@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.agrirouter.proto</groupId>
+    <artifactId>agrirouter-tmt-protobuf-definitions</artifactId>
+    <version>1.0.0</version>
+
+    <name>AGRIROUTER - Technical Message Type Protobuf Definitions</name>
+    <description>This project contains the Google Protocol Buffer (protobuf) definitions for those technical message types, that are exchanged as protobuf objects. For more informations see the technical integration guide.
+    </description>
+    <url>https://github.com/DKE-Data/agrirouter-tmt-protobuf-definitions</url>
+
+    <licenses>
+        <license>
+            <name>Apache License Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>saschadoemer</id>
+            <name>Sascha Doemer</name>
+            <email>Cf4ThQgxcnxAovOUXTNv@saschadoemer.de</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git:github.com/DKE-Data/agrirouter-tmt-protobuf-definitions.git</connection>
+        <developerConnection>scm:git:git@github.com:DKE-Data/agrirouter-tmt-protobuf-definitions.git
+        </developerConnection>
+        <url>https://github.com/DKE-Data/agrirouter-tmt-protobuf-definitions</url>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub DKE-Data Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/DKE-Data/agrirouter-tmt-protobuf-definitions</url>
+        </repository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>https://repo1.maven.org/maven2</url>
+            <releases><enabled>true</enabled></releases>
+            <snapshots><enabled>false</enabled></snapshots>
+        </repository>
+    </repositories>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+
+        <protobuf-java.version>3.5.1</protobuf-java.version>
+        <protoc-jar-maven-plugin.version>3.5.1.1</protoc-jar-maven-plugin.version>
+        <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>${protobuf-java.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>${maven-resources-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${basedir}/target/gpg</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/gpg</directory>
+                                    <filtering>false</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>generate-protobuf-tmt</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.github.os72</groupId>
+                        <artifactId>protoc-jar-maven-plugin</artifactId>
+                        <version>${protoc-jar-maven-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <phase>generate-sources</phase>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                                <configuration>
+                                    <addProtoSources>all</addProtoSources>
+                                    <includeStdTypes>true</includeStdTypes>
+                                    <inputDirectories>
+                                        <include>src/main/resources/com/dke/data/agrirouter/proto</include>
+                                    </inputDirectories>
+                                    <includeDirectories>
+                                        <include>src/main/resources/com/dke/data/agrirouter/proto</include>
+                                    </includeDirectories>
+                                    <outputTargets>
+                                        <outputTarget>
+                                            <type>java</type>
+                                            <addSources>none</addSources>
+                                            <outputDirectory>src/main/java</outputDirectory>
+                                        </outputTarget>
+                                    </outputTargets>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+</project>

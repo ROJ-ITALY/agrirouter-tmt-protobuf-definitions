@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <PackageId>agrirouter-tmt-protobuf-definitions</PackageId>
+        <Title>Agrirouter TMT Protobuf Definitions</Title>
+        <Authors>Frank Wiebeler, Sascha Dömer</Authors>
+        <Description>These are the protobuf definitons for the own technical message types provided by the agrirouter.</Description>
+        <Copyright>DKE-Data GmbH &amp; Co. KG</Copyright>
+        <PackageProjectUrl>https://my-agrirouter.com/</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/DKE-Data/agrirouter-tmt-protobuf-definitions/blob/develop/LICENSE</PackageLicenseUrl>
+        <AssemblyName>agrirouter-tmt-protobuf-definitions</AssemblyName>
+        <Product>agrirouter-tmt-protobuf-definitions</Product>
+        <RepositoryUrl>https://github.com/DKE-Data/agrirouter-tmt-protobuf-definitions</RepositoryUrl>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Google.Protobuf" Version="3.11.4" />
+    </ItemGroup>
+
+</Project>
