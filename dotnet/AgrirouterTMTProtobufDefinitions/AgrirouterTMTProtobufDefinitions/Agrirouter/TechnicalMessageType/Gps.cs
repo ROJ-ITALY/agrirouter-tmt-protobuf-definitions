@@ -26,34 +26,39 @@ namespace Agrirouter.Technicalmessagetype {
           string.Concat(
             "Ch50ZWNobmljYWxtZXNzYWdldHlwZS9ncHMucHJvdG8SH2Fncmlyb3V0ZXIu",
             "dGVjaG5pY2FsbWVzc2FnZXR5cGUaH2dvb2dsZS9wcm90b2J1Zi90aW1lc3Rh",
-            "bXAucHJvdG8aGWdvb2dsZS9wcm90b2J1Zi9hbnkucHJvdG8i+AUKB0dQU0xp",
-            "c3QSQgoHZW50cmllcxgBIAMoCzIxLmFncmlyb3V0ZXIudGVjaG5pY2FsbWVz",
-            "c2FnZXR5cGUuR1BTTGlzdC5HUFNFbnRyeRqoBQoIR1BTRW50cnkSFgoOcG9z",
-            "aXRpb25fbm9ydGgYASABKAESFQoNcG9zaXRpb25fZWFzdBgCIAEoARITCgtw",
-            "b3NpdGlvbl91cBgDIAEoEhJZCg9wb3NpdGlvbl9zdGF0dXMYBCABKA4yQC5h",
-            "Z3Jpcm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBlLkdQU0xpc3QuR1BTRW50",
-            "cnkuUG9zaXRpb25TdGF0dXMSDAoEcGRvcBgFIAEoARIMCgRoZG9wGAYgASgB",
-            "EhwKFG51bWJlcl9vZl9zYXRlbGxpdGVzGAcgASgNEjUKEWdwc191dGNfdGlt",
-            "ZXN0YW1wGAggASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBJTCgxm",
-            "aWVsZF9zdGF0dXMYCSABKA4yPS5hZ3Jpcm91dGVyLnRlY2huaWNhbG1lc3Nh",
-            "Z2V0eXBlLkdQU0xpc3QuR1BTRW50cnkuRmllbGRTdGF0dXMSKAoJZXh0ZW5z",
-            "aW9uGIAQIAMoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnkizgEKDlBvc2l0aW9u",
-            "U3RhdHVzEgwKCERfTk9fR1BTEAASCgoGRF9HTlNTEAESCwoHRF9ER05TUxAC",
-            "EhIKDkRfUFJFQ0lTRV9HTlNTEAMSEgoORF9SVEtfRklOVEVHRVIQBBIPCgtE",
-            "X1JUS19GTE9BVBAFEhEKDURfRVNUX0RSX01PREUQBhISCg5EX01BTlVBTF9J",
-            "TlBVVBAHEhMKD0RfU0lNVUxBVEVfTU9ERRAIEgsKB0RfRVJST1IQDhITCg9E",
-            "X05PVF9BVkFJTEFCTEUQDyI8CgtGaWVsZFN0YXR1cxIOCgpGU19VTktOT1dO",
-            "EAASDgoKRlNfSU5GSUVMRBABEg0KCUZTX1NUUkVFVBACYgZwcm90bzM="));
+            "bXAucHJvdG8aGWdvb2dsZS9wcm90b2J1Zi9hbnkucHJvdG8itgYKB0dQU0xp",
+            "c3QSRgoLZ3BzX2VudHJpZXMYASADKAsyMS5hZ3Jpcm91dGVyLnRlY2huaWNh",
+            "bG1lc3NhZ2V0eXBlLkdQU0xpc3QuR1BTRW50cnkSKAoJZXh0ZW5zaW9uGIAQ",
+            "IAMoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnkauAUKCEdQU0VudHJ5EhYKDnBv",
+            "c2l0aW9uX25vcnRoGAEgASgBEhUKDXBvc2l0aW9uX2Vhc3QYAiABKAESEwoL",
+            "cG9zaXRpb25fdXAYAyABKBISWQoPcG9zaXRpb25fc3RhdHVzGAQgASgOMkAu",
+            "YWdyaXJvdXRlci50ZWNobmljYWxtZXNzYWdldHlwZS5HUFNMaXN0LkdQU0Vu",
+            "dHJ5LlBvc2l0aW9uU3RhdHVzEgwKBHBkb3AYBSABKAESDAoEaGRvcBgGIAEo",
+            "ARIcChRudW1iZXJfb2Zfc2F0ZWxsaXRlcxgHIAEoDRI1ChFncHNfdXRjX3Rp",
+            "bWVzdGFtcBgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASUwoM",
+            "ZmllbGRfc3RhdHVzGAkgASgOMj0uYWdyaXJvdXRlci50ZWNobmljYWxtZXNz",
+            "YWdldHlwZS5HUFNMaXN0LkdQU0VudHJ5LkZpZWxkU3RhdHVzEigKCWV4dGVu",
+            "c2lvbhiAECADKAsyFC5nb29nbGUucHJvdG9idWYuQW55Is4BCg5Qb3NpdGlv",
+            "blN0YXR1cxIMCghEX05PX0dQUxAAEgoKBkRfR05TUxABEgsKB0RfREdOU1MQ",
+            "AhISCg5EX1BSRUNJU0VfR05TUxADEhIKDkRfUlRLX0ZJTlRFR0VSEAQSDwoL",
+            "RF9SVEtfRkxPQVQQBRIRCg1EX0VTVF9EUl9NT0RFEAYSEgoORF9NQU5VQUxf",
+            "SU5QVVQQBxITCg9EX1NJTVVMQVRFX01PREUQCBILCgdEX0VSUk9SEA4SEwoP",
+            "RF9OT1RfQVZBSUxBQkxFEA8iTAoLRmllbGRTdGF0dXMSDgoKRlNfVU5LTk9X",
+            "ThAAEg4KCkZTX0lORklFTEQQARINCglGU19PTlJPQUQQAhIOCgpGU19PRkZS",
+            "T0FEEANiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.GPSList), global::Agrirouter.Technicalmessagetype.GPSList.Parser, new[]{ "Entries" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry), global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Parser, new[]{ "PositionNorth", "PositionEast", "PositionUp", "PositionStatus", "Pdop", "Hdop", "NumberOfSatellites", "GpsUtcTimestamp", "FieldStatus", "Extension" }, null, new[]{ typeof(global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.PositionStatus), typeof(global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.FieldStatus) }, null)})
+            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.GPSList), global::Agrirouter.Technicalmessagetype.GPSList.Parser, new[]{ "GpsEntries", "Extension" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry), global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Parser, new[]{ "PositionNorth", "PositionEast", "PositionUp", "PositionStatus", "Pdop", "Hdop", "NumberOfSatellites", "GpsUtcTimestamp", "FieldStatus", "Extension" }, null, new[]{ typeof(global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.PositionStatus), typeof(global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.FieldStatus) }, null)})
           }));
     }
     #endregion
 
   }
   #region Messages
+  /// <summary>
+  /// A list of GPS Positions
+  /// </summary>
   public sealed partial class GPSList : pb::IMessage<GPSList> {
     private static readonly pb::MessageParser<GPSList> _parser = new pb::MessageParser<GPSList>(() => new GPSList());
     private pb::UnknownFieldSet _unknownFields;
@@ -79,7 +84,8 @@ namespace Agrirouter.Technicalmessagetype {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GPSList(GPSList other) : this() {
-      entries_ = other.entries_.Clone();
+      gpsEntries_ = other.gpsEntries_.Clone();
+      extension_ = other.extension_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,14 +94,27 @@ namespace Agrirouter.Technicalmessagetype {
       return new GPSList(this);
     }
 
-    /// <summary>Field number for the "entries" field.</summary>
-    public const int EntriesFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry> _repeated_entries_codec
+    /// <summary>Field number for the "gps_entries" field.</summary>
+    public const int GpsEntriesFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry> _repeated_gpsEntries_codec
         = pb::FieldCodec.ForMessage(10, global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry> entries_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry>();
+    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry> gpsEntries_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry> Entries {
-      get { return entries_; }
+    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry> GpsEntries {
+      get { return gpsEntries_; }
+    }
+
+    /// <summary>Field number for the "extension" field.</summary>
+    public const int ExtensionFieldNumber = 2048;
+    private static readonly pb::FieldCodec<global::Google.Protobuf.WellKnownTypes.Any> _repeated_extension_codec
+        = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
+    private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
+    /// <summary>
+    /// Used for proprietary purposes
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
+      get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,14 +130,16 @@ namespace Agrirouter.Technicalmessagetype {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!entries_.Equals(other.entries_)) return false;
+      if(!gpsEntries_.Equals(other.gpsEntries_)) return false;
+      if(!extension_.Equals(other.extension_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= entries_.GetHashCode();
+      hash ^= gpsEntries_.GetHashCode();
+      hash ^= extension_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -132,7 +153,8 @@ namespace Agrirouter.Technicalmessagetype {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      entries_.WriteTo(output, _repeated_entries_codec);
+      gpsEntries_.WriteTo(output, _repeated_gpsEntries_codec);
+      extension_.WriteTo(output, _repeated_extension_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -141,7 +163,8 @@ namespace Agrirouter.Technicalmessagetype {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      size += entries_.CalculateSize(_repeated_entries_codec);
+      size += gpsEntries_.CalculateSize(_repeated_gpsEntries_codec);
+      size += extension_.CalculateSize(_repeated_extension_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -153,7 +176,8 @@ namespace Agrirouter.Technicalmessagetype {
       if (other == null) {
         return;
       }
-      entries_.Add(other.entries_);
+      gpsEntries_.Add(other.gpsEntries_);
+      extension_.Add(other.extension_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -166,7 +190,11 @@ namespace Agrirouter.Technicalmessagetype {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            entries_.AddEntriesFrom(input, _repeated_entries_codec);
+            gpsEntries_.AddEntriesFrom(input, _repeated_gpsEntries_codec);
+            break;
+          }
+          case 16386: {
+            extension_.AddEntriesFrom(input, _repeated_extension_codec);
             break;
           }
         }
@@ -177,6 +205,9 @@ namespace Agrirouter.Technicalmessagetype {
     /// <summary>Container for nested types declared in the GPSList message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static partial class Types {
+      /// <summary>
+      ///One single GPS Position
+      /// </summary>
       public sealed partial class GPSEntry : pb::IMessage<GPSEntry> {
         private static readonly pb::MessageParser<GPSEntry> _parser = new pb::MessageParser<GPSEntry>(() => new GPSEntry());
         private pb::UnknownFieldSet _unknownFields;
@@ -223,6 +254,9 @@ namespace Agrirouter.Technicalmessagetype {
         /// <summary>Field number for the "position_north" field.</summary>
         public const int PositionNorthFieldNumber = 1;
         private double positionNorth_;
+        /// <summary>
+        ///Latitude
+        /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public double PositionNorth {
           get { return positionNorth_; }
@@ -234,6 +268,9 @@ namespace Agrirouter.Technicalmessagetype {
         /// <summary>Field number for the "position_east" field.</summary>
         public const int PositionEastFieldNumber = 2;
         private double positionEast_;
+        /// <summary>
+        ///Longitude
+        /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public double PositionEast {
           get { return positionEast_; }
@@ -245,6 +282,9 @@ namespace Agrirouter.Technicalmessagetype {
         /// <summary>Field number for the "position_up" field.</summary>
         public const int PositionUpFieldNumber = 3;
         private long positionUp_;
+        /// <summary>
+        ///Altitude
+        /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public long PositionUp {
           get { return positionUp_; }
@@ -267,6 +307,9 @@ namespace Agrirouter.Technicalmessagetype {
         /// <summary>Field number for the "pdop" field.</summary>
         public const int PdopFieldNumber = 5;
         private double pdop_;
+        /// <summary>
+        ///Position DOP (Dilusion of precision)
+        /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public double Pdop {
           get { return pdop_; }
@@ -278,6 +321,9 @@ namespace Agrirouter.Technicalmessagetype {
         /// <summary>Field number for the "hdop" field.</summary>
         public const int HdopFieldNumber = 6;
         private double hdop_;
+        /// <summary>
+        ///Horizontal DOP (Dilusion of precision) 
+        /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public double Hdop {
           get { return hdop_; }
@@ -311,6 +357,9 @@ namespace Agrirouter.Technicalmessagetype {
         /// <summary>Field number for the "field_status" field.</summary>
         public const int FieldStatusFieldNumber = 9;
         private global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.FieldStatus fieldStatus_ = 0;
+        /// <summary>
+        ///Are we on a road, in a field or just somewhere offroad?
+        /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.FieldStatus FieldStatus {
           get { return fieldStatus_; }
@@ -562,12 +611,33 @@ namespace Agrirouter.Technicalmessagetype {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static partial class Types {
           public enum PositionStatus {
+            /// <summary>
+            ///No GPS at all
+            /// </summary>
             [pbr::OriginalName("D_NO_GPS")] DNoGps = 0,
+            /// <summary>
+            ///Low level GPS
+            /// </summary>
             [pbr::OriginalName("D_GNSS")] DGnss = 1,
+            /// <summary>
+            ///Medium level GPS
+            /// </summary>
             [pbr::OriginalName("D_DGNSS")] DDgnss = 2,
+            /// <summary>
+            ///High level GPS Without correction signal
+            /// </summary>
             [pbr::OriginalName("D_PRECISE_GNSS")] DPreciseGnss = 3,
+            /// <summary>
+            ///High level GPS with correction signal; 
+            /// </summary>
             [pbr::OriginalName("D_RTK_FINTEGER")] DRtkFinteger = 4,
+            /// <summary>
+            ///High level GPS with correction signal in high precision;
+            /// </summary>
             [pbr::OriginalName("D_RTK_FLOAT")] DRtkFloat = 5,
+            /// <summary>
+            ///EST-Mode
+            /// </summary>
             [pbr::OriginalName("D_EST_DR_MODE")] DEstDrMode = 6,
             [pbr::OriginalName("D_MANUAL_INPUT")] DManualInput = 7,
             [pbr::OriginalName("D_SIMULATE_MODE")] DSimulateMode = 8,
@@ -581,7 +651,8 @@ namespace Agrirouter.Technicalmessagetype {
           public enum FieldStatus {
             [pbr::OriginalName("FS_UNKNOWN")] FsUnknown = 0,
             [pbr::OriginalName("FS_INFIELD")] FsInfield = 1,
-            [pbr::OriginalName("FS_STREET")] FsStreet = 2,
+            [pbr::OriginalName("FS_ONROAD")] FsOnroad = 2,
+            [pbr::OriginalName("FS_OFFROAD")] FsOffroad = 3,
           }
 
         }

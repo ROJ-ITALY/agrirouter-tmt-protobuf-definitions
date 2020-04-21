@@ -3,20 +3,22 @@ package agrirouter.technicalmessagetype;
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/any.proto";
 
+// A list of GPS Positions
 message GPSList{
+    //One single GPS Position
     message GPSEntry {
         enum PositionStatus {
-            D_NO_GPS = 0;
-            D_GNSS = 1;
-            D_DGNSS = 2;
-            D_PRECISE_GNSS = 3;
-            D_RTK_FINTEGER = 4;
-            D_RTK_FLOAT = 5;
-            D_EST_DR_MODE = 6;
-            D_MANUAL_INPUT = 7;
+            D_NO_GPS = 0;  //No GPS at all
+            D_GNSS = 1; //Low level GPS
+            D_DGNSS = 2; //Medium level GPS
+            D_PRECISE_GNSS = 3; //High level GPS Without correction signal
+            D_RTK_FINTEGER = 4; //High level GPS with correction signal; 
+            D_RTK_FLOAT = 5;//High level GPS with correction signal in high precision;
+            D_EST_DR_MODE = 6; //EST-Mode
+            D_MANUAL_INPUT = 7; 
             D_SIMULATE_MODE = 8;
             // 9-13 Reserved
-            D_ERROR = 14;
+            D_ERROR = 14;//Error receiving GPS position from the receiver
             D_NOT_AVAILABLE = 15;
         }
         enum FieldStatus {
@@ -25,16 +27,17 @@ message GPSList{
             FS_ONROAD = 2;
             FS_OFFROAD = 3;
         }
-        double position_north = 1;
-        double position_east = 2;
-        sint64 position_up = 3;
-        PositionStatus position_status = 4;
-        double pdop = 5;
-        double hdop = 6;
+        double position_north = 1; //Latitude
+        double position_east = 2; //Longitude
+        sint64 position_up = 3; //Altitude
+        PositionStatus position_status = 4; 
+        double pdop = 5; //Position DOP (Dilusion of precision)
+        double hdop = 6; //Horizontal DOP (Dilusion of precision) 
         uint32 number_of_satellites = 7;
         google.protobuf.Timestamp gps_utc_timestamp = 8;
-        FieldStatus field_status = 9;
+        FieldStatus field_status = 9;//Are we on a road, in a field or just somewhere offroad?
         repeated google.protobuf.Any extension = 2048;  // Used for proprietary purposes
     }
-    repeated GPSEntry entries = 1;
+    repeated GPSEntry gps_entries = 1;
+    repeated google.protobuf.Any extension = 2048;  // Used for proprietary purposes
 }

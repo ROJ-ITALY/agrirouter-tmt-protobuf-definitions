@@ -19,30 +19,78 @@ public final class Gps {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry entries = 1;</code>
+     * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry gps_entries = 1;</code>
      */
     java.util.List<agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry> 
-        getEntriesList();
+        getGpsEntriesList();
     /**
-     * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry entries = 1;</code>
+     * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry gps_entries = 1;</code>
      */
-    agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry getEntries(int index);
+    agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry getGpsEntries(int index);
     /**
-     * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry entries = 1;</code>
+     * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry gps_entries = 1;</code>
      */
-    int getEntriesCount();
+    int getGpsEntriesCount();
     /**
-     * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry entries = 1;</code>
+     * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry gps_entries = 1;</code>
      */
     java.util.List<? extends agrirouter.technicalmessagetype.Gps.GPSList.GPSEntryOrBuilder> 
-        getEntriesOrBuilderList();
+        getGpsEntriesOrBuilderList();
     /**
-     * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry entries = 1;</code>
+     * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry gps_entries = 1;</code>
      */
-    agrirouter.technicalmessagetype.Gps.GPSList.GPSEntryOrBuilder getEntriesOrBuilder(
+    agrirouter.technicalmessagetype.Gps.GPSList.GPSEntryOrBuilder getGpsEntriesOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * Used for proprietary purposes
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Any extension = 2048;</code>
+     */
+    java.util.List<com.google.protobuf.Any> 
+        getExtensionList();
+    /**
+     * <pre>
+     * Used for proprietary purposes
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Any extension = 2048;</code>
+     */
+    com.google.protobuf.Any getExtension(int index);
+    /**
+     * <pre>
+     * Used for proprietary purposes
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Any extension = 2048;</code>
+     */
+    int getExtensionCount();
+    /**
+     * <pre>
+     * Used for proprietary purposes
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Any extension = 2048;</code>
+     */
+    java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
+        getExtensionOrBuilderList();
+    /**
+     * <pre>
+     * Used for proprietary purposes
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Any extension = 2048;</code>
+     */
+    com.google.protobuf.AnyOrBuilder getExtensionOrBuilder(
         int index);
   }
   /**
+   * <pre>
+   * A list of GPS Positions
+   * </pre>
+   *
    * Protobuf type {@code agrirouter.technicalmessagetype.GPSList}
    */
   public  static final class GPSList extends
@@ -55,7 +103,8 @@ public final class Gps {
       super(builder);
     }
     private GPSList() {
-      entries_ = java.util.Collections.emptyList();
+      gpsEntries_ = java.util.Collections.emptyList();
+      extension_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -91,11 +140,20 @@ public final class Gps {
             }
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                entries_ = new java.util.ArrayList<agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry>();
+                gpsEntries_ = new java.util.ArrayList<agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              entries_.add(
+              gpsEntries_.add(
                   input.readMessage(agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry.parser(), extensionRegistry));
+              break;
+            }
+            case 16386: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                extension_ = new java.util.ArrayList<com.google.protobuf.Any>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              extension_.add(
+                  input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry));
               break;
             }
           }
@@ -107,7 +165,10 @@ public final class Gps {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          entries_ = java.util.Collections.unmodifiableList(entries_);
+          gpsEntries_ = java.util.Collections.unmodifiableList(gpsEntries_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          extension_ = java.util.Collections.unmodifiableList(extension_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -130,16 +191,28 @@ public final class Gps {
         com.google.protobuf.MessageOrBuilder {
 
       /**
+       * <pre>
+       *Latitude
+       * </pre>
+       *
        * <code>double position_north = 1;</code>
        */
       double getPositionNorth();
 
       /**
+       * <pre>
+       *Longitude
+       * </pre>
+       *
        * <code>double position_east = 2;</code>
        */
       double getPositionEast();
 
       /**
+       * <pre>
+       *Altitude
+       * </pre>
+       *
        * <code>sint64 position_up = 3;</code>
        */
       long getPositionUp();
@@ -154,11 +227,19 @@ public final class Gps {
       agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry.PositionStatus getPositionStatus();
 
       /**
+       * <pre>
+       *Position DOP (Dilusion of precision)
+       * </pre>
+       *
        * <code>double pdop = 5;</code>
        */
       double getPdop();
 
       /**
+       * <pre>
+       *Horizontal DOP (Dilusion of precision) 
+       * </pre>
+       *
        * <code>double hdop = 6;</code>
        */
       double getHdop();
@@ -182,10 +263,18 @@ public final class Gps {
       com.google.protobuf.TimestampOrBuilder getGpsUtcTimestampOrBuilder();
 
       /**
+       * <pre>
+       *Are we on a road, in a field or just somewhere offroad?
+       * </pre>
+       *
        * <code>.agrirouter.technicalmessagetype.GPSList.GPSEntry.FieldStatus field_status = 9;</code>
        */
       int getFieldStatusValue();
       /**
+       * <pre>
+       *Are we on a road, in a field or just somewhere offroad?
+       * </pre>
+       *
        * <code>.agrirouter.technicalmessagetype.GPSList.GPSEntry.FieldStatus field_status = 9;</code>
        */
       agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry.FieldStatus getFieldStatus();
@@ -235,6 +324,10 @@ public final class Gps {
           int index);
     }
     /**
+     * <pre>
+     *One single GPS Position
+     * </pre>
+     *
      * Protobuf type {@code agrirouter.technicalmessagetype.GPSList.GPSEntry}
      */
     public  static final class GPSEntry extends
@@ -386,30 +479,58 @@ public final class Gps {
       public enum PositionStatus
           implements com.google.protobuf.ProtocolMessageEnum {
         /**
+         * <pre>
+         *No GPS at all
+         * </pre>
+         *
          * <code>D_NO_GPS = 0;</code>
          */
         D_NO_GPS(0),
         /**
+         * <pre>
+         *Low level GPS
+         * </pre>
+         *
          * <code>D_GNSS = 1;</code>
          */
         D_GNSS(1),
         /**
+         * <pre>
+         *Medium level GPS
+         * </pre>
+         *
          * <code>D_DGNSS = 2;</code>
          */
         D_DGNSS(2),
         /**
+         * <pre>
+         *High level GPS Without correction signal
+         * </pre>
+         *
          * <code>D_PRECISE_GNSS = 3;</code>
          */
         D_PRECISE_GNSS(3),
         /**
+         * <pre>
+         *High level GPS with correction signal; 
+         * </pre>
+         *
          * <code>D_RTK_FINTEGER = 4;</code>
          */
         D_RTK_FINTEGER(4),
         /**
+         * <pre>
+         *High level GPS with correction signal in high precision;
+         * </pre>
+         *
          * <code>D_RTK_FLOAT = 5;</code>
          */
         D_RTK_FLOAT(5),
         /**
+         * <pre>
+         *EST-Mode
+         * </pre>
+         *
          * <code>D_EST_DR_MODE = 6;</code>
          */
         D_EST_DR_MODE(6),
@@ -437,30 +558,58 @@ public final class Gps {
         ;
 
         /**
+         * <pre>
+         *No GPS at all
+         * </pre>
+         *
          * <code>D_NO_GPS = 0;</code>
          */
         public static final int D_NO_GPS_VALUE = 0;
         /**
+         * <pre>
+         *Low level GPS
+         * </pre>
+         *
          * <code>D_GNSS = 1;</code>
          */
         public static final int D_GNSS_VALUE = 1;
         /**
+         * <pre>
+         *Medium level GPS
+         * </pre>
+         *
          * <code>D_DGNSS = 2;</code>
          */
         public static final int D_DGNSS_VALUE = 2;
         /**
+         * <pre>
+         *High level GPS Without correction signal
+         * </pre>
+         *
          * <code>D_PRECISE_GNSS = 3;</code>
          */
         public static final int D_PRECISE_GNSS_VALUE = 3;
         /**
+         * <pre>
+         *High level GPS with correction signal; 
+         * </pre>
+         *
          * <code>D_RTK_FINTEGER = 4;</code>
          */
         public static final int D_RTK_FINTEGER_VALUE = 4;
         /**
+         * <pre>
+         *High level GPS with correction signal in high precision;
+         * </pre>
+         *
          * <code>D_RTK_FLOAT = 5;</code>
          */
         public static final int D_RTK_FLOAT_VALUE = 5;
         /**
+         * <pre>
+         *EST-Mode
+         * </pre>
+         *
          * <code>D_EST_DR_MODE = 6;</code>
          */
         public static final int D_EST_DR_MODE_VALUE = 6;
@@ -581,9 +730,13 @@ public final class Gps {
          */
         FS_INFIELD(1),
         /**
-         * <code>FS_STREET = 2;</code>
+         * <code>FS_ONROAD = 2;</code>
          */
-        FS_STREET(2),
+        FS_ONROAD(2),
+        /**
+         * <code>FS_OFFROAD = 3;</code>
+         */
+        FS_OFFROAD(3),
         UNRECOGNIZED(-1),
         ;
 
@@ -596,9 +749,13 @@ public final class Gps {
          */
         public static final int FS_INFIELD_VALUE = 1;
         /**
-         * <code>FS_STREET = 2;</code>
+         * <code>FS_ONROAD = 2;</code>
          */
-        public static final int FS_STREET_VALUE = 2;
+        public static final int FS_ONROAD_VALUE = 2;
+        /**
+         * <code>FS_OFFROAD = 3;</code>
+         */
+        public static final int FS_OFFROAD_VALUE = 3;
 
 
         public final int getNumber() {
@@ -621,7 +778,8 @@ public final class Gps {
           switch (value) {
             case 0: return FS_UNKNOWN;
             case 1: return FS_INFIELD;
-            case 2: return FS_STREET;
+            case 2: return FS_ONROAD;
+            case 3: return FS_OFFROAD;
             default: return null;
           }
         }
@@ -678,6 +836,10 @@ public final class Gps {
       public static final int POSITION_NORTH_FIELD_NUMBER = 1;
       private double positionNorth_;
       /**
+       * <pre>
+       *Latitude
+       * </pre>
+       *
        * <code>double position_north = 1;</code>
        */
       public double getPositionNorth() {
@@ -687,6 +849,10 @@ public final class Gps {
       public static final int POSITION_EAST_FIELD_NUMBER = 2;
       private double positionEast_;
       /**
+       * <pre>
+       *Longitude
+       * </pre>
+       *
        * <code>double position_east = 2;</code>
        */
       public double getPositionEast() {
@@ -696,6 +862,10 @@ public final class Gps {
       public static final int POSITION_UP_FIELD_NUMBER = 3;
       private long positionUp_;
       /**
+       * <pre>
+       *Altitude
+       * </pre>
+       *
        * <code>sint64 position_up = 3;</code>
        */
       public long getPositionUp() {
@@ -721,6 +891,10 @@ public final class Gps {
       public static final int PDOP_FIELD_NUMBER = 5;
       private double pdop_;
       /**
+       * <pre>
+       *Position DOP (Dilusion of precision)
+       * </pre>
+       *
        * <code>double pdop = 5;</code>
        */
       public double getPdop() {
@@ -730,6 +904,10 @@ public final class Gps {
       public static final int HDOP_FIELD_NUMBER = 6;
       private double hdop_;
       /**
+       * <pre>
+       *Horizontal DOP (Dilusion of precision) 
+       * </pre>
+       *
        * <code>double hdop = 6;</code>
        */
       public double getHdop() {
@@ -769,12 +947,20 @@ public final class Gps {
       public static final int FIELD_STATUS_FIELD_NUMBER = 9;
       private int fieldStatus_;
       /**
+       * <pre>
+       *Are we on a road, in a field or just somewhere offroad?
+       * </pre>
+       *
        * <code>.agrirouter.technicalmessagetype.GPSList.GPSEntry.FieldStatus field_status = 9;</code>
        */
       public int getFieldStatusValue() {
         return fieldStatus_;
       }
       /**
+       * <pre>
+       *Are we on a road, in a field or just somewhere offroad?
+       * </pre>
+       *
        * <code>.agrirouter.technicalmessagetype.GPSList.GPSEntry.FieldStatus field_status = 9;</code>
        */
       public agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry.FieldStatus getFieldStatus() {
@@ -1106,6 +1292,10 @@ public final class Gps {
         return builder;
       }
       /**
+       * <pre>
+       *One single GPS Position
+       * </pre>
+       *
        * Protobuf type {@code agrirouter.technicalmessagetype.GPSList.GPSEntry}
        */
       public static final class Builder extends
@@ -1341,12 +1531,20 @@ public final class Gps {
 
         private double positionNorth_ ;
         /**
+         * <pre>
+         *Latitude
+         * </pre>
+         *
          * <code>double position_north = 1;</code>
          */
         public double getPositionNorth() {
           return positionNorth_;
         }
         /**
+         * <pre>
+         *Latitude
+         * </pre>
+         *
          * <code>double position_north = 1;</code>
          */
         public Builder setPositionNorth(double value) {
@@ -1356,6 +1554,10 @@ public final class Gps {
           return this;
         }
         /**
+         * <pre>
+         *Latitude
+         * </pre>
+         *
          * <code>double position_north = 1;</code>
          */
         public Builder clearPositionNorth() {
@@ -1367,12 +1569,20 @@ public final class Gps {
 
         private double positionEast_ ;
         /**
+         * <pre>
+         *Longitude
+         * </pre>
+         *
          * <code>double position_east = 2;</code>
          */
         public double getPositionEast() {
           return positionEast_;
         }
         /**
+         * <pre>
+         *Longitude
+         * </pre>
+         *
          * <code>double position_east = 2;</code>
          */
         public Builder setPositionEast(double value) {
@@ -1382,6 +1592,10 @@ public final class Gps {
           return this;
         }
         /**
+         * <pre>
+         *Longitude
+         * </pre>
+         *
          * <code>double position_east = 2;</code>
          */
         public Builder clearPositionEast() {
@@ -1393,12 +1607,20 @@ public final class Gps {
 
         private long positionUp_ ;
         /**
+         * <pre>
+         *Altitude
+         * </pre>
+         *
          * <code>sint64 position_up = 3;</code>
          */
         public long getPositionUp() {
           return positionUp_;
         }
         /**
+         * <pre>
+         *Altitude
+         * </pre>
+         *
          * <code>sint64 position_up = 3;</code>
          */
         public Builder setPositionUp(long value) {
@@ -1408,6 +1630,10 @@ public final class Gps {
           return this;
         }
         /**
+         * <pre>
+         *Altitude
+         * </pre>
+         *
          * <code>sint64 position_up = 3;</code>
          */
         public Builder clearPositionUp() {
@@ -1463,12 +1689,20 @@ public final class Gps {
 
         private double pdop_ ;
         /**
+         * <pre>
+         *Position DOP (Dilusion of precision)
+         * </pre>
+         *
          * <code>double pdop = 5;</code>
          */
         public double getPdop() {
           return pdop_;
         }
         /**
+         * <pre>
+         *Position DOP (Dilusion of precision)
+         * </pre>
+         *
          * <code>double pdop = 5;</code>
          */
         public Builder setPdop(double value) {
@@ -1478,6 +1712,10 @@ public final class Gps {
           return this;
         }
         /**
+         * <pre>
+         *Position DOP (Dilusion of precision)
+         * </pre>
+         *
          * <code>double pdop = 5;</code>
          */
         public Builder clearPdop() {
@@ -1489,12 +1727,20 @@ public final class Gps {
 
         private double hdop_ ;
         /**
+         * <pre>
+         *Horizontal DOP (Dilusion of precision) 
+         * </pre>
+         *
          * <code>double hdop = 6;</code>
          */
         public double getHdop() {
           return hdop_;
         }
         /**
+         * <pre>
+         *Horizontal DOP (Dilusion of precision) 
+         * </pre>
+         *
          * <code>double hdop = 6;</code>
          */
         public Builder setHdop(double value) {
@@ -1504,6 +1750,10 @@ public final class Gps {
           return this;
         }
         /**
+         * <pre>
+         *Horizontal DOP (Dilusion of precision) 
+         * </pre>
+         *
          * <code>double hdop = 6;</code>
          */
         public Builder clearHdop() {
@@ -1658,12 +1908,20 @@ public final class Gps {
 
         private int fieldStatus_ = 0;
         /**
+         * <pre>
+         *Are we on a road, in a field or just somewhere offroad?
+         * </pre>
+         *
          * <code>.agrirouter.technicalmessagetype.GPSList.GPSEntry.FieldStatus field_status = 9;</code>
          */
         public int getFieldStatusValue() {
           return fieldStatus_;
         }
         /**
+         * <pre>
+         *Are we on a road, in a field or just somewhere offroad?
+         * </pre>
+         *
          * <code>.agrirouter.technicalmessagetype.GPSList.GPSEntry.FieldStatus field_status = 9;</code>
          */
         public Builder setFieldStatusValue(int value) {
@@ -1672,6 +1930,10 @@ public final class Gps {
           return this;
         }
         /**
+         * <pre>
+         *Are we on a road, in a field or just somewhere offroad?
+         * </pre>
+         *
          * <code>.agrirouter.technicalmessagetype.GPSList.GPSEntry.FieldStatus field_status = 9;</code>
          */
         public agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry.FieldStatus getFieldStatus() {
@@ -1679,6 +1941,10 @@ public final class Gps {
           return result == null ? agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry.FieldStatus.UNRECOGNIZED : result;
         }
         /**
+         * <pre>
+         *Are we on a road, in a field or just somewhere offroad?
+         * </pre>
+         *
          * <code>.agrirouter.technicalmessagetype.GPSList.GPSEntry.FieldStatus field_status = 9;</code>
          */
         public Builder setFieldStatus(agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry.FieldStatus value) {
@@ -1691,6 +1957,10 @@ public final class Gps {
           return this;
         }
         /**
+         * <pre>
+         *Are we on a road, in a field or just somewhere offroad?
+         * </pre>
+         *
          * <code>.agrirouter.technicalmessagetype.GPSList.GPSEntry.FieldStatus field_status = 9;</code>
          */
         public Builder clearFieldStatus() {
@@ -2060,39 +2330,94 @@ public final class Gps {
 
     }
 
-    public static final int ENTRIES_FIELD_NUMBER = 1;
-    private java.util.List<agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry> entries_;
+    public static final int GPS_ENTRIES_FIELD_NUMBER = 1;
+    private java.util.List<agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry> gpsEntries_;
     /**
-     * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry entries = 1;</code>
+     * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry gps_entries = 1;</code>
      */
-    public java.util.List<agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry> getEntriesList() {
-      return entries_;
+    public java.util.List<agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry> getGpsEntriesList() {
+      return gpsEntries_;
     }
     /**
-     * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry entries = 1;</code>
+     * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry gps_entries = 1;</code>
      */
     public java.util.List<? extends agrirouter.technicalmessagetype.Gps.GPSList.GPSEntryOrBuilder> 
-        getEntriesOrBuilderList() {
-      return entries_;
+        getGpsEntriesOrBuilderList() {
+      return gpsEntries_;
     }
     /**
-     * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry entries = 1;</code>
+     * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry gps_entries = 1;</code>
      */
-    public int getEntriesCount() {
-      return entries_.size();
+    public int getGpsEntriesCount() {
+      return gpsEntries_.size();
     }
     /**
-     * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry entries = 1;</code>
+     * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry gps_entries = 1;</code>
      */
-    public agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry getEntries(int index) {
-      return entries_.get(index);
+    public agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry getGpsEntries(int index) {
+      return gpsEntries_.get(index);
     }
     /**
-     * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry entries = 1;</code>
+     * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry gps_entries = 1;</code>
      */
-    public agrirouter.technicalmessagetype.Gps.GPSList.GPSEntryOrBuilder getEntriesOrBuilder(
+    public agrirouter.technicalmessagetype.Gps.GPSList.GPSEntryOrBuilder getGpsEntriesOrBuilder(
         int index) {
-      return entries_.get(index);
+      return gpsEntries_.get(index);
+    }
+
+    public static final int EXTENSION_FIELD_NUMBER = 2048;
+    private java.util.List<com.google.protobuf.Any> extension_;
+    /**
+     * <pre>
+     * Used for proprietary purposes
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Any extension = 2048;</code>
+     */
+    public java.util.List<com.google.protobuf.Any> getExtensionList() {
+      return extension_;
+    }
+    /**
+     * <pre>
+     * Used for proprietary purposes
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Any extension = 2048;</code>
+     */
+    public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
+        getExtensionOrBuilderList() {
+      return extension_;
+    }
+    /**
+     * <pre>
+     * Used for proprietary purposes
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Any extension = 2048;</code>
+     */
+    public int getExtensionCount() {
+      return extension_.size();
+    }
+    /**
+     * <pre>
+     * Used for proprietary purposes
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Any extension = 2048;</code>
+     */
+    public com.google.protobuf.Any getExtension(int index) {
+      return extension_.get(index);
+    }
+    /**
+     * <pre>
+     * Used for proprietary purposes
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Any extension = 2048;</code>
+     */
+    public com.google.protobuf.AnyOrBuilder getExtensionOrBuilder(
+        int index) {
+      return extension_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2107,8 +2432,11 @@ public final class Gps {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < entries_.size(); i++) {
-        output.writeMessage(1, entries_.get(i));
+      for (int i = 0; i < gpsEntries_.size(); i++) {
+        output.writeMessage(1, gpsEntries_.get(i));
+      }
+      for (int i = 0; i < extension_.size(); i++) {
+        output.writeMessage(2048, extension_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -2118,9 +2446,13 @@ public final class Gps {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < entries_.size(); i++) {
+      for (int i = 0; i < gpsEntries_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, entries_.get(i));
+          .computeMessageSize(1, gpsEntries_.get(i));
+      }
+      for (int i = 0; i < extension_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2048, extension_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2138,8 +2470,10 @@ public final class Gps {
       agrirouter.technicalmessagetype.Gps.GPSList other = (agrirouter.technicalmessagetype.Gps.GPSList) obj;
 
       boolean result = true;
-      result = result && getEntriesList()
-          .equals(other.getEntriesList());
+      result = result && getGpsEntriesList()
+          .equals(other.getGpsEntriesList());
+      result = result && getExtensionList()
+          .equals(other.getExtensionList());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -2151,9 +2485,13 @@ public final class Gps {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getEntriesCount() > 0) {
-        hash = (37 * hash) + ENTRIES_FIELD_NUMBER;
-        hash = (53 * hash) + getEntriesList().hashCode();
+      if (getGpsEntriesCount() > 0) {
+        hash = (37 * hash) + GPS_ENTRIES_FIELD_NUMBER;
+        hash = (53 * hash) + getGpsEntriesList().hashCode();
+      }
+      if (getExtensionCount() > 0) {
+        hash = (37 * hash) + EXTENSION_FIELD_NUMBER;
+        hash = (53 * hash) + getExtensionList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -2249,6 +2587,10 @@ public final class Gps {
       return builder;
     }
     /**
+     * <pre>
+     * A list of GPS Positions
+     * </pre>
+     *
      * Protobuf type {@code agrirouter.technicalmessagetype.GPSList}
      */
     public static final class Builder extends
@@ -2280,16 +2622,23 @@ public final class Gps {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getEntriesFieldBuilder();
+          getGpsEntriesFieldBuilder();
+          getExtensionFieldBuilder();
         }
       }
       public Builder clear() {
         super.clear();
-        if (entriesBuilder_ == null) {
-          entries_ = java.util.Collections.emptyList();
+        if (gpsEntriesBuilder_ == null) {
+          gpsEntries_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          entriesBuilder_.clear();
+          gpsEntriesBuilder_.clear();
+        }
+        if (extensionBuilder_ == null) {
+          extension_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          extensionBuilder_.clear();
         }
         return this;
       }
@@ -2314,14 +2663,23 @@ public final class Gps {
       public agrirouter.technicalmessagetype.Gps.GPSList buildPartial() {
         agrirouter.technicalmessagetype.Gps.GPSList result = new agrirouter.technicalmessagetype.Gps.GPSList(this);
         int from_bitField0_ = bitField0_;
-        if (entriesBuilder_ == null) {
+        if (gpsEntriesBuilder_ == null) {
           if (((bitField0_ & 0x00000001) == 0x00000001)) {
-            entries_ = java.util.Collections.unmodifiableList(entries_);
+            gpsEntries_ = java.util.Collections.unmodifiableList(gpsEntries_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.entries_ = entries_;
+          result.gpsEntries_ = gpsEntries_;
         } else {
-          result.entries_ = entriesBuilder_.build();
+          result.gpsEntries_ = gpsEntriesBuilder_.build();
+        }
+        if (extensionBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+            extension_ = java.util.Collections.unmodifiableList(extension_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.extension_ = extension_;
+        } else {
+          result.extension_ = extensionBuilder_.build();
         }
         onBuilt();
         return result;
@@ -2364,29 +2722,55 @@ public final class Gps {
 
       public Builder mergeFrom(agrirouter.technicalmessagetype.Gps.GPSList other) {
         if (other == agrirouter.technicalmessagetype.Gps.GPSList.getDefaultInstance()) return this;
-        if (entriesBuilder_ == null) {
-          if (!other.entries_.isEmpty()) {
-            if (entries_.isEmpty()) {
-              entries_ = other.entries_;
+        if (gpsEntriesBuilder_ == null) {
+          if (!other.gpsEntries_.isEmpty()) {
+            if (gpsEntries_.isEmpty()) {
+              gpsEntries_ = other.gpsEntries_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureEntriesIsMutable();
-              entries_.addAll(other.entries_);
+              ensureGpsEntriesIsMutable();
+              gpsEntries_.addAll(other.gpsEntries_);
             }
             onChanged();
           }
         } else {
-          if (!other.entries_.isEmpty()) {
-            if (entriesBuilder_.isEmpty()) {
-              entriesBuilder_.dispose();
-              entriesBuilder_ = null;
-              entries_ = other.entries_;
+          if (!other.gpsEntries_.isEmpty()) {
+            if (gpsEntriesBuilder_.isEmpty()) {
+              gpsEntriesBuilder_.dispose();
+              gpsEntriesBuilder_ = null;
+              gpsEntries_ = other.gpsEntries_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              entriesBuilder_ = 
+              gpsEntriesBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getEntriesFieldBuilder() : null;
+                   getGpsEntriesFieldBuilder() : null;
             } else {
-              entriesBuilder_.addAllMessages(other.entries_);
+              gpsEntriesBuilder_.addAllMessages(other.gpsEntries_);
+            }
+          }
+        }
+        if (extensionBuilder_ == null) {
+          if (!other.extension_.isEmpty()) {
+            if (extension_.isEmpty()) {
+              extension_ = other.extension_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureExtensionIsMutable();
+              extension_.addAll(other.extension_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.extension_.isEmpty()) {
+            if (extensionBuilder_.isEmpty()) {
+              extensionBuilder_.dispose();
+              extensionBuilder_ = null;
+              extension_ = other.extension_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              extensionBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getExtensionFieldBuilder() : null;
+            } else {
+              extensionBuilder_.addAllMessages(other.extension_);
             }
           }
         }
@@ -2418,244 +2802,556 @@ public final class Gps {
       }
       private int bitField0_;
 
-      private java.util.List<agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry> entries_ =
+      private java.util.List<agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry> gpsEntries_ =
         java.util.Collections.emptyList();
-      private void ensureEntriesIsMutable() {
+      private void ensureGpsEntriesIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          entries_ = new java.util.ArrayList<agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry>(entries_);
+          gpsEntries_ = new java.util.ArrayList<agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry>(gpsEntries_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry, agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry.Builder, agrirouter.technicalmessagetype.Gps.GPSList.GPSEntryOrBuilder> entriesBuilder_;
+          agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry, agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry.Builder, agrirouter.technicalmessagetype.Gps.GPSList.GPSEntryOrBuilder> gpsEntriesBuilder_;
 
       /**
-       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry entries = 1;</code>
+       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry gps_entries = 1;</code>
        */
-      public java.util.List<agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry> getEntriesList() {
-        if (entriesBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(entries_);
+      public java.util.List<agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry> getGpsEntriesList() {
+        if (gpsEntriesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(gpsEntries_);
         } else {
-          return entriesBuilder_.getMessageList();
+          return gpsEntriesBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry entries = 1;</code>
+       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry gps_entries = 1;</code>
        */
-      public int getEntriesCount() {
-        if (entriesBuilder_ == null) {
-          return entries_.size();
+      public int getGpsEntriesCount() {
+        if (gpsEntriesBuilder_ == null) {
+          return gpsEntries_.size();
         } else {
-          return entriesBuilder_.getCount();
+          return gpsEntriesBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry entries = 1;</code>
+       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry gps_entries = 1;</code>
        */
-      public agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry getEntries(int index) {
-        if (entriesBuilder_ == null) {
-          return entries_.get(index);
+      public agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry getGpsEntries(int index) {
+        if (gpsEntriesBuilder_ == null) {
+          return gpsEntries_.get(index);
         } else {
-          return entriesBuilder_.getMessage(index);
+          return gpsEntriesBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry entries = 1;</code>
+       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry gps_entries = 1;</code>
        */
-      public Builder setEntries(
+      public Builder setGpsEntries(
           int index, agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry value) {
-        if (entriesBuilder_ == null) {
+        if (gpsEntriesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureEntriesIsMutable();
-          entries_.set(index, value);
+          ensureGpsEntriesIsMutable();
+          gpsEntries_.set(index, value);
           onChanged();
         } else {
-          entriesBuilder_.setMessage(index, value);
+          gpsEntriesBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry entries = 1;</code>
+       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry gps_entries = 1;</code>
        */
-      public Builder setEntries(
+      public Builder setGpsEntries(
           int index, agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry.Builder builderForValue) {
-        if (entriesBuilder_ == null) {
-          ensureEntriesIsMutable();
-          entries_.set(index, builderForValue.build());
+        if (gpsEntriesBuilder_ == null) {
+          ensureGpsEntriesIsMutable();
+          gpsEntries_.set(index, builderForValue.build());
           onChanged();
         } else {
-          entriesBuilder_.setMessage(index, builderForValue.build());
+          gpsEntriesBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry entries = 1;</code>
+       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry gps_entries = 1;</code>
        */
-      public Builder addEntries(agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry value) {
-        if (entriesBuilder_ == null) {
+      public Builder addGpsEntries(agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry value) {
+        if (gpsEntriesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureEntriesIsMutable();
-          entries_.add(value);
+          ensureGpsEntriesIsMutable();
+          gpsEntries_.add(value);
           onChanged();
         } else {
-          entriesBuilder_.addMessage(value);
+          gpsEntriesBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry entries = 1;</code>
+       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry gps_entries = 1;</code>
        */
-      public Builder addEntries(
+      public Builder addGpsEntries(
           int index, agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry value) {
-        if (entriesBuilder_ == null) {
+        if (gpsEntriesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureEntriesIsMutable();
-          entries_.add(index, value);
+          ensureGpsEntriesIsMutable();
+          gpsEntries_.add(index, value);
           onChanged();
         } else {
-          entriesBuilder_.addMessage(index, value);
+          gpsEntriesBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry entries = 1;</code>
+       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry gps_entries = 1;</code>
        */
-      public Builder addEntries(
+      public Builder addGpsEntries(
           agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry.Builder builderForValue) {
-        if (entriesBuilder_ == null) {
-          ensureEntriesIsMutable();
-          entries_.add(builderForValue.build());
+        if (gpsEntriesBuilder_ == null) {
+          ensureGpsEntriesIsMutable();
+          gpsEntries_.add(builderForValue.build());
           onChanged();
         } else {
-          entriesBuilder_.addMessage(builderForValue.build());
+          gpsEntriesBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry entries = 1;</code>
+       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry gps_entries = 1;</code>
        */
-      public Builder addEntries(
+      public Builder addGpsEntries(
           int index, agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry.Builder builderForValue) {
-        if (entriesBuilder_ == null) {
-          ensureEntriesIsMutable();
-          entries_.add(index, builderForValue.build());
+        if (gpsEntriesBuilder_ == null) {
+          ensureGpsEntriesIsMutable();
+          gpsEntries_.add(index, builderForValue.build());
           onChanged();
         } else {
-          entriesBuilder_.addMessage(index, builderForValue.build());
+          gpsEntriesBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry entries = 1;</code>
+       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry gps_entries = 1;</code>
        */
-      public Builder addAllEntries(
+      public Builder addAllGpsEntries(
           java.lang.Iterable<? extends agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry> values) {
-        if (entriesBuilder_ == null) {
-          ensureEntriesIsMutable();
+        if (gpsEntriesBuilder_ == null) {
+          ensureGpsEntriesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, entries_);
+              values, gpsEntries_);
           onChanged();
         } else {
-          entriesBuilder_.addAllMessages(values);
+          gpsEntriesBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry entries = 1;</code>
+       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry gps_entries = 1;</code>
        */
-      public Builder clearEntries() {
-        if (entriesBuilder_ == null) {
-          entries_ = java.util.Collections.emptyList();
+      public Builder clearGpsEntries() {
+        if (gpsEntriesBuilder_ == null) {
+          gpsEntries_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          entriesBuilder_.clear();
+          gpsEntriesBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry entries = 1;</code>
+       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry gps_entries = 1;</code>
        */
-      public Builder removeEntries(int index) {
-        if (entriesBuilder_ == null) {
-          ensureEntriesIsMutable();
-          entries_.remove(index);
+      public Builder removeGpsEntries(int index) {
+        if (gpsEntriesBuilder_ == null) {
+          ensureGpsEntriesIsMutable();
+          gpsEntries_.remove(index);
           onChanged();
         } else {
-          entriesBuilder_.remove(index);
+          gpsEntriesBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry entries = 1;</code>
+       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry gps_entries = 1;</code>
        */
-      public agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry.Builder getEntriesBuilder(
+      public agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry.Builder getGpsEntriesBuilder(
           int index) {
-        return getEntriesFieldBuilder().getBuilder(index);
+        return getGpsEntriesFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry entries = 1;</code>
+       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry gps_entries = 1;</code>
        */
-      public agrirouter.technicalmessagetype.Gps.GPSList.GPSEntryOrBuilder getEntriesOrBuilder(
+      public agrirouter.technicalmessagetype.Gps.GPSList.GPSEntryOrBuilder getGpsEntriesOrBuilder(
           int index) {
-        if (entriesBuilder_ == null) {
-          return entries_.get(index);  } else {
-          return entriesBuilder_.getMessageOrBuilder(index);
+        if (gpsEntriesBuilder_ == null) {
+          return gpsEntries_.get(index);  } else {
+          return gpsEntriesBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry entries = 1;</code>
+       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry gps_entries = 1;</code>
        */
       public java.util.List<? extends agrirouter.technicalmessagetype.Gps.GPSList.GPSEntryOrBuilder> 
-           getEntriesOrBuilderList() {
-        if (entriesBuilder_ != null) {
-          return entriesBuilder_.getMessageOrBuilderList();
+           getGpsEntriesOrBuilderList() {
+        if (gpsEntriesBuilder_ != null) {
+          return gpsEntriesBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(entries_);
+          return java.util.Collections.unmodifiableList(gpsEntries_);
         }
       }
       /**
-       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry entries = 1;</code>
+       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry gps_entries = 1;</code>
        */
-      public agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry.Builder addEntriesBuilder() {
-        return getEntriesFieldBuilder().addBuilder(
+      public agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry.Builder addGpsEntriesBuilder() {
+        return getGpsEntriesFieldBuilder().addBuilder(
             agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry.getDefaultInstance());
       }
       /**
-       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry entries = 1;</code>
+       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry gps_entries = 1;</code>
        */
-      public agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry.Builder addEntriesBuilder(
+      public agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry.Builder addGpsEntriesBuilder(
           int index) {
-        return getEntriesFieldBuilder().addBuilder(
+        return getGpsEntriesFieldBuilder().addBuilder(
             index, agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry.getDefaultInstance());
       }
       /**
-       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry entries = 1;</code>
+       * <code>repeated .agrirouter.technicalmessagetype.GPSList.GPSEntry gps_entries = 1;</code>
        */
       public java.util.List<agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry.Builder> 
-           getEntriesBuilderList() {
-        return getEntriesFieldBuilder().getBuilderList();
+           getGpsEntriesBuilderList() {
+        return getGpsEntriesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
           agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry, agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry.Builder, agrirouter.technicalmessagetype.Gps.GPSList.GPSEntryOrBuilder> 
-          getEntriesFieldBuilder() {
-        if (entriesBuilder_ == null) {
-          entriesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getGpsEntriesFieldBuilder() {
+        if (gpsEntriesBuilder_ == null) {
+          gpsEntriesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry, agrirouter.technicalmessagetype.Gps.GPSList.GPSEntry.Builder, agrirouter.technicalmessagetype.Gps.GPSList.GPSEntryOrBuilder>(
-                  entries_,
+                  gpsEntries_,
                   ((bitField0_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),
                   isClean());
-          entries_ = null;
+          gpsEntries_ = null;
         }
-        return entriesBuilder_;
+        return gpsEntriesBuilder_;
+      }
+
+      private java.util.List<com.google.protobuf.Any> extension_ =
+        java.util.Collections.emptyList();
+      private void ensureExtensionIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          extension_ = new java.util.ArrayList<com.google.protobuf.Any>(extension_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> extensionBuilder_;
+
+      /**
+       * <pre>
+       * Used for proprietary purposes
+       * </pre>
+       *
+       * <code>repeated .google.protobuf.Any extension = 2048;</code>
+       */
+      public java.util.List<com.google.protobuf.Any> getExtensionList() {
+        if (extensionBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(extension_);
+        } else {
+          return extensionBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * Used for proprietary purposes
+       * </pre>
+       *
+       * <code>repeated .google.protobuf.Any extension = 2048;</code>
+       */
+      public int getExtensionCount() {
+        if (extensionBuilder_ == null) {
+          return extension_.size();
+        } else {
+          return extensionBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * Used for proprietary purposes
+       * </pre>
+       *
+       * <code>repeated .google.protobuf.Any extension = 2048;</code>
+       */
+      public com.google.protobuf.Any getExtension(int index) {
+        if (extensionBuilder_ == null) {
+          return extension_.get(index);
+        } else {
+          return extensionBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * Used for proprietary purposes
+       * </pre>
+       *
+       * <code>repeated .google.protobuf.Any extension = 2048;</code>
+       */
+      public Builder setExtension(
+          int index, com.google.protobuf.Any value) {
+        if (extensionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureExtensionIsMutable();
+          extension_.set(index, value);
+          onChanged();
+        } else {
+          extensionBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Used for proprietary purposes
+       * </pre>
+       *
+       * <code>repeated .google.protobuf.Any extension = 2048;</code>
+       */
+      public Builder setExtension(
+          int index, com.google.protobuf.Any.Builder builderForValue) {
+        if (extensionBuilder_ == null) {
+          ensureExtensionIsMutable();
+          extension_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          extensionBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Used for proprietary purposes
+       * </pre>
+       *
+       * <code>repeated .google.protobuf.Any extension = 2048;</code>
+       */
+      public Builder addExtension(com.google.protobuf.Any value) {
+        if (extensionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureExtensionIsMutable();
+          extension_.add(value);
+          onChanged();
+        } else {
+          extensionBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Used for proprietary purposes
+       * </pre>
+       *
+       * <code>repeated .google.protobuf.Any extension = 2048;</code>
+       */
+      public Builder addExtension(
+          int index, com.google.protobuf.Any value) {
+        if (extensionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureExtensionIsMutable();
+          extension_.add(index, value);
+          onChanged();
+        } else {
+          extensionBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Used for proprietary purposes
+       * </pre>
+       *
+       * <code>repeated .google.protobuf.Any extension = 2048;</code>
+       */
+      public Builder addExtension(
+          com.google.protobuf.Any.Builder builderForValue) {
+        if (extensionBuilder_ == null) {
+          ensureExtensionIsMutable();
+          extension_.add(builderForValue.build());
+          onChanged();
+        } else {
+          extensionBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Used for proprietary purposes
+       * </pre>
+       *
+       * <code>repeated .google.protobuf.Any extension = 2048;</code>
+       */
+      public Builder addExtension(
+          int index, com.google.protobuf.Any.Builder builderForValue) {
+        if (extensionBuilder_ == null) {
+          ensureExtensionIsMutable();
+          extension_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          extensionBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Used for proprietary purposes
+       * </pre>
+       *
+       * <code>repeated .google.protobuf.Any extension = 2048;</code>
+       */
+      public Builder addAllExtension(
+          java.lang.Iterable<? extends com.google.protobuf.Any> values) {
+        if (extensionBuilder_ == null) {
+          ensureExtensionIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, extension_);
+          onChanged();
+        } else {
+          extensionBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Used for proprietary purposes
+       * </pre>
+       *
+       * <code>repeated .google.protobuf.Any extension = 2048;</code>
+       */
+      public Builder clearExtension() {
+        if (extensionBuilder_ == null) {
+          extension_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          extensionBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Used for proprietary purposes
+       * </pre>
+       *
+       * <code>repeated .google.protobuf.Any extension = 2048;</code>
+       */
+      public Builder removeExtension(int index) {
+        if (extensionBuilder_ == null) {
+          ensureExtensionIsMutable();
+          extension_.remove(index);
+          onChanged();
+        } else {
+          extensionBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Used for proprietary purposes
+       * </pre>
+       *
+       * <code>repeated .google.protobuf.Any extension = 2048;</code>
+       */
+      public com.google.protobuf.Any.Builder getExtensionBuilder(
+          int index) {
+        return getExtensionFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * Used for proprietary purposes
+       * </pre>
+       *
+       * <code>repeated .google.protobuf.Any extension = 2048;</code>
+       */
+      public com.google.protobuf.AnyOrBuilder getExtensionOrBuilder(
+          int index) {
+        if (extensionBuilder_ == null) {
+          return extension_.get(index);  } else {
+          return extensionBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * Used for proprietary purposes
+       * </pre>
+       *
+       * <code>repeated .google.protobuf.Any extension = 2048;</code>
+       */
+      public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
+           getExtensionOrBuilderList() {
+        if (extensionBuilder_ != null) {
+          return extensionBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(extension_);
+        }
+      }
+      /**
+       * <pre>
+       * Used for proprietary purposes
+       * </pre>
+       *
+       * <code>repeated .google.protobuf.Any extension = 2048;</code>
+       */
+      public com.google.protobuf.Any.Builder addExtensionBuilder() {
+        return getExtensionFieldBuilder().addBuilder(
+            com.google.protobuf.Any.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Used for proprietary purposes
+       * </pre>
+       *
+       * <code>repeated .google.protobuf.Any extension = 2048;</code>
+       */
+      public com.google.protobuf.Any.Builder addExtensionBuilder(
+          int index) {
+        return getExtensionFieldBuilder().addBuilder(
+            index, com.google.protobuf.Any.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Used for proprietary purposes
+       * </pre>
+       *
+       * <code>repeated .google.protobuf.Any extension = 2048;</code>
+       */
+      public java.util.List<com.google.protobuf.Any.Builder> 
+           getExtensionBuilderList() {
+        return getExtensionFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+          getExtensionFieldBuilder() {
+        if (extensionBuilder_ == null) {
+          extensionBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+                  extension_,
+                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  getParentForChildren(),
+                  isClean());
+          extension_ = null;
+        }
+        return extensionBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2728,26 +3424,27 @@ public final class Gps {
       "\n\036technicalmessagetype/gps.proto\022\037agriro" +
       "uter.technicalmessagetype\032\037google/protob" +
       "uf/timestamp.proto\032\031google/protobuf/any." +
-      "proto\"\370\005\n\007GPSList\022B\n\007entries\030\001 \003(\01321.agr" +
-      "irouter.technicalmessagetype.GPSList.GPS" +
-      "Entry\032\250\005\n\010GPSEntry\022\026\n\016position_north\030\001 \001" +
-      "(\001\022\025\n\rposition_east\030\002 \001(\001\022\023\n\013position_up" +
-      "\030\003 \001(\022\022Y\n\017position_status\030\004 \001(\0162@.agriro" +
-      "uter.technicalmessagetype.GPSList.GPSEnt" +
-      "ry.PositionStatus\022\014\n\004pdop\030\005 \001(\001\022\014\n\004hdop\030" +
-      "\006 \001(\001\022\034\n\024number_of_satellites\030\007 \001(\r\0225\n\021g" +
-      "ps_utc_timestamp\030\010 \001(\0132\032.google.protobuf" +
-      ".Timestamp\022S\n\014field_status\030\t \001(\0162=.agrir" +
-      "outer.technicalmessagetype.GPSList.GPSEn" +
-      "try.FieldStatus\022(\n\textension\030\200\020 \003(\0132\024.go" +
-      "ogle.protobuf.Any\"\316\001\n\016PositionStatus\022\014\n\010" +
-      "D_NO_GPS\020\000\022\n\n\006D_GNSS\020\001\022\013\n\007D_DGNSS\020\002\022\022\n\016D" +
-      "_PRECISE_GNSS\020\003\022\022\n\016D_RTK_FINTEGER\020\004\022\017\n\013D" +
-      "_RTK_FLOAT\020\005\022\021\n\rD_EST_DR_MODE\020\006\022\022\n\016D_MAN" +
-      "UAL_INPUT\020\007\022\023\n\017D_SIMULATE_MODE\020\010\022\013\n\007D_ER" +
-      "ROR\020\016\022\023\n\017D_NOT_AVAILABLE\020\017\"<\n\013FieldStatu" +
-      "s\022\016\n\nFS_UNKNOWN\020\000\022\016\n\nFS_INFIELD\020\001\022\r\n\tFS_" +
-      "STREET\020\002b\006proto3"
+      "proto\"\266\006\n\007GPSList\022F\n\013gps_entries\030\001 \003(\01321" +
+      ".agrirouter.technicalmessagetype.GPSList" +
+      ".GPSEntry\022(\n\textension\030\200\020 \003(\0132\024.google.p" +
+      "rotobuf.Any\032\270\005\n\010GPSEntry\022\026\n\016position_nor" +
+      "th\030\001 \001(\001\022\025\n\rposition_east\030\002 \001(\001\022\023\n\013posit" +
+      "ion_up\030\003 \001(\022\022Y\n\017position_status\030\004 \001(\0162@." +
+      "agrirouter.technicalmessagetype.GPSList." +
+      "GPSEntry.PositionStatus\022\014\n\004pdop\030\005 \001(\001\022\014\n" +
+      "\004hdop\030\006 \001(\001\022\034\n\024number_of_satellites\030\007 \001(" +
+      "\r\0225\n\021gps_utc_timestamp\030\010 \001(\0132\032.google.pr" +
+      "otobuf.Timestamp\022S\n\014field_status\030\t \001(\0162=" +
+      ".agrirouter.technicalmessagetype.GPSList" +
+      ".GPSEntry.FieldStatus\022(\n\textension\030\200\020 \003(" +
+      "\0132\024.google.protobuf.Any\"\316\001\n\016PositionStat" +
+      "us\022\014\n\010D_NO_GPS\020\000\022\n\n\006D_GNSS\020\001\022\013\n\007D_DGNSS\020" +
+      "\002\022\022\n\016D_PRECISE_GNSS\020\003\022\022\n\016D_RTK_FINTEGER\020" +
+      "\004\022\017\n\013D_RTK_FLOAT\020\005\022\021\n\rD_EST_DR_MODE\020\006\022\022\n" +
+      "\016D_MANUAL_INPUT\020\007\022\023\n\017D_SIMULATE_MODE\020\010\022\013" +
+      "\n\007D_ERROR\020\016\022\023\n\017D_NOT_AVAILABLE\020\017\"L\n\013Fiel" +
+      "dStatus\022\016\n\nFS_UNKNOWN\020\000\022\016\n\nFS_INFIELD\020\001\022" +
+      "\r\n\tFS_ONROAD\020\002\022\016\n\nFS_OFFROAD\020\003b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2768,7 +3465,7 @@ public final class Gps {
     internal_static_agrirouter_technicalmessagetype_GPSList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_agrirouter_technicalmessagetype_GPSList_descriptor,
-        new java.lang.String[] { "Entries", });
+        new java.lang.String[] { "GpsEntries", "Extension", });
     internal_static_agrirouter_technicalmessagetype_GPSList_GPSEntry_descriptor =
       internal_static_agrirouter_technicalmessagetype_GPSList_descriptor.getNestedTypes().get(0);
     internal_static_agrirouter_technicalmessagetype_GPSList_GPSEntry_fieldAccessorTable = new
