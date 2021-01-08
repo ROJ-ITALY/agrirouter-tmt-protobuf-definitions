@@ -26,30 +26,35 @@ namespace Agrirouter.Technicalmessagetype {
           string.Concat(
             "Ch50ZWNobmljYWxtZXNzYWdldHlwZS9ncHMucHJvdG8SH2Fncmlyb3V0ZXIu",
             "dGVjaG5pY2FsbWVzc2FnZXR5cGUaH2dvb2dsZS9wcm90b2J1Zi90aW1lc3Rh",
-            "bXAucHJvdG8aGWdvb2dsZS9wcm90b2J1Zi9hbnkucHJvdG8itgYKB0dQU0xp",
+            "bXAucHJvdG8aGWdvb2dsZS9wcm90b2J1Zi9hbnkucHJvdG8igwgKB0dQU0xp",
             "c3QSRgoLZ3BzX2VudHJpZXMYASADKAsyMS5hZ3Jpcm91dGVyLnRlY2huaWNh",
-            "bG1lc3NhZ2V0eXBlLkdQU0xpc3QuR1BTRW50cnkSKAoJZXh0ZW5zaW9uGIAQ",
-            "IAMoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnkauAUKCEdQU0VudHJ5EhYKDnBv",
-            "c2l0aW9uX25vcnRoGAEgASgBEhUKDXBvc2l0aW9uX2Vhc3QYAiABKAESEwoL",
-            "cG9zaXRpb25fdXAYAyABKBISWQoPcG9zaXRpb25fc3RhdHVzGAQgASgOMkAu",
-            "YWdyaXJvdXRlci50ZWNobmljYWxtZXNzYWdldHlwZS5HUFNMaXN0LkdQU0Vu",
-            "dHJ5LlBvc2l0aW9uU3RhdHVzEgwKBHBkb3AYBSABKAESDAoEaGRvcBgGIAEo",
-            "ARIcChRudW1iZXJfb2Zfc2F0ZWxsaXRlcxgHIAEoDRI1ChFncHNfdXRjX3Rp",
-            "bWVzdGFtcBgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASUwoM",
-            "ZmllbGRfc3RhdHVzGAkgASgOMj0uYWdyaXJvdXRlci50ZWNobmljYWxtZXNz",
-            "YWdldHlwZS5HUFNMaXN0LkdQU0VudHJ5LkZpZWxkU3RhdHVzEigKCWV4dGVu",
-            "c2lvbhiAECADKAsyFC5nb29nbGUucHJvdG9idWYuQW55Is4BCg5Qb3NpdGlv",
-            "blN0YXR1cxIMCghEX05PX0dQUxAAEgoKBkRfR05TUxABEgsKB0RfREdOU1MQ",
-            "AhISCg5EX1BSRUNJU0VfR05TUxADEhIKDkRfUlRLX0ZJTlRFR0VSEAQSDwoL",
-            "RF9SVEtfRkxPQVQQBRIRCg1EX0VTVF9EUl9NT0RFEAYSEgoORF9NQU5VQUxf",
-            "SU5QVVQQBxITCg9EX1NJTVVMQVRFX01PREUQCBILCgdEX0VSUk9SEA4SEwoP",
-            "RF9OT1RfQVZBSUxBQkxFEA8iTAoLRmllbGRTdGF0dXMSDgoKRlNfVU5LTk9X",
-            "ThAAEg4KCkZTX0lORklFTEQQARINCglGU19PTlJPQUQQAhIOCgpGU19PRkZS",
-            "T0FEEANiBnByb3RvMw=="));
+            "bG1lc3NhZ2V0eXBlLkdQU0xpc3QuR1BTRW50cnkSTQoOc291cmNlX2Rldmlj",
+            "ZXMYAiADKAsyNS5hZ3Jpcm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBlLkdQ",
+            "U0xpc3QuU291cmNlRGV2aWNlEigKCWV4dGVuc2lvbhiAECADKAsyFC5nb29n",
+            "bGUucHJvdG9idWYuQW55GtUFCghHUFNFbnRyeRIWCg5wb3NpdGlvbl9ub3J0",
+            "aBgBIAEoARIVCg1wb3NpdGlvbl9lYXN0GAIgASgBEhMKC3Bvc2l0aW9uX3Vw",
+            "GAMgASgSElkKD3Bvc2l0aW9uX3N0YXR1cxgEIAEoDjJALmFncmlyb3V0ZXIu",
+            "dGVjaG5pY2FsbWVzc2FnZXR5cGUuR1BTTGlzdC5HUFNFbnRyeS5Qb3NpdGlv",
+            "blN0YXR1cxIMCgRwZG9wGAUgASgBEgwKBGhkb3AYBiABKAESHAoUbnVtYmVy",
+            "X29mX3NhdGVsbGl0ZXMYByABKA0SNQoRZ3BzX3V0Y190aW1lc3RhbXAYCCAB",
+            "KAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wElMKDGZpZWxkX3N0YXR1",
+            "cxgJIAEoDjI9LmFncmlyb3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5cGUuR1BT",
+            "TGlzdC5HUFNFbnRyeS5GaWVsZFN0YXR1cxIbChNzb3VyY2VfZGV2aWNlX2lu",
+            "ZGV4GAogASgNEigKCWV4dGVuc2lvbhiAECADKAsyFC5nb29nbGUucHJvdG9i",
+            "dWYuQW55Is4BCg5Qb3NpdGlvblN0YXR1cxIMCghEX05PX0dQUxAAEgoKBkRf",
+            "R05TUxABEgsKB0RfREdOU1MQAhISCg5EX1BSRUNJU0VfR05TUxADEhIKDkRf",
+            "UlRLX0ZJTlRFR0VSEAQSDwoLRF9SVEtfRkxPQVQQBRIRCg1EX0VTVF9EUl9N",
+            "T0RFEAYSEgoORF9NQU5VQUxfSU5QVVQQBxITCg9EX1NJTVVMQVRFX01PREUQ",
+            "CBILCgdEX0VSUk9SEA4SEwoPRF9OT1RfQVZBSUxBQkxFEA8iTAoLRmllbGRT",
+            "dGF0dXMSDgoKRlNfVU5LTk9XThAAEg4KCkZTX0lORklFTEQQARINCglGU19P",
+            "TlJPQUQQAhIOCgpGU19PRkZST0FEEAMaXwoMU291cmNlRGV2aWNlEg0KBWlu",
+            "ZGV4GAEgASgNEhQKDGRpc3BsYXlfbmFtZRgCIAEoCRIVCg1hZ3Jpcm91dGVy",
+            "X2lkGAMgASgJEhMKC2ludGVybmFsX2lkGAQgASgJYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.GPSList), global::Agrirouter.Technicalmessagetype.GPSList.Parser, new[]{ "GpsEntries", "Extension" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry), global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Parser, new[]{ "PositionNorth", "PositionEast", "PositionUp", "PositionStatus", "Pdop", "Hdop", "NumberOfSatellites", "GpsUtcTimestamp", "FieldStatus", "Extension" }, null, new[]{ typeof(global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.PositionStatus), typeof(global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.FieldStatus) }, null)})
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.GPSList), global::Agrirouter.Technicalmessagetype.GPSList.Parser, new[]{ "GpsEntries", "SourceDevices", "Extension" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry), global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Parser, new[]{ "PositionNorth", "PositionEast", "PositionUp", "PositionStatus", "Pdop", "Hdop", "NumberOfSatellites", "GpsUtcTimestamp", "FieldStatus", "SourceDeviceIndex", "Extension" }, null, new[]{ typeof(global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.PositionStatus), typeof(global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.FieldStatus) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.GPSList.Types.SourceDevice), global::Agrirouter.Technicalmessagetype.GPSList.Types.SourceDevice.Parser, new[]{ "Index", "DisplayName", "AgrirouterId", "InternalId" }, null, null, null, null)})
           }));
     }
     #endregion
@@ -59,7 +64,11 @@ namespace Agrirouter.Technicalmessagetype {
   /// <summary>
   /// A list of GPS Positions
   /// </summary>
-  public sealed partial class GPSList : pb::IMessage<GPSList> {
+  public sealed partial class GPSList : pb::IMessage<GPSList>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<GPSList> _parser = new pb::MessageParser<GPSList>(() => new GPSList());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -85,6 +94,7 @@ namespace Agrirouter.Technicalmessagetype {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GPSList(GPSList other) : this() {
       gpsEntries_ = other.gpsEntries_.Clone();
+      sourceDevices_ = other.sourceDevices_.Clone();
       extension_ = other.extension_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -102,6 +112,16 @@ namespace Agrirouter.Technicalmessagetype {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry> GpsEntries {
       get { return gpsEntries_; }
+    }
+
+    /// <summary>Field number for the "source_devices" field.</summary>
+    public const int SourceDevicesFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.GPSList.Types.SourceDevice> _repeated_sourceDevices_codec
+        = pb::FieldCodec.ForMessage(18, global::Agrirouter.Technicalmessagetype.GPSList.Types.SourceDevice.Parser);
+    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.GPSList.Types.SourceDevice> sourceDevices_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.GPSList.Types.SourceDevice>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.GPSList.Types.SourceDevice> SourceDevices {
+      get { return sourceDevices_; }
     }
 
     /// <summary>Field number for the "extension" field.</summary>
@@ -131,6 +151,7 @@ namespace Agrirouter.Technicalmessagetype {
         return true;
       }
       if(!gpsEntries_.Equals(other.gpsEntries_)) return false;
+      if(!sourceDevices_.Equals(other.sourceDevices_)) return false;
       if(!extension_.Equals(other.extension_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -139,6 +160,7 @@ namespace Agrirouter.Technicalmessagetype {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= gpsEntries_.GetHashCode();
+      hash ^= sourceDevices_.GetHashCode();
       hash ^= extension_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -153,17 +175,35 @@ namespace Agrirouter.Technicalmessagetype {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       gpsEntries_.WriteTo(output, _repeated_gpsEntries_codec);
+      sourceDevices_.WriteTo(output, _repeated_sourceDevices_codec);
       extension_.WriteTo(output, _repeated_extension_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      gpsEntries_.WriteTo(ref output, _repeated_gpsEntries_codec);
+      sourceDevices_.WriteTo(ref output, _repeated_sourceDevices_codec);
+      extension_.WriteTo(ref output, _repeated_extension_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       size += gpsEntries_.CalculateSize(_repeated_gpsEntries_codec);
+      size += sourceDevices_.CalculateSize(_repeated_sourceDevices_codec);
       size += extension_.CalculateSize(_repeated_extension_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -177,12 +217,16 @@ namespace Agrirouter.Technicalmessagetype {
         return;
       }
       gpsEntries_.Add(other.gpsEntries_);
+      sourceDevices_.Add(other.sourceDevices_);
       extension_.Add(other.extension_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -193,13 +237,44 @@ namespace Agrirouter.Technicalmessagetype {
             gpsEntries_.AddEntriesFrom(input, _repeated_gpsEntries_codec);
             break;
           }
+          case 18: {
+            sourceDevices_.AddEntriesFrom(input, _repeated_sourceDevices_codec);
+            break;
+          }
           case 16386: {
             extension_.AddEntriesFrom(input, _repeated_extension_codec);
             break;
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            gpsEntries_.AddEntriesFrom(ref input, _repeated_gpsEntries_codec);
+            break;
+          }
+          case 18: {
+            sourceDevices_.AddEntriesFrom(ref input, _repeated_sourceDevices_codec);
+            break;
+          }
+          case 16386: {
+            extension_.AddEntriesFrom(ref input, _repeated_extension_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
     #region Nested types
     /// <summary>Container for nested types declared in the GPSList message type.</summary>
@@ -208,7 +283,11 @@ namespace Agrirouter.Technicalmessagetype {
       /// <summary>
       ///One single GPS Position
       /// </summary>
-      public sealed partial class GPSEntry : pb::IMessage<GPSEntry> {
+      public sealed partial class GPSEntry : pb::IMessage<GPSEntry>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
         private static readonly pb::MessageParser<GPSEntry> _parser = new pb::MessageParser<GPSEntry>(() => new GPSEntry());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -242,6 +321,7 @@ namespace Agrirouter.Technicalmessagetype {
           numberOfSatellites_ = other.numberOfSatellites_;
           gpsUtcTimestamp_ = other.gpsUtcTimestamp_ != null ? other.gpsUtcTimestamp_.Clone() : null;
           fieldStatus_ = other.fieldStatus_;
+          sourceDeviceIndex_ = other.sourceDeviceIndex_;
           extension_ = other.extension_.Clone();
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
@@ -295,7 +375,7 @@ namespace Agrirouter.Technicalmessagetype {
 
         /// <summary>Field number for the "position_status" field.</summary>
         public const int PositionStatusFieldNumber = 4;
-        private global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.PositionStatus positionStatus_ = 0;
+        private global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.PositionStatus positionStatus_ = global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.PositionStatus.DNoGps;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.PositionStatus PositionStatus {
           get { return positionStatus_; }
@@ -356,7 +436,7 @@ namespace Agrirouter.Technicalmessagetype {
 
         /// <summary>Field number for the "field_status" field.</summary>
         public const int FieldStatusFieldNumber = 9;
-        private global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.FieldStatus fieldStatus_ = 0;
+        private global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.FieldStatus fieldStatus_ = global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.FieldStatus.FsUnknown;
         /// <summary>
         ///Are we on a road, in a field or just somewhere offroad?
         /// </summary>
@@ -365,6 +445,20 @@ namespace Agrirouter.Technicalmessagetype {
           get { return fieldStatus_; }
           set {
             fieldStatus_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "source_device_index" field.</summary>
+        public const int SourceDeviceIndexFieldNumber = 10;
+        private uint sourceDeviceIndex_;
+        /// <summary>
+        ///The index of the source device in the SourceDeviceList
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public uint SourceDeviceIndex {
+          get { return sourceDeviceIndex_; }
+          set {
+            sourceDeviceIndex_ = value;
           }
         }
 
@@ -403,6 +497,7 @@ namespace Agrirouter.Technicalmessagetype {
           if (NumberOfSatellites != other.NumberOfSatellites) return false;
           if (!object.Equals(GpsUtcTimestamp, other.GpsUtcTimestamp)) return false;
           if (FieldStatus != other.FieldStatus) return false;
+          if (SourceDeviceIndex != other.SourceDeviceIndex) return false;
           if(!extension_.Equals(other.extension_)) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
@@ -413,12 +508,13 @@ namespace Agrirouter.Technicalmessagetype {
           if (PositionNorth != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(PositionNorth);
           if (PositionEast != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(PositionEast);
           if (PositionUp != 0L) hash ^= PositionUp.GetHashCode();
-          if (PositionStatus != 0) hash ^= PositionStatus.GetHashCode();
+          if (PositionStatus != global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.PositionStatus.DNoGps) hash ^= PositionStatus.GetHashCode();
           if (Pdop != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Pdop);
           if (Hdop != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Hdop);
           if (NumberOfSatellites != 0) hash ^= NumberOfSatellites.GetHashCode();
           if (gpsUtcTimestamp_ != null) hash ^= GpsUtcTimestamp.GetHashCode();
-          if (FieldStatus != 0) hash ^= FieldStatus.GetHashCode();
+          if (FieldStatus != global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.FieldStatus.FsUnknown) hash ^= FieldStatus.GetHashCode();
+          if (SourceDeviceIndex != 0) hash ^= SourceDeviceIndex.GetHashCode();
           hash ^= extension_.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
@@ -433,6 +529,9 @@ namespace Agrirouter.Technicalmessagetype {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
           if (PositionNorth != 0D) {
             output.WriteRawTag(9);
             output.WriteDouble(PositionNorth);
@@ -445,7 +544,7 @@ namespace Agrirouter.Technicalmessagetype {
             output.WriteRawTag(24);
             output.WriteSInt64(PositionUp);
           }
-          if (PositionStatus != 0) {
+          if (PositionStatus != global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.PositionStatus.DNoGps) {
             output.WriteRawTag(32);
             output.WriteEnum((int) PositionStatus);
           }
@@ -465,15 +564,70 @@ namespace Agrirouter.Technicalmessagetype {
             output.WriteRawTag(66);
             output.WriteMessage(GpsUtcTimestamp);
           }
-          if (FieldStatus != 0) {
+          if (FieldStatus != global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.FieldStatus.FsUnknown) {
             output.WriteRawTag(72);
             output.WriteEnum((int) FieldStatus);
+          }
+          if (SourceDeviceIndex != 0) {
+            output.WriteRawTag(80);
+            output.WriteUInt32(SourceDeviceIndex);
           }
           extension_.WriteTo(output, _repeated_extension_codec);
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
+        #endif
         }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (PositionNorth != 0D) {
+            output.WriteRawTag(9);
+            output.WriteDouble(PositionNorth);
+          }
+          if (PositionEast != 0D) {
+            output.WriteRawTag(17);
+            output.WriteDouble(PositionEast);
+          }
+          if (PositionUp != 0L) {
+            output.WriteRawTag(24);
+            output.WriteSInt64(PositionUp);
+          }
+          if (PositionStatus != global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.PositionStatus.DNoGps) {
+            output.WriteRawTag(32);
+            output.WriteEnum((int) PositionStatus);
+          }
+          if (Pdop != 0D) {
+            output.WriteRawTag(41);
+            output.WriteDouble(Pdop);
+          }
+          if (Hdop != 0D) {
+            output.WriteRawTag(49);
+            output.WriteDouble(Hdop);
+          }
+          if (NumberOfSatellites != 0) {
+            output.WriteRawTag(56);
+            output.WriteUInt32(NumberOfSatellites);
+          }
+          if (gpsUtcTimestamp_ != null) {
+            output.WriteRawTag(66);
+            output.WriteMessage(GpsUtcTimestamp);
+          }
+          if (FieldStatus != global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.FieldStatus.FsUnknown) {
+            output.WriteRawTag(72);
+            output.WriteEnum((int) FieldStatus);
+          }
+          if (SourceDeviceIndex != 0) {
+            output.WriteRawTag(80);
+            output.WriteUInt32(SourceDeviceIndex);
+          }
+          extension_.WriteTo(ref output, _repeated_extension_codec);
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int CalculateSize() {
@@ -487,7 +641,7 @@ namespace Agrirouter.Technicalmessagetype {
           if (PositionUp != 0L) {
             size += 1 + pb::CodedOutputStream.ComputeSInt64Size(PositionUp);
           }
-          if (PositionStatus != 0) {
+          if (PositionStatus != global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.PositionStatus.DNoGps) {
             size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) PositionStatus);
           }
           if (Pdop != 0D) {
@@ -502,8 +656,11 @@ namespace Agrirouter.Technicalmessagetype {
           if (gpsUtcTimestamp_ != null) {
             size += 1 + pb::CodedOutputStream.ComputeMessageSize(GpsUtcTimestamp);
           }
-          if (FieldStatus != 0) {
+          if (FieldStatus != global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.FieldStatus.FsUnknown) {
             size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) FieldStatus);
+          }
+          if (SourceDeviceIndex != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SourceDeviceIndex);
           }
           size += extension_.CalculateSize(_repeated_extension_codec);
           if (_unknownFields != null) {
@@ -526,7 +683,7 @@ namespace Agrirouter.Technicalmessagetype {
           if (other.PositionUp != 0L) {
             PositionUp = other.PositionUp;
           }
-          if (other.PositionStatus != 0) {
+          if (other.PositionStatus != global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.PositionStatus.DNoGps) {
             PositionStatus = other.PositionStatus;
           }
           if (other.Pdop != 0D) {
@@ -540,12 +697,15 @@ namespace Agrirouter.Technicalmessagetype {
           }
           if (other.gpsUtcTimestamp_ != null) {
             if (gpsUtcTimestamp_ == null) {
-              gpsUtcTimestamp_ = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+              GpsUtcTimestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             GpsUtcTimestamp.MergeFrom(other.GpsUtcTimestamp);
           }
-          if (other.FieldStatus != 0) {
+          if (other.FieldStatus != global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.FieldStatus.FsUnknown) {
             FieldStatus = other.FieldStatus;
+          }
+          if (other.SourceDeviceIndex != 0) {
+            SourceDeviceIndex = other.SourceDeviceIndex;
           }
           extension_.Add(other.extension_);
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -553,6 +713,9 @@ namespace Agrirouter.Technicalmessagetype {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
             switch(tag) {
@@ -572,7 +735,7 @@ namespace Agrirouter.Technicalmessagetype {
                 break;
               }
               case 32: {
-                positionStatus_ = (global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.PositionStatus) input.ReadEnum();
+                PositionStatus = (global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.PositionStatus) input.ReadEnum();
                 break;
               }
               case 41: {
@@ -589,13 +752,17 @@ namespace Agrirouter.Technicalmessagetype {
               }
               case 66: {
                 if (gpsUtcTimestamp_ == null) {
-                  gpsUtcTimestamp_ = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+                  GpsUtcTimestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
                 }
-                input.ReadMessage(gpsUtcTimestamp_);
+                input.ReadMessage(GpsUtcTimestamp);
                 break;
               }
               case 72: {
-                fieldStatus_ = (global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.FieldStatus) input.ReadEnum();
+                FieldStatus = (global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.FieldStatus) input.ReadEnum();
+                break;
+              }
+              case 80: {
+                SourceDeviceIndex = input.ReadUInt32();
                 break;
               }
               case 16386: {
@@ -604,7 +771,69 @@ namespace Agrirouter.Technicalmessagetype {
               }
             }
           }
+        #endif
         }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 9: {
+                PositionNorth = input.ReadDouble();
+                break;
+              }
+              case 17: {
+                PositionEast = input.ReadDouble();
+                break;
+              }
+              case 24: {
+                PositionUp = input.ReadSInt64();
+                break;
+              }
+              case 32: {
+                PositionStatus = (global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.PositionStatus) input.ReadEnum();
+                break;
+              }
+              case 41: {
+                Pdop = input.ReadDouble();
+                break;
+              }
+              case 49: {
+                Hdop = input.ReadDouble();
+                break;
+              }
+              case 56: {
+                NumberOfSatellites = input.ReadUInt32();
+                break;
+              }
+              case 66: {
+                if (gpsUtcTimestamp_ == null) {
+                  GpsUtcTimestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+                }
+                input.ReadMessage(GpsUtcTimestamp);
+                break;
+              }
+              case 72: {
+                FieldStatus = (global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.FieldStatus) input.ReadEnum();
+                break;
+              }
+              case 80: {
+                SourceDeviceIndex = input.ReadUInt32();
+                break;
+              }
+              case 16386: {
+                extension_.AddEntriesFrom(ref input, _repeated_extension_codec);
+                break;
+              }
+            }
+          }
+        }
+        #endif
 
         #region Nested types
         /// <summary>Container for nested types declared in the GPSEntry message type.</summary>
@@ -645,6 +874,9 @@ namespace Agrirouter.Technicalmessagetype {
             /// 9-13 Reserved
             /// </summary>
             [pbr::OriginalName("D_ERROR")] DError = 14,
+            /// <summary>
+            ///No GPS Receiver available
+            /// </summary>
             [pbr::OriginalName("D_NOT_AVAILABLE")] DNotAvailable = 15,
           }
 
@@ -657,6 +889,298 @@ namespace Agrirouter.Technicalmessagetype {
 
         }
         #endregion
+
+      }
+
+      public sealed partial class SourceDevice : pb::IMessage<SourceDevice>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
+        private static readonly pb::MessageParser<SourceDevice> _parser = new pb::MessageParser<SourceDevice>(() => new SourceDevice());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public static pb::MessageParser<SourceDevice> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::Agrirouter.Technicalmessagetype.GPSList.Descriptor.NestedTypes[1]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public SourceDevice() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public SourceDevice(SourceDevice other) : this() {
+          index_ = other.index_;
+          displayName_ = other.displayName_;
+          agrirouterId_ = other.agrirouterId_;
+          internalId_ = other.internalId_;
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public SourceDevice Clone() {
+          return new SourceDevice(this);
+        }
+
+        /// <summary>Field number for the "index" field.</summary>
+        public const int IndexFieldNumber = 1;
+        private uint index_;
+        /// <summary>
+        ///The index within the list of SourceDevices; Not necessarilly all values are there
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public uint Index {
+          get { return index_; }
+          set {
+            index_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "display_name" field.</summary>
+        public const int DisplayNameFieldNumber = 2;
+        private string displayName_ = "";
+        /// <summary>
+        ///Proprietary name for displaying (might change during operation)
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public string DisplayName {
+          get { return displayName_; }
+          set {
+            displayName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "agrirouter_id" field.</summary>
+        public const int AgrirouterIdFieldNumber = 3;
+        private string agrirouterId_ = "";
+        /// <summary>
+        ///The endpoint_id as mentioned in the ListEndpoints Result
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public string AgrirouterId {
+          get { return agrirouterId_; }
+          set {
+            agrirouterId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "internal_id" field.</summary>
+        public const int InternalIdFieldNumber = 4;
+        private string internalId_ = "";
+        /// <summary>
+        ///A proprietary but static id for sources outside of agrirouter
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public string InternalId {
+          get { return internalId_; }
+          set {
+            internalId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public override bool Equals(object other) {
+          return Equals(other as SourceDevice);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public bool Equals(SourceDevice other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (Index != other.Index) return false;
+          if (DisplayName != other.DisplayName) return false;
+          if (AgrirouterId != other.AgrirouterId) return false;
+          if (InternalId != other.InternalId) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (Index != 0) hash ^= Index.GetHashCode();
+          if (DisplayName.Length != 0) hash ^= DisplayName.GetHashCode();
+          if (AgrirouterId.Length != 0) hash ^= AgrirouterId.GetHashCode();
+          if (InternalId.Length != 0) hash ^= InternalId.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          if (Index != 0) {
+            output.WriteRawTag(8);
+            output.WriteUInt32(Index);
+          }
+          if (DisplayName.Length != 0) {
+            output.WriteRawTag(18);
+            output.WriteString(DisplayName);
+          }
+          if (AgrirouterId.Length != 0) {
+            output.WriteRawTag(26);
+            output.WriteString(AgrirouterId);
+          }
+          if (InternalId.Length != 0) {
+            output.WriteRawTag(34);
+            output.WriteString(InternalId);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (Index != 0) {
+            output.WriteRawTag(8);
+            output.WriteUInt32(Index);
+          }
+          if (DisplayName.Length != 0) {
+            output.WriteRawTag(18);
+            output.WriteString(DisplayName);
+          }
+          if (AgrirouterId.Length != 0) {
+            output.WriteRawTag(26);
+            output.WriteString(AgrirouterId);
+          }
+          if (InternalId.Length != 0) {
+            output.WriteRawTag(34);
+            output.WriteString(InternalId);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public int CalculateSize() {
+          int size = 0;
+          if (Index != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Index);
+          }
+          if (DisplayName.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(DisplayName);
+          }
+          if (AgrirouterId.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(AgrirouterId);
+          }
+          if (InternalId.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(InternalId);
+          }
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void MergeFrom(SourceDevice other) {
+          if (other == null) {
+            return;
+          }
+          if (other.Index != 0) {
+            Index = other.Index;
+          }
+          if (other.DisplayName.Length != 0) {
+            DisplayName = other.DisplayName;
+          }
+          if (other.AgrirouterId.Length != 0) {
+            AgrirouterId = other.AgrirouterId;
+          }
+          if (other.InternalId.Length != 0) {
+            InternalId = other.InternalId;
+          }
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 8: {
+                Index = input.ReadUInt32();
+                break;
+              }
+              case 18: {
+                DisplayName = input.ReadString();
+                break;
+              }
+              case 26: {
+                AgrirouterId = input.ReadString();
+                break;
+              }
+              case 34: {
+                InternalId = input.ReadString();
+                break;
+              }
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 8: {
+                Index = input.ReadUInt32();
+                break;
+              }
+              case 18: {
+                DisplayName = input.ReadString();
+                break;
+              }
+              case 26: {
+                AgrirouterId = input.ReadString();
+                break;
+              }
+              case 34: {
+                InternalId = input.ReadString();
+                break;
+              }
+            }
+          }
+        }
+        #endif
 
       }
 

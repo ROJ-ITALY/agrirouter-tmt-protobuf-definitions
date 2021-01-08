@@ -18,8 +18,8 @@ message GPSList{
             D_MANUAL_INPUT = 7; 
             D_SIMULATE_MODE = 8;
             // 9-13 Reserved
-            D_ERROR = 14;//Error receiving GPS position from the receiver
-            D_NOT_AVAILABLE = 15;
+            D_ERROR = 14; //Error receiving GPS position from the receiver
+            D_NOT_AVAILABLE = 15;//No GPS Receiver available
         }
         enum FieldStatus {
             FS_UNKNOWN = 0;
@@ -36,8 +36,18 @@ message GPSList{
         uint32 number_of_satellites = 7;
         google.protobuf.Timestamp gps_utc_timestamp = 8;
         FieldStatus field_status = 9;//Are we on a road, in a field or just somewhere offroad?
+        uint32 source_device_index = 10;//The index of the source device in the SourceDeviceList
         repeated google.protobuf.Any extension = 2048;  // Used for proprietary purposes
     }
+
+    message SourceDevice{
+        uint32 index = 1;//The index within the list of SourceDevices; Not necessarilly all values are there
+        string display_name = 2;//Proprietary name for displaying (might change during operation)
+        string agrirouter_id = 3;//The endpoint_id as mentioned in the ListEndpoints Result
+        string internal_id = 4;//A proprietary but static id for sources outside of agrirouter
+    }
+
     repeated GPSEntry gps_entries = 1;
+    repeated SourceDevice source_devices = 2;
     repeated google.protobuf.Any extension = 2048;  // Used for proprietary purposes
 }
