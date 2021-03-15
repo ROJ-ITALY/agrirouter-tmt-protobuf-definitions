@@ -12,7 +12,7 @@
         <AssemblyName>agrirouter-tmt-protobuf-definitions</AssemblyName>
         <Product>agrirouter-tmt-protobuf-definitions</Product>
         <RepositoryUrl>https://github.com/DKE-Data/agrirouter-tmt-protobuf-definitions</RepositoryUrl>
-        <PackageVersion>2.1.0</PackageVersion>
+        <PackageVersion>2.2.0</PackageVersion>
     </PropertyGroup>
 
     <ItemGroup>
