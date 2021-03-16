@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netstandard2.1</TargetFramework>
+        <TargetFramework>netstandard2.0</TargetFramework>
         <PackageId>agrirouter-tmt-protobuf-definitions</PackageId>
         <Title>Agrirouter TMT Protobuf Definitions</Title>
         <Authors>Frank Wiebeler, Sascha Dömer</Authors>
@@ -12,7 +12,7 @@
         <AssemblyName>agrirouter-tmt-protobuf-definitions</AssemblyName>
         <Product>agrirouter-tmt-protobuf-definitions</Product>
         <RepositoryUrl>https://github.com/DKE-Data/agrirouter-tmt-protobuf-definitions</RepositoryUrl>
-        <PackageVersion>2.2.0</PackageVersion>
+        <PackageVersion>2.3.0</PackageVersion>
     </PropertyGroup>
 
     <ItemGroup>
