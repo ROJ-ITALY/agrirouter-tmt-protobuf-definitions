@@ -18,7 +18,7 @@ message GPSList{
             D_MANUAL_INPUT = 7; 
             D_SIMULATE_MODE = 8;
             // 9-13 Reserved
-            D_ERROR = 14; //Error receiving GPS position from the receiver
+            D_ERROR = 14;//Error receiving GPS position from the receiver
             D_NOT_AVAILABLE = 15;//No GPS Receiver available
         }
         enum FieldStatus {
