@@ -31,7 +31,7 @@ If you receive a 404 HTTP status, this means that you are currently not allowed 
 
 == Usage of these protobuf definitions
 
-These protobuf definitions provide a data structure for data that is sent via agrirouter from one endpoint to one or multiple others. 
+These protobuf definitions provide a data structure for data that is sent via agrirouter from one endpoint to either one or multiple other endpoints. 
 The content of these messages is not relevant for the agrirouter; just for the receiving endpoints.
 
 
