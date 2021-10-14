@@ -44,7 +44,7 @@ message GPSList{
         uint32 index = 1;//The index within the list of source devices; Not necessarily all values are there
         string display_name = 2;//Proprietary name for displaying (might change during operation)
         string agrirouter_id = 3;//The agrirouter specific ID of the endpoint as mentioned in the result of the query for listing endpoints.
-        string internal_id = 4;//A proprietary but static id for sources outside of agrirouter
+        string app_specific_id = 4;//A proprietary but static id for sources outside of agrirouter
     }
 
     repeated GPSEntry gps_entries = 1;
