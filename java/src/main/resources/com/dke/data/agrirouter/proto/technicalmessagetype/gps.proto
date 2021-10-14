@@ -43,7 +43,7 @@ message GPSList{
     message SourceDevice{
         uint32 index = 1;//The index within the list of SourceDevices; Not necessarilly all values are there
         string display_name = 2;//Proprietary name for displaying (might change during operation)
-        string agrirouter_id = 3;//The endpoint_id as mentioned in the ListEndpoints Result
+        string agrirouter_id = 3;//The agrirouter specific ID of the endpoint as mentioned in the result of the query for listing endpoints.
         string internal_id = 4;//A proprietary but static id for sources outside of agrirouter
     }
 
