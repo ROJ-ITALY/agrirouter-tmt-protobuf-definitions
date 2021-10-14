@@ -36,7 +36,7 @@ message GPSList{
         uint32 number_of_satellites = 7;
         google.protobuf.Timestamp gps_utc_timestamp = 8;
         FieldStatus field_status = 9;//Are we on a road, in a field or just somewhere offroad?
-        uint32 source_device_index = 10;//The index of the source device in the SourceDeviceList
+        uint32 source_device_index = 10;//The index of the source device in the list of source devices.
         repeated google.protobuf.Any extension = 2048;  // Used for proprietary purposes
     }
 
