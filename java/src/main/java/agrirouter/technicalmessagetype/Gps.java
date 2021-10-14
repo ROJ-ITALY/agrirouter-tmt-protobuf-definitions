@@ -2464,7 +2464,7 @@ public final class Gps {
 
       /**
        * <pre>
-       *The index within the list of SourceDevices; Not necessarilly all values are there
+       *The index within the list of source devices; Not necessarily all values are there
        * </pre>
        *
        * <code>uint32 index = 1;</code>
@@ -2491,7 +2491,7 @@ public final class Gps {
 
       /**
        * <pre>
-       *The endpoint_id as mentioned in the ListEndpoints Result
+       *The agrirouter specific ID of the endpoint as mentioned in the result of the query for listing endpoints.
        * </pre>
        *
        * <code>string agrirouter_id = 3;</code>
@@ -2499,7 +2499,7 @@ public final class Gps {
       java.lang.String getAgrirouterId();
       /**
        * <pre>
-       *The endpoint_id as mentioned in the ListEndpoints Result
+       *The agrirouter specific ID of the endpoint as mentioned in the result of the query for listing endpoints.
        * </pre>
        *
        * <code>string agrirouter_id = 3;</code>
@@ -2512,18 +2512,18 @@ public final class Gps {
        *A proprietary but static id for sources outside of agrirouter
        * </pre>
        *
-       * <code>string internal_id = 4;</code>
+       * <code>string app_specific_id = 4;</code>
        */
-      java.lang.String getInternalId();
+      java.lang.String getAppSpecificId();
       /**
        * <pre>
        *A proprietary but static id for sources outside of agrirouter
        * </pre>
        *
-       * <code>string internal_id = 4;</code>
+       * <code>string app_specific_id = 4;</code>
        */
       com.google.protobuf.ByteString
-          getInternalIdBytes();
+          getAppSpecificIdBytes();
     }
     /**
      * Protobuf type {@code agrirouter.technicalmessagetype.GPSList.SourceDevice}
@@ -2541,7 +2541,7 @@ public final class Gps {
         index_ = 0;
         displayName_ = "";
         agrirouterId_ = "";
-        internalId_ = "";
+        appSpecificId_ = "";
       }
 
       @java.lang.Override
@@ -2595,7 +2595,7 @@ public final class Gps {
               case 34: {
                 java.lang.String s = input.readStringRequireUtf8();
 
-                internalId_ = s;
+                appSpecificId_ = s;
                 break;
               }
             }
@@ -2626,7 +2626,7 @@ public final class Gps {
       private int index_;
       /**
        * <pre>
-       *The index within the list of SourceDevices; Not necessarilly all values are there
+       *The index within the list of source devices; Not necessarily all values are there
        * </pre>
        *
        * <code>uint32 index = 1;</code>
@@ -2681,7 +2681,7 @@ public final class Gps {
       private volatile java.lang.Object agrirouterId_;
       /**
        * <pre>
-       *The endpoint_id as mentioned in the ListEndpoints Result
+       *The agrirouter specific ID of the endpoint as mentioned in the result of the query for listing endpoints.
        * </pre>
        *
        * <code>string agrirouter_id = 3;</code>
@@ -2700,7 +2700,7 @@ public final class Gps {
       }
       /**
        * <pre>
-       *The endpoint_id as mentioned in the ListEndpoints Result
+       *The agrirouter specific ID of the endpoint as mentioned in the result of the query for listing endpoints.
        * </pre>
        *
        * <code>string agrirouter_id = 3;</code>
@@ -2719,24 +2719,24 @@ public final class Gps {
         }
       }
 
-      public static final int INTERNAL_ID_FIELD_NUMBER = 4;
-      private volatile java.lang.Object internalId_;
+      public static final int APP_SPECIFIC_ID_FIELD_NUMBER = 4;
+      private volatile java.lang.Object appSpecificId_;
       /**
        * <pre>
        *A proprietary but static id for sources outside of agrirouter
        * </pre>
        *
-       * <code>string internal_id = 4;</code>
+       * <code>string app_specific_id = 4;</code>
        */
-      public java.lang.String getInternalId() {
-        java.lang.Object ref = internalId_;
+      public java.lang.String getAppSpecificId() {
+        java.lang.Object ref = appSpecificId_;
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
           com.google.protobuf.ByteString bs = 
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          internalId_ = s;
+          appSpecificId_ = s;
           return s;
         }
       }
@@ -2745,16 +2745,16 @@ public final class Gps {
        *A proprietary but static id for sources outside of agrirouter
        * </pre>
        *
-       * <code>string internal_id = 4;</code>
+       * <code>string app_specific_id = 4;</code>
        */
       public com.google.protobuf.ByteString
-          getInternalIdBytes() {
-        java.lang.Object ref = internalId_;
+          getAppSpecificIdBytes() {
+        java.lang.Object ref = appSpecificId_;
         if (ref instanceof java.lang.String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          internalId_ = b;
+          appSpecificId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -2782,8 +2782,8 @@ public final class Gps {
         if (!getAgrirouterIdBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 3, agrirouterId_);
         }
-        if (!getInternalIdBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 4, internalId_);
+        if (!getAppSpecificIdBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 4, appSpecificId_);
         }
         unknownFields.writeTo(output);
       }
@@ -2803,8 +2803,8 @@ public final class Gps {
         if (!getAgrirouterIdBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, agrirouterId_);
         }
-        if (!getInternalIdBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, internalId_);
+        if (!getAppSpecificIdBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, appSpecificId_);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -2828,8 +2828,8 @@ public final class Gps {
             .equals(other.getDisplayName());
         result = result && getAgrirouterId()
             .equals(other.getAgrirouterId());
-        result = result && getInternalId()
-            .equals(other.getInternalId());
+        result = result && getAppSpecificId()
+            .equals(other.getAppSpecificId());
         result = result && unknownFields.equals(other.unknownFields);
         return result;
       }
@@ -2847,8 +2847,8 @@ public final class Gps {
         hash = (53 * hash) + getDisplayName().hashCode();
         hash = (37 * hash) + AGRIROUTER_ID_FIELD_NUMBER;
         hash = (53 * hash) + getAgrirouterId().hashCode();
-        hash = (37 * hash) + INTERNAL_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getInternalId().hashCode();
+        hash = (37 * hash) + APP_SPECIFIC_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getAppSpecificId().hashCode();
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -2984,7 +2984,7 @@ public final class Gps {
 
           agrirouterId_ = "";
 
-          internalId_ = "";
+          appSpecificId_ = "";
 
           return this;
         }
@@ -3011,7 +3011,7 @@ public final class Gps {
           result.index_ = index_;
           result.displayName_ = displayName_;
           result.agrirouterId_ = agrirouterId_;
-          result.internalId_ = internalId_;
+          result.appSpecificId_ = appSpecificId_;
           onBuilt();
           return result;
         }
@@ -3064,8 +3064,8 @@ public final class Gps {
             agrirouterId_ = other.agrirouterId_;
             onChanged();
           }
-          if (!other.getInternalId().isEmpty()) {
-            internalId_ = other.internalId_;
+          if (!other.getAppSpecificId().isEmpty()) {
+            appSpecificId_ = other.appSpecificId_;
             onChanged();
           }
           this.mergeUnknownFields(other.unknownFields);
@@ -3098,7 +3098,7 @@ public final class Gps {
         private int index_ ;
         /**
          * <pre>
-         *The index within the list of SourceDevices; Not necessarilly all values are there
+         *The index within the list of source devices; Not necessarily all values are there
          * </pre>
          *
          * <code>uint32 index = 1;</code>
@@ -3108,7 +3108,7 @@ public final class Gps {
         }
         /**
          * <pre>
-         *The index within the list of SourceDevices; Not necessarilly all values are there
+         *The index within the list of source devices; Not necessarily all values are there
          * </pre>
          *
          * <code>uint32 index = 1;</code>
@@ -3121,7 +3121,7 @@ public final class Gps {
         }
         /**
          * <pre>
-         *The index within the list of SourceDevices; Not necessarilly all values are there
+         *The index within the list of source devices; Not necessarily all values are there
          * </pre>
          *
          * <code>uint32 index = 1;</code>
@@ -3225,7 +3225,7 @@ public final class Gps {
         private java.lang.Object agrirouterId_ = "";
         /**
          * <pre>
-         *The endpoint_id as mentioned in the ListEndpoints Result
+         *The agrirouter specific ID of the endpoint as mentioned in the result of the query for listing endpoints.
          * </pre>
          *
          * <code>string agrirouter_id = 3;</code>
@@ -3244,7 +3244,7 @@ public final class Gps {
         }
         /**
          * <pre>
-         *The endpoint_id as mentioned in the ListEndpoints Result
+         *The agrirouter specific ID of the endpoint as mentioned in the result of the query for listing endpoints.
          * </pre>
          *
          * <code>string agrirouter_id = 3;</code>
@@ -3264,7 +3264,7 @@ public final class Gps {
         }
         /**
          * <pre>
-         *The endpoint_id as mentioned in the ListEndpoints Result
+         *The agrirouter specific ID of the endpoint as mentioned in the result of the query for listing endpoints.
          * </pre>
          *
          * <code>string agrirouter_id = 3;</code>
@@ -3281,7 +3281,7 @@ public final class Gps {
         }
         /**
          * <pre>
-         *The endpoint_id as mentioned in the ListEndpoints Result
+         *The agrirouter specific ID of the endpoint as mentioned in the result of the query for listing endpoints.
          * </pre>
          *
          * <code>string agrirouter_id = 3;</code>
@@ -3294,7 +3294,7 @@ public final class Gps {
         }
         /**
          * <pre>
-         *The endpoint_id as mentioned in the ListEndpoints Result
+         *The agrirouter specific ID of the endpoint as mentioned in the result of the query for listing endpoints.
          * </pre>
          *
          * <code>string agrirouter_id = 3;</code>
@@ -3311,21 +3311,21 @@ public final class Gps {
           return this;
         }
 
-        private java.lang.Object internalId_ = "";
+        private java.lang.Object appSpecificId_ = "";
         /**
          * <pre>
          *A proprietary but static id for sources outside of agrirouter
          * </pre>
          *
-         * <code>string internal_id = 4;</code>
+         * <code>string app_specific_id = 4;</code>
          */
-        public java.lang.String getInternalId() {
-          java.lang.Object ref = internalId_;
+        public java.lang.String getAppSpecificId() {
+          java.lang.Object ref = appSpecificId_;
           if (!(ref instanceof java.lang.String)) {
             com.google.protobuf.ByteString bs =
                 (com.google.protobuf.ByteString) ref;
             java.lang.String s = bs.toStringUtf8();
-            internalId_ = s;
+            appSpecificId_ = s;
             return s;
           } else {
             return (java.lang.String) ref;
@@ -3336,16 +3336,16 @@ public final class Gps {
          *A proprietary but static id for sources outside of agrirouter
          * </pre>
          *
-         * <code>string internal_id = 4;</code>
+         * <code>string app_specific_id = 4;</code>
          */
         public com.google.protobuf.ByteString
-            getInternalIdBytes() {
-          java.lang.Object ref = internalId_;
+            getAppSpecificIdBytes() {
+          java.lang.Object ref = appSpecificId_;
           if (ref instanceof String) {
             com.google.protobuf.ByteString b = 
                 com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
-            internalId_ = b;
+            appSpecificId_ = b;
             return b;
           } else {
             return (com.google.protobuf.ByteString) ref;
@@ -3356,15 +3356,15 @@ public final class Gps {
          *A proprietary but static id for sources outside of agrirouter
          * </pre>
          *
-         * <code>string internal_id = 4;</code>
+         * <code>string app_specific_id = 4;</code>
          */
-        public Builder setInternalId(
+        public Builder setAppSpecificId(
             java.lang.String value) {
           if (value == null) {
     throw new NullPointerException();
   }
   
-          internalId_ = value;
+          appSpecificId_ = value;
           onChanged();
           return this;
         }
@@ -3373,11 +3373,11 @@ public final class Gps {
          *A proprietary but static id for sources outside of agrirouter
          * </pre>
          *
-         * <code>string internal_id = 4;</code>
+         * <code>string app_specific_id = 4;</code>
          */
-        public Builder clearInternalId() {
+        public Builder clearAppSpecificId() {
           
-          internalId_ = getDefaultInstance().getInternalId();
+          appSpecificId_ = getDefaultInstance().getAppSpecificId();
           onChanged();
           return this;
         }
@@ -3386,16 +3386,16 @@ public final class Gps {
          *A proprietary but static id for sources outside of agrirouter
          * </pre>
          *
-         * <code>string internal_id = 4;</code>
+         * <code>string app_specific_id = 4;</code>
          */
-        public Builder setInternalIdBytes(
+        public Builder setAppSpecificIdBytes(
             com.google.protobuf.ByteString value) {
           if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
           
-          internalId_ = value;
+          appSpecificId_ = value;
           onChanged();
           return this;
         }
@@ -4877,7 +4877,7 @@ public final class Gps {
       "\n\036technicalmessagetype/gps.proto\022\037agriro" +
       "uter.technicalmessagetype\032\037google/protob" +
       "uf/timestamp.proto\032\031google/protobuf/any." +
-      "proto\"\203\010\n\007GPSList\022F\n\013gps_entries\030\001 \003(\01321" +
+      "proto\"\207\010\n\007GPSList\022F\n\013gps_entries\030\001 \003(\01321" +
       ".agrirouter.technicalmessagetype.GPSList" +
       ".GPSEntry\022M\n\016source_devices\030\002 \003(\01325.agri" +
       "router.technicalmessagetype.GPSList.Sour" +
@@ -4900,10 +4900,10 @@ public final class Gps {
       "PUT\020\007\022\023\n\017D_SIMULATE_MODE\020\010\022\013\n\007D_ERROR\020\016\022" +
       "\023\n\017D_NOT_AVAILABLE\020\017\"L\n\013FieldStatus\022\016\n\nF" +
       "S_UNKNOWN\020\000\022\016\n\nFS_INFIELD\020\001\022\r\n\tFS_ONROAD" +
-      "\020\002\022\016\n\nFS_OFFROAD\020\003\032_\n\014SourceDevice\022\r\n\005in" +
+      "\020\002\022\016\n\nFS_OFFROAD\020\003\032c\n\014SourceDevice\022\r\n\005in" +
       "dex\030\001 \001(\r\022\024\n\014display_name\030\002 \001(\t\022\025\n\ragrir" +
-      "outer_id\030\003 \001(\t\022\023\n\013internal_id\030\004 \001(\tb\006pro" +
-      "to3"
+      "outer_id\030\003 \001(\t\022\027\n\017app_specific_id\030\004 \001(\tb" +
+      "\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4936,7 +4936,7 @@ public final class Gps {
     internal_static_agrirouter_technicalmessagetype_GPSList_SourceDevice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_agrirouter_technicalmessagetype_GPSList_SourceDevice_descriptor,
-        new java.lang.String[] { "Index", "DisplayName", "AgrirouterId", "InternalId", });
+        new java.lang.String[] { "Index", "DisplayName", "AgrirouterId", "AppSpecificId", });
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.AnyProto.getDescriptor();
   }

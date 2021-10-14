@@ -26,7 +26,7 @@ namespace Agrirouter.Technicalmessagetype {
           string.Concat(
             "Ch50ZWNobmljYWxtZXNzYWdldHlwZS9ncHMucHJvdG8SH2Fncmlyb3V0ZXIu",
             "dGVjaG5pY2FsbWVzc2FnZXR5cGUaH2dvb2dsZS9wcm90b2J1Zi90aW1lc3Rh",
-            "bXAucHJvdG8aGWdvb2dsZS9wcm90b2J1Zi9hbnkucHJvdG8igwgKB0dQU0xp",
+            "bXAucHJvdG8aGWdvb2dsZS9wcm90b2J1Zi9hbnkucHJvdG8ihwgKB0dQU0xp",
             "c3QSRgoLZ3BzX2VudHJpZXMYASADKAsyMS5hZ3Jpcm91dGVyLnRlY2huaWNh",
             "bG1lc3NhZ2V0eXBlLkdQU0xpc3QuR1BTRW50cnkSTQoOc291cmNlX2Rldmlj",
             "ZXMYAiADKAsyNS5hZ3Jpcm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBlLkdQ",
@@ -47,14 +47,14 @@ namespace Agrirouter.Technicalmessagetype {
             "T0RFEAYSEgoORF9NQU5VQUxfSU5QVVQQBxITCg9EX1NJTVVMQVRFX01PREUQ",
             "CBILCgdEX0VSUk9SEA4SEwoPRF9OT1RfQVZBSUxBQkxFEA8iTAoLRmllbGRT",
             "dGF0dXMSDgoKRlNfVU5LTk9XThAAEg4KCkZTX0lORklFTEQQARINCglGU19P",
-            "TlJPQUQQAhIOCgpGU19PRkZST0FEEAMaXwoMU291cmNlRGV2aWNlEg0KBWlu",
+            "TlJPQUQQAhIOCgpGU19PRkZST0FEEAMaYwoMU291cmNlRGV2aWNlEg0KBWlu",
             "ZGV4GAEgASgNEhQKDGRpc3BsYXlfbmFtZRgCIAEoCRIVCg1hZ3Jpcm91dGVy",
-            "X2lkGAMgASgJEhMKC2ludGVybmFsX2lkGAQgASgJYgZwcm90bzM="));
+            "X2lkGAMgASgJEhcKD2FwcF9zcGVjaWZpY19pZBgEIAEoCWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.GPSList), global::Agrirouter.Technicalmessagetype.GPSList.Parser, new[]{ "GpsEntries", "SourceDevices", "Extension" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry), global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Parser, new[]{ "PositionNorth", "PositionEast", "PositionUp", "PositionStatus", "Pdop", "Hdop", "NumberOfSatellites", "GpsUtcTimestamp", "FieldStatus", "SourceDeviceIndex", "Extension" }, null, new[]{ typeof(global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.PositionStatus), typeof(global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.FieldStatus) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.GPSList.Types.SourceDevice), global::Agrirouter.Technicalmessagetype.GPSList.Types.SourceDevice.Parser, new[]{ "Index", "DisplayName", "AgrirouterId", "InternalId" }, null, null, null, null)})
+            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.GPSList.Types.SourceDevice), global::Agrirouter.Technicalmessagetype.GPSList.Types.SourceDevice.Parser, new[]{ "Index", "DisplayName", "AgrirouterId", "AppSpecificId" }, null, null, null, null)})
           }));
     }
     #endregion
@@ -452,7 +452,7 @@ namespace Agrirouter.Technicalmessagetype {
         public const int SourceDeviceIndexFieldNumber = 10;
         private uint sourceDeviceIndex_;
         /// <summary>
-        ///The index of the source device in the SourceDeviceList
+        ///The index of the source device in the list of source devices.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public uint SourceDeviceIndex {
@@ -924,7 +924,7 @@ namespace Agrirouter.Technicalmessagetype {
           index_ = other.index_;
           displayName_ = other.displayName_;
           agrirouterId_ = other.agrirouterId_;
-          internalId_ = other.internalId_;
+          appSpecificId_ = other.appSpecificId_;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
@@ -975,17 +975,17 @@ namespace Agrirouter.Technicalmessagetype {
           }
         }
 
-        /// <summary>Field number for the "internal_id" field.</summary>
-        public const int InternalIdFieldNumber = 4;
-        private string internalId_ = "";
+        /// <summary>Field number for the "app_specific_id" field.</summary>
+        public const int AppSpecificIdFieldNumber = 4;
+        private string appSpecificId_ = "";
         /// <summary>
         ///A proprietary but static id for sources outside of agrirouter
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public string InternalId {
-          get { return internalId_; }
+        public string AppSpecificId {
+          get { return appSpecificId_; }
           set {
-            internalId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+            appSpecificId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
           }
         }
 
@@ -1005,7 +1005,7 @@ namespace Agrirouter.Technicalmessagetype {
           if (Index != other.Index) return false;
           if (DisplayName != other.DisplayName) return false;
           if (AgrirouterId != other.AgrirouterId) return false;
-          if (InternalId != other.InternalId) return false;
+          if (AppSpecificId != other.AppSpecificId) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
@@ -1015,7 +1015,7 @@ namespace Agrirouter.Technicalmessagetype {
           if (Index != 0) hash ^= Index.GetHashCode();
           if (DisplayName.Length != 0) hash ^= DisplayName.GetHashCode();
           if (AgrirouterId.Length != 0) hash ^= AgrirouterId.GetHashCode();
-          if (InternalId.Length != 0) hash ^= InternalId.GetHashCode();
+          if (AppSpecificId.Length != 0) hash ^= AppSpecificId.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -1044,9 +1044,9 @@ namespace Agrirouter.Technicalmessagetype {
             output.WriteRawTag(26);
             output.WriteString(AgrirouterId);
           }
-          if (InternalId.Length != 0) {
+          if (AppSpecificId.Length != 0) {
             output.WriteRawTag(34);
-            output.WriteString(InternalId);
+            output.WriteString(AppSpecificId);
           }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
@@ -1069,9 +1069,9 @@ namespace Agrirouter.Technicalmessagetype {
             output.WriteRawTag(26);
             output.WriteString(AgrirouterId);
           }
-          if (InternalId.Length != 0) {
+          if (AppSpecificId.Length != 0) {
             output.WriteRawTag(34);
-            output.WriteString(InternalId);
+            output.WriteString(AppSpecificId);
           }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(ref output);
@@ -1091,8 +1091,8 @@ namespace Agrirouter.Technicalmessagetype {
           if (AgrirouterId.Length != 0) {
             size += 1 + pb::CodedOutputStream.ComputeStringSize(AgrirouterId);
           }
-          if (InternalId.Length != 0) {
-            size += 1 + pb::CodedOutputStream.ComputeStringSize(InternalId);
+          if (AppSpecificId.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(AppSpecificId);
           }
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
@@ -1114,8 +1114,8 @@ namespace Agrirouter.Technicalmessagetype {
           if (other.AgrirouterId.Length != 0) {
             AgrirouterId = other.AgrirouterId;
           }
-          if (other.InternalId.Length != 0) {
-            InternalId = other.InternalId;
+          if (other.AppSpecificId.Length != 0) {
+            AppSpecificId = other.AppSpecificId;
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
@@ -1144,7 +1144,7 @@ namespace Agrirouter.Technicalmessagetype {
                 break;
               }
               case 34: {
-                InternalId = input.ReadString();
+                AppSpecificId = input.ReadString();
                 break;
               }
             }
@@ -1174,7 +1174,7 @@ namespace Agrirouter.Technicalmessagetype {
                 break;
               }
               case 34: {
-                InternalId = input.ReadString();
+                AppSpecificId = input.ReadString();
                 break;
               }
             }
