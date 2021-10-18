@@ -29,6 +29,10 @@ Here are some external resources for the development:
 
 If you receive a 404 HTTP status, this means that you are currently not allowed to view this repository because you do not have access. If you are an AEF member and do not have access, please ask the AEF office to grant you access to the repository.
 
+== gps:info MessageType
+
+The definitions of the gps:info type can be found https://docs.my-agrirouter.com/agrirouter-interface-documentation/latest/tmt/gps.html[in the agrirouter docs].
+
 == Usage of these protobuf definitions
 
 These protobuf definitions provide a structure for data that is sent via agrirouter from one endpoint to either one or multiple endpoints. 

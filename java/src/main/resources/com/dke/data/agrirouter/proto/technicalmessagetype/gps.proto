@@ -13,13 +13,13 @@ message GPSList{
             D_DGNSS = 2; //Medium level GPS
             D_PRECISE_GNSS = 3; //High level GPS Without correction signal
             D_RTK_FINTEGER = 4; //High level GPS with correction signal; 
-            D_RTK_FLOAT = 5;//High level GPS with correction signal in high precision;
+            D_RTK_FLOAT = 5; //High level GPS with correction signal in high precision;
             D_EST_DR_MODE = 6; //EST-Mode
             D_MANUAL_INPUT = 7; 
             D_SIMULATE_MODE = 8;
             // 9-13 Reserved
             D_ERROR = 14; //Error receiving GPS position from the receiver
-            D_NOT_AVAILABLE = 15;//No GPS Receiver available
+            D_NOT_AVAILABLE = 15; //No GPS Receiver available
         }
         enum FieldStatus {
             FS_UNKNOWN = 0;
@@ -35,16 +35,16 @@ message GPSList{
         double hdop = 6; //Horizontal DOP (Dilusion of precision) 
         uint32 number_of_satellites = 7;
         google.protobuf.Timestamp gps_utc_timestamp = 8;
-        FieldStatus field_status = 9;//Are we on a road, in a field or just somewhere offroad?
-        uint32 source_device_index = 10;//The index of the source device in the SourceDeviceList
+        FieldStatus field_status = 9; //Are we on a road, in a field or just somewhere offroad?
+        uint32 source_device_index = 10; //The index of the source device in the list of source devices.
         repeated google.protobuf.Any extension = 2048;  // Used for proprietary purposes
     }
 
     message SourceDevice{
-        uint32 index = 1;//The index within the list of source devices; Not necessarily all values are there
-        string display_name = 2;//Proprietary name for displaying (might change during operation)
-        string agrirouter_id = 3;//The agrirouter specific ID of the endpoint as mentioned in the result of the query for listing endpoints.
-        string app_specific_id = 4;//A proprietary but static id for sources outside of agrirouter
+        uint32 index = 1; //The index within the list of source devices. Not necessarilly all indizes can be found here; only those that are used in the GPS_Entries list.
+        string display_name = 2; //Proprietary name for displaying (might change during operation)
+        string agrirouter_id = 3; //The endpoint_id as mentioned in the ListEndpoints Result
+        string app_specific_id = 4; //A proprietary but static id for sources outside of agrirouter
     }
 
     repeated GPSEntry gps_entries = 1;
