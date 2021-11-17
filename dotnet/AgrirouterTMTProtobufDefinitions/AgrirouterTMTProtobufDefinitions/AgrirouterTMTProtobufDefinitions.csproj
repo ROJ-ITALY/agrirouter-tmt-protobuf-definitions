@@ -12,11 +12,11 @@
         <AssemblyName>agrirouter-tmt-protobuf-definitions</AssemblyName>
         <Product>agrirouter-tmt-protobuf-definitions</Product>
         <RepositoryUrl>https://github.com/DKE-Data/agrirouter-tmt-protobuf-definitions</RepositoryUrl>
-        <PackageVersion>2.1.0</PackageVersion>
+        <PackageVersion>2.2.0</PackageVersion>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Google.Protobuf" Version="3.11.4" />
+      <PackageReference Include="Google.Protobuf" Version="3.17.3" />
     </ItemGroup>
 
 </Project>
