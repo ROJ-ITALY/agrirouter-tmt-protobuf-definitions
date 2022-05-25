@@ -67,23 +67,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<GPSList> _parser = new pb::MessageParser<GPSList>(() => new GPSList());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<GPSList> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Agrirouter.Technicalmessagetype.GpsReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GPSList() {
       OnConstruction();
     }
@@ -91,7 +87,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GPSList(GPSList other) : this() {
       gpsEntries_ = other.gpsEntries_.Clone();
       extension_ = other.extension_.Clone();
@@ -99,7 +94,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GPSList Clone() {
       return new GPSList(this);
     }
@@ -110,7 +104,6 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(10, global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Parser);
     private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry> gpsEntries_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry> GpsEntries {
       get { return gpsEntries_; }
     }
@@ -124,19 +117,16 @@ namespace Agrirouter.Technicalmessagetype {
     /// Used for proprietary purposes
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as GPSList);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(GPSList other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -150,7 +140,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= gpsEntries_.GetHashCode();
@@ -162,13 +151,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -183,7 +170,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       gpsEntries_.WriteTo(ref output, _repeated_gpsEntries_codec);
       extension_.WriteTo(ref output, _repeated_extension_codec);
@@ -194,7 +180,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       size += gpsEntries_.CalculateSize(_repeated_gpsEntries_codec);
@@ -206,7 +191,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(GPSList other) {
       if (other == null) {
         return;
@@ -217,7 +201,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -243,7 +226,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -267,7 +249,6 @@ namespace Agrirouter.Technicalmessagetype {
     #region Nested types
     /// <summary>Container for nested types declared in the GPSList message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       ///One single GPS Position
@@ -280,23 +261,19 @@ namespace Agrirouter.Technicalmessagetype {
         private static readonly pb::MessageParser<GPSEntry> _parser = new pb::MessageParser<GPSEntry>(() => new GPSEntry());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<GPSEntry> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Agrirouter.Technicalmessagetype.GPSList.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public GPSEntry() {
           OnConstruction();
         }
@@ -304,7 +281,6 @@ namespace Agrirouter.Technicalmessagetype {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public GPSEntry(GPSEntry other) : this() {
           positionNorth_ = other.positionNorth_;
           positionEast_ = other.positionEast_;
@@ -320,7 +296,6 @@ namespace Agrirouter.Technicalmessagetype {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public GPSEntry Clone() {
           return new GPSEntry(this);
         }
@@ -332,7 +307,6 @@ namespace Agrirouter.Technicalmessagetype {
         ///Latitude
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public double PositionNorth {
           get { return positionNorth_; }
           set {
@@ -347,7 +321,6 @@ namespace Agrirouter.Technicalmessagetype {
         ///Longitude
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public double PositionEast {
           get { return positionEast_; }
           set {
@@ -362,7 +335,6 @@ namespace Agrirouter.Technicalmessagetype {
         ///Altitude
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public long PositionUp {
           get { return positionUp_; }
           set {
@@ -374,7 +346,6 @@ namespace Agrirouter.Technicalmessagetype {
         public const int PositionStatusFieldNumber = 4;
         private global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.PositionStatus positionStatus_ = global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.PositionStatus.DNoGps;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.PositionStatus PositionStatus {
           get { return positionStatus_; }
           set {
@@ -389,7 +360,6 @@ namespace Agrirouter.Technicalmessagetype {
         ///Position DOP (Dilusion of precision)
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public double Pdop {
           get { return pdop_; }
           set {
@@ -404,7 +374,6 @@ namespace Agrirouter.Technicalmessagetype {
         ///Horizontal DOP (Dilusion of precision) 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public double Hdop {
           get { return hdop_; }
           set {
@@ -416,7 +385,6 @@ namespace Agrirouter.Technicalmessagetype {
         public const int NumberOfSatellitesFieldNumber = 7;
         private uint numberOfSatellites_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public uint NumberOfSatellites {
           get { return numberOfSatellites_; }
           set {
@@ -428,7 +396,6 @@ namespace Agrirouter.Technicalmessagetype {
         public const int GpsUtcTimestampFieldNumber = 8;
         private global::Google.Protobuf.WellKnownTypes.Timestamp gpsUtcTimestamp_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Protobuf.WellKnownTypes.Timestamp GpsUtcTimestamp {
           get { return gpsUtcTimestamp_; }
           set {
@@ -443,7 +410,6 @@ namespace Agrirouter.Technicalmessagetype {
         ///Are we on a road, in a field or just somewhere offroad?
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Agrirouter.Technicalmessagetype.GPSList.Types.GPSEntry.Types.FieldStatus FieldStatus {
           get { return fieldStatus_; }
           set {
@@ -460,19 +426,16 @@ namespace Agrirouter.Technicalmessagetype {
         /// Used for proprietary purposes
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
           get { return extension_; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as GPSEntry);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(GPSEntry other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -494,7 +457,6 @@ namespace Agrirouter.Technicalmessagetype {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (PositionNorth != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(PositionNorth);
@@ -514,13 +476,11 @@ namespace Agrirouter.Technicalmessagetype {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -570,7 +530,6 @@ namespace Agrirouter.Technicalmessagetype {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (PositionNorth != 0D) {
             output.WriteRawTag(9);
@@ -616,7 +575,6 @@ namespace Agrirouter.Technicalmessagetype {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (PositionNorth != 0D) {
@@ -654,7 +612,6 @@ namespace Agrirouter.Technicalmessagetype {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(GPSEntry other) {
           if (other == null) {
             return;
@@ -694,7 +651,6 @@ namespace Agrirouter.Technicalmessagetype {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -755,7 +711,6 @@ namespace Agrirouter.Technicalmessagetype {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -814,7 +769,6 @@ namespace Agrirouter.Technicalmessagetype {
         #region Nested types
         /// <summary>Container for nested types declared in the GPSEntry message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static partial class Types {
           public enum PositionStatus {
             /// <summary>
