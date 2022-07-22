@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Agrirouter.Technicalmessagetype {
+namespace Efdi {
 
   /// <summary>Holder for reflection information generated from technicalmessagetype/efdi.proto</summary>
   public static partial class EfdiReflection {
@@ -24,98 +24,80 @@ namespace Agrirouter.Technicalmessagetype {
     static EfdiReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch90ZWNobmljYWxtZXNzYWdldHlwZS9lZmRpLnByb3RvEh9hZ3Jpcm91dGVy",
-            "LnRlY2huaWNhbG1lc3NhZ2V0eXBlGh9nb29nbGUvcHJvdG9idWYvdGltZXN0",
-            "YW1wLnByb3RvGhlnb29nbGUvcHJvdG9idWYvYW55LnByb3RvIiIKA1VJRBIO",
-            "CgZudW1iZXIYASABKBISCwoDdXJpGAIgAygJIvgCCg9BbGxvY2F0aW9uU3Rh",
-            "bXASKQoFc3RhcnQYASABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1w",
-            "EigKBHN0b3AYAiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEhAK",
-            "CGR1cmF0aW9uGAMgASgEElIKBHR5cGUYBCABKA4yRC5hZ3Jpcm91dGVyLnRl",
-            "Y2huaWNhbG1lc3NhZ2V0eXBlLkFsbG9jYXRpb25TdGFtcC5BbGxvY2F0aW9u",
-            "U3RhbXBUeXBlEjsKCHBvc2l0aW9uGAUgAygLMikuYWdyaXJvdXRlci50ZWNo",
-            "bmljYWxtZXNzYWdldHlwZS5Qb3NpdGlvbhIoCglleHRlbnNpb24YgBAgAygL",
-            "MhQuZ29vZ2xlLnByb3RvYnVmLkFueSJDChNBbGxvY2F0aW9uU3RhbXBUeXBl",
-            "EgwKCERfTk9UU0VUEAASDQoJRF9QTEFOTkVEEAESDwoLRF9FRkZFQ1RJVkUQ",
-            "BCLiAgoMQXR0YWNoZWRGaWxlEkUKF2ZpbGVuYW1lX3dpdGhfZXh0ZW5zaW9u",
-            "GAEgASgLMiQuYWdyaXJvdXRlci50ZWNobmljYWxtZXNzYWdldHlwZS5VSUQS",
-            "SAoIcHJlc2VydmUYAiABKA4yNi5hZ3Jpcm91dGVyLnRlY2huaWNhbG1lc3Nh",
-            "Z2V0eXBlLkF0dGFjaGVkRmlsZS5QcmVzZXJ2ZRIYChBtYW51ZmFjdHVyZXJf",
+            "Ch90ZWNobmljYWxtZXNzYWdldHlwZS9lZmRpLnByb3RvEgRlZmRpGh9nb29n",
+            "bGUvcHJvdG9idWYvdGltZXN0YW1wLnByb3RvGhlnb29nbGUvcHJvdG9idWYv",
+            "YW55LnByb3RvIiIKA1VJRBIOCgZudW1iZXIYASABKBISCwoDdXJpGAIgAygJ",
+            "IsICCg9BbGxvY2F0aW9uU3RhbXASKQoFc3RhcnQYASABKAsyGi5nb29nbGUu",
+            "cHJvdG9idWYuVGltZXN0YW1wEigKBHN0b3AYAiABKAsyGi5nb29nbGUucHJv",
+            "dG9idWYuVGltZXN0YW1wEhAKCGR1cmF0aW9uGAMgASgEEjcKBHR5cGUYBCAB",
+            "KA4yKS5lZmRpLkFsbG9jYXRpb25TdGFtcC5BbGxvY2F0aW9uU3RhbXBUeXBl",
+            "EiAKCHBvc2l0aW9uGAUgAygLMg4uZWZkaS5Qb3NpdGlvbhIoCglleHRlbnNp",
+            "b24YgBAgAygLMhQuZ29vZ2xlLnByb3RvYnVmLkFueSJDChNBbGxvY2F0aW9u",
+            "U3RhbXBUeXBlEgwKCERfTk9UU0VUEAASDQoJRF9QTEFOTkVEEAESDwoLRF9F",
+            "RkZFQ1RJVkUQBCKsAgoMQXR0YWNoZWRGaWxlEioKF2ZpbGVuYW1lX3dpdGhf",
+            "ZXh0ZW5zaW9uGAEgASgLMgkuZWZkaS5VSUQSLQoIcHJlc2VydmUYAiABKA4y",
+            "Gy5lZmRpLkF0dGFjaGVkRmlsZS5QcmVzZXJ2ZRIYChBtYW51ZmFjdHVyZXJf",
             "Z2xuGAMgASgJEhEKCWZpbGVfdHlwZRgEIAEoDRIUCgxmaWxlX3ZlcnNpb24Y",
             "BSABKAkSEwoLZmlsZV9sZW5ndGgYBiABKAQSKAoJZXh0ZW5zaW9uGIAQIAMo",
             "CzIULmdvb2dsZS5wcm90b2J1Zi5BbnkiPwoIUHJlc2VydmUSDAoIQl9OT1RT",
-            "RVQQABIRCg1CX1BSRVNFUlZFX05PEAESEgoOQl9QUkVTRVJWRV9ZRVMQAiLn",
-            "AQoLQmFzZVN0YXRpb24SPQoPYmFzZV9zdGF0aW9uX2lkGAEgASgLMiQuYWdy",
-            "aXJvdXRlci50ZWNobmljYWxtZXNzYWdldHlwZS5VSUQSHwoXYmFzZV9zdGF0",
-            "aW9uX2Rlc2lnbmF0b3IYAiABKAkSGgoSYmFzZV9zdGF0aW9uX25vcnRoGAMg",
-            "ASgBEhkKEWJhc2Vfc3RhdGlvbl9lYXN0GAQgASgBEhcKD2Jhc2Vfc3RhdGlv",
-            "bl91cBgFIAEoEhIoCglleHRlbnNpb24YgBAgAygLMhQuZ29vZ2xlLnByb3Rv",
-            "YnVmLkFueSLsAwoMQ29kZWRDb21tZW50Ej4KEGNvZGVkX2NvbW1lbnRfaWQY",
-            "ASABKAsyJC5hZ3Jpcm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBlLlVJRBIg",
-            "Chhjb2RlZF9jb21tZW50X2Rlc2lnbmF0b3IYAiABKAkSXAoTY29kZWRfY29t",
-            "bWVudF9zY29wZRgDIAEoDjI/LmFncmlyb3V0ZXIudGVjaG5pY2FsbWVzc2Fn",
-            "ZXR5cGUuQ29kZWRDb21tZW50LkNvZGVkQ29tbWVudFNjb3BlEkgKGmNvZGVk",
-            "X2NvbW1lbnRfZ3JvdXBfaWRfcmVmGAQgASgLMiQuYWdyaXJvdXRlci50ZWNo",
-            "bmljYWxtZXNzYWdldHlwZS5VSUQSWAoYY29kZWRfY29tbWVudF9saXN0X3Zh",
-            "bHVlGAUgAygLMjYuYWdyaXJvdXRlci50ZWNobmljYWxtZXNzYWdldHlwZS5D",
+            "RVQQABIRCg1CX1BSRVNFUlZFX05PEAESEgoOQl9QUkVTRVJWRV9ZRVMQAiLM",
+            "AQoLQmFzZVN0YXRpb24SIgoPYmFzZV9zdGF0aW9uX2lkGAEgASgLMgkuZWZk",
+            "aS5VSUQSHwoXYmFzZV9zdGF0aW9uX2Rlc2lnbmF0b3IYAiABKAkSGgoSYmFz",
+            "ZV9zdGF0aW9uX25vcnRoGAMgASgBEhkKEWJhc2Vfc3RhdGlvbl9lYXN0GAQg",
+            "ASgBEhcKD2Jhc2Vfc3RhdGlvbl91cBgFIAEoEhIoCglleHRlbnNpb24YgBAg",
+            "AygLMhQuZ29vZ2xlLnByb3RvYnVmLkFueSKAAwoMQ29kZWRDb21tZW50EiMK",
+            "EGNvZGVkX2NvbW1lbnRfaWQYASABKAsyCS5lZmRpLlVJRBIgChhjb2RlZF9j",
+            "b21tZW50X2Rlc2lnbmF0b3IYAiABKAkSQQoTY29kZWRfY29tbWVudF9zY29w",
+            "ZRgDIAEoDjIkLmVmZGkuQ29kZWRDb21tZW50LkNvZGVkQ29tbWVudFNjb3Bl",
+            "Ei0KGmNvZGVkX2NvbW1lbnRfZ3JvdXBfaWRfcmVmGAQgASgLMgkuZWZkaS5V",
+            "SUQSPQoYY29kZWRfY29tbWVudF9saXN0X3ZhbHVlGAUgAygLMhsuZWZkaS5D",
             "b2RlZENvbW1lbnRMaXN0VmFsdWUSKAoJZXh0ZW5zaW9uGIAQIAMoCzIULmdv",
             "b2dsZS5wcm90b2J1Zi5BbnkiTgoRQ29kZWRDb21tZW50U2NvcGUSDAoIQ19O",
             "T1RTRVQQABILCgdDX1BPSU5UEAESDAoIQ19HTE9CQUwQAhIQCgxDX0NPTlRJ",
-            "TlVPVVMQAyKrAQoRQ29kZWRDb21tZW50R3JvdXASRAoWY29kZWRfY29tbWVu",
-            "dF9ncm91cF9pZBgBIAEoCzIkLmFncmlyb3V0ZXIudGVjaG5pY2FsbWVzc2Fn",
-            "ZXR5cGUuVUlEEiYKHmNvZGVkX2NvbW1lbnRfZ3JvdXBfZGVzaWduYXRvchgC",
-            "IAEoCRIoCglleHRlbnNpb24YgBAgAygLMhQuZ29vZ2xlLnByb3RvYnVmLkFu",
-            "eSK5AQoVQ29kZWRDb21tZW50TGlzdFZhbHVlEkkKG2NvZGVkX2NvbW1lbnRf",
-            "bGlzdF92YWx1ZV9pZBgBIAEoCzIkLmFncmlyb3V0ZXIudGVjaG5pY2FsbWVz",
-            "c2FnZXR5cGUuVUlEEisKI2NvZGVkX2NvbW1lbnRfbGlzdF92YWx1ZV9kZXNp",
-            "Z25hdG9yGAIgASgJEigKCWV4dGVuc2lvbhiAECADKAsyFC5nb29nbGUucHJv",
-            "dG9idWYuQW55ItQBCgxDb2xvdXJMZWdlbmQSPgoQY29sb3VyX2xlZ2VuZF9p",
-            "ZBgBIAEoCzIkLmFncmlyb3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5cGUuVUlE",
-            "EhYKDmRlZmF1bHRfY29sb3VyGAIgASgNEkIKDGNvbG91cl9yYW5nZRgDIAMo",
-            "CzIsLmFncmlyb3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5cGUuQ29sb3VyUmFu",
-            "Z2USKAoJZXh0ZW5zaW9uGIAQIAMoCzIULmdvb2dsZS5wcm90b2J1Zi5Bbnki",
-            "dQoLQ29sb3VyUmFuZ2USFQoNbWluaW11bV92YWx1ZRgBIAEoEhIVCg1tYXhp",
-            "bXVtX3ZhbHVlGAIgASgSEg4KBmNvbG91chgDIAEoDRIoCglleHRlbnNpb24Y",
-            "gBAgAygLMhQuZ29vZ2xlLnByb3RvYnVmLkFueSKwAgoRQ29tbWVudEFsbG9j",
-            "YXRpb24SQgoUY29kZWRfY29tbWVudF9pZF9yZWYYASABKAsyJC5hZ3Jpcm91",
-            "dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBlLlVJRBJGChhjb2RlZF9jb21tZW50",
-            "X2xpc3RfdmFsdWUYAiABKAsyJC5hZ3Jpcm91dGVyLnRlY2huaWNhbG1lc3Nh",
-            "Z2V0eXBlLlVJRBIZChFmcmVlX2NvbW1lbnRfdGV4dBgDIAEoCRJKChBhbGxv",
-            "Y2F0aW9uX3N0YW1wGAQgASgLMjAuYWdyaXJvdXRlci50ZWNobmljYWxtZXNz",
-            "YWdldHlwZS5BbGxvY2F0aW9uU3RhbXASKAoJZXh0ZW5zaW9uGIAQIAMoCzIU",
-            "Lmdvb2dsZS5wcm90b2J1Zi5BbnkiwgIKCkNvbm5lY3Rpb24SPQoPZGV2aWNl",
-            "X2lkX3JlZl8wGAEgASgLMiQuYWdyaXJvdXRlci50ZWNobmljYWxtZXNzYWdl",
-            "dHlwZS5VSUQSRQoXZGV2aWNlX2VsZW1lbnRfaWRfcmVmXzAYAiABKAsyJC5h",
-            "Z3Jpcm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBlLlVJRBI9Cg9kZXZpY2Vf",
-            "aWRfcmVmXzEYAyABKAsyJC5hZ3Jpcm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0",
-            "eXBlLlVJRBJFChdkZXZpY2VfZWxlbWVudF9pZF9yZWZfMRgEIAEoCzIkLmFn",
-            "cmlyb3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5cGUuVUlEEigKCWV4dGVuc2lv",
-            "bhiAECADKAsyFC5nb29nbGUucHJvdG9idWYuQW55Iu8CChFDb250cm9sQXNz",
-            "aWdubWVudBIaChJzb3VyY2VfY2xpZW50X25hbWUYASABKAwSGAoQdXNlcl9j",
-            "bGllbnRfbmFtZRgCIAEoDBIlCh1zb3VyY2VfZGV2aWNlX3N0cnVjdHVyZV9s",
-            "YWJlbBgDIAEoDBIjCht1c2VyX2RldmljZV9zdHJ1Y3R1cmVfbGFiZWwYBCAB",
-            "KAwSJAocc291cmNlX2RldmljZV9lbGVtZW50X251bWJlchgFIAEoDRIiChp1",
-            "c2VyX2RldmljZV9lbGVtZW50X251bWJlchgGIAEoDRIYChBwcm9jZXNzX2Rh",
-            "dGFfZGRpGAcgASgNEkoKEGFsbG9jYXRpb25fc3RhbXAYCCABKAsyMC5hZ3Jp",
-            "cm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBlLkFsbG9jYXRpb25TdGFtcBIo",
-            "CglleHRlbnNpb24YgBAgAygLMhQuZ29vZ2xlLnByb3RvYnVmLkFueSKWAgoI",
-            "Q3JvcFR5cGUSOgoMY3JvcF90eXBlX2lkGAEgASgLMiQuYWdyaXJvdXRlci50",
-            "ZWNobmljYWxtZXNzYWdldHlwZS5VSUQSHAoUY3JvcF90eXBlX2Rlc2lnbmF0",
-            "b3IYAiABKAkSQgoUcHJvZHVjdF9ncm91cF9pZF9yZWYYAyABKAsyJC5hZ3Jp",
-            "cm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBlLlVJRBJCCgxjcm9wX3Zhcmll",
-            "dHkYBCADKAsyLC5hZ3Jpcm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBlLkNy",
+            "TlVPVVMQAyKQAQoRQ29kZWRDb21tZW50R3JvdXASKQoWY29kZWRfY29tbWVu",
+            "dF9ncm91cF9pZBgBIAEoCzIJLmVmZGkuVUlEEiYKHmNvZGVkX2NvbW1lbnRf",
+            "Z3JvdXBfZGVzaWduYXRvchgCIAEoCRIoCglleHRlbnNpb24YgBAgAygLMhQu",
+            "Z29vZ2xlLnByb3RvYnVmLkFueSKeAQoVQ29kZWRDb21tZW50TGlzdFZhbHVl",
+            "Ei4KG2NvZGVkX2NvbW1lbnRfbGlzdF92YWx1ZV9pZBgBIAEoCzIJLmVmZGku",
+            "VUlEEisKI2NvZGVkX2NvbW1lbnRfbGlzdF92YWx1ZV9kZXNpZ25hdG9yGAIg",
+            "ASgJEigKCWV4dGVuc2lvbhiAECADKAsyFC5nb29nbGUucHJvdG9idWYuQW55",
+            "Ip4BCgxDb2xvdXJMZWdlbmQSIwoQY29sb3VyX2xlZ2VuZF9pZBgBIAEoCzIJ",
+            "LmVmZGkuVUlEEhYKDmRlZmF1bHRfY29sb3VyGAIgASgNEicKDGNvbG91cl9y",
+            "YW5nZRgDIAMoCzIRLmVmZGkuQ29sb3VyUmFuZ2USKAoJZXh0ZW5zaW9uGIAQ",
+            "IAMoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnkidQoLQ29sb3VyUmFuZ2USFQoN",
+            "bWluaW11bV92YWx1ZRgBIAEoEhIVCg1tYXhpbXVtX3ZhbHVlGAIgASgSEg4K",
+            "BmNvbG91chgDIAEoDRIoCglleHRlbnNpb24YgBAgAygLMhQuZ29vZ2xlLnBy",
+            "b3RvYnVmLkFueSLfAQoRQ29tbWVudEFsbG9jYXRpb24SJwoUY29kZWRfY29t",
+            "bWVudF9pZF9yZWYYASABKAsyCS5lZmRpLlVJRBIrChhjb2RlZF9jb21tZW50",
+            "X2xpc3RfdmFsdWUYAiABKAsyCS5lZmRpLlVJRBIZChFmcmVlX2NvbW1lbnRf",
+            "dGV4dBgDIAEoCRIvChBhbGxvY2F0aW9uX3N0YW1wGAQgASgLMhUuZWZkaS5B",
+            "bGxvY2F0aW9uU3RhbXASKAoJZXh0ZW5zaW9uGIAQIAMoCzIULmdvb2dsZS5w",
+            "cm90b2J1Zi5Bbnki1gEKCkNvbm5lY3Rpb24SIgoPZGV2aWNlX2lkX3JlZl8w",
+            "GAEgASgLMgkuZWZkaS5VSUQSKgoXZGV2aWNlX2VsZW1lbnRfaWRfcmVmXzAY",
+            "AiABKAsyCS5lZmRpLlVJRBIiCg9kZXZpY2VfaWRfcmVmXzEYAyABKAsyCS5l",
+            "ZmRpLlVJRBIqChdkZXZpY2VfZWxlbWVudF9pZF9yZWZfMRgEIAEoCzIJLmVm",
+            "ZGkuVUlEEigKCWV4dGVuc2lvbhiAECADKAsyFC5nb29nbGUucHJvdG9idWYu",
+            "QW55ItQCChFDb250cm9sQXNzaWdubWVudBIaChJzb3VyY2VfY2xpZW50X25h",
+            "bWUYASABKAwSGAoQdXNlcl9jbGllbnRfbmFtZRgCIAEoDBIlCh1zb3VyY2Vf",
+            "ZGV2aWNlX3N0cnVjdHVyZV9sYWJlbBgDIAEoDBIjCht1c2VyX2RldmljZV9z",
+            "dHJ1Y3R1cmVfbGFiZWwYBCABKAwSJAocc291cmNlX2RldmljZV9lbGVtZW50",
+            "X251bWJlchgFIAEoDRIiChp1c2VyX2RldmljZV9lbGVtZW50X251bWJlchgG",
+            "IAEoDRIYChBwcm9jZXNzX2RhdGFfZGRpGAcgASgNEi8KEGFsbG9jYXRpb25f",
+            "c3RhbXAYCCABKAsyFS5lZmRpLkFsbG9jYXRpb25TdGFtcBIoCglleHRlbnNp",
+            "b24YgBAgAygLMhQuZ29vZ2xlLnByb3RvYnVmLkFueSLFAQoIQ3JvcFR5cGUS",
+            "HwoMY3JvcF90eXBlX2lkGAEgASgLMgkuZWZkaS5VSUQSHAoUY3JvcF90eXBl",
+            "X2Rlc2lnbmF0b3IYAiABKAkSJwoUcHJvZHVjdF9ncm91cF9pZF9yZWYYAyAB",
+            "KAsyCS5lZmRpLlVJRBInCgxjcm9wX3ZhcmlldHkYBCADKAsyES5lZmRpLkNy",
             "b3BWYXJpZXR5EigKCWV4dGVuc2lvbhiAECADKAsyFC5nb29nbGUucHJvdG9i",
-            "dWYuQW55ItUBCgtDcm9wVmFyaWV0eRI9Cg9jcm9wX3ZhcmlldHlfaWQYASAB",
-            "KAsyJC5hZ3Jpcm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBlLlVJRBIfChdj",
-            "cm9wX3ZhcmlldHlfZGVzaWduYXRvchgCIAEoCRI8Cg5wcm9kdWN0X2lkX3Jl",
-            "ZhgDIAEoCzIkLmFncmlyb3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5cGUuVUlE",
-            "EigKCWV4dGVuc2lvbhiAECADKAsyFC5nb29nbGUucHJvdG9idWYuQW55IuEB",
-            "ChBDdWx0dXJhbFByYWN0aWNlEkIKFGN1bHR1cmFsX3ByYWN0aWNlX2lkGAEg",
-            "ASgLMiQuYWdyaXJvdXRlci50ZWNobmljYWxtZXNzYWdldHlwZS5VSUQSJAoc",
-            "Y3VsdHVyYWxfcHJhY3RpY2VfZGVzaWduYXRvchgCIAEoCRJjCh1vcGVyYXRp",
-            "b25fdGVjaG5pcXVlX3JlZmVyZW5jZRgDIAMoCzI8LmFncmlyb3V0ZXIudGVj",
-            "aG5pY2FsbWVzc2FnZXR5cGUuT3BlcmF0aW9uVGVjaG5pcXVlUmVmZXJlbmNl",
-            "IqADCghDdXN0b21lchI5CgtjdXN0b21lcl9pZBgBIAEoCzIkLmFncmlyb3V0",
-            "ZXIudGVjaG5pY2FsbWVzc2FnZXR5cGUuVUlEEhoKEmN1c3RvbWVyX2xhc3Rf",
+            "dWYuQW55Ip8BCgtDcm9wVmFyaWV0eRIiCg9jcm9wX3ZhcmlldHlfaWQYASAB",
+            "KAsyCS5lZmRpLlVJRBIfChdjcm9wX3ZhcmlldHlfZGVzaWduYXRvchgCIAEo",
+            "CRIhCg5wcm9kdWN0X2lkX3JlZhgDIAEoCzIJLmVmZGkuVUlEEigKCWV4dGVu",
+            "c2lvbhiAECADKAsyFC5nb29nbGUucHJvdG9idWYuQW55IqsBChBDdWx0dXJh",
+            "bFByYWN0aWNlEicKFGN1bHR1cmFsX3ByYWN0aWNlX2lkGAEgASgLMgkuZWZk",
+            "aS5VSUQSJAocY3VsdHVyYWxfcHJhY3RpY2VfZGVzaWduYXRvchgCIAEoCRJI",
+            "Ch1vcGVyYXRpb25fdGVjaG5pcXVlX3JlZmVyZW5jZRgDIAMoCzIhLmVmZGku",
+            "T3BlcmF0aW9uVGVjaG5pcXVlUmVmZXJlbmNlIoUDCghDdXN0b21lchIeCgtj",
+            "dXN0b21lcl9pZBgBIAEoCzIJLmVmZGkuVUlEEhoKEmN1c3RvbWVyX2xhc3Rf",
             "bmFtZRgCIAEoCRIbChNjdXN0b21lcl9maXJzdF9uYW1lGAMgASgJEhcKD2N1",
             "c3RvbWVyX3N0cmVldBgEIAEoCRIXCg9jdXN0b21lcl9wb19ib3gYBSABKAkS",
             "HAoUY3VzdG9tZXJfcG9zdGFsX2NvZGUYBiABKAkSFQoNY3VzdG9tZXJfY2l0",
@@ -123,484 +105,405 @@ namespace Agrirouter.Technicalmessagetype {
             "b3VudHJ5GAkgASgJEhYKDmN1c3RvbWVyX3Bob25lGAogASgJEhcKD2N1c3Rv",
             "bWVyX21vYmlsZRgLIAEoCRIUCgxjdXN0b21lcl9mYXgYDCABKAkSFgoOY3Vz",
             "dG9tZXJfZW1haWwYDSABKAkSKAoJZXh0ZW5zaW9uGIAQIAMoCzIULmdvb2ds",
-            "ZS5wcm90b2J1Zi5Bbnki+wMKDkRhdGFMb2dUcmlnZ2VyEhQKDGRhdGFfbG9n",
+            "ZS5wcm90b2J1Zi5BbnkixQMKDkRhdGFMb2dUcmlnZ2VyEhQKDGRhdGFfbG9n",
             "X2RkaRgBIAEoDRIXCg9kYXRhX2xvZ19tZXRob2QYAiABKA0SIgoaZGF0YV9s",
             "b2dfZGlzdGFuY2VfaW50ZXJ2YWwYAyABKBISHgoWZGF0YV9sb2dfdGltZV9p",
             "bnRlcnZhbBgEIAEoEhIiChpkYXRhX2xvZ190aHJlc2hvbGRfbWluaW11bRgF",
             "IAEoEhIiChpkYXRhX2xvZ190aHJlc2hvbGRfbWF4aW11bRgGIAEoEhIhChlk",
-            "YXRhX2xvZ190aHJlc2hvbGRfY2hhbmdlGAcgASgSEkMKFWRldmljZV9lbGVt",
-            "ZW50X2lkX3JlZhgIIAEoCzIkLmFncmlyb3V0ZXIudGVjaG5pY2FsbWVzc2Fn",
-            "ZXR5cGUuVUlEEkcKGXZhbHVlX3ByZXNlbnRhdGlvbl9pZF9yZWYYCSABKAsy",
-            "JC5hZ3Jpcm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBlLlVJRBIUCgxkYXRh",
-            "X2xvZ19wZ24YCiABKAQSHgoWZGF0YV9sb2dfcGduX3N0YXJ0X2JpdBgLIAEo",
-            "DRIdChVkYXRhX2xvZ19wZ25fc3RvcF9iaXQYDCABKA0SKAoJZXh0ZW5zaW9u",
-            "GIAQIAMoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnkiiAIKDERhdGFMb2dWYWx1",
-            "ZRIYChBwcm9jZXNzX2RhdGFfZGRpGAEgASgNEhoKEnByb2Nlc3NfZGF0YV92",
-            "YWx1ZRgCIAEoEhJDChVkZXZpY2VfZWxlbWVudF9pZF9yZWYYAyABKAsyJC5h",
-            "Z3Jpcm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBlLlVJRBIUCgxkYXRhX2xv",
-            "Z19wZ24YBCABKAQSHgoWZGF0YV9sb2dfcGduX3N0YXJ0X2JpdBgFIAEoDRId",
-            "ChVkYXRhX2xvZ19wZ25fc3RvcF9iaXQYBiABKA0SKAoJZXh0ZW5zaW9uGIAQ",
-            "IAMoCzIULmdvb2dsZS5wcm90b2J1Zi5Bbnki3QQKBkRldmljZRI3CglkZXZp",
-            "Y2VfaWQYASABKAsyJC5hZ3Jpcm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBl",
-            "LlVJRBIZChFkZXZpY2VfZGVzaWduYXRvchgCIAEoCRIfChdkZXZpY2Vfc29m",
-            "dHdhcmVfdmVyc2lvbhgDIAEoCRITCgtjbGllbnRfbmFtZRgEIAEoDBIcChRk",
-            "ZXZpY2Vfc2VyaWFsX251bWJlchgFIAEoCRIeChZkZXZpY2Vfc3RydWN0dXJl",
-            "X2xhYmVsGAYgASgMEiEKGWRldmljZV9sb2NhbGl6YXRpb25fbGFiZWwYByAB",
-            "KAwSRgoOZGV2aWNlX2VsZW1lbnQYCCADKAsyLi5hZ3Jpcm91dGVyLnRlY2hu",
-            "aWNhbG1lc3NhZ2V0eXBlLkRldmljZUVsZW1lbnQSTwoTZGV2aWNlX3Byb2Nl",
-            "c3NfZGF0YRgJIAMoCzIyLmFncmlyb3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5",
-            "cGUuRGV2aWNlUHJvY2Vzc0RhdGESSAoPZGV2aWNlX3Byb3BlcnR5GAogAygL",
-            "Mi8uYWdyaXJvdXRlci50ZWNobmljYWxtZXNzYWdldHlwZS5EZXZpY2VQcm9w",
-            "ZXJ0eRJbChlkZXZpY2VfdmFsdWVfcHJlc2VudGF0aW9uGAsgAygLMjguYWdy",
-            "aXJvdXRlci50ZWNobmljYWxtZXNzYWdldHlwZS5EZXZpY2VWYWx1ZVByZXNl",
-            "bnRhdGlvbhIoCglleHRlbnNpb24YgBAgAygLMhQuZ29vZ2xlLnByb3RvYnVm",
-            "LkFueSL6AQoQRGV2aWNlQWxsb2NhdGlvbhIZChFjbGllbnRfbmFtZV92YWx1",
-            "ZRgBIAEoDBIYChBjbGllbnRfbmFtZV9tYXNrGAIgASgMEjsKDWRldmljZV9p",
-            "ZF9yZWYYAyABKAsyJC5hZ3Jpcm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBl",
-            "LlVJRBJKChBhbGxvY2F0aW9uX3N0YW1wGAQgASgLMjAuYWdyaXJvdXRlci50",
-            "ZWNobmljYWxtZXNzYWdldHlwZS5BbGxvY2F0aW9uU3RhbXASKAoJZXh0ZW5z",
-            "aW9uGIAQIAMoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnkiuwQKDURldmljZUVs",
-            "ZW1lbnQSPwoRZGV2aWNlX2VsZW1lbnRfaWQYASABKAsyJC5hZ3Jpcm91dGVy",
-            "LnRlY2huaWNhbG1lc3NhZ2V0eXBlLlVJRBIgChhkZXZpY2VfZWxlbWVudF9v",
-            "YmplY3RfaWQYAiABKA0SXQoTZGV2aWNlX2VsZW1lbnRfdHlwZRgDIAEoDjJA",
-            "LmFncmlyb3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5cGUuRGV2aWNlRWxlbWVu",
-            "dC5EZXZpY2VFbGVtZW50VHlwZRIhChlkZXZpY2VfZWxlbWVudF9kZXNpZ25h",
-            "dG9yGAQgASgJEh0KFWRldmljZV9lbGVtZW50X251bWJlchgFIAEoDRIYChBw",
-            "YXJlbnRfb2JqZWN0X2lkGAYgASgNElcKF2RldmljZV9vYmplY3RfcmVmZXJl",
-            "bmNlGAcgAygLMjYuYWdyaXJvdXRlci50ZWNobmljYWxtZXNzYWdldHlwZS5E",
-            "ZXZpY2VPYmplY3RSZWZlcmVuY2USKAoJZXh0ZW5zaW9uGIAQIAMoCzIULmdv",
-            "b2dsZS5wcm90b2J1Zi5BbnkiiAEKEURldmljZUVsZW1lbnRUeXBlEgwKCENf",
-            "Tk9UU0VUEAASDAoIQ19ERVZJQ0UQARIOCgpDX0ZVTkNUSU9OEAISCQoFQ19C",
-            "SU4QAxINCglDX1NFQ1RJT04QBBIKCgZDX1VOSVQQBRIPCgtDX0NPTk5FQ1RP",
-            "UhAGEhAKDENfTkFWSUdBVElPThAHIlsKFURldmljZU9iamVjdFJlZmVyZW5j",
-            "ZRIYChBkZXZpY2Vfb2JqZWN0X2lkGAEgASgNEigKCWV4dGVuc2lvbhiAECAD",
-            "KAsyFC5nb29nbGUucHJvdG9idWYuQW55Iq0CChFEZXZpY2VQcm9jZXNzRGF0",
-            "YRIlCh1kZXZpY2VfcHJvY2Vzc19kYXRhX29iamVjdF9pZBgBIAEoDRIfChdk",
-            "ZXZpY2VfcHJvY2Vzc19kYXRhX2RkaRgCIAEoDRIkChxkZXZpY2VfcHJvY2Vz",
-            "c19kYXRhX3Byb3BlcnR5GAMgASgNEisKI2RldmljZV9wcm9jZXNzX2RhdGFf",
-            "dHJpZ2dlcl9tZXRob2RzGAQgASgNEiYKHmRldmljZV9wcm9jZXNzX2RhdGFf",
-            "ZGVzaWduYXRvchgFIAEoCRIrCiNkZXZpY2VfdmFsdWVfcHJlc2VudGF0aW9u",
-            "X29iamVjdF9pZBgGIAEoDRIoCglleHRlbnNpb24YgBAgAygLMhQuZ29vZ2xl",
-            "LnByb3RvYnVmLkFueSLqAQoORGV2aWNlUHJvcGVydHkSIQoZZGV2aWNlX3By",
-            "b3BlcnR5X29iamVjdF9pZBgBIAEoDRIbChNkZXZpY2VfcHJvcGVydHlfZGRp",
-            "GAIgASgNEh0KFWRldmljZV9wcm9wZXJ0eV92YWx1ZRgDIAEoEhIiChpkZXZp",
-            "Y2VfcHJvcGVydHlfZGVzaWduYXRvchgEIAEoCRIrCiNkZXZpY2VfdmFsdWVf",
-            "cHJlc2VudGF0aW9uX29iamVjdF9pZBgFIAEoDRIoCglleHRlbnNpb24YgBAg",
-            "AygLMhQuZ29vZ2xlLnByb3RvYnVmLkFueSLEAQoXRGV2aWNlVmFsdWVQcmVz",
-            "ZW50YXRpb24SKwojZGV2aWNlX3ZhbHVlX3ByZXNlbnRhdGlvbl9vYmplY3Rf",
-            "aWQYASABKA0SDgoGb2Zmc2V0GAIgASgSEg0KBXNjYWxlGAMgASgBEhoKEm51",
-            "bWJlcl9vZl9kZWNpbWFscxgEIAEoDRIXCg91bml0X2Rlc2lnbmF0b3IYBSAB",
-            "KAkSKAoJZXh0ZW5zaW9uGIAQIAMoCzIULmdvb2dsZS5wcm90b2J1Zi5Bbnki",
-            "wAIKBEZhcm0SNQoHZmFybV9pZBgBIAEoCzIkLmFncmlyb3V0ZXIudGVjaG5p",
-            "Y2FsbWVzc2FnZXR5cGUuVUlEEhcKD2Zhcm1fZGVzaWduYXRvchgCIAEoCRIT",
-            "CgtmYXJtX3N0cmVldBgDIAEoCRITCgtmYXJtX3BvX2JveBgEIAEoCRIYChBm",
-            "YXJtX3Bvc3RhbF9jb2RlGAUgASgJEhEKCWZhcm1fY2l0eRgGIAEoCRISCgpm",
-            "YXJtX3N0YXRlGAcgASgJEhQKDGZhcm1fY291bnRyeRgIIAEoCRI9Cg9jdXN0",
-            "b21lcl9pZF9yZWYYCSABKAsyJC5hZ3Jpcm91dGVyLnRlY2huaWNhbG1lc3Nh",
-            "Z2V0eXBlLlVJRBIoCglleHRlbnNpb24YgBAgAygLMhQuZ29vZ2xlLnByb3Rv",
-            "YnVmLkFueSLXAwoER3JpZBIjChtncmlkX21pbmltdW1fbm9ydGhfcG9zaXRp",
+            "YXRhX2xvZ190aHJlc2hvbGRfY2hhbmdlGAcgASgSEigKFWRldmljZV9lbGVt",
+            "ZW50X2lkX3JlZhgIIAEoCzIJLmVmZGkuVUlEEiwKGXZhbHVlX3ByZXNlbnRh",
+            "dGlvbl9pZF9yZWYYCSABKAsyCS5lZmRpLlVJRBIUCgxkYXRhX2xvZ19wZ24Y",
+            "CiABKAQSHgoWZGF0YV9sb2dfcGduX3N0YXJ0X2JpdBgLIAEoDRIdChVkYXRh",
+            "X2xvZ19wZ25fc3RvcF9iaXQYDCABKA0SKAoJZXh0ZW5zaW9uGIAQIAMoCzIU",
+            "Lmdvb2dsZS5wcm90b2J1Zi5Bbnki7QEKDERhdGFMb2dWYWx1ZRIYChBwcm9j",
+            "ZXNzX2RhdGFfZGRpGAEgASgNEhoKEnByb2Nlc3NfZGF0YV92YWx1ZRgCIAEo",
+            "EhIoChVkZXZpY2VfZWxlbWVudF9pZF9yZWYYAyABKAsyCS5lZmRpLlVJRBIU",
+            "CgxkYXRhX2xvZ19wZ24YBCABKAQSHgoWZGF0YV9sb2dfcGduX3N0YXJ0X2Jp",
+            "dBgFIAEoDRIdChVkYXRhX2xvZ19wZ25fc3RvcF9iaXQYBiABKA0SKAoJZXh0",
+            "ZW5zaW9uGIAQIAMoCzIULmdvb2dsZS5wcm90b2J1Zi5Bbnki1gMKBkRldmlj",
+            "ZRIcCglkZXZpY2VfaWQYASABKAsyCS5lZmRpLlVJRBIZChFkZXZpY2VfZGVz",
+            "aWduYXRvchgCIAEoCRIfChdkZXZpY2Vfc29mdHdhcmVfdmVyc2lvbhgDIAEo",
+            "CRITCgtjbGllbnRfbmFtZRgEIAEoDBIcChRkZXZpY2Vfc2VyaWFsX251bWJl",
+            "chgFIAEoCRIeChZkZXZpY2Vfc3RydWN0dXJlX2xhYmVsGAYgASgMEiEKGWRl",
+            "dmljZV9sb2NhbGl6YXRpb25fbGFiZWwYByABKAwSKwoOZGV2aWNlX2VsZW1l",
+            "bnQYCCADKAsyEy5lZmRpLkRldmljZUVsZW1lbnQSNAoTZGV2aWNlX3Byb2Nl",
+            "c3NfZGF0YRgJIAMoCzIXLmVmZGkuRGV2aWNlUHJvY2Vzc0RhdGESLQoPZGV2",
+            "aWNlX3Byb3BlcnR5GAogAygLMhQuZWZkaS5EZXZpY2VQcm9wZXJ0eRJAChlk",
+            "ZXZpY2VfdmFsdWVfcHJlc2VudGF0aW9uGAsgAygLMh0uZWZkaS5EZXZpY2VW",
+            "YWx1ZVByZXNlbnRhdGlvbhIoCglleHRlbnNpb24YgBAgAygLMhQuZ29vZ2xl",
+            "LnByb3RvYnVmLkFueSLEAQoQRGV2aWNlQWxsb2NhdGlvbhIZChFjbGllbnRf",
+            "bmFtZV92YWx1ZRgBIAEoDBIYChBjbGllbnRfbmFtZV9tYXNrGAIgASgMEiAK",
+            "DWRldmljZV9pZF9yZWYYAyABKAsyCS5lZmRpLlVJRBIvChBhbGxvY2F0aW9u",
+            "X3N0YW1wGAQgASgLMhUuZWZkaS5BbGxvY2F0aW9uU3RhbXASKAoJZXh0ZW5z",
+            "aW9uGIAQIAMoCzIULmdvb2dsZS5wcm90b2J1Zi5Bbnki6gMKDURldmljZUVs",
+            "ZW1lbnQSJAoRZGV2aWNlX2VsZW1lbnRfaWQYASABKAsyCS5lZmRpLlVJRBIg",
+            "ChhkZXZpY2VfZWxlbWVudF9vYmplY3RfaWQYAiABKA0SQgoTZGV2aWNlX2Vs",
+            "ZW1lbnRfdHlwZRgDIAEoDjIlLmVmZGkuRGV2aWNlRWxlbWVudC5EZXZpY2VF",
+            "bGVtZW50VHlwZRIhChlkZXZpY2VfZWxlbWVudF9kZXNpZ25hdG9yGAQgASgJ",
+            "Eh0KFWRldmljZV9lbGVtZW50X251bWJlchgFIAEoDRIYChBwYXJlbnRfb2Jq",
+            "ZWN0X2lkGAYgASgNEjwKF2RldmljZV9vYmplY3RfcmVmZXJlbmNlGAcgAygL",
+            "MhsuZWZkaS5EZXZpY2VPYmplY3RSZWZlcmVuY2USKAoJZXh0ZW5zaW9uGIAQ",
+            "IAMoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnkiiAEKEURldmljZUVsZW1lbnRU",
+            "eXBlEgwKCENfTk9UU0VUEAASDAoIQ19ERVZJQ0UQARIOCgpDX0ZVTkNUSU9O",
+            "EAISCQoFQ19CSU4QAxINCglDX1NFQ1RJT04QBBIKCgZDX1VOSVQQBRIPCgtD",
+            "X0NPTk5FQ1RPUhAGEhAKDENfTkFWSUdBVElPThAHIlsKFURldmljZU9iamVj",
+            "dFJlZmVyZW5jZRIYChBkZXZpY2Vfb2JqZWN0X2lkGAEgASgNEigKCWV4dGVu",
+            "c2lvbhiAECADKAsyFC5nb29nbGUucHJvdG9idWYuQW55Iq0CChFEZXZpY2VQ",
+            "cm9jZXNzRGF0YRIlCh1kZXZpY2VfcHJvY2Vzc19kYXRhX29iamVjdF9pZBgB",
+            "IAEoDRIfChdkZXZpY2VfcHJvY2Vzc19kYXRhX2RkaRgCIAEoDRIkChxkZXZp",
+            "Y2VfcHJvY2Vzc19kYXRhX3Byb3BlcnR5GAMgASgNEisKI2RldmljZV9wcm9j",
+            "ZXNzX2RhdGFfdHJpZ2dlcl9tZXRob2RzGAQgASgNEiYKHmRldmljZV9wcm9j",
+            "ZXNzX2RhdGFfZGVzaWduYXRvchgFIAEoCRIrCiNkZXZpY2VfdmFsdWVfcHJl",
+            "c2VudGF0aW9uX29iamVjdF9pZBgGIAEoDRIoCglleHRlbnNpb24YgBAgAygL",
+            "MhQuZ29vZ2xlLnByb3RvYnVmLkFueSLqAQoORGV2aWNlUHJvcGVydHkSIQoZ",
+            "ZGV2aWNlX3Byb3BlcnR5X29iamVjdF9pZBgBIAEoDRIbChNkZXZpY2VfcHJv",
+            "cGVydHlfZGRpGAIgASgNEh0KFWRldmljZV9wcm9wZXJ0eV92YWx1ZRgDIAEo",
+            "EhIiChpkZXZpY2VfcHJvcGVydHlfZGVzaWduYXRvchgEIAEoCRIrCiNkZXZp",
+            "Y2VfdmFsdWVfcHJlc2VudGF0aW9uX29iamVjdF9pZBgFIAEoDRIoCglleHRl",
+            "bnNpb24YgBAgAygLMhQuZ29vZ2xlLnByb3RvYnVmLkFueSLEAQoXRGV2aWNl",
+            "VmFsdWVQcmVzZW50YXRpb24SKwojZGV2aWNlX3ZhbHVlX3ByZXNlbnRhdGlv",
+            "bl9vYmplY3RfaWQYASABKA0SDgoGb2Zmc2V0GAIgASgSEg0KBXNjYWxlGAMg",
+            "ASgBEhoKEm51bWJlcl9vZl9kZWNpbWFscxgEIAEoDRIXCg91bml0X2Rlc2ln",
+            "bmF0b3IYBSABKAkSKAoJZXh0ZW5zaW9uGIAQIAMoCzIULmdvb2dsZS5wcm90",
+            "b2J1Zi5BbnkiigIKBEZhcm0SGgoHZmFybV9pZBgBIAEoCzIJLmVmZGkuVUlE",
+            "EhcKD2Zhcm1fZGVzaWduYXRvchgCIAEoCRITCgtmYXJtX3N0cmVldBgDIAEo",
+            "CRITCgtmYXJtX3BvX2JveBgEIAEoCRIYChBmYXJtX3Bvc3RhbF9jb2RlGAUg",
+            "ASgJEhEKCWZhcm1fY2l0eRgGIAEoCRISCgpmYXJtX3N0YXRlGAcgASgJEhQK",
+            "DGZhcm1fY291bnRyeRgIIAEoCRIiCg9jdXN0b21lcl9pZF9yZWYYCSABKAsy",
+            "CS5lZmRpLlVJRBIoCglleHRlbnNpb24YgBAgAygLMhQuZ29vZ2xlLnByb3Rv",
+            "YnVmLkFueSKhAwoER3JpZBIjChtncmlkX21pbmltdW1fbm9ydGhfcG9zaXRp",
             "b24YASABKAESIgoaZ3JpZF9taW5pbXVtX2Vhc3RfcG9zaXRpb24YAiABKAES",
             "HAoUZ3JpZF9jZWxsX25vcnRoX3NpemUYAyABKAESGwoTZ3JpZF9jZWxsX2Vh",
             "c3Rfc2l6ZRgEIAEoARIbChNncmlkX21heGltdW1fY29sdW1uGAUgASgEEhgK",
-            "EGdyaWRfbWF4aW11bV9yb3cYBiABKAQSNgoIZmlsZW5hbWUYByABKAsyJC5h",
-            "Z3Jpcm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBlLlVJRBISCgpmaWxlbGVu",
-            "Z3RoGAggASgEEkEKCWdyaWRfdHlwZRgJIAEoDjIuLmFncmlyb3V0ZXIudGVj",
-            "aG5pY2FsbWVzc2FnZXR5cGUuR3JpZC5HcmlkVHlwZRIbChN0cmVhdG1lbnRf",
-            "em9uZV9jb2RlGAogASgNEigKCWV4dGVuc2lvbhiAECADKAsyFC5nb29nbGUu",
-            "cHJvdG9idWYuQW55Ij4KCEdyaWRUeXBlEgwKCElfTk9UU0VUEAASEQoNSV9H",
-            "UklEX1RZUEVfMRABEhEKDUlfR1JJRF9UWVBFXzIQAiKXAgoSR3VpZGFuY2VB",
-            "bGxvY2F0aW9uEkMKFWd1aWRhbmNlX2dyb3VwX2lkX3JlZhgBIAEoCzIkLmFn",
-            "cmlyb3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5cGUuVUlEEkoKEGFsbG9jYXRp",
-            "b25fc3RhbXAYAiABKAsyMC5hZ3Jpcm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0",
-            "eXBlLkFsbG9jYXRpb25TdGFtcBJGCg5ndWlkYW5jZV9zaGlmdBgDIAMoCzIu",
-            "LmFncmlyb3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5cGUuR3VpZGFuY2VTaGlm",
-            "dBIoCglleHRlbnNpb24YgBAgAygLMhQuZ29vZ2xlLnByb3RvYnVmLkFueSKt",
-            "AgoNR3VpZGFuY2VHcm91cBI/ChFndWlkYW5jZV9ncm91cF9pZBgBIAEoCzIk",
-            "LmFncmlyb3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5cGUuVUlEEiEKGWd1aWRh",
-            "bmNlX2dyb3VwX2Rlc2lnbmF0b3IYAiABKAkSSgoQZ3VpZGFuY2VfcGF0dGVy",
-            "bhgDIAMoCzIwLmFncmlyb3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5cGUuR3Vp",
-            "ZGFuY2VQYXR0ZXJuEkIKEGJvdW5kYXJ5X3BvbHlnb24YBCADKAsyKC5hZ3Jp",
-            "cm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBlLlBvbHlnb24SKAoJZXh0ZW5z",
-            "aW9uGIAQIAMoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnkiqQ4KD0d1aWRhbmNl",
-            "UGF0dGVybhJBChNndWlkYW5jZV9wYXR0ZXJuX2lkGAEgASgLMiQuYWdyaXJv",
-            "dXRlci50ZWNobmljYWxtZXNzYWdldHlwZS5VSUQSIwobZ3VpZGFuY2VfcGF0",
-            "dGVybl9kZXNpZ25hdG9yGAIgASgJEmMKFWd1aWRhbmNlX3BhdHRlcm5fdHlw",
-            "ZRgDIAEoDjJELmFncmlyb3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5cGUuR3Vp",
-            "ZGFuY2VQYXR0ZXJuLkd1aWRhbmNlUGF0dGVyblR5cGUSaQoYZ3VpZGFuY2Vf",
-            "cGF0dGVybl9vcHRpb25zGAQgASgOMkcuYWdyaXJvdXRlci50ZWNobmljYWxt",
-            "ZXNzYWdldHlwZS5HdWlkYW5jZVBhdHRlcm4uR3VpZGFuY2VQYXR0ZXJuT3B0",
-            "aW9ucxKEAQomZ3VpZGFuY2VfcGF0dGVybl9wcm9wYWdhdGlvbl9kaXJlY3Rp",
-            "b24YBSABKA4yVC5hZ3Jpcm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBlLkd1",
-            "aWRhbmNlUGF0dGVybi5HdWlkYW5jZVBhdHRlcm5Qcm9wYWdhdGlvbkRpcmVj",
-            "dGlvbhJtChpndWlkYW5jZV9wYXR0ZXJuX2V4dGVuc2lvbhgGIAEoDjJJLmFn",
-            "cmlyb3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5cGUuR3VpZGFuY2VQYXR0ZXJu",
-            "Lkd1aWRhbmNlUGF0dGVybkV4dGVuc2lvbhIgChhndWlkYW5jZV9wYXR0ZXJu",
-            "X2hlYWRpbmcYByABKAESHwoXZ3VpZGFuY2VfcGF0dGVybl9yYWRpdXMYCCAB",
-            "KAQScAocZ3VpZGFuY2VfcGF0dGVybl9nbnNzX21ldGhvZBgJIAEoDjJKLmFn",
-            "cmlyb3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5cGUuR3VpZGFuY2VQYXR0ZXJu",
-            "Lkd1aWRhbmNlUGF0dGVybkdOU1NNZXRob2QSLAokZ3VpZGFuY2VfcGF0dGVy",
-            "bl9ob3Jpem9udGFsX2FjY3VyYWN5GAogASgBEioKImd1aWRhbmNlX3BhdHRl",
-            "cm5fdmVydGljYWxfYWNjdXJhY3kYCyABKAESQQoTYmFzZV9zdGF0aW9uX2lk",
-            "X3JlZhgMIAEoCzIkLmFncmlyb3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5cGUu",
-            "VUlEEhUKDW9yaWdpbmFsX3NyaWQYDSABKAkSHQoVbnVtYmVyX29mX3N3YXRo",
-            "c19sZWZ0GA4gASgEEh4KFm51bWJlcl9vZl9zd2F0aHNfcmlnaHQYDyABKAQS",
-            "QAoLbGluZV9zdHJpbmcYECABKAsyKy5hZ3Jpcm91dGVyLnRlY2huaWNhbG1l",
-            "c3NhZ2V0eXBlLkxpbmVTdHJpbmcSQgoQYm91bmRhcnlfcG9seWdvbhgRIAMo",
-            "CzIoLmFncmlyb3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5cGUuUG9seWdvbhIo",
-            "CglleHRlbnNpb24YgBAgAygLMhQuZ29vZ2xlLnByb3RvYnVmLkFueSJjChNH",
-            "dWlkYW5jZVBhdHRlcm5UeXBlEgwKCENfTk9UU0VUEAASCAoEQ19BQhABEgwK",
-            "CENfQV9QTFVTEAISCwoHQ19DVVJWRRADEgsKB0NfUElWT1QQBBIMCghDX1NQ",
-            "SVJBTBAFImMKFkd1aWRhbmNlUGF0dGVybk9wdGlvbnMSDAoIRF9OT1RTRVQQ",
-            "ABIPCgtEX0NMT0NLV0lTRRABEhcKE0RfQ09VTlRFUl9DTE9DS1dJU0UQAhIR",
-            "Cg1EX0ZVTExfQ0lSQ0xFEAMiZwojR3VpZGFuY2VQYXR0ZXJuUHJvcGFnYXRp",
-            "b25EaXJlY3Rpb24SDAoIRV9OT1RTRVQQABIKCgZFX0JPVEgQARIKCgZFX0xF",
-            "RlQQAhILCgdFX1JJR0hUEAMSDQoJRV9OT19QUk9QEAQiZQoYR3VpZGFuY2VQ",
-            "YXR0ZXJuRXh0ZW5zaW9uEgwKCEZfTk9UU0VUEAASCgoGRl9CT1RIEAESEAoM",
-            "Rl9GSVJTVF9PTkxZEAISDwoLRl9MQVNUX09OTFkQAxIMCghGX05PX0VYVBAE",
-            "IvUBChlHdWlkYW5jZVBhdHRlcm5HTlNTTWV0aG9kEgwKCElfTk9UU0VUEAAS",
-            "DgoKSV9HTlNTX0ZJWBABEg8KC0lfREdOU1NfRklYEAISEgoOSV9QUkVDSVNF",
-            "X0dOU1MQAxIXChNJX1JUS19GSVhFRF9JTlRFR0VSEAQSDwoLSV9SVEtfRkxP",
-            "QVQQBRIXChNJX0VTVElNQVRFRF9EUl9NT0RFEAYSEgoOSV9NQU5VQUxfSU5Q",
-            "VVQQBxITCg9JX1NJTVVMQVRFX01PREUQCBIcChhJX0RFU0tUT1BfR0VORVJB",
-            "VEVEX0RBVEEQEBILCgdJX09USEVSEBEi6AIKDUd1aWRhbmNlU2hpZnQSQwoV",
-            "Z3VpZGFuY2VfZ3JvdXBfaWRfcmVmGAEgASgLMiQuYWdyaXJvdXRlci50ZWNo",
-            "bmljYWxtZXNzYWdldHlwZS5VSUQSRQoXZ3VpZGFuY2VfcGF0dGVybl9pZF9y",
-            "ZWYYAiABKAsyJC5hZ3Jpcm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBlLlVJ",
-            "RBIbChNndWlkYW5jZV9lYXN0X3NoaWZ0GAMgASgSEhwKFGd1aWRhbmNlX25v",
-            "cnRoX3NoaWZ0GAQgASgSEhoKEnByb3BhZ2F0aW9uX29mZnNldBgFIAEoEhJK",
-            "ChBhbGxvY2F0aW9uX3N0YW1wGAYgASgLMjAuYWdyaXJvdXRlci50ZWNobmlj",
-            "YWxtZXNzYWdldHlwZS5BbGxvY2F0aW9uU3RhbXASKAoJZXh0ZW5zaW9uGIAQ",
-            "IAMoCzIULmdvb2dsZS5wcm90b2J1Zi5Bbnki9w8KEUlTTzExNzgzX1Rhc2tE",
-            "YXRhElYKDXZlcnNpb25fbWFqb3IYASABKA4yPy5hZ3Jpcm91dGVyLnRlY2hu",
-            "aWNhbG1lc3NhZ2V0eXBlLklTTzExNzgzX1Rhc2tEYXRhLlZlcnNpb25NYWpv",
-            "chIVCg12ZXJzaW9uX21pbm9yGAIgASgNEigKIG1hbmFnZW1lbnRfc29mdHdh",
-            "cmVfbWFudWZhY3R1cmVyGAMgASgJEiMKG21hbmFnZW1lbnRfc29mdHdhcmVf",
-            "dmVyc2lvbhgEIAEoCRIkChx0YXNrX2NvbnRyb2xsZXJfbWFudWZhY3R1cmVy",
-            "GAUgASgJEh8KF3Rhc2tfY29udHJvbGxlcl92ZXJzaW9uGAYgASgJEmMKFGRh",
-            "dGFfdHJhbnNmZXJfb3JpZ2luGAcgASgOMkUuYWdyaXJvdXRlci50ZWNobmlj",
-            "YWxtZXNzYWdldHlwZS5JU08xMTc4M19UYXNrRGF0YS5EYXRhVHJhbnNmZXJP",
-            "cmlnaW4SHgoWZGF0YV90cmFuc2Zlcl9sYW5ndWFnZRgIIAEoCRJECg1hdHRh",
-            "Y2hlZF9maWxlGAkgAygLMi0uYWdyaXJvdXRlci50ZWNobmljYWxtZXNzYWdl",
-            "dHlwZS5BdHRhY2hlZEZpbGUSQgoMYmFzZV9zdGF0aW9uGAogAygLMiwuYWdy",
-            "aXJvdXRlci50ZWNobmljYWxtZXNzYWdldHlwZS5CYXNlU3RhdGlvbhJECg1j",
-            "b2RlZF9jb21tZW50GAsgAygLMi0uYWdyaXJvdXRlci50ZWNobmljYWxtZXNz",
-            "YWdldHlwZS5Db2RlZENvbW1lbnQSTwoTY29kZWRfY29tbWVudF9ncm91cBgM",
-            "IAMoCzIyLmFncmlyb3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5cGUuQ29kZWRD",
-            "b21tZW50R3JvdXASRAoNY29sb3VyX2xlZ2VuZBgNIAMoCzItLmFncmlyb3V0",
-            "ZXIudGVjaG5pY2FsbWVzc2FnZXR5cGUuQ29sb3VyTGVnZW5kEjwKCWNyb3Bf",
-            "dHlwZRgOIAMoCzIpLmFncmlyb3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5cGUu",
-            "Q3JvcFR5cGUSTAoRY3VsdHVyYWxfcHJhY3RpY2UYDyADKAsyMS5hZ3Jpcm91",
-            "dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBlLkN1bHR1cmFsUHJhY3RpY2USOwoI",
-            "Y3VzdG9tZXIYECADKAsyKS5hZ3Jpcm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0",
-            "eXBlLkN1c3RvbWVyEjcKBmRldmljZRgRIAMoCzInLmFncmlyb3V0ZXIudGVj",
-            "aG5pY2FsbWVzc2FnZXR5cGUuRGV2aWNlEjMKBGZhcm0YEiADKAsyJS5hZ3Jp",
-            "cm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBlLkZhcm0SUAoTb3BlcmF0aW9u",
-            "X3RlY2huaXF1ZRgTIAMoCzIzLmFncmlyb3V0ZXIudGVjaG5pY2FsbWVzc2Fn",
-            "ZXR5cGUuT3BlcmF0aW9uVGVjaG5pcXVlEj0KCXBhcnRmaWVsZBgUIAMoCzIq",
-            "LmFncmlyb3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5cGUuUGFydGZpZWxkEjkK",
-            "B3Byb2R1Y3QYFSADKAsyKC5hZ3Jpcm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0",
-            "eXBlLlByb2R1Y3QSRAoNcHJvZHVjdF9ncm91cBgWIAMoCzItLmFncmlyb3V0",
-            "ZXIudGVjaG5pY2FsbWVzc2FnZXR5cGUuUHJvZHVjdEdyb3VwEjMKBHRhc2sY",
-            "FyADKAsyJS5hZ3Jpcm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBlLlRhc2sS",
-            "YQocdGFza19jb250cm9sbGVyX2NhcGFiaWxpdGllcxgYIAMoCzI7LmFncmly",
-            "b3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5cGUuVGFza0NvbnRyb2xsZXJDYXBh",
-            "YmlsaXRpZXMSTgoSdmFsdWVfcHJlc2VudGF0aW9uGBkgAygLMjIuYWdyaXJv",
-            "dXRlci50ZWNobmljYWxtZXNzYWdldHlwZS5WYWx1ZVByZXNlbnRhdGlvbhI3",
-            "CgZ3b3JrZXIYGiADKAsyJy5hZ3Jpcm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0",
-            "eXBlLldvcmtlchJXChdleHRlcm5hbF9maWxlX3JlZmVyZW5jZRgbIAMoCzI2",
-            "LmFncmlyb3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5cGUuRXh0ZXJuYWxGaWxl",
-            "UmVmZXJlbmNlEigKCWV4dGVuc2lvbhiAECADKAsyFC5nb29nbGUucHJvdG9i",
-            "dWYuQW55Io4BCgxWZXJzaW9uTWFqb3ISFQoRVkVSU0lPTl9NQUpPUl9ESVMQ",
-            "ABIYChRWRVJTSU9OX01BSk9SX0ZESVNfMRABEhgKFFZFUlNJT05fTUFKT1Jf",
-            "RkRJU18yEAISGAoUVkVSU0lPTl9NQUpPUl9FMl9ESVMQAxIZChVWRVJTSU9O",
-            "X01BSk9SX0UyX0ZESVMQBCJzChJEYXRhVHJhbnNmZXJPcmlnaW4SHwobREFU",
-            "QV9UUkFOU0ZFUl9PUklHSU5fTk9UU0VUEAASHQoZREFUQV9UUkFOU0ZFUl9P",
-            "UklHSU5fRk1JUxABEh0KGURBVEFfVFJBTlNGRVJfT1JJR0lOX01JQ1MQAiK9",
-            "BAoKTGluZVN0cmluZxJUChBsaW5lX3N0cmluZ190eXBlGAEgASgOMjouYWdy",
-            "aXJvdXRlci50ZWNobmljYWxtZXNzYWdldHlwZS5MaW5lU3RyaW5nLkxpbmVz",
-            "dHJpbmdUeXBlEh4KFmxpbmVfc3RyaW5nX2Rlc2lnbmF0b3IYAiABKAkSGQoR",
-            "bGluZV9zdHJpbmdfd2lkdGgYAyABKA0SGgoSbGluZV9zdHJpbmdfbGVuZ3Ro",
-            "GAQgASgNEhoKEmxpbmVfc3RyaW5nX2NvbG91chgFIAEoDRI8Cg5saW5lX3N0",
-            "cmluZ19pZBgGIAEoCzIkLmFncmlyb3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5",
-            "cGUuVUlEEjUKBXBvaW50GAcgAygLMiYuYWdyaXJvdXRlci50ZWNobmljYWxt",
-            "ZXNzYWdldHlwZS5Qb2ludBIoCglleHRlbnNpb24YgBAgAygLMhQuZ29vZ2xl",
-            "LnByb3RvYnVmLkFueSLGAQoOTGluZXN0cmluZ1R5cGUSDAoIQV9OT1RTRVQQ",
-            "ABIWChJBX1BPTFlHT05fRVhURVJJT1IQARIWChJBX1BPTFlHT05fSU5URVJJ",
-            "T1IQAhIPCgtBX1RSQU1fTElORRADEhQKEEFfU0FNUExJTkdfUk9VVEUQBBIW",
-            "ChJBX0dVSURBTkNFX1BBVFRFUk4QBRIOCgpBX0RSQUlOQUdFEAYSCwoHQV9G",
-            "RU5DRRAHEgoKBkFfRkxBRxAIEg4KCkFfT0JTVEFDTEUQCSKsAQoST3BlcmF0",
-            "aW9uVGVjaG5pcXVlEkQKFm9wZXJhdGlvbl90ZWNobmlxdWVfaWQYASABKAsy",
-            "JC5hZ3Jpcm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBlLlVJRBImCh5vcGVy",
-            "YXRpb25fdGVjaG5pcXVlX2Rlc2lnbmF0b3IYAiABKAkSKAoJZXh0ZW5zaW9u",
-            "GIAQIAMoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnkikQEKG09wZXJhdGlvblRl",
-            "Y2huaXF1ZVJlZmVyZW5jZRJIChpvcGVyYXRpb25fdGVjaG5pcXVlX2lkX3Jl",
-            "ZhgBIAEoCzIkLmFncmlyb3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5cGUuVUlE",
-            "EigKCWV4dGVuc2lvbhiAECADKAsyFC5nb29nbGUucHJvdG9idWYuQW55Is4B",
-            "ChBPcGVyVGVjaFByYWN0aWNlEkYKGGN1bHR1cmFsX3ByYWN0aWNlX2lkX3Jl",
-            "ZhgBIAEoCzIkLmFncmlyb3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5cGUuVUlE",
-            "EkgKGm9wZXJhdGlvbl90ZWNobmlxdWVfaWRfcmVmGAIgASgLMiQuYWdyaXJv",
-            "dXRlci50ZWNobmljYWxtZXNzYWdldHlwZS5VSUQSKAoJZXh0ZW5zaW9uGIAQ",
-            "IAMoCzIULmdvb2dsZS5wcm90b2J1Zi5Bbnki9AUKCVBhcnRmaWVsZBI6Cgxw",
-            "YXJ0ZmllbGRfaWQYASABKAsyJC5hZ3Jpcm91dGVyLnRlY2huaWNhbG1lc3Nh",
-            "Z2V0eXBlLlVJRBIWCg5wYXJ0ZmllbGRfY29kZRgCIAEoCRIcChRwYXJ0Zmll",
-            "bGRfZGVzaWduYXRvchgDIAEoCRIWCg5wYXJ0ZmllbGRfYXJlYRgEIAEoBBI9",
-            "Cg9jdXN0b21lcl9pZF9yZWYYBSABKAsyJC5hZ3Jpcm91dGVyLnRlY2huaWNh",
-            "bG1lc3NhZ2V0eXBlLlVJRBI5CgtmYXJtX2lkX3JlZhgGIAEoCzIkLmFncmly",
-            "b3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5cGUuVUlEEj4KEGNyb3BfdHlwZV9p",
-            "ZF9yZWYYByABKAsyJC5hZ3Jpcm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBl",
-            "LlVJRBJBChNjcm9wX3ZhcmlldHlfaWRfcmVmGAggASgLMiQuYWdyaXJvdXRl",
-            "ci50ZWNobmljYWxtZXNzYWdldHlwZS5VSUQSOgoMZmllbGRfaWRfcmVmGAkg",
-            "ASgLMiQuYWdyaXJvdXRlci50ZWNobmljYWxtZXNzYWdldHlwZS5VSUQSOQoH",
-            "cG9seWdvbhgKIAMoCzIoLmFncmlyb3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5",
-            "cGUuUG9seWdvbhJACgtsaW5lX3N0cmluZxgLIAMoCzIrLmFncmlyb3V0ZXIu",
-            "dGVjaG5pY2FsbWVzc2FnZXR5cGUuTGluZVN0cmluZxI1CgVwb2ludBgMIAMo",
-            "CzImLmFncmlyb3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5cGUuUG9pbnQSRgoO",
-            "Z3VpZGFuY2VfZ3JvdXAYDSADKAsyLi5hZ3Jpcm91dGVyLnRlY2huaWNhbG1l",
-            "c3NhZ2V0eXBlLkd1aWRhbmNlR3JvdXASKAoJZXh0ZW5zaW9uGIAQIAMoCzIU",
-            "Lmdvb2dsZS5wcm90b2J1Zi5Bbnki5AQKBVBvaW50EkQKCnBvaW50X3R5cGUY",
-            "ASABKA4yMC5hZ3Jpcm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBlLlBvaW50",
-            "LlBvaW50VHlwZRIYChBwb2ludF9kZXNpZ25hdG9yGAIgASgJEhMKC3BvaW50",
-            "X25vcnRoGAMgASgBEhIKCnBvaW50X2Vhc3QYBCABKAESEAoIcG9pbnRfdXAY",
-            "BSABKBISFAoMcG9pbnRfY29sb3VyGAYgASgNEjYKCHBvaW50X2lkGAcgASgL",
-            "MiQuYWdyaXJvdXRlci50ZWNobmljYWxtZXNzYWdldHlwZS5VSUQSIQoZcG9p",
-            "bnRfaG9yaXpvbnRhbF9hY2N1cmFjeRgIIAEoARIfChdwb2ludF92ZXJ0aWNh",
-            "bF9hY2N1cmFjeRgJIAEoARIQCghmaWxlbmFtZRgKIAEoCRISCgpmaWxlbGVu",
-            "Z3RoGAsgASgEEigKCWV4dGVuc2lvbhiAECADKAsyFC5nb29nbGUucHJvdG9i",
-            "dWYuQW55It0BCglQb2ludFR5cGUSDAoIQV9OT1RTRVQQABIKCgZBX0ZMQUcQ",
-            "ARILCgdBX09USEVSEAISEgoOQV9GSUVMRF9BQ0NFU1MQAxINCglBX1NUT1JB",
-            "R0UQBBIOCgpBX09CU1RBQ0xFEAUSEAoMQV9HVUlEX1JFRl9BEAYSEAoMQV9H",
-            "VUlEX1JFRl9CEAcSFQoRQV9HVUlEX1JFRl9DRU5URVIQCBIQCgxBX0dVSURf",
-            "UE9JTlQQCRIZChVBX1BBUlRGSUVMRF9SRUZfUE9JTlQQChIOCgpBX0hPTUVC",
-            "QVNFEAsisgQKB1BvbHlnb24SSgoMcG9seWdvbl90eXBlGAEgASgOMjQuYWdy",
-            "aXJvdXRlci50ZWNobmljYWxtZXNzYWdldHlwZS5Qb2x5Z29uLlBvbHlnb25U",
-            "eXBlEhoKEnBvbHlnb25fZGVzaWduYXRvchgCIAEoCRIUCgxwb2x5Z29uX2Fy",
-            "ZWEYAyABKAQSFgoOcG9seWdvbl9jb2xvdXIYBCABKA0SOAoKcG9seWdvbl9p",
-            "ZBgFIAEoCzIkLmFncmlyb3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5cGUuVUlE",
-            "EkAKC2xpbmVfc3RyaW5nGAYgAygLMisuYWdyaXJvdXRlci50ZWNobmljYWxt",
-            "ZXNzYWdldHlwZS5MaW5lU3RyaW5nEigKCWV4dGVuc2lvbhiAECADKAsyFC5n",
-            "b29nbGUucHJvdG9idWYuQW55IuoBCgtQb2x5Z29uVHlwZRIMCghBX05PVFNF",
-            "VBAAEhgKFEFfUEFSVEZJRUxEX0JPVU5EQVJZEAESFAoQQV9UUkVBVE1FTlRf",
-            "Wk9ORRACEhMKD0FfV0FURVJfU1VSRkFDRRADEg4KCkFfQlVJTERJTkcQBBIK",
-            "CgZBX1JPQUQQBRIOCgpBX09CU1RBQ0xFEAYSCgoGQV9GTEFHEAcSCwoHQV9P",
-            "VEhFUhAIEg8KC0FfTUFJTkZJRUxEEAkSDgoKQV9IRUFETEFORBAKEhEKDUFf",
-            "QlVGRkVSX1pPTkUQCxIPCgtBX1dJTkRCUkVBSxAMIo0ECghQb3NpdGlvbhIW",
-            "Cg5wb3NpdGlvbl9ub3J0aBgBIAEoARIVCg1wb3NpdGlvbl9lYXN0GAIgASgB",
-            "EhMKC3Bvc2l0aW9uX3VwGAMgASgSElEKD3Bvc2l0aW9uX3N0YXR1cxgEIAEo",
-            "DjI4LmFncmlyb3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5cGUuUG9zaXRpb24u",
-            "UG9zaXRpb25TdGF0dXMSDAoEcGRvcBgFIAEoARIMCgRoZG9wGAYgASgBEhwK",
-            "FG51bWJlcl9vZl9zYXRlbGxpdGVzGAcgASgNEjUKEWdwc191dGNfdGltZXN0",
-            "YW1wGAggASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIoCglleHRl",
-            "bnNpb24YgBAgAygLMhQuZ29vZ2xlLnByb3RvYnVmLkFueSLOAQoOUG9zaXRp",
-            "b25TdGF0dXMSDAoIRF9OT19HUFMQABIKCgZEX0dOU1MQARILCgdEX0RHTlNT",
-            "EAISEgoORF9QUkVDSVNFX0dOU1MQAxISCg5EX1JUS19GSU5URUdFUhAEEg8K",
-            "C0RfUlRLX0ZMT0FUEAUSEQoNRF9FU1RfRFJfTU9ERRAGEhIKDkRfTUFOVUFM",
-            "X0lOUFVUEAcSEwoPRF9TSU1VTEFURV9NT0RFEAgSCwoHRF9FUlJPUhAOEhMK",
-            "D0RfTk9UX0FWQUlMQUJMRRAPIuMDChNQcm9jZXNzRGF0YVZhcmlhYmxlEhgK",
-            "EHByb2Nlc3NfZGF0YV9kZGkYASABKA0SGgoScHJvY2Vzc19kYXRhX3ZhbHVl",
-            "GAIgASgSEjwKDnByb2R1Y3RfaWRfcmVmGAMgASgLMiQuYWdyaXJvdXRlci50",
-            "ZWNobmljYWxtZXNzYWdldHlwZS5VSUQSQwoVZGV2aWNlX2VsZW1lbnRfaWRf",
-            "cmVmGAQgASgLMiQuYWdyaXJvdXRlci50ZWNobmljYWxtZXNzYWdldHlwZS5V",
-            "SUQSRwoZdmFsdWVfcHJlc2VudGF0aW9uX2lkX3JlZhgFIAEoCzIkLmFncmly",
-            "b3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5cGUuVUlEEiYKHmFjdHVhbF9jdWx0",
-            "dXJhbF9wcmFjdGljZV92YWx1ZRgGIAEoEhIjChtlbGVtZW50X3R5cGVfaW5z",
-            "dGFuY2VfdmFsdWUYByABKBISUwoVcHJvY2Vzc19kYXRhX3ZhcmlhYmxlGAgg",
-            "AygLMjQuYWdyaXJvdXRlci50ZWNobmljYWxtZXNzYWdldHlwZS5Qcm9jZXNz",
-            "RGF0YVZhcmlhYmxlEigKCWV4dGVuc2lvbhiAECADKAsyFC5nb29nbGUucHJv",
-            "dG9idWYuQW55IpsFCgdQcm9kdWN0EjgKCnByb2R1Y3RfaWQYASABKAsyJC5h",
-            "Z3Jpcm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBlLlVJRBIaChJwcm9kdWN0",
-            "X2Rlc2lnbmF0b3IYAiABKAkSQgoUcHJvZHVjdF9ncm91cF9pZF9yZWYYAyAB",
-            "KAsyJC5hZ3Jpcm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBlLlVJRBJHChl2",
-            "YWx1ZV9wcmVzZW50YXRpb25faWRfcmVmGAQgASgLMiQuYWdyaXJvdXRlci50",
-            "ZWNobmljYWxtZXNzYWdldHlwZS5VSUQSFAoMcXVhbnRpdHlfZGRpGAUgASgN",
-            "EkoKDHByb2R1Y3RfdHlwZRgGIAEoDjI0LmFncmlyb3V0ZXIudGVjaG5pY2Fs",
-            "bWVzc2FnZXR5cGUuUHJvZHVjdC5Qcm9kdWN0VHlwZRIfChdtaXh0dXJlX3Jl",
-            "Y2lwZV9xdWFudGl0eRgHIAEoEhIfChdkZW5zaXR5X21hc3NfcGVyX3ZvbHVt",
-            "ZRgIIAEoEhIeChZkZW5zaXR5X21hc3NfcGVyX2NvdW50GAkgASgSEiAKGGRl",
-            "bnNpdHlfdm9sdW1lX3Blcl9jb3VudBgKIAEoEhJKChBwcm9kdWN0X3JlbGF0",
-            "aW9uGAsgAygLMjAuYWdyaXJvdXRlci50ZWNobmljYWxtZXNzYWdldHlwZS5Q",
-            "cm9kdWN0UmVsYXRpb24SKAoJZXh0ZW5zaW9uGIAQIAMoCzIULmdvb2dsZS5w",
-            "cm90b2J1Zi5BbnkiUQoLUHJvZHVjdFR5cGUSDAoIRl9OT1RTRVQQABIMCghG",
-            "X1NJTkdMRRABEg0KCUZfTUlYVFVSRRACEhcKE0ZfVEVNUE9SQVJZX01JWFRV",
-            "UkUQAyLwBAoRUHJvZHVjdEFsbG9jYXRpb24SPAoOcHJvZHVjdF9pZF9yZWYY",
-            "ASABKAsyJC5hZ3Jpcm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBlLlVJRBIU",
-            "CgxxdWFudGl0eV9kZGkYAiABKA0SFgoOcXVhbnRpdHlfdmFsdWUYAyABKBIS",
-            "VgoNdHJhbnNmZXJfbW9kZRgEIAEoDjI/LmFncmlyb3V0ZXIudGVjaG5pY2Fs",
-            "bWVzc2FnZXR5cGUuUHJvZHVjdEFsbG9jYXRpb24uVHJhbnNmZXJNb2RlEkMK",
-            "FWRldmljZV9lbGVtZW50X2lkX3JlZhgFIAEoCzIkLmFncmlyb3V0ZXIudGVj",
-            "aG5pY2FsbWVzc2FnZXR5cGUuVUlEEkcKGXZhbHVlX3ByZXNlbnRhdGlvbl9p",
-            "ZF9yZWYYBiABKAsyJC5hZ3Jpcm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBl",
-            "LlVJRBJFChdwcm9kdWN0X3N1Yl90eXBlX2lkX3JlZhgHIAEoCzIkLmFncmly",
-            "b3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5cGUuVUlEEkoKEGFsbG9jYXRpb25f",
-            "c3RhbXAYCCABKAsyMC5hZ3Jpcm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBl",
-            "LkFsbG9jYXRpb25TdGFtcBIoCglleHRlbnNpb24YgBAgAygLMhQuZ29vZ2xl",
-            "LnByb3RvYnVmLkFueSJMCgxUcmFuc2Zlck1vZGUSDAoIRF9OT1RTRVQQABIN",
-            "CglEX0ZJTExJTkcQARIOCgpEX0VNUFRZSU5HEAISDwoLRF9SRU1BSU5ERVIQ",
-            "AyK+AgoMUHJvZHVjdEdyb3VwEj4KEHByb2R1Y3RfZ3JvdXBfaWQYASABKAsy",
-            "JC5hZ3Jpcm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBlLlVJRBIgChhwcm9k",
-            "dWN0X2dyb3VwX2Rlc2lnbmF0b3IYAiABKAkSWgoScHJvZHVjdF9ncm91cF90",
-            "eXBlGAMgASgOMj4uYWdyaXJvdXRlci50ZWNobmljYWxtZXNzYWdldHlwZS5Q",
-            "cm9kdWN0R3JvdXAuUHJvZHVjdEdyb3VwVHlwZRIoCglleHRlbnNpb24YgBAg",
-            "AygLMhQuZ29vZ2xlLnByb3RvYnVmLkFueSJGChBQcm9kdWN0R3JvdXBUeXBl",
-            "EgwKCENfTk9UU0VUEAASEwoPQ19QUk9EVUNUX0dST1VQEAESDwoLQ19DUk9Q",
-            "X1RZUEUQAiKRAQoPUHJvZHVjdFJlbGF0aW9uEjwKDnByb2R1Y3RfaWRfcmVm",
-            "GAEgASgLMiQuYWdyaXJvdXRlci50ZWNobmljYWxtZXNzYWdldHlwZS5VSUQS",
-            "FgoOcXVhbnRpdHlfdmFsdWUYAiABKBISKAoJZXh0ZW5zaW9uGIAQIAMoCzIU",
-            "Lmdvb2dsZS5wcm90b2J1Zi5Bbnki5AwKBFRhc2sSNQoHdGFza19pZBgBIAEo",
-            "CzIkLmFncmlyb3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5cGUuVUlEEhcKD3Rh",
-            "c2tfZGVzaWduYXRvchgCIAEoCRI9Cg9jdXN0b21lcl9pZF9yZWYYAyABKAsy",
-            "JC5hZ3Jpcm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBlLlVJRBI5CgtmYXJt",
-            "X2lkX3JlZhgEIAEoCzIkLmFncmlyb3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5",
-            "cGUuVUlEEj4KEHBhcnRmaWVsZF9pZF9yZWYYBSABKAsyJC5hZ3Jpcm91dGVy",
-            "LnRlY2huaWNhbG1lc3NhZ2V0eXBlLlVJRBJHChlyZXNwb25zaWJsZV93b3Jr",
-            "ZXJfaWRfcmVmGAYgASgLMiQuYWdyaXJvdXRlci50ZWNobmljYWxtZXNzYWdl",
-            "dHlwZS5VSUQSRQoLdGFza19zdGF0dXMYByABKA4yMC5hZ3Jpcm91dGVyLnRl",
-            "Y2huaWNhbG1lc3NhZ2V0eXBlLlRhc2suVGFza1N0YXR1cxIjChtkZWZhdWx0",
-            "X3RyZWF0bWVudF96b25lX2NvZGUYCCABKA0SKQohcG9zaXRpb25fbG9zdF90",
-            "cmVhdG1lbnRfem9uZV9jb2RlGAkgASgNEigKIG91dF9vZl9maWVsZF90cmVh",
-            "dG1lbnRfem9uZV9jb2RlGAogASgNEkYKDnRyZWF0bWVudF96b25lGAsgAygL",
-            "Mi4uYWdyaXJvdXRlci50ZWNobmljYWxtZXNzYWdldHlwZS5UcmVhdG1lbnRa",
-            "b25lEjMKBHRpbWUYDCADKAsyJS5hZ3Jpcm91dGVyLnRlY2huaWNhbG1lc3Nh",
-            "Z2V0eXBlLlRpbWUSTQoSb3Blcl90ZWNoX3ByYWN0aWNlGA0gASgLMjEuYWdy",
-            "aXJvdXRlci50ZWNobmljYWxtZXNzYWdldHlwZS5PcGVyVGVjaFByYWN0aWNl",
-            "EkwKEXdvcmtlcl9hbGxvY2F0aW9uGA4gAygLMjEuYWdyaXJvdXRlci50ZWNo",
-            "bmljYWxtZXNzYWdldHlwZS5Xb3JrZXJBbGxvY2F0aW9uEkwKEWRldmljZV9h",
-            "bGxvY2F0aW9uGA8gAygLMjEuYWdyaXJvdXRlci50ZWNobmljYWxtZXNzYWdl",
-            "dHlwZS5EZXZpY2VBbGxvY2F0aW9uEj8KCmNvbm5lY3Rpb24YECADKAsyKy5h",
-            "Z3Jpcm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBlLkNvbm5lY3Rpb24STgoS",
-            "cHJvZHVjdF9hbGxvY2F0aW9uGBEgAygLMjIuYWdyaXJvdXRlci50ZWNobmlj",
-            "YWxtZXNzYWdldHlwZS5Qcm9kdWN0QWxsb2NhdGlvbhJJChBkYXRhX2xvZ190",
-            "cmlnZ2VyGBIgAygLMi8uYWdyaXJvdXRlci50ZWNobmljYWxtZXNzYWdldHlw",
-            "ZS5EYXRhTG9nVHJpZ2dlchJOChJjb21tZW50X2FsbG9jYXRpb24YEyADKAsy",
-            "Mi5hZ3Jpcm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBlLkNvbW1lbnRBbGxv",
-            "Y2F0aW9uEjoKCHRpbWVfbG9nGBQgAygLMiguYWdyaXJvdXRlci50ZWNobmlj",
-            "YWxtZXNzYWdldHlwZS5UaW1lTG9nEjMKBGdyaWQYFSABKAsyJS5hZ3Jpcm91",
-            "dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBlLkdyaWQSTgoSY29udHJvbF9hc3Np",
-            "Z25tZW50GBYgAygLMjIuYWdyaXJvdXRlci50ZWNobmljYWxtZXNzYWdldHlw",
-            "ZS5Db250cm9sQXNzaWdubWVudBJQChNndWlkYW5jZV9hbGxvY2F0aW9uGBcg",
-            "AygLMjMuYWdyaXJvdXRlci50ZWNobmljYWxtZXNzYWdldHlwZS5HdWlkYW5j",
-            "ZUFsbG9jYXRpb24SKAoJZXh0ZW5zaW9uGIAQIAMoCzIULmdvb2dsZS5wcm90",
-            "b2J1Zi5BbnkidwoKVGFza1N0YXR1cxIMCghHX05PVFNFVBAAEg0KCUdfUExB",
-            "Tk5FRBABEg0KCUdfUlVOTklORxACEgwKCEdfUEFVU0VEEAMSDwoLR19DT01Q",
-            "TEVURUQQBBIOCgpHX1RFTVBMQVRFEAUSDgoKR19DQU5DRUxFRBAGIukDChpU",
-            "YXNrQ29udHJvbGxlckNhcGFiaWxpdGllcxItCiV0YXNrX2NvbnRyb2xsZXJf",
-            "Y29udHJvbF9mdW5jdGlvbl9uYW1lGAEgASgMEiIKGnRhc2tfY29udHJvbGxl",
-            "cl9kZXNpZ25hdG9yGAIgASgJEmEKDnZlcnNpb25fbnVtYmVyGAMgASgOMkku",
-            "YWdyaXJvdXRlci50ZWNobmljYWxtZXNzYWdldHlwZS5UYXNrQ29udHJvbGxl",
-            "ckNhcGFiaWxpdGllcy5WZXJzaW9uTnVtYmVyEh0KFXByb3ZpZGVkX2NhcGFi",
-            "aWxpdGllcxgEIAEoDRInCh9udW1iZXJfb2ZfYm9vbXNfc2VjdGlvbl9jb250",
-            "cm9sGAUgASgNEioKIm51bWJlcl9vZl9zZWN0aW9uc19zZWN0aW9uX2NvbnRy",
-            "b2wYBiABKA0SIgoabnVtYmVyX29mX2NvbnRyb2xfY2hhbm5lbHMYByABKA0S",
-            "KAoJZXh0ZW5zaW9uGIAQIAMoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnkiUwoN",
-            "VmVyc2lvbk51bWJlchIJCgVDX0RJUxAAEgwKCENfRkRJU18xEAESDAoIQ19G",
-            "RElTXzIQAhIMCghDX0UyX0RJUxADEg0KCUNfRTJfRkRJUxAEIrQECgRUaW1l",
-            "EikKBXN0YXJ0GAEgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIo",
-            "CgRzdG9wGAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIQCghk",
-            "dXJhdGlvbhgDIAEoBBI8CgR0eXBlGAQgASgOMi4uYWdyaXJvdXRlci50ZWNo",
-            "bmljYWxtZXNzYWdldHlwZS5UaW1lLlRpbWVUeXBlEkEKDnBvc2l0aW9uX3N0",
-            "YXJ0GAUgASgLMikuYWdyaXJvdXRlci50ZWNobmljYWxtZXNzYWdldHlwZS5Q",
-            "b3NpdGlvbhJACg1wb3NpdGlvbl9zdG9wGAYgASgLMikuYWdyaXJvdXRlci50",
-            "ZWNobmljYWxtZXNzYWdldHlwZS5Qb3NpdGlvbhJFCg5kYXRhX2xvZ192YWx1",
-            "ZRgHIAMoCzItLmFncmlyb3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5cGUuRGF0",
-            "YUxvZ1ZhbHVlEigKCWV4dGVuc2lvbhiAECADKAsyFC5nb29nbGUucHJvdG9i",
-            "dWYuQW55IpABCghUaW1lVHlwZRIMCghEX05PVFNFVBAAEg0KCURfUExBTk5F",
-            "RBABEhEKDURfUFJFTElNSU5BUlkQAhIPCgtEX0VGRkVDVElWRRAEEhEKDURf",
-            "SU5FRkZFQ1RJVkUQBRIMCghEX1JFUEFJUhAGEg4KCkRfQ0xFQVJJTkcQBxIS",
-            "Cg5EX1BPV0VSRURfRE9XThAIIo4CCgdUaW1lTG9nEhAKCGZpbGVuYW1lGAIg",
-            "ASgJEhIKCmZpbGVsZW5ndGgYAyABKAQSSwoNdGltZV9sb2dfdHlwZRgBIAEo",
-            "DjI0LmFncmlyb3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5cGUuVGltZUxvZy5U",
-            "aW1lTG9nVHlwZRIzCgR0aW1lGAQgAygLMiUuYWdyaXJvdXRlci50ZWNobmlj",
-            "YWxtZXNzYWdldHlwZS5UaW1lEigKCWV4dGVuc2lvbhiAECADKAsyFC5nb29n",
-            "bGUucHJvdG9idWYuQW55IjEKC1RpbWVMb2dUeXBlEgwKCENfTk9UU0VUEAAS",
-            "FAoQQ19CSU5BUllfVElNRUxPRxABIqgCCg1UcmVhdG1lbnRab25lEhsKE3Ry",
-            "ZWF0bWVudF96b25lX2NvZGUYASABKA0SIQoZdHJlYXRtZW50X3pvbmVfZGVz",
-            "aWduYXRvchgCIAEoCRIdChV0cmVhdG1lbnRfem9uZV9jb2xvdXIYAyABKA0S",
-            "OQoHcG9seWdvbhgEIAMoCzIoLmFncmlyb3V0ZXIudGVjaG5pY2FsbWVzc2Fn",
-            "ZXR5cGUuUG9seWdvbhJTChVwcm9jZXNzX2RhdGFfdmFyaWFibGUYBSADKAsy",
-            "NC5hZ3Jpcm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBlLlByb2Nlc3NEYXRh",
-            "VmFyaWFibGUSKAoJZXh0ZW5zaW9uGIAQIAMoCzIULmdvb2dsZS5wcm90b2J1",
-            "Zi5BbnkimgIKEVZhbHVlUHJlc2VudGF0aW9uEkMKFXZhbHVlX3ByZXNlbnRh",
-            "dGlvbl9pZBgBIAEoCzIkLmFncmlyb3V0ZXIudGVjaG5pY2FsbWVzc2FnZXR5",
-            "cGUuVUlEEg4KBm9mZnNldBgCIAEoEhINCgVzY2FsZRgDIAEoARIaChJudW1i",
-            "ZXJfb2ZfZGVjaW1hbHMYBCABKA0SFwoPdW5pdF9kZXNpZ25hdG9yGAUgASgJ",
-            "EkIKFGNvbG91cl9sZWdlbmRfaWRfcmVmGAYgASgLMiQuYWdyaXJvdXRlci50",
-            "ZWNobmljYWxtZXNzYWdldHlwZS5VSUQSKAoJZXh0ZW5zaW9uGIAQIAMoCzIU",
-            "Lmdvb2dsZS5wcm90b2J1Zi5BbnkijwMKBldvcmtlchI3Cgl3b3JrZXJfaWQY",
-            "ASABKAsyJC5hZ3Jpcm91dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBlLlVJRBIY",
-            "ChB3b3JrZXJfbGFzdF9uYW1lGAIgASgJEhkKEXdvcmtlcl9maXJzdF9uYW1l",
-            "GAMgASgJEhUKDXdvcmtlcl9zdHJlZXQYBCABKAkSFQoNd29ya2VyX3BvX2Jv",
-            "eBgFIAEoCRIaChJ3b3JrZXJfcG9zdGFsX2NvZGUYBiABKAkSEwoLd29ya2Vy",
-            "X2NpdHkYByABKAkSFAoMd29ya2VyX3N0YXRlGAggASgJEhYKDndvcmtlcl9j",
-            "b3VudHJ5GAkgASgJEhQKDHdvcmtlcl9waG9uZRgKIAEoCRIVCg13b3JrZXJf",
-            "bW9iaWxlGAsgASgJEh0KFXdvcmtlcl9saWNlbnNlX251bWJlchgMIAEoCRIU",
-            "Cgx3b3JrZXJfZW1haWwYDSABKAkSKAoJZXh0ZW5zaW9uGIAQIAMoCzIULmdv",
-            "b2dsZS5wcm90b2J1Zi5BbnkixQEKEFdvcmtlckFsbG9jYXRpb24SOwoNd29y",
-            "a2VyX2lkX3JlZhgBIAEoCzIkLmFncmlyb3V0ZXIudGVjaG5pY2FsbWVzc2Fn",
-            "ZXR5cGUuVUlEEkoKEGFsbG9jYXRpb25fc3RhbXAYAiABKAsyMC5hZ3Jpcm91",
-            "dGVyLnRlY2huaWNhbG1lc3NhZ2V0eXBlLkFsbG9jYXRpb25TdGFtcBIoCgll",
-            "eHRlbnNpb24YgBAgAygLMhQuZ29vZ2xlLnByb3RvYnVmLkFueSLyAQoVRXh0",
-            "ZXJuYWxGaWxlUmVmZXJlbmNlEjYKCGZpbGVuYW1lGAEgASgLMiQuYWdyaXJv",
-            "dXRlci50ZWNobmljYWxtZXNzYWdldHlwZS5VSUQSUgoJZmlsZV90eXBlGAIg",
-            "ASgOMj8uYWdyaXJvdXRlci50ZWNobmljYWxtZXNzYWdldHlwZS5FeHRlcm5h",
-            "bEZpbGVSZWZlcmVuY2UuRmlsZVR5cGUSKAoJZXh0ZW5zaW9uGIAQIAMoCzIU",
-            "Lmdvb2dsZS5wcm90b2J1Zi5BbnkiIwoIRmlsZVR5cGUSDAoIQl9OT1RTRVQQ",
-            "ABIJCgVCX1hNTBABYgZwcm90bzM="));
+            "EGdyaWRfbWF4aW11bV9yb3cYBiABKAQSGwoIZmlsZW5hbWUYByABKAsyCS5l",
+            "ZmRpLlVJRBISCgpmaWxlbGVuZ3RoGAggASgEEiYKCWdyaWRfdHlwZRgJIAEo",
+            "DjITLmVmZGkuR3JpZC5HcmlkVHlwZRIbChN0cmVhdG1lbnRfem9uZV9jb2Rl",
+            "GAogASgNEigKCWV4dGVuc2lvbhiAECADKAsyFC5nb29nbGUucHJvdG9idWYu",
+            "QW55Ij4KCEdyaWRUeXBlEgwKCElfTk9UU0VUEAASEQoNSV9HUklEX1RZUEVf",
+            "MRABEhEKDUlfR1JJRF9UWVBFXzIQAiLGAQoSR3VpZGFuY2VBbGxvY2F0aW9u",
+            "EigKFWd1aWRhbmNlX2dyb3VwX2lkX3JlZhgBIAEoCzIJLmVmZGkuVUlEEi8K",
+            "EGFsbG9jYXRpb25fc3RhbXAYAiABKAsyFS5lZmRpLkFsbG9jYXRpb25TdGFt",
+            "cBIrCg5ndWlkYW5jZV9zaGlmdBgDIAMoCzITLmVmZGkuR3VpZGFuY2VTaGlm",
+            "dBIoCglleHRlbnNpb24YgBAgAygLMhQuZ29vZ2xlLnByb3RvYnVmLkFueSLc",
+            "AQoNR3VpZGFuY2VHcm91cBIkChFndWlkYW5jZV9ncm91cF9pZBgBIAEoCzIJ",
+            "LmVmZGkuVUlEEiEKGWd1aWRhbmNlX2dyb3VwX2Rlc2lnbmF0b3IYAiABKAkS",
+            "LwoQZ3VpZGFuY2VfcGF0dGVybhgDIAMoCzIVLmVmZGkuR3VpZGFuY2VQYXR0",
+            "ZXJuEicKEGJvdW5kYXJ5X3BvbHlnb24YBCADKAsyDS5lZmRpLlBvbHlnb24S",
+            "KAoJZXh0ZW5zaW9uGIAQIAMoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnkitQwK",
+            "D0d1aWRhbmNlUGF0dGVybhImChNndWlkYW5jZV9wYXR0ZXJuX2lkGAEgASgL",
+            "MgkuZWZkaS5VSUQSIwobZ3VpZGFuY2VfcGF0dGVybl9kZXNpZ25hdG9yGAIg",
+            "ASgJEkgKFWd1aWRhbmNlX3BhdHRlcm5fdHlwZRgDIAEoDjIpLmVmZGkuR3Vp",
+            "ZGFuY2VQYXR0ZXJuLkd1aWRhbmNlUGF0dGVyblR5cGUSTgoYZ3VpZGFuY2Vf",
+            "cGF0dGVybl9vcHRpb25zGAQgASgOMiwuZWZkaS5HdWlkYW5jZVBhdHRlcm4u",
+            "R3VpZGFuY2VQYXR0ZXJuT3B0aW9ucxJpCiZndWlkYW5jZV9wYXR0ZXJuX3By",
+            "b3BhZ2F0aW9uX2RpcmVjdGlvbhgFIAEoDjI5LmVmZGkuR3VpZGFuY2VQYXR0",
+            "ZXJuLkd1aWRhbmNlUGF0dGVyblByb3BhZ2F0aW9uRGlyZWN0aW9uElIKGmd1",
+            "aWRhbmNlX3BhdHRlcm5fZXh0ZW5zaW9uGAYgASgOMi4uZWZkaS5HdWlkYW5j",
+            "ZVBhdHRlcm4uR3VpZGFuY2VQYXR0ZXJuRXh0ZW5zaW9uEiAKGGd1aWRhbmNl",
+            "X3BhdHRlcm5faGVhZGluZxgHIAEoARIfChdndWlkYW5jZV9wYXR0ZXJuX3Jh",
+            "ZGl1cxgIIAEoBBJVChxndWlkYW5jZV9wYXR0ZXJuX2duc3NfbWV0aG9kGAkg",
+            "ASgOMi8uZWZkaS5HdWlkYW5jZVBhdHRlcm4uR3VpZGFuY2VQYXR0ZXJuR05T",
+            "U01ldGhvZBIsCiRndWlkYW5jZV9wYXR0ZXJuX2hvcml6b250YWxfYWNjdXJh",
+            "Y3kYCiABKAESKgoiZ3VpZGFuY2VfcGF0dGVybl92ZXJ0aWNhbF9hY2N1cmFj",
+            "eRgLIAEoARImChNiYXNlX3N0YXRpb25faWRfcmVmGAwgASgLMgkuZWZkaS5V",
+            "SUQSFQoNb3JpZ2luYWxfc3JpZBgNIAEoCRIdChVudW1iZXJfb2Zfc3dhdGhz",
+            "X2xlZnQYDiABKAQSHgoWbnVtYmVyX29mX3N3YXRoc19yaWdodBgPIAEoBBIl",
+            "CgtsaW5lX3N0cmluZxgQIAEoCzIQLmVmZGkuTGluZVN0cmluZxInChBib3Vu",
+            "ZGFyeV9wb2x5Z29uGBEgAygLMg0uZWZkaS5Qb2x5Z29uEigKCWV4dGVuc2lv",
+            "bhiAECADKAsyFC5nb29nbGUucHJvdG9idWYuQW55ImMKE0d1aWRhbmNlUGF0",
+            "dGVyblR5cGUSDAoIQ19OT1RTRVQQABIICgRDX0FCEAESDAoIQ19BX1BMVVMQ",
+            "AhILCgdDX0NVUlZFEAMSCwoHQ19QSVZPVBAEEgwKCENfU1BJUkFMEAUiYwoW",
+            "R3VpZGFuY2VQYXR0ZXJuT3B0aW9ucxIMCghEX05PVFNFVBAAEg8KC0RfQ0xP",
+            "Q0tXSVNFEAESFwoTRF9DT1VOVEVSX0NMT0NLV0lTRRACEhEKDURfRlVMTF9D",
+            "SVJDTEUQAyJnCiNHdWlkYW5jZVBhdHRlcm5Qcm9wYWdhdGlvbkRpcmVjdGlv",
+            "bhIMCghFX05PVFNFVBAAEgoKBkVfQk9USBABEgoKBkVfTEVGVBACEgsKB0Vf",
+            "UklHSFQQAxINCglFX05PX1BST1AQBCJlChhHdWlkYW5jZVBhdHRlcm5FeHRl",
+            "bnNpb24SDAoIRl9OT1RTRVQQABIKCgZGX0JPVEgQARIQCgxGX0ZJUlNUX09O",
+            "TFkQAhIPCgtGX0xBU1RfT05MWRADEgwKCEZfTk9fRVhUEAQi9QEKGUd1aWRh",
+            "bmNlUGF0dGVybkdOU1NNZXRob2QSDAoISV9OT1RTRVQQABIOCgpJX0dOU1Nf",
+            "RklYEAESDwoLSV9ER05TU19GSVgQAhISCg5JX1BSRUNJU0VfR05TUxADEhcK",
+            "E0lfUlRLX0ZJWEVEX0lOVEVHRVIQBBIPCgtJX1JUS19GTE9BVBAFEhcKE0lf",
+            "RVNUSU1BVEVEX0RSX01PREUQBhISCg5JX01BTlVBTF9JTlBVVBAHEhMKD0lf",
+            "U0lNVUxBVEVfTU9ERRAIEhwKGElfREVTS1RPUF9HRU5FUkFURURfREFUQRAQ",
+            "EgsKB0lfT1RIRVIQESKXAgoNR3VpZGFuY2VTaGlmdBIoChVndWlkYW5jZV9n",
+            "cm91cF9pZF9yZWYYASABKAsyCS5lZmRpLlVJRBIqChdndWlkYW5jZV9wYXR0",
+            "ZXJuX2lkX3JlZhgCIAEoCzIJLmVmZGkuVUlEEhsKE2d1aWRhbmNlX2Vhc3Rf",
+            "c2hpZnQYAyABKBISHAoUZ3VpZGFuY2Vfbm9ydGhfc2hpZnQYBCABKBISGgoS",
+            "cHJvcGFnYXRpb25fb2Zmc2V0GAUgASgSEi8KEGFsbG9jYXRpb25fc3RhbXAY",
+            "BiABKAsyFS5lZmRpLkFsbG9jYXRpb25TdGFtcBIoCglleHRlbnNpb24YgBAg",
+            "AygLMhQuZ29vZ2xlLnByb3RvYnVmLkFueSLACwoRSVNPMTE3ODNfVGFza0Rh",
+            "dGESOwoNdmVyc2lvbl9tYWpvchgBIAEoDjIkLmVmZGkuSVNPMTE3ODNfVGFz",
+            "a0RhdGEuVmVyc2lvbk1ham9yEhUKDXZlcnNpb25fbWlub3IYAiABKA0SKAog",
+            "bWFuYWdlbWVudF9zb2Z0d2FyZV9tYW51ZmFjdHVyZXIYAyABKAkSIwobbWFu",
+            "YWdlbWVudF9zb2Z0d2FyZV92ZXJzaW9uGAQgASgJEiQKHHRhc2tfY29udHJv",
+            "bGxlcl9tYW51ZmFjdHVyZXIYBSABKAkSHwoXdGFza19jb250cm9sbGVyX3Zl",
+            "cnNpb24YBiABKAkSSAoUZGF0YV90cmFuc2Zlcl9vcmlnaW4YByABKA4yKi5l",
+            "ZmRpLklTTzExNzgzX1Rhc2tEYXRhLkRhdGFUcmFuc2Zlck9yaWdpbhIeChZk",
+            "YXRhX3RyYW5zZmVyX2xhbmd1YWdlGAggASgJEikKDWF0dGFjaGVkX2ZpbGUY",
+            "CSADKAsyEi5lZmRpLkF0dGFjaGVkRmlsZRInCgxiYXNlX3N0YXRpb24YCiAD",
+            "KAsyES5lZmRpLkJhc2VTdGF0aW9uEikKDWNvZGVkX2NvbW1lbnQYCyADKAsy",
+            "Ei5lZmRpLkNvZGVkQ29tbWVudBI0ChNjb2RlZF9jb21tZW50X2dyb3VwGAwg",
+            "AygLMhcuZWZkaS5Db2RlZENvbW1lbnRHcm91cBIpCg1jb2xvdXJfbGVnZW5k",
+            "GA0gAygLMhIuZWZkaS5Db2xvdXJMZWdlbmQSIQoJY3JvcF90eXBlGA4gAygL",
+            "Mg4uZWZkaS5Dcm9wVHlwZRIxChFjdWx0dXJhbF9wcmFjdGljZRgPIAMoCzIW",
+            "LmVmZGkuQ3VsdHVyYWxQcmFjdGljZRIgCghjdXN0b21lchgQIAMoCzIOLmVm",
+            "ZGkuQ3VzdG9tZXISHAoGZGV2aWNlGBEgAygLMgwuZWZkaS5EZXZpY2USGAoE",
+            "ZmFybRgSIAMoCzIKLmVmZGkuRmFybRI1ChNvcGVyYXRpb25fdGVjaG5pcXVl",
+            "GBMgAygLMhguZWZkaS5PcGVyYXRpb25UZWNobmlxdWUSIgoJcGFydGZpZWxk",
+            "GBQgAygLMg8uZWZkaS5QYXJ0ZmllbGQSHgoHcHJvZHVjdBgVIAMoCzINLmVm",
+            "ZGkuUHJvZHVjdBIpCg1wcm9kdWN0X2dyb3VwGBYgAygLMhIuZWZkaS5Qcm9k",
+            "dWN0R3JvdXASGAoEdGFzaxgXIAMoCzIKLmVmZGkuVGFzaxJGChx0YXNrX2Nv",
+            "bnRyb2xsZXJfY2FwYWJpbGl0aWVzGBggAygLMiAuZWZkaS5UYXNrQ29udHJv",
+            "bGxlckNhcGFiaWxpdGllcxIzChJ2YWx1ZV9wcmVzZW50YXRpb24YGSADKAsy",
+            "Fy5lZmRpLlZhbHVlUHJlc2VudGF0aW9uEhwKBndvcmtlchgaIAMoCzIMLmVm",
+            "ZGkuV29ya2VyEjwKF2V4dGVybmFsX2ZpbGVfcmVmZXJlbmNlGBsgAygLMhsu",
+            "ZWZkaS5FeHRlcm5hbEZpbGVSZWZlcmVuY2USKAoJZXh0ZW5zaW9uGIAQIAMo",
+            "CzIULmdvb2dsZS5wcm90b2J1Zi5BbnkijgEKDFZlcnNpb25NYWpvchIVChFW",
+            "RVJTSU9OX01BSk9SX0RJUxAAEhgKFFZFUlNJT05fTUFKT1JfRkRJU18xEAES",
+            "GAoUVkVSU0lPTl9NQUpPUl9GRElTXzIQAhIYChRWRVJTSU9OX01BSk9SX0Uy",
+            "X0RJUxADEhkKFVZFUlNJT05fTUFKT1JfRTJfRkRJUxAEInMKEkRhdGFUcmFu",
+            "c2Zlck9yaWdpbhIfChtEQVRBX1RSQU5TRkVSX09SSUdJTl9OT1RTRVQQABId",
+            "ChlEQVRBX1RSQU5TRkVSX09SSUdJTl9GTUlTEAESHQoZREFUQV9UUkFOU0ZF",
+            "Ul9PUklHSU5fTUlDUxACIuwDCgpMaW5lU3RyaW5nEjkKEGxpbmVfc3RyaW5n",
+            "X3R5cGUYASABKA4yHy5lZmRpLkxpbmVTdHJpbmcuTGluZXN0cmluZ1R5cGUS",
+            "HgoWbGluZV9zdHJpbmdfZGVzaWduYXRvchgCIAEoCRIZChFsaW5lX3N0cmlu",
+            "Z193aWR0aBgDIAEoDRIaChJsaW5lX3N0cmluZ19sZW5ndGgYBCABKA0SGgoS",
+            "bGluZV9zdHJpbmdfY29sb3VyGAUgASgNEiEKDmxpbmVfc3RyaW5nX2lkGAYg",
+            "ASgLMgkuZWZkaS5VSUQSGgoFcG9pbnQYByADKAsyCy5lZmRpLlBvaW50EigK",
+            "CWV4dGVuc2lvbhiAECADKAsyFC5nb29nbGUucHJvdG9idWYuQW55IsYBCg5M",
+            "aW5lc3RyaW5nVHlwZRIMCghBX05PVFNFVBAAEhYKEkFfUE9MWUdPTl9FWFRF",
+            "UklPUhABEhYKEkFfUE9MWUdPTl9JTlRFUklPUhACEg8KC0FfVFJBTV9MSU5F",
+            "EAMSFAoQQV9TQU1QTElOR19ST1VURRAEEhYKEkFfR1VJREFOQ0VfUEFUVEVS",
+            "ThAFEg4KCkFfRFJBSU5BR0UQBhILCgdBX0ZFTkNFEAcSCgoGQV9GTEFHEAgS",
+            "DgoKQV9PQlNUQUNMRRAJIpEBChJPcGVyYXRpb25UZWNobmlxdWUSKQoWb3Bl",
+            "cmF0aW9uX3RlY2huaXF1ZV9pZBgBIAEoCzIJLmVmZGkuVUlEEiYKHm9wZXJh",
+            "dGlvbl90ZWNobmlxdWVfZGVzaWduYXRvchgCIAEoCRIoCglleHRlbnNpb24Y",
+            "gBAgAygLMhQuZ29vZ2xlLnByb3RvYnVmLkFueSJ2ChtPcGVyYXRpb25UZWNo",
+            "bmlxdWVSZWZlcmVuY2USLQoab3BlcmF0aW9uX3RlY2huaXF1ZV9pZF9yZWYY",
+            "ASABKAsyCS5lZmRpLlVJRBIoCglleHRlbnNpb24YgBAgAygLMhQuZ29vZ2xl",
+            "LnByb3RvYnVmLkFueSKYAQoQT3BlclRlY2hQcmFjdGljZRIrChhjdWx0dXJh",
+            "bF9wcmFjdGljZV9pZF9yZWYYASABKAsyCS5lZmRpLlVJRBItChpvcGVyYXRp",
+            "b25fdGVjaG5pcXVlX2lkX3JlZhgCIAEoCzIJLmVmZGkuVUlEEigKCWV4dGVu",
+            "c2lvbhiAECADKAsyFC5nb29nbGUucHJvdG9idWYuQW55IuYDCglQYXJ0Zmll",
+            "bGQSHwoMcGFydGZpZWxkX2lkGAEgASgLMgkuZWZkaS5VSUQSFgoOcGFydGZp",
+            "ZWxkX2NvZGUYAiABKAkSHAoUcGFydGZpZWxkX2Rlc2lnbmF0b3IYAyABKAkS",
+            "FgoOcGFydGZpZWxkX2FyZWEYBCABKAQSIgoPY3VzdG9tZXJfaWRfcmVmGAUg",
+            "ASgLMgkuZWZkaS5VSUQSHgoLZmFybV9pZF9yZWYYBiABKAsyCS5lZmRpLlVJ",
+            "RBIjChBjcm9wX3R5cGVfaWRfcmVmGAcgASgLMgkuZWZkaS5VSUQSJgoTY3Jv",
+            "cF92YXJpZXR5X2lkX3JlZhgIIAEoCzIJLmVmZGkuVUlEEh8KDGZpZWxkX2lk",
+            "X3JlZhgJIAEoCzIJLmVmZGkuVUlEEh4KB3BvbHlnb24YCiADKAsyDS5lZmRp",
+            "LlBvbHlnb24SJQoLbGluZV9zdHJpbmcYCyADKAsyEC5lZmRpLkxpbmVTdHJp",
+            "bmcSGgoFcG9pbnQYDCADKAsyCy5lZmRpLlBvaW50EisKDmd1aWRhbmNlX2dy",
+            "b3VwGA0gAygLMhMuZWZkaS5HdWlkYW5jZUdyb3VwEigKCWV4dGVuc2lvbhiA",
+            "ECADKAsyFC5nb29nbGUucHJvdG9idWYuQW55Iq4ECgVQb2ludBIpCgpwb2lu",
+            "dF90eXBlGAEgASgOMhUuZWZkaS5Qb2ludC5Qb2ludFR5cGUSGAoQcG9pbnRf",
+            "ZGVzaWduYXRvchgCIAEoCRITCgtwb2ludF9ub3J0aBgDIAEoARISCgpwb2lu",
+            "dF9lYXN0GAQgASgBEhAKCHBvaW50X3VwGAUgASgSEhQKDHBvaW50X2NvbG91",
+            "chgGIAEoDRIbCghwb2ludF9pZBgHIAEoCzIJLmVmZGkuVUlEEiEKGXBvaW50",
+            "X2hvcml6b250YWxfYWNjdXJhY3kYCCABKAESHwoXcG9pbnRfdmVydGljYWxf",
+            "YWNjdXJhY3kYCSABKAESEAoIZmlsZW5hbWUYCiABKAkSEgoKZmlsZWxlbmd0",
+            "aBgLIAEoBBIoCglleHRlbnNpb24YgBAgAygLMhQuZ29vZ2xlLnByb3RvYnVm",
+            "LkFueSLdAQoJUG9pbnRUeXBlEgwKCEFfTk9UU0VUEAASCgoGQV9GTEFHEAES",
+            "CwoHQV9PVEhFUhACEhIKDkFfRklFTERfQUNDRVNTEAMSDQoJQV9TVE9SQUdF",
+            "EAQSDgoKQV9PQlNUQUNMRRAFEhAKDEFfR1VJRF9SRUZfQRAGEhAKDEFfR1VJ",
+            "RF9SRUZfQhAHEhUKEUFfR1VJRF9SRUZfQ0VOVEVSEAgSEAoMQV9HVUlEX1BP",
+            "SU5UEAkSGQoVQV9QQVJURklFTERfUkVGX1BPSU5UEAoSDgoKQV9IT01FQkFT",
+            "RRALIuEDCgdQb2x5Z29uEi8KDHBvbHlnb25fdHlwZRgBIAEoDjIZLmVmZGku",
+            "UG9seWdvbi5Qb2x5Z29uVHlwZRIaChJwb2x5Z29uX2Rlc2lnbmF0b3IYAiAB",
+            "KAkSFAoMcG9seWdvbl9hcmVhGAMgASgEEhYKDnBvbHlnb25fY29sb3VyGAQg",
+            "ASgNEh0KCnBvbHlnb25faWQYBSABKAsyCS5lZmRpLlVJRBIlCgtsaW5lX3N0",
+            "cmluZxgGIAMoCzIQLmVmZGkuTGluZVN0cmluZxIoCglleHRlbnNpb24YgBAg",
+            "AygLMhQuZ29vZ2xlLnByb3RvYnVmLkFueSLqAQoLUG9seWdvblR5cGUSDAoI",
+            "QV9OT1RTRVQQABIYChRBX1BBUlRGSUVMRF9CT1VOREFSWRABEhQKEEFfVFJF",
+            "QVRNRU5UX1pPTkUQAhITCg9BX1dBVEVSX1NVUkZBQ0UQAxIOCgpBX0JVSUxE",
+            "SU5HEAQSCgoGQV9ST0FEEAUSDgoKQV9PQlNUQUNMRRAGEgoKBkFfRkxBRxAH",
+            "EgsKB0FfT1RIRVIQCBIPCgtBX01BSU5GSUVMRBAJEg4KCkFfSEVBRExBTkQQ",
+            "ChIRCg1BX0JVRkZFUl9aT05FEAsSDwoLQV9XSU5EQlJFQUsQDCLyAwoIUG9z",
+            "aXRpb24SFgoOcG9zaXRpb25fbm9ydGgYASABKAESFQoNcG9zaXRpb25fZWFz",
+            "dBgCIAEoARITCgtwb3NpdGlvbl91cBgDIAEoEhI2Cg9wb3NpdGlvbl9zdGF0",
+            "dXMYBCABKA4yHS5lZmRpLlBvc2l0aW9uLlBvc2l0aW9uU3RhdHVzEgwKBHBk",
+            "b3AYBSABKAESDAoEaGRvcBgGIAEoARIcChRudW1iZXJfb2Zfc2F0ZWxsaXRl",
+            "cxgHIAEoDRI1ChFncHNfdXRjX3RpbWVzdGFtcBgIIAEoCzIaLmdvb2dsZS5w",
+            "cm90b2J1Zi5UaW1lc3RhbXASKAoJZXh0ZW5zaW9uGIAQIAMoCzIULmdvb2ds",
+            "ZS5wcm90b2J1Zi5BbnkizgEKDlBvc2l0aW9uU3RhdHVzEgwKCERfTk9fR1BT",
+            "EAASCgoGRF9HTlNTEAESCwoHRF9ER05TUxACEhIKDkRfUFJFQ0lTRV9HTlNT",
+            "EAMSEgoORF9SVEtfRklOVEVHRVIQBBIPCgtEX1JUS19GTE9BVBAFEhEKDURf",
+            "RVNUX0RSX01PREUQBhISCg5EX01BTlVBTF9JTlBVVBAHEhMKD0RfU0lNVUxB",
+            "VEVfTU9ERRAIEgsKB0RfRVJST1IQDhITCg9EX05PVF9BVkFJTEFCTEUQDyL3",
+            "AgoTUHJvY2Vzc0RhdGFWYXJpYWJsZRIYChBwcm9jZXNzX2RhdGFfZGRpGAEg",
+            "ASgNEhoKEnByb2Nlc3NfZGF0YV92YWx1ZRgCIAEoEhIhCg5wcm9kdWN0X2lk",
+            "X3JlZhgDIAEoCzIJLmVmZGkuVUlEEigKFWRldmljZV9lbGVtZW50X2lkX3Jl",
+            "ZhgEIAEoCzIJLmVmZGkuVUlEEiwKGXZhbHVlX3ByZXNlbnRhdGlvbl9pZF9y",
+            "ZWYYBSABKAsyCS5lZmRpLlVJRBImCh5hY3R1YWxfY3VsdHVyYWxfcHJhY3Rp",
+            "Y2VfdmFsdWUYBiABKBISIwobZWxlbWVudF90eXBlX2luc3RhbmNlX3ZhbHVl",
+            "GAcgASgSEjgKFXByb2Nlc3NfZGF0YV92YXJpYWJsZRgIIAMoCzIZLmVmZGku",
+            "UHJvY2Vzc0RhdGFWYXJpYWJsZRIoCglleHRlbnNpb24YgBAgAygLMhQuZ29v",
+            "Z2xlLnByb3RvYnVmLkFueSKUBAoHUHJvZHVjdBIdCgpwcm9kdWN0X2lkGAEg",
+            "ASgLMgkuZWZkaS5VSUQSGgoScHJvZHVjdF9kZXNpZ25hdG9yGAIgASgJEicK",
+            "FHByb2R1Y3RfZ3JvdXBfaWRfcmVmGAMgASgLMgkuZWZkaS5VSUQSLAoZdmFs",
+            "dWVfcHJlc2VudGF0aW9uX2lkX3JlZhgEIAEoCzIJLmVmZGkuVUlEEhQKDHF1",
+            "YW50aXR5X2RkaRgFIAEoDRIvCgxwcm9kdWN0X3R5cGUYBiABKA4yGS5lZmRp",
+            "LlByb2R1Y3QuUHJvZHVjdFR5cGUSHwoXbWl4dHVyZV9yZWNpcGVfcXVhbnRp",
+            "dHkYByABKBISHwoXZGVuc2l0eV9tYXNzX3Blcl92b2x1bWUYCCABKBISHgoW",
+            "ZGVuc2l0eV9tYXNzX3Blcl9jb3VudBgJIAEoEhIgChhkZW5zaXR5X3ZvbHVt",
+            "ZV9wZXJfY291bnQYCiABKBISLwoQcHJvZHVjdF9yZWxhdGlvbhgLIAMoCzIV",
+            "LmVmZGkuUHJvZHVjdFJlbGF0aW9uEigKCWV4dGVuc2lvbhiAECADKAsyFC5n",
+            "b29nbGUucHJvdG9idWYuQW55IlEKC1Byb2R1Y3RUeXBlEgwKCEZfTk9UU0VU",
+            "EAASDAoIRl9TSU5HTEUQARINCglGX01JWFRVUkUQAhIXChNGX1RFTVBPUkFS",
+            "WV9NSVhUVVJFEAMizgMKEVByb2R1Y3RBbGxvY2F0aW9uEiEKDnByb2R1Y3Rf",
+            "aWRfcmVmGAEgASgLMgkuZWZkaS5VSUQSFAoMcXVhbnRpdHlfZGRpGAIgASgN",
+            "EhYKDnF1YW50aXR5X3ZhbHVlGAMgASgSEjsKDXRyYW5zZmVyX21vZGUYBCAB",
+            "KA4yJC5lZmRpLlByb2R1Y3RBbGxvY2F0aW9uLlRyYW5zZmVyTW9kZRIoChVk",
+            "ZXZpY2VfZWxlbWVudF9pZF9yZWYYBSABKAsyCS5lZmRpLlVJRBIsChl2YWx1",
+            "ZV9wcmVzZW50YXRpb25faWRfcmVmGAYgASgLMgkuZWZkaS5VSUQSKgoXcHJv",
+            "ZHVjdF9zdWJfdHlwZV9pZF9yZWYYByABKAsyCS5lZmRpLlVJRBIvChBhbGxv",
+            "Y2F0aW9uX3N0YW1wGAggASgLMhUuZWZkaS5BbGxvY2F0aW9uU3RhbXASKAoJ",
+            "ZXh0ZW5zaW9uGIAQIAMoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnkiTAoMVHJh",
+            "bnNmZXJNb2RlEgwKCERfTk9UU0VUEAASDQoJRF9GSUxMSU5HEAESDgoKRF9F",
+            "TVBUWUlORxACEg8KC0RfUkVNQUlOREVSEAMiiAIKDFByb2R1Y3RHcm91cBIj",
+            "ChBwcm9kdWN0X2dyb3VwX2lkGAEgASgLMgkuZWZkaS5VSUQSIAoYcHJvZHVj",
+            "dF9ncm91cF9kZXNpZ25hdG9yGAIgASgJEj8KEnByb2R1Y3RfZ3JvdXBfdHlw",
+            "ZRgDIAEoDjIjLmVmZGkuUHJvZHVjdEdyb3VwLlByb2R1Y3RHcm91cFR5cGUS",
+            "KAoJZXh0ZW5zaW9uGIAQIAMoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnkiRgoQ",
+            "UHJvZHVjdEdyb3VwVHlwZRIMCghDX05PVFNFVBAAEhMKD0NfUFJPRFVDVF9H",
+            "Uk9VUBABEg8KC0NfQ1JPUF9UWVBFEAIidgoPUHJvZHVjdFJlbGF0aW9uEiEK",
+            "DnByb2R1Y3RfaWRfcmVmGAEgASgLMgkuZWZkaS5VSUQSFgoOcXVhbnRpdHlf",
+            "dmFsdWUYAiABKBISKAoJZXh0ZW5zaW9uGIAQIAMoCzIULmdvb2dsZS5wcm90",
+            "b2J1Zi5Bbnki4wgKBFRhc2sSGgoHdGFza19pZBgBIAEoCzIJLmVmZGkuVUlE",
+            "EhcKD3Rhc2tfZGVzaWduYXRvchgCIAEoCRIiCg9jdXN0b21lcl9pZF9yZWYY",
+            "AyABKAsyCS5lZmRpLlVJRBIeCgtmYXJtX2lkX3JlZhgEIAEoCzIJLmVmZGku",
+            "VUlEEiMKEHBhcnRmaWVsZF9pZF9yZWYYBSABKAsyCS5lZmRpLlVJRBIsChly",
+            "ZXNwb25zaWJsZV93b3JrZXJfaWRfcmVmGAYgASgLMgkuZWZkaS5VSUQSKgoL",
+            "dGFza19zdGF0dXMYByABKA4yFS5lZmRpLlRhc2suVGFza1N0YXR1cxIjChtk",
+            "ZWZhdWx0X3RyZWF0bWVudF96b25lX2NvZGUYCCABKA0SKQohcG9zaXRpb25f",
+            "bG9zdF90cmVhdG1lbnRfem9uZV9jb2RlGAkgASgNEigKIG91dF9vZl9maWVs",
+            "ZF90cmVhdG1lbnRfem9uZV9jb2RlGAogASgNEisKDnRyZWF0bWVudF96b25l",
+            "GAsgAygLMhMuZWZkaS5UcmVhdG1lbnRab25lEhgKBHRpbWUYDCADKAsyCi5l",
+            "ZmRpLlRpbWUSMgoSb3Blcl90ZWNoX3ByYWN0aWNlGA0gASgLMhYuZWZkaS5P",
+            "cGVyVGVjaFByYWN0aWNlEjEKEXdvcmtlcl9hbGxvY2F0aW9uGA4gAygLMhYu",
+            "ZWZkaS5Xb3JrZXJBbGxvY2F0aW9uEjEKEWRldmljZV9hbGxvY2F0aW9uGA8g",
+            "AygLMhYuZWZkaS5EZXZpY2VBbGxvY2F0aW9uEiQKCmNvbm5lY3Rpb24YECAD",
+            "KAsyEC5lZmRpLkNvbm5lY3Rpb24SMwoScHJvZHVjdF9hbGxvY2F0aW9uGBEg",
+            "AygLMhcuZWZkaS5Qcm9kdWN0QWxsb2NhdGlvbhIuChBkYXRhX2xvZ190cmln",
+            "Z2VyGBIgAygLMhQuZWZkaS5EYXRhTG9nVHJpZ2dlchIzChJjb21tZW50X2Fs",
+            "bG9jYXRpb24YEyADKAsyFy5lZmRpLkNvbW1lbnRBbGxvY2F0aW9uEh8KCHRp",
+            "bWVfbG9nGBQgAygLMg0uZWZkaS5UaW1lTG9nEhgKBGdyaWQYFSABKAsyCi5l",
+            "ZmRpLkdyaWQSMwoSY29udHJvbF9hc3NpZ25tZW50GBYgAygLMhcuZWZkaS5D",
+            "b250cm9sQXNzaWdubWVudBI1ChNndWlkYW5jZV9hbGxvY2F0aW9uGBcgAygL",
+            "MhguZWZkaS5HdWlkYW5jZUFsbG9jYXRpb24SKAoJZXh0ZW5zaW9uGIAQIAMo",
+            "CzIULmdvb2dsZS5wcm90b2J1Zi5BbnkidwoKVGFza1N0YXR1cxIMCghHX05P",
+            "VFNFVBAAEg0KCUdfUExBTk5FRBABEg0KCUdfUlVOTklORxACEgwKCEdfUEFV",
+            "U0VEEAMSDwoLR19DT01QTEVURUQQBBIOCgpHX1RFTVBMQVRFEAUSDgoKR19D",
+            "QU5DRUxFRBAGIs4DChpUYXNrQ29udHJvbGxlckNhcGFiaWxpdGllcxItCiV0",
+            "YXNrX2NvbnRyb2xsZXJfY29udHJvbF9mdW5jdGlvbl9uYW1lGAEgASgMEiIK",
+            "GnRhc2tfY29udHJvbGxlcl9kZXNpZ25hdG9yGAIgASgJEkYKDnZlcnNpb25f",
+            "bnVtYmVyGAMgASgOMi4uZWZkaS5UYXNrQ29udHJvbGxlckNhcGFiaWxpdGll",
+            "cy5WZXJzaW9uTnVtYmVyEh0KFXByb3ZpZGVkX2NhcGFiaWxpdGllcxgEIAEo",
+            "DRInCh9udW1iZXJfb2ZfYm9vbXNfc2VjdGlvbl9jb250cm9sGAUgASgNEioK",
+            "Im51bWJlcl9vZl9zZWN0aW9uc19zZWN0aW9uX2NvbnRyb2wYBiABKA0SIgoa",
+            "bnVtYmVyX29mX2NvbnRyb2xfY2hhbm5lbHMYByABKA0SKAoJZXh0ZW5zaW9u",
+            "GIAQIAMoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnkiUwoNVmVyc2lvbk51bWJl",
+            "chIJCgVDX0RJUxAAEgwKCENfRkRJU18xEAESDAoIQ19GRElTXzIQAhIMCghD",
+            "X0UyX0RJUxADEg0KCUNfRTJfRkRJUxAEIsgDCgRUaW1lEikKBXN0YXJ0GAEg",
+            "ASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIoCgRzdG9wGAIgASgL",
+            "MhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIQCghkdXJhdGlvbhgDIAEo",
+            "BBIhCgR0eXBlGAQgASgOMhMuZWZkaS5UaW1lLlRpbWVUeXBlEiYKDnBvc2l0",
+            "aW9uX3N0YXJ0GAUgASgLMg4uZWZkaS5Qb3NpdGlvbhIlCg1wb3NpdGlvbl9z",
+            "dG9wGAYgASgLMg4uZWZkaS5Qb3NpdGlvbhIqCg5kYXRhX2xvZ192YWx1ZRgH",
+            "IAMoCzISLmVmZGkuRGF0YUxvZ1ZhbHVlEigKCWV4dGVuc2lvbhiAECADKAsy",
+            "FC5nb29nbGUucHJvdG9idWYuQW55IpABCghUaW1lVHlwZRIMCghEX05PVFNF",
+            "VBAAEg0KCURfUExBTk5FRBABEhEKDURfUFJFTElNSU5BUlkQAhIPCgtEX0VG",
+            "RkVDVElWRRAEEhEKDURfSU5FRkZFQ1RJVkUQBRIMCghEX1JFUEFJUhAGEg4K",
+            "CkRfQ0xFQVJJTkcQBxISCg5EX1BPV0VSRURfRE9XThAIItgBCgdUaW1lTG9n",
+            "EhAKCGZpbGVuYW1lGAIgASgJEhIKCmZpbGVsZW5ndGgYAyABKAQSMAoNdGlt",
+            "ZV9sb2dfdHlwZRgBIAEoDjIZLmVmZGkuVGltZUxvZy5UaW1lTG9nVHlwZRIY",
+            "CgR0aW1lGAQgAygLMgouZWZkaS5UaW1lEigKCWV4dGVuc2lvbhiAECADKAsy",
+            "FC5nb29nbGUucHJvdG9idWYuQW55IjEKC1RpbWVMb2dUeXBlEgwKCENfTk9U",
+            "U0VUEAASFAoQQ19CSU5BUllfVElNRUxPRxABIvIBCg1UcmVhdG1lbnRab25l",
+            "EhsKE3RyZWF0bWVudF96b25lX2NvZGUYASABKA0SIQoZdHJlYXRtZW50X3pv",
+            "bmVfZGVzaWduYXRvchgCIAEoCRIdChV0cmVhdG1lbnRfem9uZV9jb2xvdXIY",
+            "AyABKA0SHgoHcG9seWdvbhgEIAMoCzINLmVmZGkuUG9seWdvbhI4ChVwcm9j",
+            "ZXNzX2RhdGFfdmFyaWFibGUYBSADKAsyGS5lZmRpLlByb2Nlc3NEYXRhVmFy",
+            "aWFibGUSKAoJZXh0ZW5zaW9uGIAQIAMoCzIULmdvb2dsZS5wcm90b2J1Zi5B",
+            "bnki5AEKEVZhbHVlUHJlc2VudGF0aW9uEigKFXZhbHVlX3ByZXNlbnRhdGlv",
+            "bl9pZBgBIAEoCzIJLmVmZGkuVUlEEg4KBm9mZnNldBgCIAEoEhINCgVzY2Fs",
+            "ZRgDIAEoARIaChJudW1iZXJfb2ZfZGVjaW1hbHMYBCABKA0SFwoPdW5pdF9k",
+            "ZXNpZ25hdG9yGAUgASgJEicKFGNvbG91cl9sZWdlbmRfaWRfcmVmGAYgASgL",
+            "MgkuZWZkaS5VSUQSKAoJZXh0ZW5zaW9uGIAQIAMoCzIULmdvb2dsZS5wcm90",
+            "b2J1Zi5Bbnki9AIKBldvcmtlchIcCgl3b3JrZXJfaWQYASABKAsyCS5lZmRp",
+            "LlVJRBIYChB3b3JrZXJfbGFzdF9uYW1lGAIgASgJEhkKEXdvcmtlcl9maXJz",
+            "dF9uYW1lGAMgASgJEhUKDXdvcmtlcl9zdHJlZXQYBCABKAkSFQoNd29ya2Vy",
+            "X3BvX2JveBgFIAEoCRIaChJ3b3JrZXJfcG9zdGFsX2NvZGUYBiABKAkSEwoL",
+            "d29ya2VyX2NpdHkYByABKAkSFAoMd29ya2VyX3N0YXRlGAggASgJEhYKDndv",
+            "cmtlcl9jb3VudHJ5GAkgASgJEhQKDHdvcmtlcl9waG9uZRgKIAEoCRIVCg13",
+            "b3JrZXJfbW9iaWxlGAsgASgJEh0KFXdvcmtlcl9saWNlbnNlX251bWJlchgM",
+            "IAEoCRIUCgx3b3JrZXJfZW1haWwYDSABKAkSKAoJZXh0ZW5zaW9uGIAQIAMo",
+            "CzIULmdvb2dsZS5wcm90b2J1Zi5BbnkijwEKEFdvcmtlckFsbG9jYXRpb24S",
+            "IAoNd29ya2VyX2lkX3JlZhgBIAEoCzIJLmVmZGkuVUlEEi8KEGFsbG9jYXRp",
+            "b25fc3RhbXAYAiABKAsyFS5lZmRpLkFsbG9jYXRpb25TdGFtcBIoCglleHRl",
+            "bnNpb24YgBAgAygLMhQuZ29vZ2xlLnByb3RvYnVmLkFueSK8AQoVRXh0ZXJu",
+            "YWxGaWxlUmVmZXJlbmNlEhsKCGZpbGVuYW1lGAEgASgLMgkuZWZkaS5VSUQS",
+            "NwoJZmlsZV90eXBlGAIgASgOMiQuZWZkaS5FeHRlcm5hbEZpbGVSZWZlcmVu",
+            "Y2UuRmlsZVR5cGUSKAoJZXh0ZW5zaW9uGIAQIAMoCzIULmdvb2dsZS5wcm90",
+            "b2J1Zi5BbnkiIwoIRmlsZVR5cGUSDAoIQl9OT1RTRVQQABIJCgVCX1hNTBAB",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.UID), global::Agrirouter.Technicalmessagetype.UID.Parser, new[]{ "Number", "Uri" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.AllocationStamp), global::Agrirouter.Technicalmessagetype.AllocationStamp.Parser, new[]{ "Start", "Stop", "Duration", "Type", "Position", "Extension" }, null, new[]{ typeof(global::Agrirouter.Technicalmessagetype.AllocationStamp.Types.AllocationStampType) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.AttachedFile), global::Agrirouter.Technicalmessagetype.AttachedFile.Parser, new[]{ "FilenameWithExtension", "Preserve", "ManufacturerGln", "FileType", "FileVersion", "FileLength", "Extension" }, null, new[]{ typeof(global::Agrirouter.Technicalmessagetype.AttachedFile.Types.Preserve) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.BaseStation), global::Agrirouter.Technicalmessagetype.BaseStation.Parser, new[]{ "BaseStationId", "BaseStationDesignator", "BaseStationNorth", "BaseStationEast", "BaseStationUp", "Extension" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.CodedComment), global::Agrirouter.Technicalmessagetype.CodedComment.Parser, new[]{ "CodedCommentId", "CodedCommentDesignator", "CodedCommentScope", "CodedCommentGroupIdRef", "CodedCommentListValue", "Extension" }, null, new[]{ typeof(global::Agrirouter.Technicalmessagetype.CodedComment.Types.CodedCommentScope) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.CodedCommentGroup), global::Agrirouter.Technicalmessagetype.CodedCommentGroup.Parser, new[]{ "CodedCommentGroupId", "CodedCommentGroupDesignator", "Extension" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.CodedCommentListValue), global::Agrirouter.Technicalmessagetype.CodedCommentListValue.Parser, new[]{ "CodedCommentListValueId", "CodedCommentListValueDesignator", "Extension" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.ColourLegend), global::Agrirouter.Technicalmessagetype.ColourLegend.Parser, new[]{ "ColourLegendId", "DefaultColour", "ColourRange", "Extension" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.ColourRange), global::Agrirouter.Technicalmessagetype.ColourRange.Parser, new[]{ "MinimumValue", "MaximumValue", "Colour", "Extension" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.CommentAllocation), global::Agrirouter.Technicalmessagetype.CommentAllocation.Parser, new[]{ "CodedCommentIdRef", "CodedCommentListValue", "FreeCommentText", "AllocationStamp", "Extension" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.Connection), global::Agrirouter.Technicalmessagetype.Connection.Parser, new[]{ "DeviceIdRef0", "DeviceElementIdRef0", "DeviceIdRef1", "DeviceElementIdRef1", "Extension" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.ControlAssignment), global::Agrirouter.Technicalmessagetype.ControlAssignment.Parser, new[]{ "SourceClientName", "UserClientName", "SourceDeviceStructureLabel", "UserDeviceStructureLabel", "SourceDeviceElementNumber", "UserDeviceElementNumber", "ProcessDataDdi", "AllocationStamp", "Extension" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.CropType), global::Agrirouter.Technicalmessagetype.CropType.Parser, new[]{ "CropTypeId", "CropTypeDesignator", "ProductGroupIdRef", "CropVariety", "Extension" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.CropVariety), global::Agrirouter.Technicalmessagetype.CropVariety.Parser, new[]{ "CropVarietyId", "CropVarietyDesignator", "ProductIdRef", "Extension" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.CulturalPractice), global::Agrirouter.Technicalmessagetype.CulturalPractice.Parser, new[]{ "CulturalPracticeId", "CulturalPracticeDesignator", "OperationTechniqueReference" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.Customer), global::Agrirouter.Technicalmessagetype.Customer.Parser, new[]{ "CustomerId", "CustomerLastName", "CustomerFirstName", "CustomerStreet", "CustomerPoBox", "CustomerPostalCode", "CustomerCity", "CustomerState", "CustomerCountry", "CustomerPhone", "CustomerMobile", "CustomerFax", "CustomerEmail", "Extension" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.DataLogTrigger), global::Agrirouter.Technicalmessagetype.DataLogTrigger.Parser, new[]{ "DataLogDdi", "DataLogMethod", "DataLogDistanceInterval", "DataLogTimeInterval", "DataLogThresholdMinimum", "DataLogThresholdMaximum", "DataLogThresholdChange", "DeviceElementIdRef", "ValuePresentationIdRef", "DataLogPgn", "DataLogPgnStartBit", "DataLogPgnStopBit", "Extension" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.DataLogValue), global::Agrirouter.Technicalmessagetype.DataLogValue.Parser, new[]{ "ProcessDataDdi", "ProcessDataValue", "DeviceElementIdRef", "DataLogPgn", "DataLogPgnStartBit", "DataLogPgnStopBit", "Extension" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.Device), global::Agrirouter.Technicalmessagetype.Device.Parser, new[]{ "DeviceId", "DeviceDesignator", "DeviceSoftwareVersion", "ClientName", "DeviceSerialNumber", "DeviceStructureLabel", "DeviceLocalizationLabel", "DeviceElement", "DeviceProcessData", "DeviceProperty", "DeviceValuePresentation", "Extension" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.DeviceAllocation), global::Agrirouter.Technicalmessagetype.DeviceAllocation.Parser, new[]{ "ClientNameValue", "ClientNameMask", "DeviceIdRef", "AllocationStamp", "Extension" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.DeviceElement), global::Agrirouter.Technicalmessagetype.DeviceElement.Parser, new[]{ "DeviceElementId", "DeviceElementObjectId", "DeviceElementType", "DeviceElementDesignator", "DeviceElementNumber", "ParentObjectId", "DeviceObjectReference", "Extension" }, null, new[]{ typeof(global::Agrirouter.Technicalmessagetype.DeviceElement.Types.DeviceElementType) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.DeviceObjectReference), global::Agrirouter.Technicalmessagetype.DeviceObjectReference.Parser, new[]{ "DeviceObjectId", "Extension" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.DeviceProcessData), global::Agrirouter.Technicalmessagetype.DeviceProcessData.Parser, new[]{ "DeviceProcessDataObjectId", "DeviceProcessDataDdi", "DeviceProcessDataProperty", "DeviceProcessDataTriggerMethods", "DeviceProcessDataDesignator", "DeviceValuePresentationObjectId", "Extension" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.DeviceProperty), global::Agrirouter.Technicalmessagetype.DeviceProperty.Parser, new[]{ "DevicePropertyObjectId", "DevicePropertyDdi", "DevicePropertyValue", "DevicePropertyDesignator", "DeviceValuePresentationObjectId", "Extension" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.DeviceValuePresentation), global::Agrirouter.Technicalmessagetype.DeviceValuePresentation.Parser, new[]{ "DeviceValuePresentationObjectId", "Offset", "Scale", "NumberOfDecimals", "UnitDesignator", "Extension" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.Farm), global::Agrirouter.Technicalmessagetype.Farm.Parser, new[]{ "FarmId", "FarmDesignator", "FarmStreet", "FarmPoBox", "FarmPostalCode", "FarmCity", "FarmState", "FarmCountry", "CustomerIdRef", "Extension" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.Grid), global::Agrirouter.Technicalmessagetype.Grid.Parser, new[]{ "GridMinimumNorthPosition", "GridMinimumEastPosition", "GridCellNorthSize", "GridCellEastSize", "GridMaximumColumn", "GridMaximumRow", "Filename", "Filelength", "GridType", "TreatmentZoneCode", "Extension" }, null, new[]{ typeof(global::Agrirouter.Technicalmessagetype.Grid.Types.GridType) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.GuidanceAllocation), global::Agrirouter.Technicalmessagetype.GuidanceAllocation.Parser, new[]{ "GuidanceGroupIdRef", "AllocationStamp", "GuidanceShift", "Extension" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.GuidanceGroup), global::Agrirouter.Technicalmessagetype.GuidanceGroup.Parser, new[]{ "GuidanceGroupId", "GuidanceGroupDesignator", "GuidancePattern", "BoundaryPolygon", "Extension" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.GuidancePattern), global::Agrirouter.Technicalmessagetype.GuidancePattern.Parser, new[]{ "GuidancePatternId", "GuidancePatternDesignator", "GuidancePatternType", "GuidancePatternOptions", "GuidancePatternPropagationDirection", "GuidancePatternExtension", "GuidancePatternHeading", "GuidancePatternRadius", "GuidancePatternGnssMethod", "GuidancePatternHorizontalAccuracy", "GuidancePatternVerticalAccuracy", "BaseStationIdRef", "OriginalSrid", "NumberOfSwathsLeft", "NumberOfSwathsRight", "LineString", "BoundaryPolygon", "Extension" }, null, new[]{ typeof(global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternType), typeof(global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternOptions), typeof(global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternPropagationDirection), typeof(global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternExtension), typeof(global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternGNSSMethod) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.GuidanceShift), global::Agrirouter.Technicalmessagetype.GuidanceShift.Parser, new[]{ "GuidanceGroupIdRef", "GuidancePatternIdRef", "GuidanceEastShift", "GuidanceNorthShift", "PropagationOffset", "AllocationStamp", "Extension" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.ISO11783_TaskData), global::Agrirouter.Technicalmessagetype.ISO11783_TaskData.Parser, new[]{ "VersionMajor", "VersionMinor", "ManagementSoftwareManufacturer", "ManagementSoftwareVersion", "TaskControllerManufacturer", "TaskControllerVersion", "DataTransferOrigin", "DataTransferLanguage", "AttachedFile", "BaseStation", "CodedComment", "CodedCommentGroup", "ColourLegend", "CropType", "CulturalPractice", "Customer", "Device", "Farm", "OperationTechnique", "Partfield", "Product", "ProductGroup", "Task", "TaskControllerCapabilities", "ValuePresentation", "Worker", "ExternalFileReference", "Extension" }, null, new[]{ typeof(global::Agrirouter.Technicalmessagetype.ISO11783_TaskData.Types.VersionMajor), typeof(global::Agrirouter.Technicalmessagetype.ISO11783_TaskData.Types.DataTransferOrigin) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.LineString), global::Agrirouter.Technicalmessagetype.LineString.Parser, new[]{ "LineStringType", "LineStringDesignator", "LineStringWidth", "LineStringLength", "LineStringColour", "LineStringId", "Point", "Extension" }, null, new[]{ typeof(global::Agrirouter.Technicalmessagetype.LineString.Types.LinestringType) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.OperationTechnique), global::Agrirouter.Technicalmessagetype.OperationTechnique.Parser, new[]{ "OperationTechniqueId", "OperationTechniqueDesignator", "Extension" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.OperationTechniqueReference), global::Agrirouter.Technicalmessagetype.OperationTechniqueReference.Parser, new[]{ "OperationTechniqueIdRef", "Extension" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.OperTechPractice), global::Agrirouter.Technicalmessagetype.OperTechPractice.Parser, new[]{ "CulturalPracticeIdRef", "OperationTechniqueIdRef", "Extension" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.Partfield), global::Agrirouter.Technicalmessagetype.Partfield.Parser, new[]{ "PartfieldId", "PartfieldCode", "PartfieldDesignator", "PartfieldArea", "CustomerIdRef", "FarmIdRef", "CropTypeIdRef", "CropVarietyIdRef", "FieldIdRef", "Polygon", "LineString", "Point", "GuidanceGroup", "Extension" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.Point), global::Agrirouter.Technicalmessagetype.Point.Parser, new[]{ "PointType", "PointDesignator", "PointNorth", "PointEast", "PointUp", "PointColour", "PointId", "PointHorizontalAccuracy", "PointVerticalAccuracy", "Filename", "Filelength", "Extension" }, null, new[]{ typeof(global::Agrirouter.Technicalmessagetype.Point.Types.PointType) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.Polygon), global::Agrirouter.Technicalmessagetype.Polygon.Parser, new[]{ "PolygonType", "PolygonDesignator", "PolygonArea", "PolygonColour", "PolygonId", "LineString", "Extension" }, null, new[]{ typeof(global::Agrirouter.Technicalmessagetype.Polygon.Types.PolygonType) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.Position), global::Agrirouter.Technicalmessagetype.Position.Parser, new[]{ "PositionNorth", "PositionEast", "PositionUp", "PositionStatus", "Pdop", "Hdop", "NumberOfSatellites", "GpsUtcTimestamp", "Extension" }, null, new[]{ typeof(global::Agrirouter.Technicalmessagetype.Position.Types.PositionStatus) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.ProcessDataVariable), global::Agrirouter.Technicalmessagetype.ProcessDataVariable.Parser, new[]{ "ProcessDataDdi", "ProcessDataValue", "ProductIdRef", "DeviceElementIdRef", "ValuePresentationIdRef", "ActualCulturalPracticeValue", "ElementTypeInstanceValue", "ProcessDataVariable_", "Extension" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.Product), global::Agrirouter.Technicalmessagetype.Product.Parser, new[]{ "ProductId", "ProductDesignator", "ProductGroupIdRef", "ValuePresentationIdRef", "QuantityDdi", "ProductType", "MixtureRecipeQuantity", "DensityMassPerVolume", "DensityMassPerCount", "DensityVolumePerCount", "ProductRelation", "Extension" }, null, new[]{ typeof(global::Agrirouter.Technicalmessagetype.Product.Types.ProductType) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.ProductAllocation), global::Agrirouter.Technicalmessagetype.ProductAllocation.Parser, new[]{ "ProductIdRef", "QuantityDdi", "QuantityValue", "TransferMode", "DeviceElementIdRef", "ValuePresentationIdRef", "ProductSubTypeIdRef", "AllocationStamp", "Extension" }, null, new[]{ typeof(global::Agrirouter.Technicalmessagetype.ProductAllocation.Types.TransferMode) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.ProductGroup), global::Agrirouter.Technicalmessagetype.ProductGroup.Parser, new[]{ "ProductGroupId", "ProductGroupDesignator", "ProductGroupType", "Extension" }, null, new[]{ typeof(global::Agrirouter.Technicalmessagetype.ProductGroup.Types.ProductGroupType) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.ProductRelation), global::Agrirouter.Technicalmessagetype.ProductRelation.Parser, new[]{ "ProductIdRef", "QuantityValue", "Extension" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.Task), global::Agrirouter.Technicalmessagetype.Task.Parser, new[]{ "TaskId", "TaskDesignator", "CustomerIdRef", "FarmIdRef", "PartfieldIdRef", "ResponsibleWorkerIdRef", "TaskStatus", "DefaultTreatmentZoneCode", "PositionLostTreatmentZoneCode", "OutOfFieldTreatmentZoneCode", "TreatmentZone", "Time", "OperTechPractice", "WorkerAllocation", "DeviceAllocation", "Connection", "ProductAllocation", "DataLogTrigger", "CommentAllocation", "TimeLog", "Grid", "ControlAssignment", "GuidanceAllocation", "Extension" }, null, new[]{ typeof(global::Agrirouter.Technicalmessagetype.Task.Types.TaskStatus) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.TaskControllerCapabilities), global::Agrirouter.Technicalmessagetype.TaskControllerCapabilities.Parser, new[]{ "TaskControllerControlFunctionName", "TaskControllerDesignator", "VersionNumber", "ProvidedCapabilities", "NumberOfBoomsSectionControl", "NumberOfSectionsSectionControl", "NumberOfControlChannels", "Extension" }, null, new[]{ typeof(global::Agrirouter.Technicalmessagetype.TaskControllerCapabilities.Types.VersionNumber) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.Time), global::Agrirouter.Technicalmessagetype.Time.Parser, new[]{ "Start", "Stop", "Duration", "Type", "PositionStart", "PositionStop", "DataLogValue", "Extension" }, null, new[]{ typeof(global::Agrirouter.Technicalmessagetype.Time.Types.TimeType) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.TimeLog), global::Agrirouter.Technicalmessagetype.TimeLog.Parser, new[]{ "Filename", "Filelength", "TimeLogType", "Time", "Extension" }, null, new[]{ typeof(global::Agrirouter.Technicalmessagetype.TimeLog.Types.TimeLogType) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.TreatmentZone), global::Agrirouter.Technicalmessagetype.TreatmentZone.Parser, new[]{ "TreatmentZoneCode", "TreatmentZoneDesignator", "TreatmentZoneColour", "Polygon", "ProcessDataVariable", "Extension" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.ValuePresentation), global::Agrirouter.Technicalmessagetype.ValuePresentation.Parser, new[]{ "ValuePresentationId", "Offset", "Scale", "NumberOfDecimals", "UnitDesignator", "ColourLegendIdRef", "Extension" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.Worker), global::Agrirouter.Technicalmessagetype.Worker.Parser, new[]{ "WorkerId", "WorkerLastName", "WorkerFirstName", "WorkerStreet", "WorkerPoBox", "WorkerPostalCode", "WorkerCity", "WorkerState", "WorkerCountry", "WorkerPhone", "WorkerMobile", "WorkerLicenseNumber", "WorkerEmail", "Extension" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.WorkerAllocation), global::Agrirouter.Technicalmessagetype.WorkerAllocation.Parser, new[]{ "WorkerIdRef", "AllocationStamp", "Extension" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Technicalmessagetype.ExternalFileReference), global::Agrirouter.Technicalmessagetype.ExternalFileReference.Parser, new[]{ "Filename", "FileType", "Extension" }, null, new[]{ typeof(global::Agrirouter.Technicalmessagetype.ExternalFileReference.Types.FileType) }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.UID), global::Efdi.UID.Parser, new[]{ "Number", "Uri" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.AllocationStamp), global::Efdi.AllocationStamp.Parser, new[]{ "Start", "Stop", "Duration", "Type", "Position", "Extension" }, null, new[]{ typeof(global::Efdi.AllocationStamp.Types.AllocationStampType) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.AttachedFile), global::Efdi.AttachedFile.Parser, new[]{ "FilenameWithExtension", "Preserve", "ManufacturerGln", "FileType", "FileVersion", "FileLength", "Extension" }, null, new[]{ typeof(global::Efdi.AttachedFile.Types.Preserve) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.BaseStation), global::Efdi.BaseStation.Parser, new[]{ "BaseStationId", "BaseStationDesignator", "BaseStationNorth", "BaseStationEast", "BaseStationUp", "Extension" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.CodedComment), global::Efdi.CodedComment.Parser, new[]{ "CodedCommentId", "CodedCommentDesignator", "CodedCommentScope", "CodedCommentGroupIdRef", "CodedCommentListValue", "Extension" }, null, new[]{ typeof(global::Efdi.CodedComment.Types.CodedCommentScope) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.CodedCommentGroup), global::Efdi.CodedCommentGroup.Parser, new[]{ "CodedCommentGroupId", "CodedCommentGroupDesignator", "Extension" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.CodedCommentListValue), global::Efdi.CodedCommentListValue.Parser, new[]{ "CodedCommentListValueId", "CodedCommentListValueDesignator", "Extension" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.ColourLegend), global::Efdi.ColourLegend.Parser, new[]{ "ColourLegendId", "DefaultColour", "ColourRange", "Extension" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.ColourRange), global::Efdi.ColourRange.Parser, new[]{ "MinimumValue", "MaximumValue", "Colour", "Extension" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.CommentAllocation), global::Efdi.CommentAllocation.Parser, new[]{ "CodedCommentIdRef", "CodedCommentListValue", "FreeCommentText", "AllocationStamp", "Extension" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.Connection), global::Efdi.Connection.Parser, new[]{ "DeviceIdRef0", "DeviceElementIdRef0", "DeviceIdRef1", "DeviceElementIdRef1", "Extension" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.ControlAssignment), global::Efdi.ControlAssignment.Parser, new[]{ "SourceClientName", "UserClientName", "SourceDeviceStructureLabel", "UserDeviceStructureLabel", "SourceDeviceElementNumber", "UserDeviceElementNumber", "ProcessDataDdi", "AllocationStamp", "Extension" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.CropType), global::Efdi.CropType.Parser, new[]{ "CropTypeId", "CropTypeDesignator", "ProductGroupIdRef", "CropVariety", "Extension" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.CropVariety), global::Efdi.CropVariety.Parser, new[]{ "CropVarietyId", "CropVarietyDesignator", "ProductIdRef", "Extension" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.CulturalPractice), global::Efdi.CulturalPractice.Parser, new[]{ "CulturalPracticeId", "CulturalPracticeDesignator", "OperationTechniqueReference" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.Customer), global::Efdi.Customer.Parser, new[]{ "CustomerId", "CustomerLastName", "CustomerFirstName", "CustomerStreet", "CustomerPoBox", "CustomerPostalCode", "CustomerCity", "CustomerState", "CustomerCountry", "CustomerPhone", "CustomerMobile", "CustomerFax", "CustomerEmail", "Extension" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.DataLogTrigger), global::Efdi.DataLogTrigger.Parser, new[]{ "DataLogDdi", "DataLogMethod", "DataLogDistanceInterval", "DataLogTimeInterval", "DataLogThresholdMinimum", "DataLogThresholdMaximum", "DataLogThresholdChange", "DeviceElementIdRef", "ValuePresentationIdRef", "DataLogPgn", "DataLogPgnStartBit", "DataLogPgnStopBit", "Extension" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.DataLogValue), global::Efdi.DataLogValue.Parser, new[]{ "ProcessDataDdi", "ProcessDataValue", "DeviceElementIdRef", "DataLogPgn", "DataLogPgnStartBit", "DataLogPgnStopBit", "Extension" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.Device), global::Efdi.Device.Parser, new[]{ "DeviceId", "DeviceDesignator", "DeviceSoftwareVersion", "ClientName", "DeviceSerialNumber", "DeviceStructureLabel", "DeviceLocalizationLabel", "DeviceElement", "DeviceProcessData", "DeviceProperty", "DeviceValuePresentation", "Extension" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.DeviceAllocation), global::Efdi.DeviceAllocation.Parser, new[]{ "ClientNameValue", "ClientNameMask", "DeviceIdRef", "AllocationStamp", "Extension" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.DeviceElement), global::Efdi.DeviceElement.Parser, new[]{ "DeviceElementId", "DeviceElementObjectId", "DeviceElementType", "DeviceElementDesignator", "DeviceElementNumber", "ParentObjectId", "DeviceObjectReference", "Extension" }, null, new[]{ typeof(global::Efdi.DeviceElement.Types.DeviceElementType) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.DeviceObjectReference), global::Efdi.DeviceObjectReference.Parser, new[]{ "DeviceObjectId", "Extension" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.DeviceProcessData), global::Efdi.DeviceProcessData.Parser, new[]{ "DeviceProcessDataObjectId", "DeviceProcessDataDdi", "DeviceProcessDataProperty", "DeviceProcessDataTriggerMethods", "DeviceProcessDataDesignator", "DeviceValuePresentationObjectId", "Extension" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.DeviceProperty), global::Efdi.DeviceProperty.Parser, new[]{ "DevicePropertyObjectId", "DevicePropertyDdi", "DevicePropertyValue", "DevicePropertyDesignator", "DeviceValuePresentationObjectId", "Extension" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.DeviceValuePresentation), global::Efdi.DeviceValuePresentation.Parser, new[]{ "DeviceValuePresentationObjectId", "Offset", "Scale", "NumberOfDecimals", "UnitDesignator", "Extension" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.Farm), global::Efdi.Farm.Parser, new[]{ "FarmId", "FarmDesignator", "FarmStreet", "FarmPoBox", "FarmPostalCode", "FarmCity", "FarmState", "FarmCountry", "CustomerIdRef", "Extension" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.Grid), global::Efdi.Grid.Parser, new[]{ "GridMinimumNorthPosition", "GridMinimumEastPosition", "GridCellNorthSize", "GridCellEastSize", "GridMaximumColumn", "GridMaximumRow", "Filename", "Filelength", "GridType", "TreatmentZoneCode", "Extension" }, null, new[]{ typeof(global::Efdi.Grid.Types.GridType) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.GuidanceAllocation), global::Efdi.GuidanceAllocation.Parser, new[]{ "GuidanceGroupIdRef", "AllocationStamp", "GuidanceShift", "Extension" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.GuidanceGroup), global::Efdi.GuidanceGroup.Parser, new[]{ "GuidanceGroupId", "GuidanceGroupDesignator", "GuidancePattern", "BoundaryPolygon", "Extension" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.GuidancePattern), global::Efdi.GuidancePattern.Parser, new[]{ "GuidancePatternId", "GuidancePatternDesignator", "GuidancePatternType", "GuidancePatternOptions", "GuidancePatternPropagationDirection", "GuidancePatternExtension", "GuidancePatternHeading", "GuidancePatternRadius", "GuidancePatternGnssMethod", "GuidancePatternHorizontalAccuracy", "GuidancePatternVerticalAccuracy", "BaseStationIdRef", "OriginalSrid", "NumberOfSwathsLeft", "NumberOfSwathsRight", "LineString", "BoundaryPolygon", "Extension" }, null, new[]{ typeof(global::Efdi.GuidancePattern.Types.GuidancePatternType), typeof(global::Efdi.GuidancePattern.Types.GuidancePatternOptions), typeof(global::Efdi.GuidancePattern.Types.GuidancePatternPropagationDirection), typeof(global::Efdi.GuidancePattern.Types.GuidancePatternExtension), typeof(global::Efdi.GuidancePattern.Types.GuidancePatternGNSSMethod) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.GuidanceShift), global::Efdi.GuidanceShift.Parser, new[]{ "GuidanceGroupIdRef", "GuidancePatternIdRef", "GuidanceEastShift", "GuidanceNorthShift", "PropagationOffset", "AllocationStamp", "Extension" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.ISO11783_TaskData), global::Efdi.ISO11783_TaskData.Parser, new[]{ "VersionMajor", "VersionMinor", "ManagementSoftwareManufacturer", "ManagementSoftwareVersion", "TaskControllerManufacturer", "TaskControllerVersion", "DataTransferOrigin", "DataTransferLanguage", "AttachedFile", "BaseStation", "CodedComment", "CodedCommentGroup", "ColourLegend", "CropType", "CulturalPractice", "Customer", "Device", "Farm", "OperationTechnique", "Partfield", "Product", "ProductGroup", "Task", "TaskControllerCapabilities", "ValuePresentation", "Worker", "ExternalFileReference", "Extension" }, null, new[]{ typeof(global::Efdi.ISO11783_TaskData.Types.VersionMajor), typeof(global::Efdi.ISO11783_TaskData.Types.DataTransferOrigin) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.LineString), global::Efdi.LineString.Parser, new[]{ "LineStringType", "LineStringDesignator", "LineStringWidth", "LineStringLength", "LineStringColour", "LineStringId", "Point", "Extension" }, null, new[]{ typeof(global::Efdi.LineString.Types.LinestringType) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.OperationTechnique), global::Efdi.OperationTechnique.Parser, new[]{ "OperationTechniqueId", "OperationTechniqueDesignator", "Extension" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.OperationTechniqueReference), global::Efdi.OperationTechniqueReference.Parser, new[]{ "OperationTechniqueIdRef", "Extension" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.OperTechPractice), global::Efdi.OperTechPractice.Parser, new[]{ "CulturalPracticeIdRef", "OperationTechniqueIdRef", "Extension" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.Partfield), global::Efdi.Partfield.Parser, new[]{ "PartfieldId", "PartfieldCode", "PartfieldDesignator", "PartfieldArea", "CustomerIdRef", "FarmIdRef", "CropTypeIdRef", "CropVarietyIdRef", "FieldIdRef", "Polygon", "LineString", "Point", "GuidanceGroup", "Extension" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.Point), global::Efdi.Point.Parser, new[]{ "PointType", "PointDesignator", "PointNorth", "PointEast", "PointUp", "PointColour", "PointId", "PointHorizontalAccuracy", "PointVerticalAccuracy", "Filename", "Filelength", "Extension" }, null, new[]{ typeof(global::Efdi.Point.Types.PointType) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.Polygon), global::Efdi.Polygon.Parser, new[]{ "PolygonType", "PolygonDesignator", "PolygonArea", "PolygonColour", "PolygonId", "LineString", "Extension" }, null, new[]{ typeof(global::Efdi.Polygon.Types.PolygonType) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.Position), global::Efdi.Position.Parser, new[]{ "PositionNorth", "PositionEast", "PositionUp", "PositionStatus", "Pdop", "Hdop", "NumberOfSatellites", "GpsUtcTimestamp", "Extension" }, null, new[]{ typeof(global::Efdi.Position.Types.PositionStatus) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.ProcessDataVariable), global::Efdi.ProcessDataVariable.Parser, new[]{ "ProcessDataDdi", "ProcessDataValue", "ProductIdRef", "DeviceElementIdRef", "ValuePresentationIdRef", "ActualCulturalPracticeValue", "ElementTypeInstanceValue", "ProcessDataVariable_", "Extension" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.Product), global::Efdi.Product.Parser, new[]{ "ProductId", "ProductDesignator", "ProductGroupIdRef", "ValuePresentationIdRef", "QuantityDdi", "ProductType", "MixtureRecipeQuantity", "DensityMassPerVolume", "DensityMassPerCount", "DensityVolumePerCount", "ProductRelation", "Extension" }, null, new[]{ typeof(global::Efdi.Product.Types.ProductType) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.ProductAllocation), global::Efdi.ProductAllocation.Parser, new[]{ "ProductIdRef", "QuantityDdi", "QuantityValue", "TransferMode", "DeviceElementIdRef", "ValuePresentationIdRef", "ProductSubTypeIdRef", "AllocationStamp", "Extension" }, null, new[]{ typeof(global::Efdi.ProductAllocation.Types.TransferMode) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.ProductGroup), global::Efdi.ProductGroup.Parser, new[]{ "ProductGroupId", "ProductGroupDesignator", "ProductGroupType", "Extension" }, null, new[]{ typeof(global::Efdi.ProductGroup.Types.ProductGroupType) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.ProductRelation), global::Efdi.ProductRelation.Parser, new[]{ "ProductIdRef", "QuantityValue", "Extension" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.Task), global::Efdi.Task.Parser, new[]{ "TaskId", "TaskDesignator", "CustomerIdRef", "FarmIdRef", "PartfieldIdRef", "ResponsibleWorkerIdRef", "TaskStatus", "DefaultTreatmentZoneCode", "PositionLostTreatmentZoneCode", "OutOfFieldTreatmentZoneCode", "TreatmentZone", "Time", "OperTechPractice", "WorkerAllocation", "DeviceAllocation", "Connection", "ProductAllocation", "DataLogTrigger", "CommentAllocation", "TimeLog", "Grid", "ControlAssignment", "GuidanceAllocation", "Extension" }, null, new[]{ typeof(global::Efdi.Task.Types.TaskStatus) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.TaskControllerCapabilities), global::Efdi.TaskControllerCapabilities.Parser, new[]{ "TaskControllerControlFunctionName", "TaskControllerDesignator", "VersionNumber", "ProvidedCapabilities", "NumberOfBoomsSectionControl", "NumberOfSectionsSectionControl", "NumberOfControlChannels", "Extension" }, null, new[]{ typeof(global::Efdi.TaskControllerCapabilities.Types.VersionNumber) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.Time), global::Efdi.Time.Parser, new[]{ "Start", "Stop", "Duration", "Type", "PositionStart", "PositionStop", "DataLogValue", "Extension" }, null, new[]{ typeof(global::Efdi.Time.Types.TimeType) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.TimeLog), global::Efdi.TimeLog.Parser, new[]{ "Filename", "Filelength", "TimeLogType", "Time", "Extension" }, null, new[]{ typeof(global::Efdi.TimeLog.Types.TimeLogType) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.TreatmentZone), global::Efdi.TreatmentZone.Parser, new[]{ "TreatmentZoneCode", "TreatmentZoneDesignator", "TreatmentZoneColour", "Polygon", "ProcessDataVariable", "Extension" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.ValuePresentation), global::Efdi.ValuePresentation.Parser, new[]{ "ValuePresentationId", "Offset", "Scale", "NumberOfDecimals", "UnitDesignator", "ColourLegendIdRef", "Extension" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.Worker), global::Efdi.Worker.Parser, new[]{ "WorkerId", "WorkerLastName", "WorkerFirstName", "WorkerStreet", "WorkerPoBox", "WorkerPostalCode", "WorkerCity", "WorkerState", "WorkerCountry", "WorkerPhone", "WorkerMobile", "WorkerLicenseNumber", "WorkerEmail", "Extension" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.WorkerAllocation), global::Efdi.WorkerAllocation.Parser, new[]{ "WorkerIdRef", "AllocationStamp", "Extension" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Efdi.ExternalFileReference), global::Efdi.ExternalFileReference.Parser, new[]{ "Filename", "FileType", "Extension" }, null, new[]{ typeof(global::Efdi.ExternalFileReference.Types.FileType) }, null, null)
           }));
     }
     #endregion
@@ -632,23 +535,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<UID> _parser = new pb::MessageParser<UID>(() => new UID());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<UID> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UID() {
       OnConstruction();
     }
@@ -656,7 +555,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UID(UID other) : this() {
       number_ = other.number_;
       uri_ = other.uri_.Clone();
@@ -664,7 +562,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UID Clone() {
       return new UID(this);
     }
@@ -673,7 +570,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int NumberFieldNumber = 1;
     private long number_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long Number {
       get { return number_; }
       set {
@@ -687,19 +583,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForString(18);
     private readonly pbc::RepeatedField<string> uri_ = new pbc::RepeatedField<string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<string> Uri {
       get { return uri_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as UID);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(UID other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -713,7 +606,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Number != 0L) hash ^= Number.GetHashCode();
@@ -725,13 +617,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -749,7 +639,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Number != 0L) {
         output.WriteRawTag(8);
@@ -763,7 +652,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Number != 0L) {
@@ -777,7 +665,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(UID other) {
       if (other == null) {
         return;
@@ -790,7 +677,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -816,7 +702,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -850,23 +735,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<AllocationStamp> _parser = new pb::MessageParser<AllocationStamp>(() => new AllocationStamp());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<AllocationStamp> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AllocationStamp() {
       OnConstruction();
     }
@@ -874,7 +755,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AllocationStamp(AllocationStamp other) : this() {
       start_ = other.start_ != null ? other.start_.Clone() : null;
       stop_ = other.stop_ != null ? other.stop_.Clone() : null;
@@ -886,7 +766,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AllocationStamp Clone() {
       return new AllocationStamp(this);
     }
@@ -895,7 +774,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int StartFieldNumber = 1;
     private global::Google.Protobuf.WellKnownTypes.Timestamp start_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp Start {
       get { return start_; }
       set {
@@ -907,7 +785,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int StopFieldNumber = 2;
     private global::Google.Protobuf.WellKnownTypes.Timestamp stop_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp Stop {
       get { return stop_; }
       set {
@@ -919,7 +796,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DurationFieldNumber = 3;
     private ulong duration_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ulong Duration {
       get { return duration_; }
       set {
@@ -929,10 +805,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "type" field.</summary>
     public const int TypeFieldNumber = 4;
-    private global::Agrirouter.Technicalmessagetype.AllocationStamp.Types.AllocationStampType type_ = global::Agrirouter.Technicalmessagetype.AllocationStamp.Types.AllocationStampType.DNotset;
+    private global::Efdi.AllocationStamp.Types.AllocationStampType type_ = global::Efdi.AllocationStamp.Types.AllocationStampType.DNotset;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.AllocationStamp.Types.AllocationStampType Type {
+    public global::Efdi.AllocationStamp.Types.AllocationStampType Type {
       get { return type_; }
       set {
         type_ = value;
@@ -941,12 +816,11 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "position" field.</summary>
     public const int PositionFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.Position> _repeated_position_codec
-        = pb::FieldCodec.ForMessage(42, global::Agrirouter.Technicalmessagetype.Position.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Position> position_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Position>();
+    private static readonly pb::FieldCodec<global::Efdi.Position> _repeated_position_codec
+        = pb::FieldCodec.ForMessage(42, global::Efdi.Position.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.Position> position_ = new pbc::RepeatedField<global::Efdi.Position>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Position> Position {
+    public pbc::RepeatedField<global::Efdi.Position> Position {
       get { return position_; }
     }
 
@@ -956,19 +830,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as AllocationStamp);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(AllocationStamp other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -986,13 +857,12 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (start_ != null) hash ^= Start.GetHashCode();
       if (stop_ != null) hash ^= Stop.GetHashCode();
       if (Duration != 0UL) hash ^= Duration.GetHashCode();
-      if (Type != global::Agrirouter.Technicalmessagetype.AllocationStamp.Types.AllocationStampType.DNotset) hash ^= Type.GetHashCode();
+      if (Type != global::Efdi.AllocationStamp.Types.AllocationStampType.DNotset) hash ^= Type.GetHashCode();
       hash ^= position_.GetHashCode();
       hash ^= extension_.GetHashCode();
       if (_unknownFields != null) {
@@ -1002,13 +872,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1025,7 +893,7 @@ namespace Agrirouter.Technicalmessagetype {
         output.WriteRawTag(24);
         output.WriteUInt64(Duration);
       }
-      if (Type != global::Agrirouter.Technicalmessagetype.AllocationStamp.Types.AllocationStampType.DNotset) {
+      if (Type != global::Efdi.AllocationStamp.Types.AllocationStampType.DNotset) {
         output.WriteRawTag(32);
         output.WriteEnum((int) Type);
       }
@@ -1039,7 +907,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (start_ != null) {
         output.WriteRawTag(10);
@@ -1053,7 +920,7 @@ namespace Agrirouter.Technicalmessagetype {
         output.WriteRawTag(24);
         output.WriteUInt64(Duration);
       }
-      if (Type != global::Agrirouter.Technicalmessagetype.AllocationStamp.Types.AllocationStampType.DNotset) {
+      if (Type != global::Efdi.AllocationStamp.Types.AllocationStampType.DNotset) {
         output.WriteRawTag(32);
         output.WriteEnum((int) Type);
       }
@@ -1066,7 +933,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (start_ != null) {
@@ -1078,7 +944,7 @@ namespace Agrirouter.Technicalmessagetype {
       if (Duration != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Duration);
       }
-      if (Type != global::Agrirouter.Technicalmessagetype.AllocationStamp.Types.AllocationStampType.DNotset) {
+      if (Type != global::Efdi.AllocationStamp.Types.AllocationStampType.DNotset) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
       size += position_.CalculateSize(_repeated_position_codec);
@@ -1090,7 +956,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(AllocationStamp other) {
       if (other == null) {
         return;
@@ -1110,7 +975,7 @@ namespace Agrirouter.Technicalmessagetype {
       if (other.Duration != 0UL) {
         Duration = other.Duration;
       }
-      if (other.Type != global::Agrirouter.Technicalmessagetype.AllocationStamp.Types.AllocationStampType.DNotset) {
+      if (other.Type != global::Efdi.AllocationStamp.Types.AllocationStampType.DNotset) {
         Type = other.Type;
       }
       position_.Add(other.position_);
@@ -1119,7 +984,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1149,7 +1013,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           }
           case 32: {
-            Type = (global::Agrirouter.Technicalmessagetype.AllocationStamp.Types.AllocationStampType) input.ReadEnum();
+            Type = (global::Efdi.AllocationStamp.Types.AllocationStampType) input.ReadEnum();
             break;
           }
           case 42: {
@@ -1167,7 +1031,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1194,7 +1057,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           }
           case 32: {
-            Type = (global::Agrirouter.Technicalmessagetype.AllocationStamp.Types.AllocationStampType) input.ReadEnum();
+            Type = (global::Efdi.AllocationStamp.Types.AllocationStampType) input.ReadEnum();
             break;
           }
           case 42: {
@@ -1213,7 +1076,6 @@ namespace Agrirouter.Technicalmessagetype {
     #region Nested types
     /// <summary>Container for nested types declared in the AllocationStamp message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       public enum AllocationStampType {
         [pbr::OriginalName("D_NOTSET")] DNotset = 0,
@@ -1237,23 +1099,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<AttachedFile> _parser = new pb::MessageParser<AttachedFile>(() => new AttachedFile());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<AttachedFile> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AttachedFile() {
       OnConstruction();
     }
@@ -1261,7 +1119,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AttachedFile(AttachedFile other) : this() {
       filenameWithExtension_ = other.filenameWithExtension_ != null ? other.filenameWithExtension_.Clone() : null;
       preserve_ = other.preserve_;
@@ -1274,17 +1131,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AttachedFile Clone() {
       return new AttachedFile(this);
     }
 
     /// <summary>Field number for the "filename_with_extension" field.</summary>
     public const int FilenameWithExtensionFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.UID filenameWithExtension_;
+    private global::Efdi.UID filenameWithExtension_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID FilenameWithExtension {
+    public global::Efdi.UID FilenameWithExtension {
       get { return filenameWithExtension_; }
       set {
         filenameWithExtension_ = value;
@@ -1293,10 +1148,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "preserve" field.</summary>
     public const int PreserveFieldNumber = 2;
-    private global::Agrirouter.Technicalmessagetype.AttachedFile.Types.Preserve preserve_ = global::Agrirouter.Technicalmessagetype.AttachedFile.Types.Preserve.BNotset;
+    private global::Efdi.AttachedFile.Types.Preserve preserve_ = global::Efdi.AttachedFile.Types.Preserve.BNotset;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.AttachedFile.Types.Preserve Preserve {
+    public global::Efdi.AttachedFile.Types.Preserve Preserve {
       get { return preserve_; }
       set {
         preserve_ = value;
@@ -1307,7 +1161,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int ManufacturerGlnFieldNumber = 3;
     private string manufacturerGln_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ManufacturerGln {
       get { return manufacturerGln_; }
       set {
@@ -1319,7 +1172,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int FileTypeFieldNumber = 4;
     private uint fileType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint FileType {
       get { return fileType_; }
       set {
@@ -1331,7 +1183,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int FileVersionFieldNumber = 5;
     private string fileVersion_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string FileVersion {
       get { return fileVersion_; }
       set {
@@ -1343,7 +1194,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int FileLengthFieldNumber = 6;
     private ulong fileLength_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ulong FileLength {
       get { return fileLength_; }
       set {
@@ -1357,19 +1207,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as AttachedFile);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(AttachedFile other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1388,11 +1235,10 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (filenameWithExtension_ != null) hash ^= FilenameWithExtension.GetHashCode();
-      if (Preserve != global::Agrirouter.Technicalmessagetype.AttachedFile.Types.Preserve.BNotset) hash ^= Preserve.GetHashCode();
+      if (Preserve != global::Efdi.AttachedFile.Types.Preserve.BNotset) hash ^= Preserve.GetHashCode();
       if (ManufacturerGln.Length != 0) hash ^= ManufacturerGln.GetHashCode();
       if (FileType != 0) hash ^= FileType.GetHashCode();
       if (FileVersion.Length != 0) hash ^= FileVersion.GetHashCode();
@@ -1405,13 +1251,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1420,7 +1264,7 @@ namespace Agrirouter.Technicalmessagetype {
         output.WriteRawTag(10);
         output.WriteMessage(FilenameWithExtension);
       }
-      if (Preserve != global::Agrirouter.Technicalmessagetype.AttachedFile.Types.Preserve.BNotset) {
+      if (Preserve != global::Efdi.AttachedFile.Types.Preserve.BNotset) {
         output.WriteRawTag(16);
         output.WriteEnum((int) Preserve);
       }
@@ -1449,13 +1293,12 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (filenameWithExtension_ != null) {
         output.WriteRawTag(10);
         output.WriteMessage(FilenameWithExtension);
       }
-      if (Preserve != global::Agrirouter.Technicalmessagetype.AttachedFile.Types.Preserve.BNotset) {
+      if (Preserve != global::Efdi.AttachedFile.Types.Preserve.BNotset) {
         output.WriteRawTag(16);
         output.WriteEnum((int) Preserve);
       }
@@ -1483,13 +1326,12 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (filenameWithExtension_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(FilenameWithExtension);
       }
-      if (Preserve != global::Agrirouter.Technicalmessagetype.AttachedFile.Types.Preserve.BNotset) {
+      if (Preserve != global::Efdi.AttachedFile.Types.Preserve.BNotset) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Preserve);
       }
       if (ManufacturerGln.Length != 0) {
@@ -1512,18 +1354,17 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(AttachedFile other) {
       if (other == null) {
         return;
       }
       if (other.filenameWithExtension_ != null) {
         if (filenameWithExtension_ == null) {
-          FilenameWithExtension = new global::Agrirouter.Technicalmessagetype.UID();
+          FilenameWithExtension = new global::Efdi.UID();
         }
         FilenameWithExtension.MergeFrom(other.FilenameWithExtension);
       }
-      if (other.Preserve != global::Agrirouter.Technicalmessagetype.AttachedFile.Types.Preserve.BNotset) {
+      if (other.Preserve != global::Efdi.AttachedFile.Types.Preserve.BNotset) {
         Preserve = other.Preserve;
       }
       if (other.ManufacturerGln.Length != 0) {
@@ -1543,7 +1384,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1556,13 +1396,13 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (filenameWithExtension_ == null) {
-              FilenameWithExtension = new global::Agrirouter.Technicalmessagetype.UID();
+              FilenameWithExtension = new global::Efdi.UID();
             }
             input.ReadMessage(FilenameWithExtension);
             break;
           }
           case 16: {
-            Preserve = (global::Agrirouter.Technicalmessagetype.AttachedFile.Types.Preserve) input.ReadEnum();
+            Preserve = (global::Efdi.AttachedFile.Types.Preserve) input.ReadEnum();
             break;
           }
           case 26: {
@@ -1592,7 +1432,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1602,13 +1441,13 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (filenameWithExtension_ == null) {
-              FilenameWithExtension = new global::Agrirouter.Technicalmessagetype.UID();
+              FilenameWithExtension = new global::Efdi.UID();
             }
             input.ReadMessage(FilenameWithExtension);
             break;
           }
           case 16: {
-            Preserve = (global::Agrirouter.Technicalmessagetype.AttachedFile.Types.Preserve) input.ReadEnum();
+            Preserve = (global::Efdi.AttachedFile.Types.Preserve) input.ReadEnum();
             break;
           }
           case 26: {
@@ -1639,7 +1478,6 @@ namespace Agrirouter.Technicalmessagetype {
     #region Nested types
     /// <summary>Container for nested types declared in the AttachedFile message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       public enum Preserve {
         [pbr::OriginalName("B_NOTSET")] BNotset = 0,
@@ -1663,23 +1501,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<BaseStation> _parser = new pb::MessageParser<BaseStation>(() => new BaseStation());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<BaseStation> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BaseStation() {
       OnConstruction();
     }
@@ -1687,7 +1521,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BaseStation(BaseStation other) : this() {
       baseStationId_ = other.baseStationId_ != null ? other.baseStationId_.Clone() : null;
       baseStationDesignator_ = other.baseStationDesignator_;
@@ -1699,17 +1532,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BaseStation Clone() {
       return new BaseStation(this);
     }
 
     /// <summary>Field number for the "base_station_id" field.</summary>
     public const int BaseStationIdFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.UID baseStationId_;
+    private global::Efdi.UID baseStationId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID BaseStationId {
+    public global::Efdi.UID BaseStationId {
       get { return baseStationId_; }
       set {
         baseStationId_ = value;
@@ -1720,7 +1551,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int BaseStationDesignatorFieldNumber = 2;
     private string baseStationDesignator_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string BaseStationDesignator {
       get { return baseStationDesignator_; }
       set {
@@ -1732,7 +1562,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int BaseStationNorthFieldNumber = 3;
     private double baseStationNorth_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double BaseStationNorth {
       get { return baseStationNorth_; }
       set {
@@ -1744,7 +1573,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int BaseStationEastFieldNumber = 4;
     private double baseStationEast_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double BaseStationEast {
       get { return baseStationEast_; }
       set {
@@ -1756,7 +1584,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int BaseStationUpFieldNumber = 5;
     private long baseStationUp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long BaseStationUp {
       get { return baseStationUp_; }
       set {
@@ -1770,19 +1597,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as BaseStation);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(BaseStation other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1800,7 +1624,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (baseStationId_ != null) hash ^= BaseStationId.GetHashCode();
@@ -1816,13 +1639,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1856,7 +1677,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (baseStationId_ != null) {
         output.WriteRawTag(10);
@@ -1886,7 +1706,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (baseStationId_ != null) {
@@ -1912,14 +1731,13 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(BaseStation other) {
       if (other == null) {
         return;
       }
       if (other.baseStationId_ != null) {
         if (baseStationId_ == null) {
-          BaseStationId = new global::Agrirouter.Technicalmessagetype.UID();
+          BaseStationId = new global::Efdi.UID();
         }
         BaseStationId.MergeFrom(other.BaseStationId);
       }
@@ -1940,7 +1758,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1953,7 +1770,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (baseStationId_ == null) {
-              BaseStationId = new global::Agrirouter.Technicalmessagetype.UID();
+              BaseStationId = new global::Efdi.UID();
             }
             input.ReadMessage(BaseStationId);
             break;
@@ -1985,7 +1802,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1995,7 +1811,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (baseStationId_ == null) {
-              BaseStationId = new global::Agrirouter.Technicalmessagetype.UID();
+              BaseStationId = new global::Efdi.UID();
             }
             input.ReadMessage(BaseStationId);
             break;
@@ -2038,23 +1854,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<CodedComment> _parser = new pb::MessageParser<CodedComment>(() => new CodedComment());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<CodedComment> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CodedComment() {
       OnConstruction();
     }
@@ -2062,7 +1874,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CodedComment(CodedComment other) : this() {
       codedCommentId_ = other.codedCommentId_ != null ? other.codedCommentId_.Clone() : null;
       codedCommentDesignator_ = other.codedCommentDesignator_;
@@ -2074,17 +1885,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CodedComment Clone() {
       return new CodedComment(this);
     }
 
     /// <summary>Field number for the "coded_comment_id" field.</summary>
     public const int CodedCommentIdFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.UID codedCommentId_;
+    private global::Efdi.UID codedCommentId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID CodedCommentId {
+    public global::Efdi.UID CodedCommentId {
       get { return codedCommentId_; }
       set {
         codedCommentId_ = value;
@@ -2095,7 +1904,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int CodedCommentDesignatorFieldNumber = 2;
     private string codedCommentDesignator_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string CodedCommentDesignator {
       get { return codedCommentDesignator_; }
       set {
@@ -2105,10 +1913,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "coded_comment_scope" field.</summary>
     public const int CodedCommentScopeFieldNumber = 3;
-    private global::Agrirouter.Technicalmessagetype.CodedComment.Types.CodedCommentScope codedCommentScope_ = global::Agrirouter.Technicalmessagetype.CodedComment.Types.CodedCommentScope.CNotset;
+    private global::Efdi.CodedComment.Types.CodedCommentScope codedCommentScope_ = global::Efdi.CodedComment.Types.CodedCommentScope.CNotset;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.CodedComment.Types.CodedCommentScope CodedCommentScope {
+    public global::Efdi.CodedComment.Types.CodedCommentScope CodedCommentScope {
       get { return codedCommentScope_; }
       set {
         codedCommentScope_ = value;
@@ -2117,10 +1924,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "coded_comment_group_id_ref" field.</summary>
     public const int CodedCommentGroupIdRefFieldNumber = 4;
-    private global::Agrirouter.Technicalmessagetype.UID codedCommentGroupIdRef_;
+    private global::Efdi.UID codedCommentGroupIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID CodedCommentGroupIdRef {
+    public global::Efdi.UID CodedCommentGroupIdRef {
       get { return codedCommentGroupIdRef_; }
       set {
         codedCommentGroupIdRef_ = value;
@@ -2129,12 +1935,11 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "coded_comment_list_value" field.</summary>
     public const int CodedCommentListValueFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.CodedCommentListValue> _repeated_codedCommentListValue_codec
-        = pb::FieldCodec.ForMessage(42, global::Agrirouter.Technicalmessagetype.CodedCommentListValue.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.CodedCommentListValue> codedCommentListValue_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.CodedCommentListValue>();
+    private static readonly pb::FieldCodec<global::Efdi.CodedCommentListValue> _repeated_codedCommentListValue_codec
+        = pb::FieldCodec.ForMessage(42, global::Efdi.CodedCommentListValue.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.CodedCommentListValue> codedCommentListValue_ = new pbc::RepeatedField<global::Efdi.CodedCommentListValue>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.CodedCommentListValue> CodedCommentListValue {
+    public pbc::RepeatedField<global::Efdi.CodedCommentListValue> CodedCommentListValue {
       get { return codedCommentListValue_; }
     }
 
@@ -2144,19 +1949,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as CodedComment);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(CodedComment other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2174,12 +1976,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (codedCommentId_ != null) hash ^= CodedCommentId.GetHashCode();
       if (CodedCommentDesignator.Length != 0) hash ^= CodedCommentDesignator.GetHashCode();
-      if (CodedCommentScope != global::Agrirouter.Technicalmessagetype.CodedComment.Types.CodedCommentScope.CNotset) hash ^= CodedCommentScope.GetHashCode();
+      if (CodedCommentScope != global::Efdi.CodedComment.Types.CodedCommentScope.CNotset) hash ^= CodedCommentScope.GetHashCode();
       if (codedCommentGroupIdRef_ != null) hash ^= CodedCommentGroupIdRef.GetHashCode();
       hash ^= codedCommentListValue_.GetHashCode();
       hash ^= extension_.GetHashCode();
@@ -2190,13 +1991,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -2209,7 +2008,7 @@ namespace Agrirouter.Technicalmessagetype {
         output.WriteRawTag(18);
         output.WriteString(CodedCommentDesignator);
       }
-      if (CodedCommentScope != global::Agrirouter.Technicalmessagetype.CodedComment.Types.CodedCommentScope.CNotset) {
+      if (CodedCommentScope != global::Efdi.CodedComment.Types.CodedCommentScope.CNotset) {
         output.WriteRawTag(24);
         output.WriteEnum((int) CodedCommentScope);
       }
@@ -2227,7 +2026,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (codedCommentId_ != null) {
         output.WriteRawTag(10);
@@ -2237,7 +2035,7 @@ namespace Agrirouter.Technicalmessagetype {
         output.WriteRawTag(18);
         output.WriteString(CodedCommentDesignator);
       }
-      if (CodedCommentScope != global::Agrirouter.Technicalmessagetype.CodedComment.Types.CodedCommentScope.CNotset) {
+      if (CodedCommentScope != global::Efdi.CodedComment.Types.CodedCommentScope.CNotset) {
         output.WriteRawTag(24);
         output.WriteEnum((int) CodedCommentScope);
       }
@@ -2254,7 +2052,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (codedCommentId_ != null) {
@@ -2263,7 +2060,7 @@ namespace Agrirouter.Technicalmessagetype {
       if (CodedCommentDesignator.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(CodedCommentDesignator);
       }
-      if (CodedCommentScope != global::Agrirouter.Technicalmessagetype.CodedComment.Types.CodedCommentScope.CNotset) {
+      if (CodedCommentScope != global::Efdi.CodedComment.Types.CodedCommentScope.CNotset) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) CodedCommentScope);
       }
       if (codedCommentGroupIdRef_ != null) {
@@ -2278,26 +2075,25 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(CodedComment other) {
       if (other == null) {
         return;
       }
       if (other.codedCommentId_ != null) {
         if (codedCommentId_ == null) {
-          CodedCommentId = new global::Agrirouter.Technicalmessagetype.UID();
+          CodedCommentId = new global::Efdi.UID();
         }
         CodedCommentId.MergeFrom(other.CodedCommentId);
       }
       if (other.CodedCommentDesignator.Length != 0) {
         CodedCommentDesignator = other.CodedCommentDesignator;
       }
-      if (other.CodedCommentScope != global::Agrirouter.Technicalmessagetype.CodedComment.Types.CodedCommentScope.CNotset) {
+      if (other.CodedCommentScope != global::Efdi.CodedComment.Types.CodedCommentScope.CNotset) {
         CodedCommentScope = other.CodedCommentScope;
       }
       if (other.codedCommentGroupIdRef_ != null) {
         if (codedCommentGroupIdRef_ == null) {
-          CodedCommentGroupIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          CodedCommentGroupIdRef = new global::Efdi.UID();
         }
         CodedCommentGroupIdRef.MergeFrom(other.CodedCommentGroupIdRef);
       }
@@ -2307,7 +2103,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -2320,7 +2115,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (codedCommentId_ == null) {
-              CodedCommentId = new global::Agrirouter.Technicalmessagetype.UID();
+              CodedCommentId = new global::Efdi.UID();
             }
             input.ReadMessage(CodedCommentId);
             break;
@@ -2330,12 +2125,12 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           }
           case 24: {
-            CodedCommentScope = (global::Agrirouter.Technicalmessagetype.CodedComment.Types.CodedCommentScope) input.ReadEnum();
+            CodedCommentScope = (global::Efdi.CodedComment.Types.CodedCommentScope) input.ReadEnum();
             break;
           }
           case 34: {
             if (codedCommentGroupIdRef_ == null) {
-              CodedCommentGroupIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              CodedCommentGroupIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(CodedCommentGroupIdRef);
             break;
@@ -2355,7 +2150,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -2365,7 +2159,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (codedCommentId_ == null) {
-              CodedCommentId = new global::Agrirouter.Technicalmessagetype.UID();
+              CodedCommentId = new global::Efdi.UID();
             }
             input.ReadMessage(CodedCommentId);
             break;
@@ -2375,12 +2169,12 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           }
           case 24: {
-            CodedCommentScope = (global::Agrirouter.Technicalmessagetype.CodedComment.Types.CodedCommentScope) input.ReadEnum();
+            CodedCommentScope = (global::Efdi.CodedComment.Types.CodedCommentScope) input.ReadEnum();
             break;
           }
           case 34: {
             if (codedCommentGroupIdRef_ == null) {
-              CodedCommentGroupIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              CodedCommentGroupIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(CodedCommentGroupIdRef);
             break;
@@ -2401,7 +2195,6 @@ namespace Agrirouter.Technicalmessagetype {
     #region Nested types
     /// <summary>Container for nested types declared in the CodedComment message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       public enum CodedCommentScope {
         [pbr::OriginalName("C_NOTSET")] CNotset = 0,
@@ -2426,23 +2219,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<CodedCommentGroup> _parser = new pb::MessageParser<CodedCommentGroup>(() => new CodedCommentGroup());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<CodedCommentGroup> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CodedCommentGroup() {
       OnConstruction();
     }
@@ -2450,7 +2239,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CodedCommentGroup(CodedCommentGroup other) : this() {
       codedCommentGroupId_ = other.codedCommentGroupId_ != null ? other.codedCommentGroupId_.Clone() : null;
       codedCommentGroupDesignator_ = other.codedCommentGroupDesignator_;
@@ -2459,17 +2247,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CodedCommentGroup Clone() {
       return new CodedCommentGroup(this);
     }
 
     /// <summary>Field number for the "coded_comment_group_id" field.</summary>
     public const int CodedCommentGroupIdFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.UID codedCommentGroupId_;
+    private global::Efdi.UID codedCommentGroupId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID CodedCommentGroupId {
+    public global::Efdi.UID CodedCommentGroupId {
       get { return codedCommentGroupId_; }
       set {
         codedCommentGroupId_ = value;
@@ -2480,7 +2266,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int CodedCommentGroupDesignatorFieldNumber = 2;
     private string codedCommentGroupDesignator_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string CodedCommentGroupDesignator {
       get { return codedCommentGroupDesignator_; }
       set {
@@ -2494,19 +2279,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as CodedCommentGroup);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(CodedCommentGroup other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2521,7 +2303,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (codedCommentGroupId_ != null) hash ^= CodedCommentGroupId.GetHashCode();
@@ -2534,13 +2315,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -2562,7 +2341,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (codedCommentGroupId_ != null) {
         output.WriteRawTag(10);
@@ -2580,7 +2358,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (codedCommentGroupId_ != null) {
@@ -2597,14 +2374,13 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(CodedCommentGroup other) {
       if (other == null) {
         return;
       }
       if (other.codedCommentGroupId_ != null) {
         if (codedCommentGroupId_ == null) {
-          CodedCommentGroupId = new global::Agrirouter.Technicalmessagetype.UID();
+          CodedCommentGroupId = new global::Efdi.UID();
         }
         CodedCommentGroupId.MergeFrom(other.CodedCommentGroupId);
       }
@@ -2616,7 +2392,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -2629,7 +2404,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (codedCommentGroupId_ == null) {
-              CodedCommentGroupId = new global::Agrirouter.Technicalmessagetype.UID();
+              CodedCommentGroupId = new global::Efdi.UID();
             }
             input.ReadMessage(CodedCommentGroupId);
             break;
@@ -2649,7 +2424,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -2659,7 +2433,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (codedCommentGroupId_ == null) {
-              CodedCommentGroupId = new global::Agrirouter.Technicalmessagetype.UID();
+              CodedCommentGroupId = new global::Efdi.UID();
             }
             input.ReadMessage(CodedCommentGroupId);
             break;
@@ -2690,23 +2464,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<CodedCommentListValue> _parser = new pb::MessageParser<CodedCommentListValue>(() => new CodedCommentListValue());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<CodedCommentListValue> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CodedCommentListValue() {
       OnConstruction();
     }
@@ -2714,7 +2484,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CodedCommentListValue(CodedCommentListValue other) : this() {
       codedCommentListValueId_ = other.codedCommentListValueId_ != null ? other.codedCommentListValueId_.Clone() : null;
       codedCommentListValueDesignator_ = other.codedCommentListValueDesignator_;
@@ -2723,17 +2492,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CodedCommentListValue Clone() {
       return new CodedCommentListValue(this);
     }
 
     /// <summary>Field number for the "coded_comment_list_value_id" field.</summary>
     public const int CodedCommentListValueIdFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.UID codedCommentListValueId_;
+    private global::Efdi.UID codedCommentListValueId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID CodedCommentListValueId {
+    public global::Efdi.UID CodedCommentListValueId {
       get { return codedCommentListValueId_; }
       set {
         codedCommentListValueId_ = value;
@@ -2744,7 +2511,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int CodedCommentListValueDesignatorFieldNumber = 2;
     private string codedCommentListValueDesignator_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string CodedCommentListValueDesignator {
       get { return codedCommentListValueDesignator_; }
       set {
@@ -2758,19 +2524,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as CodedCommentListValue);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(CodedCommentListValue other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2785,7 +2548,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (codedCommentListValueId_ != null) hash ^= CodedCommentListValueId.GetHashCode();
@@ -2798,13 +2560,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -2826,7 +2586,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (codedCommentListValueId_ != null) {
         output.WriteRawTag(10);
@@ -2844,7 +2603,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (codedCommentListValueId_ != null) {
@@ -2861,14 +2619,13 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(CodedCommentListValue other) {
       if (other == null) {
         return;
       }
       if (other.codedCommentListValueId_ != null) {
         if (codedCommentListValueId_ == null) {
-          CodedCommentListValueId = new global::Agrirouter.Technicalmessagetype.UID();
+          CodedCommentListValueId = new global::Efdi.UID();
         }
         CodedCommentListValueId.MergeFrom(other.CodedCommentListValueId);
       }
@@ -2880,7 +2637,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -2893,7 +2649,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (codedCommentListValueId_ == null) {
-              CodedCommentListValueId = new global::Agrirouter.Technicalmessagetype.UID();
+              CodedCommentListValueId = new global::Efdi.UID();
             }
             input.ReadMessage(CodedCommentListValueId);
             break;
@@ -2913,7 +2669,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -2923,7 +2678,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (codedCommentListValueId_ == null) {
-              CodedCommentListValueId = new global::Agrirouter.Technicalmessagetype.UID();
+              CodedCommentListValueId = new global::Efdi.UID();
             }
             input.ReadMessage(CodedCommentListValueId);
             break;
@@ -2954,23 +2709,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<ColourLegend> _parser = new pb::MessageParser<ColourLegend>(() => new ColourLegend());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ColourLegend> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ColourLegend() {
       OnConstruction();
     }
@@ -2978,7 +2729,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ColourLegend(ColourLegend other) : this() {
       colourLegendId_ = other.colourLegendId_ != null ? other.colourLegendId_.Clone() : null;
       defaultColour_ = other.defaultColour_;
@@ -2988,17 +2738,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ColourLegend Clone() {
       return new ColourLegend(this);
     }
 
     /// <summary>Field number for the "colour_legend_id" field.</summary>
     public const int ColourLegendIdFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.UID colourLegendId_;
+    private global::Efdi.UID colourLegendId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID ColourLegendId {
+    public global::Efdi.UID ColourLegendId {
       get { return colourLegendId_; }
       set {
         colourLegendId_ = value;
@@ -3009,7 +2757,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DefaultColourFieldNumber = 2;
     private uint defaultColour_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint DefaultColour {
       get { return defaultColour_; }
       set {
@@ -3019,12 +2766,11 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "colour_range" field.</summary>
     public const int ColourRangeFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.ColourRange> _repeated_colourRange_codec
-        = pb::FieldCodec.ForMessage(26, global::Agrirouter.Technicalmessagetype.ColourRange.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.ColourRange> colourRange_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.ColourRange>();
+    private static readonly pb::FieldCodec<global::Efdi.ColourRange> _repeated_colourRange_codec
+        = pb::FieldCodec.ForMessage(26, global::Efdi.ColourRange.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.ColourRange> colourRange_ = new pbc::RepeatedField<global::Efdi.ColourRange>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.ColourRange> ColourRange {
+    public pbc::RepeatedField<global::Efdi.ColourRange> ColourRange {
       get { return colourRange_; }
     }
 
@@ -3034,19 +2780,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ColourLegend);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ColourLegend other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -3062,7 +2805,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (colourLegendId_ != null) hash ^= ColourLegendId.GetHashCode();
@@ -3076,13 +2818,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -3105,7 +2845,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (colourLegendId_ != null) {
         output.WriteRawTag(10);
@@ -3124,7 +2863,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (colourLegendId_ != null) {
@@ -3142,14 +2880,13 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ColourLegend other) {
       if (other == null) {
         return;
       }
       if (other.colourLegendId_ != null) {
         if (colourLegendId_ == null) {
-          ColourLegendId = new global::Agrirouter.Technicalmessagetype.UID();
+          ColourLegendId = new global::Efdi.UID();
         }
         ColourLegendId.MergeFrom(other.ColourLegendId);
       }
@@ -3162,7 +2899,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -3175,7 +2911,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (colourLegendId_ == null) {
-              ColourLegendId = new global::Agrirouter.Technicalmessagetype.UID();
+              ColourLegendId = new global::Efdi.UID();
             }
             input.ReadMessage(ColourLegendId);
             break;
@@ -3199,7 +2935,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -3209,7 +2944,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (colourLegendId_ == null) {
-              ColourLegendId = new global::Agrirouter.Technicalmessagetype.UID();
+              ColourLegendId = new global::Efdi.UID();
             }
             input.ReadMessage(ColourLegendId);
             break;
@@ -3244,23 +2979,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<ColourRange> _parser = new pb::MessageParser<ColourRange>(() => new ColourRange());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ColourRange> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ColourRange() {
       OnConstruction();
     }
@@ -3268,7 +2999,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ColourRange(ColourRange other) : this() {
       minimumValue_ = other.minimumValue_;
       maximumValue_ = other.maximumValue_;
@@ -3278,7 +3008,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ColourRange Clone() {
       return new ColourRange(this);
     }
@@ -3287,7 +3016,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int MinimumValueFieldNumber = 1;
     private long minimumValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long MinimumValue {
       get { return minimumValue_; }
       set {
@@ -3299,7 +3027,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int MaximumValueFieldNumber = 2;
     private long maximumValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long MaximumValue {
       get { return maximumValue_; }
       set {
@@ -3311,7 +3038,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int ColourFieldNumber = 3;
     private uint colour_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint Colour {
       get { return colour_; }
       set {
@@ -3325,19 +3051,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ColourRange);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ColourRange other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -3353,7 +3076,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (MinimumValue != 0L) hash ^= MinimumValue.GetHashCode();
@@ -3367,13 +3089,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -3399,7 +3119,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (MinimumValue != 0L) {
         output.WriteRawTag(8);
@@ -3421,7 +3140,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (MinimumValue != 0L) {
@@ -3441,7 +3159,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ColourRange other) {
       if (other == null) {
         return;
@@ -3460,7 +3177,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -3494,7 +3210,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -3536,23 +3251,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<CommentAllocation> _parser = new pb::MessageParser<CommentAllocation>(() => new CommentAllocation());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<CommentAllocation> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CommentAllocation() {
       OnConstruction();
     }
@@ -3560,7 +3271,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CommentAllocation(CommentAllocation other) : this() {
       codedCommentIdRef_ = other.codedCommentIdRef_ != null ? other.codedCommentIdRef_.Clone() : null;
       codedCommentListValue_ = other.codedCommentListValue_ != null ? other.codedCommentListValue_.Clone() : null;
@@ -3571,17 +3281,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CommentAllocation Clone() {
       return new CommentAllocation(this);
     }
 
     /// <summary>Field number for the "coded_comment_id_ref" field.</summary>
     public const int CodedCommentIdRefFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.UID codedCommentIdRef_;
+    private global::Efdi.UID codedCommentIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID CodedCommentIdRef {
+    public global::Efdi.UID CodedCommentIdRef {
       get { return codedCommentIdRef_; }
       set {
         codedCommentIdRef_ = value;
@@ -3590,10 +3298,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "coded_comment_list_value" field.</summary>
     public const int CodedCommentListValueFieldNumber = 2;
-    private global::Agrirouter.Technicalmessagetype.UID codedCommentListValue_;
+    private global::Efdi.UID codedCommentListValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID CodedCommentListValue {
+    public global::Efdi.UID CodedCommentListValue {
       get { return codedCommentListValue_; }
       set {
         codedCommentListValue_ = value;
@@ -3604,7 +3311,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int FreeCommentTextFieldNumber = 3;
     private string freeCommentText_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string FreeCommentText {
       get { return freeCommentText_; }
       set {
@@ -3614,10 +3320,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "allocation_stamp" field.</summary>
     public const int AllocationStampFieldNumber = 4;
-    private global::Agrirouter.Technicalmessagetype.AllocationStamp allocationStamp_;
+    private global::Efdi.AllocationStamp allocationStamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.AllocationStamp AllocationStamp {
+    public global::Efdi.AllocationStamp AllocationStamp {
       get { return allocationStamp_; }
       set {
         allocationStamp_ = value;
@@ -3630,19 +3335,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as CommentAllocation);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(CommentAllocation other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -3659,7 +3361,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (codedCommentIdRef_ != null) hash ^= CodedCommentIdRef.GetHashCode();
@@ -3674,13 +3375,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -3710,7 +3409,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (codedCommentIdRef_ != null) {
         output.WriteRawTag(10);
@@ -3736,7 +3434,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (codedCommentIdRef_ != null) {
@@ -3759,20 +3456,19 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(CommentAllocation other) {
       if (other == null) {
         return;
       }
       if (other.codedCommentIdRef_ != null) {
         if (codedCommentIdRef_ == null) {
-          CodedCommentIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          CodedCommentIdRef = new global::Efdi.UID();
         }
         CodedCommentIdRef.MergeFrom(other.CodedCommentIdRef);
       }
       if (other.codedCommentListValue_ != null) {
         if (codedCommentListValue_ == null) {
-          CodedCommentListValue = new global::Agrirouter.Technicalmessagetype.UID();
+          CodedCommentListValue = new global::Efdi.UID();
         }
         CodedCommentListValue.MergeFrom(other.CodedCommentListValue);
       }
@@ -3781,7 +3477,7 @@ namespace Agrirouter.Technicalmessagetype {
       }
       if (other.allocationStamp_ != null) {
         if (allocationStamp_ == null) {
-          AllocationStamp = new global::Agrirouter.Technicalmessagetype.AllocationStamp();
+          AllocationStamp = new global::Efdi.AllocationStamp();
         }
         AllocationStamp.MergeFrom(other.AllocationStamp);
       }
@@ -3790,7 +3486,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -3803,14 +3498,14 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (codedCommentIdRef_ == null) {
-              CodedCommentIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              CodedCommentIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(CodedCommentIdRef);
             break;
           }
           case 18: {
             if (codedCommentListValue_ == null) {
-              CodedCommentListValue = new global::Agrirouter.Technicalmessagetype.UID();
+              CodedCommentListValue = new global::Efdi.UID();
             }
             input.ReadMessage(CodedCommentListValue);
             break;
@@ -3821,7 +3516,7 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 34: {
             if (allocationStamp_ == null) {
-              AllocationStamp = new global::Agrirouter.Technicalmessagetype.AllocationStamp();
+              AllocationStamp = new global::Efdi.AllocationStamp();
             }
             input.ReadMessage(AllocationStamp);
             break;
@@ -3837,7 +3532,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -3847,14 +3541,14 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (codedCommentIdRef_ == null) {
-              CodedCommentIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              CodedCommentIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(CodedCommentIdRef);
             break;
           }
           case 18: {
             if (codedCommentListValue_ == null) {
-              CodedCommentListValue = new global::Agrirouter.Technicalmessagetype.UID();
+              CodedCommentListValue = new global::Efdi.UID();
             }
             input.ReadMessage(CodedCommentListValue);
             break;
@@ -3865,7 +3559,7 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 34: {
             if (allocationStamp_ == null) {
-              AllocationStamp = new global::Agrirouter.Technicalmessagetype.AllocationStamp();
+              AllocationStamp = new global::Efdi.AllocationStamp();
             }
             input.ReadMessage(AllocationStamp);
             break;
@@ -3893,23 +3587,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<Connection> _parser = new pb::MessageParser<Connection>(() => new Connection());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Connection> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Connection() {
       OnConstruction();
     }
@@ -3917,7 +3607,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Connection(Connection other) : this() {
       deviceIdRef0_ = other.deviceIdRef0_ != null ? other.deviceIdRef0_.Clone() : null;
       deviceElementIdRef0_ = other.deviceElementIdRef0_ != null ? other.deviceElementIdRef0_.Clone() : null;
@@ -3928,17 +3617,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Connection Clone() {
       return new Connection(this);
     }
 
     /// <summary>Field number for the "device_id_ref_0" field.</summary>
     public const int DeviceIdRef0FieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.UID deviceIdRef0_;
+    private global::Efdi.UID deviceIdRef0_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID DeviceIdRef0 {
+    public global::Efdi.UID DeviceIdRef0 {
       get { return deviceIdRef0_; }
       set {
         deviceIdRef0_ = value;
@@ -3947,10 +3634,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "device_element_id_ref_0" field.</summary>
     public const int DeviceElementIdRef0FieldNumber = 2;
-    private global::Agrirouter.Technicalmessagetype.UID deviceElementIdRef0_;
+    private global::Efdi.UID deviceElementIdRef0_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID DeviceElementIdRef0 {
+    public global::Efdi.UID DeviceElementIdRef0 {
       get { return deviceElementIdRef0_; }
       set {
         deviceElementIdRef0_ = value;
@@ -3959,10 +3645,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "device_id_ref_1" field.</summary>
     public const int DeviceIdRef1FieldNumber = 3;
-    private global::Agrirouter.Technicalmessagetype.UID deviceIdRef1_;
+    private global::Efdi.UID deviceIdRef1_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID DeviceIdRef1 {
+    public global::Efdi.UID DeviceIdRef1 {
       get { return deviceIdRef1_; }
       set {
         deviceIdRef1_ = value;
@@ -3971,10 +3656,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "device_element_id_ref_1" field.</summary>
     public const int DeviceElementIdRef1FieldNumber = 4;
-    private global::Agrirouter.Technicalmessagetype.UID deviceElementIdRef1_;
+    private global::Efdi.UID deviceElementIdRef1_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID DeviceElementIdRef1 {
+    public global::Efdi.UID DeviceElementIdRef1 {
       get { return deviceElementIdRef1_; }
       set {
         deviceElementIdRef1_ = value;
@@ -3987,19 +3671,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Connection);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Connection other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -4016,7 +3697,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (deviceIdRef0_ != null) hash ^= DeviceIdRef0.GetHashCode();
@@ -4031,13 +3711,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -4067,7 +3745,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (deviceIdRef0_ != null) {
         output.WriteRawTag(10);
@@ -4093,7 +3770,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (deviceIdRef0_ != null) {
@@ -4116,32 +3792,31 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Connection other) {
       if (other == null) {
         return;
       }
       if (other.deviceIdRef0_ != null) {
         if (deviceIdRef0_ == null) {
-          DeviceIdRef0 = new global::Agrirouter.Technicalmessagetype.UID();
+          DeviceIdRef0 = new global::Efdi.UID();
         }
         DeviceIdRef0.MergeFrom(other.DeviceIdRef0);
       }
       if (other.deviceElementIdRef0_ != null) {
         if (deviceElementIdRef0_ == null) {
-          DeviceElementIdRef0 = new global::Agrirouter.Technicalmessagetype.UID();
+          DeviceElementIdRef0 = new global::Efdi.UID();
         }
         DeviceElementIdRef0.MergeFrom(other.DeviceElementIdRef0);
       }
       if (other.deviceIdRef1_ != null) {
         if (deviceIdRef1_ == null) {
-          DeviceIdRef1 = new global::Agrirouter.Technicalmessagetype.UID();
+          DeviceIdRef1 = new global::Efdi.UID();
         }
         DeviceIdRef1.MergeFrom(other.DeviceIdRef1);
       }
       if (other.deviceElementIdRef1_ != null) {
         if (deviceElementIdRef1_ == null) {
-          DeviceElementIdRef1 = new global::Agrirouter.Technicalmessagetype.UID();
+          DeviceElementIdRef1 = new global::Efdi.UID();
         }
         DeviceElementIdRef1.MergeFrom(other.DeviceElementIdRef1);
       }
@@ -4150,7 +3825,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -4163,28 +3837,28 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (deviceIdRef0_ == null) {
-              DeviceIdRef0 = new global::Agrirouter.Technicalmessagetype.UID();
+              DeviceIdRef0 = new global::Efdi.UID();
             }
             input.ReadMessage(DeviceIdRef0);
             break;
           }
           case 18: {
             if (deviceElementIdRef0_ == null) {
-              DeviceElementIdRef0 = new global::Agrirouter.Technicalmessagetype.UID();
+              DeviceElementIdRef0 = new global::Efdi.UID();
             }
             input.ReadMessage(DeviceElementIdRef0);
             break;
           }
           case 26: {
             if (deviceIdRef1_ == null) {
-              DeviceIdRef1 = new global::Agrirouter.Technicalmessagetype.UID();
+              DeviceIdRef1 = new global::Efdi.UID();
             }
             input.ReadMessage(DeviceIdRef1);
             break;
           }
           case 34: {
             if (deviceElementIdRef1_ == null) {
-              DeviceElementIdRef1 = new global::Agrirouter.Technicalmessagetype.UID();
+              DeviceElementIdRef1 = new global::Efdi.UID();
             }
             input.ReadMessage(DeviceElementIdRef1);
             break;
@@ -4200,7 +3874,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -4210,28 +3883,28 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (deviceIdRef0_ == null) {
-              DeviceIdRef0 = new global::Agrirouter.Technicalmessagetype.UID();
+              DeviceIdRef0 = new global::Efdi.UID();
             }
             input.ReadMessage(DeviceIdRef0);
             break;
           }
           case 18: {
             if (deviceElementIdRef0_ == null) {
-              DeviceElementIdRef0 = new global::Agrirouter.Technicalmessagetype.UID();
+              DeviceElementIdRef0 = new global::Efdi.UID();
             }
             input.ReadMessage(DeviceElementIdRef0);
             break;
           }
           case 26: {
             if (deviceIdRef1_ == null) {
-              DeviceIdRef1 = new global::Agrirouter.Technicalmessagetype.UID();
+              DeviceIdRef1 = new global::Efdi.UID();
             }
             input.ReadMessage(DeviceIdRef1);
             break;
           }
           case 34: {
             if (deviceElementIdRef1_ == null) {
-              DeviceElementIdRef1 = new global::Agrirouter.Technicalmessagetype.UID();
+              DeviceElementIdRef1 = new global::Efdi.UID();
             }
             input.ReadMessage(DeviceElementIdRef1);
             break;
@@ -4258,23 +3931,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<ControlAssignment> _parser = new pb::MessageParser<ControlAssignment>(() => new ControlAssignment());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ControlAssignment> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[11]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ControlAssignment() {
       OnConstruction();
     }
@@ -4282,7 +3951,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ControlAssignment(ControlAssignment other) : this() {
       sourceClientName_ = other.sourceClientName_;
       userClientName_ = other.userClientName_;
@@ -4297,7 +3965,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ControlAssignment Clone() {
       return new ControlAssignment(this);
     }
@@ -4306,7 +3973,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int SourceClientNameFieldNumber = 1;
     private pb::ByteString sourceClientName_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pb::ByteString SourceClientName {
       get { return sourceClientName_; }
       set {
@@ -4318,7 +3984,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int UserClientNameFieldNumber = 2;
     private pb::ByteString userClientName_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pb::ByteString UserClientName {
       get { return userClientName_; }
       set {
@@ -4330,7 +3995,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int SourceDeviceStructureLabelFieldNumber = 3;
     private pb::ByteString sourceDeviceStructureLabel_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pb::ByteString SourceDeviceStructureLabel {
       get { return sourceDeviceStructureLabel_; }
       set {
@@ -4342,7 +4006,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int UserDeviceStructureLabelFieldNumber = 4;
     private pb::ByteString userDeviceStructureLabel_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pb::ByteString UserDeviceStructureLabel {
       get { return userDeviceStructureLabel_; }
       set {
@@ -4354,7 +4017,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int SourceDeviceElementNumberFieldNumber = 5;
     private uint sourceDeviceElementNumber_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint SourceDeviceElementNumber {
       get { return sourceDeviceElementNumber_; }
       set {
@@ -4366,7 +4028,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int UserDeviceElementNumberFieldNumber = 6;
     private uint userDeviceElementNumber_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint UserDeviceElementNumber {
       get { return userDeviceElementNumber_; }
       set {
@@ -4378,7 +4039,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int ProcessDataDdiFieldNumber = 7;
     private uint processDataDdi_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint ProcessDataDdi {
       get { return processDataDdi_; }
       set {
@@ -4388,10 +4048,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "allocation_stamp" field.</summary>
     public const int AllocationStampFieldNumber = 8;
-    private global::Agrirouter.Technicalmessagetype.AllocationStamp allocationStamp_;
+    private global::Efdi.AllocationStamp allocationStamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.AllocationStamp AllocationStamp {
+    public global::Efdi.AllocationStamp AllocationStamp {
       get { return allocationStamp_; }
       set {
         allocationStamp_ = value;
@@ -4404,19 +4063,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ControlAssignment);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ControlAssignment other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -4437,7 +4093,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (SourceClientName.Length != 0) hash ^= SourceClientName.GetHashCode();
@@ -4456,13 +4111,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -4508,7 +4161,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (SourceClientName.Length != 0) {
         output.WriteRawTag(10);
@@ -4550,7 +4202,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (SourceClientName.Length != 0) {
@@ -4585,7 +4236,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ControlAssignment other) {
       if (other == null) {
         return;
@@ -4613,7 +4263,7 @@ namespace Agrirouter.Technicalmessagetype {
       }
       if (other.allocationStamp_ != null) {
         if (allocationStamp_ == null) {
-          AllocationStamp = new global::Agrirouter.Technicalmessagetype.AllocationStamp();
+          AllocationStamp = new global::Efdi.AllocationStamp();
         }
         AllocationStamp.MergeFrom(other.AllocationStamp);
       }
@@ -4622,7 +4272,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -4663,7 +4312,7 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 66: {
             if (allocationStamp_ == null) {
-              AllocationStamp = new global::Agrirouter.Technicalmessagetype.AllocationStamp();
+              AllocationStamp = new global::Efdi.AllocationStamp();
             }
             input.ReadMessage(AllocationStamp);
             break;
@@ -4679,7 +4328,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -4717,7 +4365,7 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 66: {
             if (allocationStamp_ == null) {
-              AllocationStamp = new global::Agrirouter.Technicalmessagetype.AllocationStamp();
+              AllocationStamp = new global::Efdi.AllocationStamp();
             }
             input.ReadMessage(AllocationStamp);
             break;
@@ -4744,23 +4392,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<CropType> _parser = new pb::MessageParser<CropType>(() => new CropType());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<CropType> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[12]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CropType() {
       OnConstruction();
     }
@@ -4768,7 +4412,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CropType(CropType other) : this() {
       cropTypeId_ = other.cropTypeId_ != null ? other.cropTypeId_.Clone() : null;
       cropTypeDesignator_ = other.cropTypeDesignator_;
@@ -4779,17 +4422,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CropType Clone() {
       return new CropType(this);
     }
 
     /// <summary>Field number for the "crop_type_id" field.</summary>
     public const int CropTypeIdFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.UID cropTypeId_;
+    private global::Efdi.UID cropTypeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID CropTypeId {
+    public global::Efdi.UID CropTypeId {
       get { return cropTypeId_; }
       set {
         cropTypeId_ = value;
@@ -4800,7 +4441,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int CropTypeDesignatorFieldNumber = 2;
     private string cropTypeDesignator_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string CropTypeDesignator {
       get { return cropTypeDesignator_; }
       set {
@@ -4810,10 +4450,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "product_group_id_ref" field.</summary>
     public const int ProductGroupIdRefFieldNumber = 3;
-    private global::Agrirouter.Technicalmessagetype.UID productGroupIdRef_;
+    private global::Efdi.UID productGroupIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID ProductGroupIdRef {
+    public global::Efdi.UID ProductGroupIdRef {
       get { return productGroupIdRef_; }
       set {
         productGroupIdRef_ = value;
@@ -4822,12 +4461,11 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "crop_variety" field.</summary>
     public const int CropVarietyFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.CropVariety> _repeated_cropVariety_codec
-        = pb::FieldCodec.ForMessage(34, global::Agrirouter.Technicalmessagetype.CropVariety.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.CropVariety> cropVariety_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.CropVariety>();
+    private static readonly pb::FieldCodec<global::Efdi.CropVariety> _repeated_cropVariety_codec
+        = pb::FieldCodec.ForMessage(34, global::Efdi.CropVariety.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.CropVariety> cropVariety_ = new pbc::RepeatedField<global::Efdi.CropVariety>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.CropVariety> CropVariety {
+    public pbc::RepeatedField<global::Efdi.CropVariety> CropVariety {
       get { return cropVariety_; }
     }
 
@@ -4837,19 +4475,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as CropType);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(CropType other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -4866,7 +4501,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (cropTypeId_ != null) hash ^= CropTypeId.GetHashCode();
@@ -4881,13 +4515,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -4914,7 +4546,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (cropTypeId_ != null) {
         output.WriteRawTag(10);
@@ -4937,7 +4568,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (cropTypeId_ != null) {
@@ -4958,14 +4588,13 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(CropType other) {
       if (other == null) {
         return;
       }
       if (other.cropTypeId_ != null) {
         if (cropTypeId_ == null) {
-          CropTypeId = new global::Agrirouter.Technicalmessagetype.UID();
+          CropTypeId = new global::Efdi.UID();
         }
         CropTypeId.MergeFrom(other.CropTypeId);
       }
@@ -4974,7 +4603,7 @@ namespace Agrirouter.Technicalmessagetype {
       }
       if (other.productGroupIdRef_ != null) {
         if (productGroupIdRef_ == null) {
-          ProductGroupIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          ProductGroupIdRef = new global::Efdi.UID();
         }
         ProductGroupIdRef.MergeFrom(other.ProductGroupIdRef);
       }
@@ -4984,7 +4613,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -4997,7 +4625,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (cropTypeId_ == null) {
-              CropTypeId = new global::Agrirouter.Technicalmessagetype.UID();
+              CropTypeId = new global::Efdi.UID();
             }
             input.ReadMessage(CropTypeId);
             break;
@@ -5008,7 +4636,7 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 26: {
             if (productGroupIdRef_ == null) {
-              ProductGroupIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              ProductGroupIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(ProductGroupIdRef);
             break;
@@ -5028,7 +4656,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -5038,7 +4665,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (cropTypeId_ == null) {
-              CropTypeId = new global::Agrirouter.Technicalmessagetype.UID();
+              CropTypeId = new global::Efdi.UID();
             }
             input.ReadMessage(CropTypeId);
             break;
@@ -5049,7 +4676,7 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 26: {
             if (productGroupIdRef_ == null) {
-              ProductGroupIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              ProductGroupIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(ProductGroupIdRef);
             break;
@@ -5080,23 +4707,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<CropVariety> _parser = new pb::MessageParser<CropVariety>(() => new CropVariety());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<CropVariety> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[13]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CropVariety() {
       OnConstruction();
     }
@@ -5104,7 +4727,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CropVariety(CropVariety other) : this() {
       cropVarietyId_ = other.cropVarietyId_ != null ? other.cropVarietyId_.Clone() : null;
       cropVarietyDesignator_ = other.cropVarietyDesignator_;
@@ -5114,17 +4736,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CropVariety Clone() {
       return new CropVariety(this);
     }
 
     /// <summary>Field number for the "crop_variety_id" field.</summary>
     public const int CropVarietyIdFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.UID cropVarietyId_;
+    private global::Efdi.UID cropVarietyId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID CropVarietyId {
+    public global::Efdi.UID CropVarietyId {
       get { return cropVarietyId_; }
       set {
         cropVarietyId_ = value;
@@ -5135,7 +4755,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int CropVarietyDesignatorFieldNumber = 2;
     private string cropVarietyDesignator_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string CropVarietyDesignator {
       get { return cropVarietyDesignator_; }
       set {
@@ -5145,10 +4764,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "product_id_ref" field.</summary>
     public const int ProductIdRefFieldNumber = 3;
-    private global::Agrirouter.Technicalmessagetype.UID productIdRef_;
+    private global::Efdi.UID productIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID ProductIdRef {
+    public global::Efdi.UID ProductIdRef {
       get { return productIdRef_; }
       set {
         productIdRef_ = value;
@@ -5161,19 +4779,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as CropVariety);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(CropVariety other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -5189,7 +4804,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (cropVarietyId_ != null) hash ^= CropVarietyId.GetHashCode();
@@ -5203,13 +4817,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -5235,7 +4847,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (cropVarietyId_ != null) {
         output.WriteRawTag(10);
@@ -5257,7 +4868,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (cropVarietyId_ != null) {
@@ -5277,14 +4887,13 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(CropVariety other) {
       if (other == null) {
         return;
       }
       if (other.cropVarietyId_ != null) {
         if (cropVarietyId_ == null) {
-          CropVarietyId = new global::Agrirouter.Technicalmessagetype.UID();
+          CropVarietyId = new global::Efdi.UID();
         }
         CropVarietyId.MergeFrom(other.CropVarietyId);
       }
@@ -5293,7 +4902,7 @@ namespace Agrirouter.Technicalmessagetype {
       }
       if (other.productIdRef_ != null) {
         if (productIdRef_ == null) {
-          ProductIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          ProductIdRef = new global::Efdi.UID();
         }
         ProductIdRef.MergeFrom(other.ProductIdRef);
       }
@@ -5302,7 +4911,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -5315,7 +4923,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (cropVarietyId_ == null) {
-              CropVarietyId = new global::Agrirouter.Technicalmessagetype.UID();
+              CropVarietyId = new global::Efdi.UID();
             }
             input.ReadMessage(CropVarietyId);
             break;
@@ -5326,7 +4934,7 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 26: {
             if (productIdRef_ == null) {
-              ProductIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              ProductIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(ProductIdRef);
             break;
@@ -5342,7 +4950,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -5352,7 +4959,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (cropVarietyId_ == null) {
-              CropVarietyId = new global::Agrirouter.Technicalmessagetype.UID();
+              CropVarietyId = new global::Efdi.UID();
             }
             input.ReadMessage(CropVarietyId);
             break;
@@ -5363,7 +4970,7 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 26: {
             if (productIdRef_ == null) {
-              ProductIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              ProductIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(ProductIdRef);
             break;
@@ -5390,23 +4997,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<CulturalPractice> _parser = new pb::MessageParser<CulturalPractice>(() => new CulturalPractice());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<CulturalPractice> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[14]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CulturalPractice() {
       OnConstruction();
     }
@@ -5414,7 +5017,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CulturalPractice(CulturalPractice other) : this() {
       culturalPracticeId_ = other.culturalPracticeId_ != null ? other.culturalPracticeId_.Clone() : null;
       culturalPracticeDesignator_ = other.culturalPracticeDesignator_;
@@ -5423,17 +5025,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CulturalPractice Clone() {
       return new CulturalPractice(this);
     }
 
     /// <summary>Field number for the "cultural_practice_id" field.</summary>
     public const int CulturalPracticeIdFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.UID culturalPracticeId_;
+    private global::Efdi.UID culturalPracticeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID CulturalPracticeId {
+    public global::Efdi.UID CulturalPracticeId {
       get { return culturalPracticeId_; }
       set {
         culturalPracticeId_ = value;
@@ -5444,7 +5044,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int CulturalPracticeDesignatorFieldNumber = 2;
     private string culturalPracticeDesignator_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string CulturalPracticeDesignator {
       get { return culturalPracticeDesignator_; }
       set {
@@ -5454,23 +5053,20 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "operation_technique_reference" field.</summary>
     public const int OperationTechniqueReferenceFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.OperationTechniqueReference> _repeated_operationTechniqueReference_codec
-        = pb::FieldCodec.ForMessage(26, global::Agrirouter.Technicalmessagetype.OperationTechniqueReference.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.OperationTechniqueReference> operationTechniqueReference_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.OperationTechniqueReference>();
+    private static readonly pb::FieldCodec<global::Efdi.OperationTechniqueReference> _repeated_operationTechniqueReference_codec
+        = pb::FieldCodec.ForMessage(26, global::Efdi.OperationTechniqueReference.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.OperationTechniqueReference> operationTechniqueReference_ = new pbc::RepeatedField<global::Efdi.OperationTechniqueReference>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.OperationTechniqueReference> OperationTechniqueReference {
+    public pbc::RepeatedField<global::Efdi.OperationTechniqueReference> OperationTechniqueReference {
       get { return operationTechniqueReference_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as CulturalPractice);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(CulturalPractice other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -5485,7 +5081,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (culturalPracticeId_ != null) hash ^= CulturalPracticeId.GetHashCode();
@@ -5498,13 +5093,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -5526,7 +5119,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (culturalPracticeId_ != null) {
         output.WriteRawTag(10);
@@ -5544,7 +5136,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (culturalPracticeId_ != null) {
@@ -5561,14 +5152,13 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(CulturalPractice other) {
       if (other == null) {
         return;
       }
       if (other.culturalPracticeId_ != null) {
         if (culturalPracticeId_ == null) {
-          CulturalPracticeId = new global::Agrirouter.Technicalmessagetype.UID();
+          CulturalPracticeId = new global::Efdi.UID();
         }
         CulturalPracticeId.MergeFrom(other.CulturalPracticeId);
       }
@@ -5580,7 +5170,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -5593,7 +5182,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (culturalPracticeId_ == null) {
-              CulturalPracticeId = new global::Agrirouter.Technicalmessagetype.UID();
+              CulturalPracticeId = new global::Efdi.UID();
             }
             input.ReadMessage(CulturalPracticeId);
             break;
@@ -5613,7 +5202,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -5623,7 +5211,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (culturalPracticeId_ == null) {
-              CulturalPracticeId = new global::Agrirouter.Technicalmessagetype.UID();
+              CulturalPracticeId = new global::Efdi.UID();
             }
             input.ReadMessage(CulturalPracticeId);
             break;
@@ -5654,23 +5242,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<Customer> _parser = new pb::MessageParser<Customer>(() => new Customer());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Customer> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[15]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Customer() {
       OnConstruction();
     }
@@ -5678,7 +5262,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Customer(Customer other) : this() {
       customerId_ = other.customerId_ != null ? other.customerId_.Clone() : null;
       customerLastName_ = other.customerLastName_;
@@ -5698,17 +5281,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Customer Clone() {
       return new Customer(this);
     }
 
     /// <summary>Field number for the "customer_id" field.</summary>
     public const int CustomerIdFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.UID customerId_;
+    private global::Efdi.UID customerId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID CustomerId {
+    public global::Efdi.UID CustomerId {
       get { return customerId_; }
       set {
         customerId_ = value;
@@ -5719,7 +5300,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int CustomerLastNameFieldNumber = 2;
     private string customerLastName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string CustomerLastName {
       get { return customerLastName_; }
       set {
@@ -5731,7 +5311,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int CustomerFirstNameFieldNumber = 3;
     private string customerFirstName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string CustomerFirstName {
       get { return customerFirstName_; }
       set {
@@ -5743,7 +5322,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int CustomerStreetFieldNumber = 4;
     private string customerStreet_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string CustomerStreet {
       get { return customerStreet_; }
       set {
@@ -5755,7 +5333,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int CustomerPoBoxFieldNumber = 5;
     private string customerPoBox_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string CustomerPoBox {
       get { return customerPoBox_; }
       set {
@@ -5767,7 +5344,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int CustomerPostalCodeFieldNumber = 6;
     private string customerPostalCode_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string CustomerPostalCode {
       get { return customerPostalCode_; }
       set {
@@ -5779,7 +5355,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int CustomerCityFieldNumber = 7;
     private string customerCity_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string CustomerCity {
       get { return customerCity_; }
       set {
@@ -5791,7 +5366,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int CustomerStateFieldNumber = 8;
     private string customerState_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string CustomerState {
       get { return customerState_; }
       set {
@@ -5803,7 +5377,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int CustomerCountryFieldNumber = 9;
     private string customerCountry_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string CustomerCountry {
       get { return customerCountry_; }
       set {
@@ -5815,7 +5388,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int CustomerPhoneFieldNumber = 10;
     private string customerPhone_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string CustomerPhone {
       get { return customerPhone_; }
       set {
@@ -5827,7 +5399,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int CustomerMobileFieldNumber = 11;
     private string customerMobile_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string CustomerMobile {
       get { return customerMobile_; }
       set {
@@ -5839,7 +5410,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int CustomerFaxFieldNumber = 12;
     private string customerFax_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string CustomerFax {
       get { return customerFax_; }
       set {
@@ -5851,7 +5421,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int CustomerEmailFieldNumber = 13;
     private string customerEmail_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string CustomerEmail {
       get { return customerEmail_; }
       set {
@@ -5865,19 +5434,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Customer);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Customer other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -5903,7 +5469,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (customerId_ != null) hash ^= CustomerId.GetHashCode();
@@ -5927,13 +5492,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -5999,7 +5562,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (customerId_ != null) {
         output.WriteRawTag(10);
@@ -6061,7 +5623,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (customerId_ != null) {
@@ -6111,14 +5672,13 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Customer other) {
       if (other == null) {
         return;
       }
       if (other.customerId_ != null) {
         if (customerId_ == null) {
-          CustomerId = new global::Agrirouter.Technicalmessagetype.UID();
+          CustomerId = new global::Efdi.UID();
         }
         CustomerId.MergeFrom(other.CustomerId);
       }
@@ -6163,7 +5723,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -6176,7 +5735,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (customerId_ == null) {
-              CustomerId = new global::Agrirouter.Technicalmessagetype.UID();
+              CustomerId = new global::Efdi.UID();
             }
             input.ReadMessage(CustomerId);
             break;
@@ -6240,7 +5799,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -6250,7 +5808,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (customerId_ == null) {
-              CustomerId = new global::Agrirouter.Technicalmessagetype.UID();
+              CustomerId = new global::Efdi.UID();
             }
             input.ReadMessage(CustomerId);
             break;
@@ -6325,23 +5883,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<DataLogTrigger> _parser = new pb::MessageParser<DataLogTrigger>(() => new DataLogTrigger());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<DataLogTrigger> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[16]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DataLogTrigger() {
       OnConstruction();
     }
@@ -6349,7 +5903,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DataLogTrigger(DataLogTrigger other) : this() {
       dataLogDdi_ = other.dataLogDdi_;
       dataLogMethod_ = other.dataLogMethod_;
@@ -6368,7 +5921,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DataLogTrigger Clone() {
       return new DataLogTrigger(this);
     }
@@ -6377,7 +5929,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DataLogDdiFieldNumber = 1;
     private uint dataLogDdi_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint DataLogDdi {
       get { return dataLogDdi_; }
       set {
@@ -6389,7 +5940,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DataLogMethodFieldNumber = 2;
     private uint dataLogMethod_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint DataLogMethod {
       get { return dataLogMethod_; }
       set {
@@ -6401,7 +5951,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DataLogDistanceIntervalFieldNumber = 3;
     private long dataLogDistanceInterval_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long DataLogDistanceInterval {
       get { return dataLogDistanceInterval_; }
       set {
@@ -6413,7 +5962,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DataLogTimeIntervalFieldNumber = 4;
     private long dataLogTimeInterval_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long DataLogTimeInterval {
       get { return dataLogTimeInterval_; }
       set {
@@ -6425,7 +5973,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DataLogThresholdMinimumFieldNumber = 5;
     private long dataLogThresholdMinimum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long DataLogThresholdMinimum {
       get { return dataLogThresholdMinimum_; }
       set {
@@ -6437,7 +5984,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DataLogThresholdMaximumFieldNumber = 6;
     private long dataLogThresholdMaximum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long DataLogThresholdMaximum {
       get { return dataLogThresholdMaximum_; }
       set {
@@ -6449,7 +5995,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DataLogThresholdChangeFieldNumber = 7;
     private long dataLogThresholdChange_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long DataLogThresholdChange {
       get { return dataLogThresholdChange_; }
       set {
@@ -6459,10 +6004,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "device_element_id_ref" field.</summary>
     public const int DeviceElementIdRefFieldNumber = 8;
-    private global::Agrirouter.Technicalmessagetype.UID deviceElementIdRef_;
+    private global::Efdi.UID deviceElementIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID DeviceElementIdRef {
+    public global::Efdi.UID DeviceElementIdRef {
       get { return deviceElementIdRef_; }
       set {
         deviceElementIdRef_ = value;
@@ -6471,10 +6015,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "value_presentation_id_ref" field.</summary>
     public const int ValuePresentationIdRefFieldNumber = 9;
-    private global::Agrirouter.Technicalmessagetype.UID valuePresentationIdRef_;
+    private global::Efdi.UID valuePresentationIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID ValuePresentationIdRef {
+    public global::Efdi.UID ValuePresentationIdRef {
       get { return valuePresentationIdRef_; }
       set {
         valuePresentationIdRef_ = value;
@@ -6485,7 +6028,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DataLogPgnFieldNumber = 10;
     private ulong dataLogPgn_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ulong DataLogPgn {
       get { return dataLogPgn_; }
       set {
@@ -6497,7 +6039,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DataLogPgnStartBitFieldNumber = 11;
     private uint dataLogPgnStartBit_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint DataLogPgnStartBit {
       get { return dataLogPgnStartBit_; }
       set {
@@ -6509,7 +6050,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DataLogPgnStopBitFieldNumber = 12;
     private uint dataLogPgnStopBit_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint DataLogPgnStopBit {
       get { return dataLogPgnStopBit_; }
       set {
@@ -6523,19 +6063,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as DataLogTrigger);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(DataLogTrigger other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -6560,7 +6097,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (DataLogDdi != 0) hash ^= DataLogDdi.GetHashCode();
@@ -6583,13 +6119,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -6651,7 +6185,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (DataLogDdi != 0) {
         output.WriteRawTag(8);
@@ -6709,7 +6242,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (DataLogDdi != 0) {
@@ -6756,7 +6288,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(DataLogTrigger other) {
       if (other == null) {
         return;
@@ -6784,13 +6315,13 @@ namespace Agrirouter.Technicalmessagetype {
       }
       if (other.deviceElementIdRef_ != null) {
         if (deviceElementIdRef_ == null) {
-          DeviceElementIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          DeviceElementIdRef = new global::Efdi.UID();
         }
         DeviceElementIdRef.MergeFrom(other.DeviceElementIdRef);
       }
       if (other.valuePresentationIdRef_ != null) {
         if (valuePresentationIdRef_ == null) {
-          ValuePresentationIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          ValuePresentationIdRef = new global::Efdi.UID();
         }
         ValuePresentationIdRef.MergeFrom(other.ValuePresentationIdRef);
       }
@@ -6808,7 +6339,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -6849,14 +6379,14 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 66: {
             if (deviceElementIdRef_ == null) {
-              DeviceElementIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              DeviceElementIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(DeviceElementIdRef);
             break;
           }
           case 74: {
             if (valuePresentationIdRef_ == null) {
-              ValuePresentationIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              ValuePresentationIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(ValuePresentationIdRef);
             break;
@@ -6884,7 +6414,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -6922,14 +6451,14 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 66: {
             if (deviceElementIdRef_ == null) {
-              DeviceElementIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              DeviceElementIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(DeviceElementIdRef);
             break;
           }
           case 74: {
             if (valuePresentationIdRef_ == null) {
-              ValuePresentationIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              ValuePresentationIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(ValuePresentationIdRef);
             break;
@@ -6968,23 +6497,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<DataLogValue> _parser = new pb::MessageParser<DataLogValue>(() => new DataLogValue());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<DataLogValue> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[17]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DataLogValue() {
       OnConstruction();
     }
@@ -6992,7 +6517,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DataLogValue(DataLogValue other) : this() {
       processDataDdi_ = other.processDataDdi_;
       processDataValue_ = other.processDataValue_;
@@ -7005,7 +6529,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DataLogValue Clone() {
       return new DataLogValue(this);
     }
@@ -7014,7 +6537,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int ProcessDataDdiFieldNumber = 1;
     private uint processDataDdi_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint ProcessDataDdi {
       get { return processDataDdi_; }
       set {
@@ -7026,7 +6548,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int ProcessDataValueFieldNumber = 2;
     private long processDataValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long ProcessDataValue {
       get { return processDataValue_; }
       set {
@@ -7036,10 +6557,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "device_element_id_ref" field.</summary>
     public const int DeviceElementIdRefFieldNumber = 3;
-    private global::Agrirouter.Technicalmessagetype.UID deviceElementIdRef_;
+    private global::Efdi.UID deviceElementIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID DeviceElementIdRef {
+    public global::Efdi.UID DeviceElementIdRef {
       get { return deviceElementIdRef_; }
       set {
         deviceElementIdRef_ = value;
@@ -7050,7 +6570,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DataLogPgnFieldNumber = 4;
     private ulong dataLogPgn_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ulong DataLogPgn {
       get { return dataLogPgn_; }
       set {
@@ -7062,7 +6581,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DataLogPgnStartBitFieldNumber = 5;
     private uint dataLogPgnStartBit_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint DataLogPgnStartBit {
       get { return dataLogPgnStartBit_; }
       set {
@@ -7074,7 +6592,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DataLogPgnStopBitFieldNumber = 6;
     private uint dataLogPgnStopBit_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint DataLogPgnStopBit {
       get { return dataLogPgnStopBit_; }
       set {
@@ -7088,19 +6605,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as DataLogValue);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(DataLogValue other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -7119,7 +6633,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (ProcessDataDdi != 0) hash ^= ProcessDataDdi.GetHashCode();
@@ -7136,13 +6649,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -7180,7 +6691,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (ProcessDataDdi != 0) {
         output.WriteRawTag(8);
@@ -7214,7 +6724,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (ProcessDataDdi != 0) {
@@ -7243,7 +6752,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(DataLogValue other) {
       if (other == null) {
         return;
@@ -7256,7 +6764,7 @@ namespace Agrirouter.Technicalmessagetype {
       }
       if (other.deviceElementIdRef_ != null) {
         if (deviceElementIdRef_ == null) {
-          DeviceElementIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          DeviceElementIdRef = new global::Efdi.UID();
         }
         DeviceElementIdRef.MergeFrom(other.DeviceElementIdRef);
       }
@@ -7274,7 +6782,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -7295,7 +6802,7 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 26: {
             if (deviceElementIdRef_ == null) {
-              DeviceElementIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              DeviceElementIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(DeviceElementIdRef);
             break;
@@ -7323,7 +6830,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -7341,7 +6847,7 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 26: {
             if (deviceElementIdRef_ == null) {
-              DeviceElementIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              DeviceElementIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(DeviceElementIdRef);
             break;
@@ -7380,23 +6886,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<Device> _parser = new pb::MessageParser<Device>(() => new Device());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Device> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[18]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Device() {
       OnConstruction();
     }
@@ -7404,7 +6906,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Device(Device other) : this() {
       deviceId_ = other.deviceId_ != null ? other.deviceId_.Clone() : null;
       deviceDesignator_ = other.deviceDesignator_;
@@ -7422,17 +6923,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Device Clone() {
       return new Device(this);
     }
 
     /// <summary>Field number for the "device_id" field.</summary>
     public const int DeviceIdFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.UID deviceId_;
+    private global::Efdi.UID deviceId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID DeviceId {
+    public global::Efdi.UID DeviceId {
       get { return deviceId_; }
       set {
         deviceId_ = value;
@@ -7443,7 +6942,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DeviceDesignatorFieldNumber = 2;
     private string deviceDesignator_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string DeviceDesignator {
       get { return deviceDesignator_; }
       set {
@@ -7455,7 +6953,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DeviceSoftwareVersionFieldNumber = 3;
     private string deviceSoftwareVersion_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string DeviceSoftwareVersion {
       get { return deviceSoftwareVersion_; }
       set {
@@ -7467,7 +6964,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int ClientNameFieldNumber = 4;
     private pb::ByteString clientName_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pb::ByteString ClientName {
       get { return clientName_; }
       set {
@@ -7479,7 +6975,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DeviceSerialNumberFieldNumber = 5;
     private string deviceSerialNumber_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string DeviceSerialNumber {
       get { return deviceSerialNumber_; }
       set {
@@ -7491,7 +6986,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DeviceStructureLabelFieldNumber = 6;
     private pb::ByteString deviceStructureLabel_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pb::ByteString DeviceStructureLabel {
       get { return deviceStructureLabel_; }
       set {
@@ -7503,7 +6997,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DeviceLocalizationLabelFieldNumber = 7;
     private pb::ByteString deviceLocalizationLabel_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pb::ByteString DeviceLocalizationLabel {
       get { return deviceLocalizationLabel_; }
       set {
@@ -7513,45 +7006,41 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "device_element" field.</summary>
     public const int DeviceElementFieldNumber = 8;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.DeviceElement> _repeated_deviceElement_codec
-        = pb::FieldCodec.ForMessage(66, global::Agrirouter.Technicalmessagetype.DeviceElement.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.DeviceElement> deviceElement_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.DeviceElement>();
+    private static readonly pb::FieldCodec<global::Efdi.DeviceElement> _repeated_deviceElement_codec
+        = pb::FieldCodec.ForMessage(66, global::Efdi.DeviceElement.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.DeviceElement> deviceElement_ = new pbc::RepeatedField<global::Efdi.DeviceElement>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.DeviceElement> DeviceElement {
+    public pbc::RepeatedField<global::Efdi.DeviceElement> DeviceElement {
       get { return deviceElement_; }
     }
 
     /// <summary>Field number for the "device_process_data" field.</summary>
     public const int DeviceProcessDataFieldNumber = 9;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.DeviceProcessData> _repeated_deviceProcessData_codec
-        = pb::FieldCodec.ForMessage(74, global::Agrirouter.Technicalmessagetype.DeviceProcessData.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.DeviceProcessData> deviceProcessData_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.DeviceProcessData>();
+    private static readonly pb::FieldCodec<global::Efdi.DeviceProcessData> _repeated_deviceProcessData_codec
+        = pb::FieldCodec.ForMessage(74, global::Efdi.DeviceProcessData.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.DeviceProcessData> deviceProcessData_ = new pbc::RepeatedField<global::Efdi.DeviceProcessData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.DeviceProcessData> DeviceProcessData {
+    public pbc::RepeatedField<global::Efdi.DeviceProcessData> DeviceProcessData {
       get { return deviceProcessData_; }
     }
 
     /// <summary>Field number for the "device_property" field.</summary>
     public const int DevicePropertyFieldNumber = 10;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.DeviceProperty> _repeated_deviceProperty_codec
-        = pb::FieldCodec.ForMessage(82, global::Agrirouter.Technicalmessagetype.DeviceProperty.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.DeviceProperty> deviceProperty_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.DeviceProperty>();
+    private static readonly pb::FieldCodec<global::Efdi.DeviceProperty> _repeated_deviceProperty_codec
+        = pb::FieldCodec.ForMessage(82, global::Efdi.DeviceProperty.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.DeviceProperty> deviceProperty_ = new pbc::RepeatedField<global::Efdi.DeviceProperty>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.DeviceProperty> DeviceProperty {
+    public pbc::RepeatedField<global::Efdi.DeviceProperty> DeviceProperty {
       get { return deviceProperty_; }
     }
 
     /// <summary>Field number for the "device_value_presentation" field.</summary>
     public const int DeviceValuePresentationFieldNumber = 11;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.DeviceValuePresentation> _repeated_deviceValuePresentation_codec
-        = pb::FieldCodec.ForMessage(90, global::Agrirouter.Technicalmessagetype.DeviceValuePresentation.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.DeviceValuePresentation> deviceValuePresentation_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.DeviceValuePresentation>();
+    private static readonly pb::FieldCodec<global::Efdi.DeviceValuePresentation> _repeated_deviceValuePresentation_codec
+        = pb::FieldCodec.ForMessage(90, global::Efdi.DeviceValuePresentation.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.DeviceValuePresentation> deviceValuePresentation_ = new pbc::RepeatedField<global::Efdi.DeviceValuePresentation>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.DeviceValuePresentation> DeviceValuePresentation {
+    public pbc::RepeatedField<global::Efdi.DeviceValuePresentation> DeviceValuePresentation {
       get { return deviceValuePresentation_; }
     }
 
@@ -7561,19 +7050,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Device);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Device other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -7597,7 +7083,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (deviceId_ != null) hash ^= DeviceId.GetHashCode();
@@ -7619,13 +7104,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -7671,7 +7154,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (deviceId_ != null) {
         output.WriteRawTag(10);
@@ -7713,7 +7195,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (deviceId_ != null) {
@@ -7749,14 +7230,13 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Device other) {
       if (other == null) {
         return;
       }
       if (other.deviceId_ != null) {
         if (deviceId_ == null) {
-          DeviceId = new global::Agrirouter.Technicalmessagetype.UID();
+          DeviceId = new global::Efdi.UID();
         }
         DeviceId.MergeFrom(other.DeviceId);
       }
@@ -7787,7 +7267,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -7800,7 +7279,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (deviceId_ == null) {
-              DeviceId = new global::Agrirouter.Technicalmessagetype.UID();
+              DeviceId = new global::Efdi.UID();
             }
             input.ReadMessage(DeviceId);
             break;
@@ -7856,7 +7335,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -7866,7 +7344,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (deviceId_ == null) {
-              DeviceId = new global::Agrirouter.Technicalmessagetype.UID();
+              DeviceId = new global::Efdi.UID();
             }
             input.ReadMessage(DeviceId);
             break;
@@ -7933,23 +7411,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<DeviceAllocation> _parser = new pb::MessageParser<DeviceAllocation>(() => new DeviceAllocation());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<DeviceAllocation> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[19]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[19]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DeviceAllocation() {
       OnConstruction();
     }
@@ -7957,7 +7431,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DeviceAllocation(DeviceAllocation other) : this() {
       clientNameValue_ = other.clientNameValue_;
       clientNameMask_ = other.clientNameMask_;
@@ -7968,7 +7441,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DeviceAllocation Clone() {
       return new DeviceAllocation(this);
     }
@@ -7977,7 +7449,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int ClientNameValueFieldNumber = 1;
     private pb::ByteString clientNameValue_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pb::ByteString ClientNameValue {
       get { return clientNameValue_; }
       set {
@@ -7989,7 +7460,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int ClientNameMaskFieldNumber = 2;
     private pb::ByteString clientNameMask_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pb::ByteString ClientNameMask {
       get { return clientNameMask_; }
       set {
@@ -7999,10 +7469,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "device_id_ref" field.</summary>
     public const int DeviceIdRefFieldNumber = 3;
-    private global::Agrirouter.Technicalmessagetype.UID deviceIdRef_;
+    private global::Efdi.UID deviceIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID DeviceIdRef {
+    public global::Efdi.UID DeviceIdRef {
       get { return deviceIdRef_; }
       set {
         deviceIdRef_ = value;
@@ -8011,10 +7480,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "allocation_stamp" field.</summary>
     public const int AllocationStampFieldNumber = 4;
-    private global::Agrirouter.Technicalmessagetype.AllocationStamp allocationStamp_;
+    private global::Efdi.AllocationStamp allocationStamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.AllocationStamp AllocationStamp {
+    public global::Efdi.AllocationStamp AllocationStamp {
       get { return allocationStamp_; }
       set {
         allocationStamp_ = value;
@@ -8027,19 +7495,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as DeviceAllocation);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(DeviceAllocation other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -8056,7 +7521,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (ClientNameValue.Length != 0) hash ^= ClientNameValue.GetHashCode();
@@ -8071,13 +7535,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -8107,7 +7569,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (ClientNameValue.Length != 0) {
         output.WriteRawTag(10);
@@ -8133,7 +7594,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (ClientNameValue.Length != 0) {
@@ -8156,7 +7616,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(DeviceAllocation other) {
       if (other == null) {
         return;
@@ -8169,13 +7628,13 @@ namespace Agrirouter.Technicalmessagetype {
       }
       if (other.deviceIdRef_ != null) {
         if (deviceIdRef_ == null) {
-          DeviceIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          DeviceIdRef = new global::Efdi.UID();
         }
         DeviceIdRef.MergeFrom(other.DeviceIdRef);
       }
       if (other.allocationStamp_ != null) {
         if (allocationStamp_ == null) {
-          AllocationStamp = new global::Agrirouter.Technicalmessagetype.AllocationStamp();
+          AllocationStamp = new global::Efdi.AllocationStamp();
         }
         AllocationStamp.MergeFrom(other.AllocationStamp);
       }
@@ -8184,7 +7643,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -8205,14 +7663,14 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 26: {
             if (deviceIdRef_ == null) {
-              DeviceIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              DeviceIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(DeviceIdRef);
             break;
           }
           case 34: {
             if (allocationStamp_ == null) {
-              AllocationStamp = new global::Agrirouter.Technicalmessagetype.AllocationStamp();
+              AllocationStamp = new global::Efdi.AllocationStamp();
             }
             input.ReadMessage(AllocationStamp);
             break;
@@ -8228,7 +7686,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -8246,14 +7703,14 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 26: {
             if (deviceIdRef_ == null) {
-              DeviceIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              DeviceIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(DeviceIdRef);
             break;
           }
           case 34: {
             if (allocationStamp_ == null) {
-              AllocationStamp = new global::Agrirouter.Technicalmessagetype.AllocationStamp();
+              AllocationStamp = new global::Efdi.AllocationStamp();
             }
             input.ReadMessage(AllocationStamp);
             break;
@@ -8280,23 +7737,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<DeviceElement> _parser = new pb::MessageParser<DeviceElement>(() => new DeviceElement());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<DeviceElement> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[20]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DeviceElement() {
       OnConstruction();
     }
@@ -8304,7 +7757,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DeviceElement(DeviceElement other) : this() {
       deviceElementId_ = other.deviceElementId_ != null ? other.deviceElementId_.Clone() : null;
       deviceElementObjectId_ = other.deviceElementObjectId_;
@@ -8318,17 +7770,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DeviceElement Clone() {
       return new DeviceElement(this);
     }
 
     /// <summary>Field number for the "device_element_id" field.</summary>
     public const int DeviceElementIdFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.UID deviceElementId_;
+    private global::Efdi.UID deviceElementId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID DeviceElementId {
+    public global::Efdi.UID DeviceElementId {
       get { return deviceElementId_; }
       set {
         deviceElementId_ = value;
@@ -8339,7 +7789,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DeviceElementObjectIdFieldNumber = 2;
     private uint deviceElementObjectId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint DeviceElementObjectId {
       get { return deviceElementObjectId_; }
       set {
@@ -8349,10 +7798,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "device_element_type" field.</summary>
     public const int DeviceElementTypeFieldNumber = 3;
-    private global::Agrirouter.Technicalmessagetype.DeviceElement.Types.DeviceElementType deviceElementType_ = global::Agrirouter.Technicalmessagetype.DeviceElement.Types.DeviceElementType.CNotset;
+    private global::Efdi.DeviceElement.Types.DeviceElementType deviceElementType_ = global::Efdi.DeviceElement.Types.DeviceElementType.CNotset;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.DeviceElement.Types.DeviceElementType DeviceElementType {
+    public global::Efdi.DeviceElement.Types.DeviceElementType DeviceElementType {
       get { return deviceElementType_; }
       set {
         deviceElementType_ = value;
@@ -8363,7 +7811,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DeviceElementDesignatorFieldNumber = 4;
     private string deviceElementDesignator_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string DeviceElementDesignator {
       get { return deviceElementDesignator_; }
       set {
@@ -8375,7 +7822,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DeviceElementNumberFieldNumber = 5;
     private uint deviceElementNumber_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint DeviceElementNumber {
       get { return deviceElementNumber_; }
       set {
@@ -8387,7 +7833,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int ParentObjectIdFieldNumber = 6;
     private uint parentObjectId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint ParentObjectId {
       get { return parentObjectId_; }
       set {
@@ -8397,12 +7842,11 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "device_object_reference" field.</summary>
     public const int DeviceObjectReferenceFieldNumber = 7;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.DeviceObjectReference> _repeated_deviceObjectReference_codec
-        = pb::FieldCodec.ForMessage(58, global::Agrirouter.Technicalmessagetype.DeviceObjectReference.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.DeviceObjectReference> deviceObjectReference_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.DeviceObjectReference>();
+    private static readonly pb::FieldCodec<global::Efdi.DeviceObjectReference> _repeated_deviceObjectReference_codec
+        = pb::FieldCodec.ForMessage(58, global::Efdi.DeviceObjectReference.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.DeviceObjectReference> deviceObjectReference_ = new pbc::RepeatedField<global::Efdi.DeviceObjectReference>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.DeviceObjectReference> DeviceObjectReference {
+    public pbc::RepeatedField<global::Efdi.DeviceObjectReference> DeviceObjectReference {
       get { return deviceObjectReference_; }
     }
 
@@ -8412,19 +7856,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as DeviceElement);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(DeviceElement other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -8444,12 +7885,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (deviceElementId_ != null) hash ^= DeviceElementId.GetHashCode();
       if (DeviceElementObjectId != 0) hash ^= DeviceElementObjectId.GetHashCode();
-      if (DeviceElementType != global::Agrirouter.Technicalmessagetype.DeviceElement.Types.DeviceElementType.CNotset) hash ^= DeviceElementType.GetHashCode();
+      if (DeviceElementType != global::Efdi.DeviceElement.Types.DeviceElementType.CNotset) hash ^= DeviceElementType.GetHashCode();
       if (DeviceElementDesignator.Length != 0) hash ^= DeviceElementDesignator.GetHashCode();
       if (DeviceElementNumber != 0) hash ^= DeviceElementNumber.GetHashCode();
       if (ParentObjectId != 0) hash ^= ParentObjectId.GetHashCode();
@@ -8462,13 +7902,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -8481,7 +7919,7 @@ namespace Agrirouter.Technicalmessagetype {
         output.WriteRawTag(16);
         output.WriteUInt32(DeviceElementObjectId);
       }
-      if (DeviceElementType != global::Agrirouter.Technicalmessagetype.DeviceElement.Types.DeviceElementType.CNotset) {
+      if (DeviceElementType != global::Efdi.DeviceElement.Types.DeviceElementType.CNotset) {
         output.WriteRawTag(24);
         output.WriteEnum((int) DeviceElementType);
       }
@@ -8507,7 +7945,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (deviceElementId_ != null) {
         output.WriteRawTag(10);
@@ -8517,7 +7954,7 @@ namespace Agrirouter.Technicalmessagetype {
         output.WriteRawTag(16);
         output.WriteUInt32(DeviceElementObjectId);
       }
-      if (DeviceElementType != global::Agrirouter.Technicalmessagetype.DeviceElement.Types.DeviceElementType.CNotset) {
+      if (DeviceElementType != global::Efdi.DeviceElement.Types.DeviceElementType.CNotset) {
         output.WriteRawTag(24);
         output.WriteEnum((int) DeviceElementType);
       }
@@ -8542,7 +7979,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (deviceElementId_ != null) {
@@ -8551,7 +7987,7 @@ namespace Agrirouter.Technicalmessagetype {
       if (DeviceElementObjectId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DeviceElementObjectId);
       }
-      if (DeviceElementType != global::Agrirouter.Technicalmessagetype.DeviceElement.Types.DeviceElementType.CNotset) {
+      if (DeviceElementType != global::Efdi.DeviceElement.Types.DeviceElementType.CNotset) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) DeviceElementType);
       }
       if (DeviceElementDesignator.Length != 0) {
@@ -8572,21 +8008,20 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(DeviceElement other) {
       if (other == null) {
         return;
       }
       if (other.deviceElementId_ != null) {
         if (deviceElementId_ == null) {
-          DeviceElementId = new global::Agrirouter.Technicalmessagetype.UID();
+          DeviceElementId = new global::Efdi.UID();
         }
         DeviceElementId.MergeFrom(other.DeviceElementId);
       }
       if (other.DeviceElementObjectId != 0) {
         DeviceElementObjectId = other.DeviceElementObjectId;
       }
-      if (other.DeviceElementType != global::Agrirouter.Technicalmessagetype.DeviceElement.Types.DeviceElementType.CNotset) {
+      if (other.DeviceElementType != global::Efdi.DeviceElement.Types.DeviceElementType.CNotset) {
         DeviceElementType = other.DeviceElementType;
       }
       if (other.DeviceElementDesignator.Length != 0) {
@@ -8604,7 +8039,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -8617,7 +8051,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (deviceElementId_ == null) {
-              DeviceElementId = new global::Agrirouter.Technicalmessagetype.UID();
+              DeviceElementId = new global::Efdi.UID();
             }
             input.ReadMessage(DeviceElementId);
             break;
@@ -8627,7 +8061,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           }
           case 24: {
-            DeviceElementType = (global::Agrirouter.Technicalmessagetype.DeviceElement.Types.DeviceElementType) input.ReadEnum();
+            DeviceElementType = (global::Efdi.DeviceElement.Types.DeviceElementType) input.ReadEnum();
             break;
           }
           case 34: {
@@ -8657,7 +8091,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -8667,7 +8100,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (deviceElementId_ == null) {
-              DeviceElementId = new global::Agrirouter.Technicalmessagetype.UID();
+              DeviceElementId = new global::Efdi.UID();
             }
             input.ReadMessage(DeviceElementId);
             break;
@@ -8677,7 +8110,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           }
           case 24: {
-            DeviceElementType = (global::Agrirouter.Technicalmessagetype.DeviceElement.Types.DeviceElementType) input.ReadEnum();
+            DeviceElementType = (global::Efdi.DeviceElement.Types.DeviceElementType) input.ReadEnum();
             break;
           }
           case 34: {
@@ -8708,7 +8141,6 @@ namespace Agrirouter.Technicalmessagetype {
     #region Nested types
     /// <summary>Container for nested types declared in the DeviceElement message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       public enum DeviceElementType {
         [pbr::OriginalName("C_NOTSET")] CNotset = 0,
@@ -8737,23 +8169,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<DeviceObjectReference> _parser = new pb::MessageParser<DeviceObjectReference>(() => new DeviceObjectReference());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<DeviceObjectReference> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[21]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[21]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DeviceObjectReference() {
       OnConstruction();
     }
@@ -8761,7 +8189,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DeviceObjectReference(DeviceObjectReference other) : this() {
       deviceObjectId_ = other.deviceObjectId_;
       extension_ = other.extension_.Clone();
@@ -8769,7 +8196,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DeviceObjectReference Clone() {
       return new DeviceObjectReference(this);
     }
@@ -8778,7 +8204,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DeviceObjectIdFieldNumber = 1;
     private uint deviceObjectId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint DeviceObjectId {
       get { return deviceObjectId_; }
       set {
@@ -8792,19 +8217,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as DeviceObjectReference);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(DeviceObjectReference other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -8818,7 +8240,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (DeviceObjectId != 0) hash ^= DeviceObjectId.GetHashCode();
@@ -8830,13 +8251,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -8854,7 +8273,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (DeviceObjectId != 0) {
         output.WriteRawTag(8);
@@ -8868,7 +8286,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (DeviceObjectId != 0) {
@@ -8882,7 +8299,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(DeviceObjectReference other) {
       if (other == null) {
         return;
@@ -8895,7 +8311,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -8921,7 +8336,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -8955,23 +8369,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<DeviceProcessData> _parser = new pb::MessageParser<DeviceProcessData>(() => new DeviceProcessData());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<DeviceProcessData> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[22]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[22]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DeviceProcessData() {
       OnConstruction();
     }
@@ -8979,7 +8389,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DeviceProcessData(DeviceProcessData other) : this() {
       deviceProcessDataObjectId_ = other.deviceProcessDataObjectId_;
       deviceProcessDataDdi_ = other.deviceProcessDataDdi_;
@@ -8992,7 +8401,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DeviceProcessData Clone() {
       return new DeviceProcessData(this);
     }
@@ -9001,7 +8409,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DeviceProcessDataObjectIdFieldNumber = 1;
     private uint deviceProcessDataObjectId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint DeviceProcessDataObjectId {
       get { return deviceProcessDataObjectId_; }
       set {
@@ -9013,7 +8420,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DeviceProcessDataDdiFieldNumber = 2;
     private uint deviceProcessDataDdi_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint DeviceProcessDataDdi {
       get { return deviceProcessDataDdi_; }
       set {
@@ -9025,7 +8431,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DeviceProcessDataPropertyFieldNumber = 3;
     private uint deviceProcessDataProperty_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint DeviceProcessDataProperty {
       get { return deviceProcessDataProperty_; }
       set {
@@ -9037,7 +8442,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DeviceProcessDataTriggerMethodsFieldNumber = 4;
     private uint deviceProcessDataTriggerMethods_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint DeviceProcessDataTriggerMethods {
       get { return deviceProcessDataTriggerMethods_; }
       set {
@@ -9049,7 +8453,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DeviceProcessDataDesignatorFieldNumber = 5;
     private string deviceProcessDataDesignator_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string DeviceProcessDataDesignator {
       get { return deviceProcessDataDesignator_; }
       set {
@@ -9061,7 +8464,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DeviceValuePresentationObjectIdFieldNumber = 6;
     private uint deviceValuePresentationObjectId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint DeviceValuePresentationObjectId {
       get { return deviceValuePresentationObjectId_; }
       set {
@@ -9075,19 +8477,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as DeviceProcessData);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(DeviceProcessData other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -9106,7 +8505,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (DeviceProcessDataObjectId != 0) hash ^= DeviceProcessDataObjectId.GetHashCode();
@@ -9123,13 +8521,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -9167,7 +8563,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (DeviceProcessDataObjectId != 0) {
         output.WriteRawTag(8);
@@ -9201,7 +8596,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (DeviceProcessDataObjectId != 0) {
@@ -9230,7 +8624,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(DeviceProcessData other) {
       if (other == null) {
         return;
@@ -9258,7 +8651,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -9304,7 +8696,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -9358,23 +8749,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<DeviceProperty> _parser = new pb::MessageParser<DeviceProperty>(() => new DeviceProperty());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<DeviceProperty> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[23]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[23]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DeviceProperty() {
       OnConstruction();
     }
@@ -9382,7 +8769,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DeviceProperty(DeviceProperty other) : this() {
       devicePropertyObjectId_ = other.devicePropertyObjectId_;
       devicePropertyDdi_ = other.devicePropertyDdi_;
@@ -9394,7 +8780,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DeviceProperty Clone() {
       return new DeviceProperty(this);
     }
@@ -9403,7 +8788,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DevicePropertyObjectIdFieldNumber = 1;
     private uint devicePropertyObjectId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint DevicePropertyObjectId {
       get { return devicePropertyObjectId_; }
       set {
@@ -9415,7 +8799,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DevicePropertyDdiFieldNumber = 2;
     private uint devicePropertyDdi_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint DevicePropertyDdi {
       get { return devicePropertyDdi_; }
       set {
@@ -9427,7 +8810,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DevicePropertyValueFieldNumber = 3;
     private long devicePropertyValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long DevicePropertyValue {
       get { return devicePropertyValue_; }
       set {
@@ -9439,7 +8821,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DevicePropertyDesignatorFieldNumber = 4;
     private string devicePropertyDesignator_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string DevicePropertyDesignator {
       get { return devicePropertyDesignator_; }
       set {
@@ -9451,7 +8832,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DeviceValuePresentationObjectIdFieldNumber = 5;
     private uint deviceValuePresentationObjectId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint DeviceValuePresentationObjectId {
       get { return deviceValuePresentationObjectId_; }
       set {
@@ -9465,19 +8845,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as DeviceProperty);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(DeviceProperty other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -9495,7 +8872,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (DevicePropertyObjectId != 0) hash ^= DevicePropertyObjectId.GetHashCode();
@@ -9511,13 +8887,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -9551,7 +8925,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (DevicePropertyObjectId != 0) {
         output.WriteRawTag(8);
@@ -9581,7 +8954,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (DevicePropertyObjectId != 0) {
@@ -9607,7 +8979,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(DeviceProperty other) {
       if (other == null) {
         return;
@@ -9632,7 +9003,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -9674,7 +9044,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -9724,23 +9093,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<DeviceValuePresentation> _parser = new pb::MessageParser<DeviceValuePresentation>(() => new DeviceValuePresentation());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<DeviceValuePresentation> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[24]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[24]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DeviceValuePresentation() {
       OnConstruction();
     }
@@ -9748,7 +9113,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DeviceValuePresentation(DeviceValuePresentation other) : this() {
       deviceValuePresentationObjectId_ = other.deviceValuePresentationObjectId_;
       offset_ = other.offset_;
@@ -9760,7 +9124,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DeviceValuePresentation Clone() {
       return new DeviceValuePresentation(this);
     }
@@ -9769,7 +9132,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DeviceValuePresentationObjectIdFieldNumber = 1;
     private uint deviceValuePresentationObjectId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint DeviceValuePresentationObjectId {
       get { return deviceValuePresentationObjectId_; }
       set {
@@ -9781,7 +9143,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int OffsetFieldNumber = 2;
     private long offset_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long Offset {
       get { return offset_; }
       set {
@@ -9793,7 +9154,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int ScaleFieldNumber = 3;
     private double scale_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double Scale {
       get { return scale_; }
       set {
@@ -9805,7 +9165,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int NumberOfDecimalsFieldNumber = 4;
     private uint numberOfDecimals_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint NumberOfDecimals {
       get { return numberOfDecimals_; }
       set {
@@ -9817,7 +9176,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int UnitDesignatorFieldNumber = 5;
     private string unitDesignator_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string UnitDesignator {
       get { return unitDesignator_; }
       set {
@@ -9831,19 +9189,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as DeviceValuePresentation);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(DeviceValuePresentation other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -9861,7 +9216,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (DeviceValuePresentationObjectId != 0) hash ^= DeviceValuePresentationObjectId.GetHashCode();
@@ -9877,13 +9231,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -9917,7 +9269,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (DeviceValuePresentationObjectId != 0) {
         output.WriteRawTag(8);
@@ -9947,7 +9298,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (DeviceValuePresentationObjectId != 0) {
@@ -9973,7 +9323,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(DeviceValuePresentation other) {
       if (other == null) {
         return;
@@ -9998,7 +9347,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -10040,7 +9388,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -10090,23 +9437,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<Farm> _parser = new pb::MessageParser<Farm>(() => new Farm());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Farm> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[25]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[25]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Farm() {
       OnConstruction();
     }
@@ -10114,7 +9457,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Farm(Farm other) : this() {
       farmId_ = other.farmId_ != null ? other.farmId_.Clone() : null;
       farmDesignator_ = other.farmDesignator_;
@@ -10130,17 +9472,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Farm Clone() {
       return new Farm(this);
     }
 
     /// <summary>Field number for the "farm_id" field.</summary>
     public const int FarmIdFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.UID farmId_;
+    private global::Efdi.UID farmId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID FarmId {
+    public global::Efdi.UID FarmId {
       get { return farmId_; }
       set {
         farmId_ = value;
@@ -10151,7 +9491,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int FarmDesignatorFieldNumber = 2;
     private string farmDesignator_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string FarmDesignator {
       get { return farmDesignator_; }
       set {
@@ -10163,7 +9502,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int FarmStreetFieldNumber = 3;
     private string farmStreet_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string FarmStreet {
       get { return farmStreet_; }
       set {
@@ -10175,7 +9513,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int FarmPoBoxFieldNumber = 4;
     private string farmPoBox_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string FarmPoBox {
       get { return farmPoBox_; }
       set {
@@ -10187,7 +9524,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int FarmPostalCodeFieldNumber = 5;
     private string farmPostalCode_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string FarmPostalCode {
       get { return farmPostalCode_; }
       set {
@@ -10199,7 +9535,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int FarmCityFieldNumber = 6;
     private string farmCity_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string FarmCity {
       get { return farmCity_; }
       set {
@@ -10211,7 +9546,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int FarmStateFieldNumber = 7;
     private string farmState_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string FarmState {
       get { return farmState_; }
       set {
@@ -10223,7 +9557,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int FarmCountryFieldNumber = 8;
     private string farmCountry_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string FarmCountry {
       get { return farmCountry_; }
       set {
@@ -10233,10 +9566,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "customer_id_ref" field.</summary>
     public const int CustomerIdRefFieldNumber = 9;
-    private global::Agrirouter.Technicalmessagetype.UID customerIdRef_;
+    private global::Efdi.UID customerIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID CustomerIdRef {
+    public global::Efdi.UID CustomerIdRef {
       get { return customerIdRef_; }
       set {
         customerIdRef_ = value;
@@ -10249,19 +9581,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Farm);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Farm other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -10283,7 +9612,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (farmId_ != null) hash ^= FarmId.GetHashCode();
@@ -10303,13 +9631,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -10359,7 +9685,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (farmId_ != null) {
         output.WriteRawTag(10);
@@ -10405,7 +9730,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (farmId_ != null) {
@@ -10443,14 +9767,13 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Farm other) {
       if (other == null) {
         return;
       }
       if (other.farmId_ != null) {
         if (farmId_ == null) {
-          FarmId = new global::Agrirouter.Technicalmessagetype.UID();
+          FarmId = new global::Efdi.UID();
         }
         FarmId.MergeFrom(other.FarmId);
       }
@@ -10477,7 +9800,7 @@ namespace Agrirouter.Technicalmessagetype {
       }
       if (other.customerIdRef_ != null) {
         if (customerIdRef_ == null) {
-          CustomerIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          CustomerIdRef = new global::Efdi.UID();
         }
         CustomerIdRef.MergeFrom(other.CustomerIdRef);
       }
@@ -10486,7 +9809,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -10499,7 +9821,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (farmId_ == null) {
-              FarmId = new global::Agrirouter.Technicalmessagetype.UID();
+              FarmId = new global::Efdi.UID();
             }
             input.ReadMessage(FarmId);
             break;
@@ -10534,7 +9856,7 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 74: {
             if (customerIdRef_ == null) {
-              CustomerIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              CustomerIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(CustomerIdRef);
             break;
@@ -10550,7 +9872,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -10560,7 +9881,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (farmId_ == null) {
-              FarmId = new global::Agrirouter.Technicalmessagetype.UID();
+              FarmId = new global::Efdi.UID();
             }
             input.ReadMessage(FarmId);
             break;
@@ -10595,7 +9916,7 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 74: {
             if (customerIdRef_ == null) {
-              CustomerIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              CustomerIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(CustomerIdRef);
             break;
@@ -10622,23 +9943,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<Grid> _parser = new pb::MessageParser<Grid>(() => new Grid());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Grid> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[26]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[26]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Grid() {
       OnConstruction();
     }
@@ -10646,7 +9963,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Grid(Grid other) : this() {
       gridMinimumNorthPosition_ = other.gridMinimumNorthPosition_;
       gridMinimumEastPosition_ = other.gridMinimumEastPosition_;
@@ -10663,7 +9979,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Grid Clone() {
       return new Grid(this);
     }
@@ -10672,7 +9987,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int GridMinimumNorthPositionFieldNumber = 1;
     private double gridMinimumNorthPosition_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double GridMinimumNorthPosition {
       get { return gridMinimumNorthPosition_; }
       set {
@@ -10684,7 +9998,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int GridMinimumEastPositionFieldNumber = 2;
     private double gridMinimumEastPosition_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double GridMinimumEastPosition {
       get { return gridMinimumEastPosition_; }
       set {
@@ -10696,7 +10009,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int GridCellNorthSizeFieldNumber = 3;
     private double gridCellNorthSize_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double GridCellNorthSize {
       get { return gridCellNorthSize_; }
       set {
@@ -10708,7 +10020,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int GridCellEastSizeFieldNumber = 4;
     private double gridCellEastSize_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double GridCellEastSize {
       get { return gridCellEastSize_; }
       set {
@@ -10720,7 +10031,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int GridMaximumColumnFieldNumber = 5;
     private ulong gridMaximumColumn_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ulong GridMaximumColumn {
       get { return gridMaximumColumn_; }
       set {
@@ -10732,7 +10042,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int GridMaximumRowFieldNumber = 6;
     private ulong gridMaximumRow_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ulong GridMaximumRow {
       get { return gridMaximumRow_; }
       set {
@@ -10742,10 +10051,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "filename" field.</summary>
     public const int FilenameFieldNumber = 7;
-    private global::Agrirouter.Technicalmessagetype.UID filename_;
+    private global::Efdi.UID filename_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID Filename {
+    public global::Efdi.UID Filename {
       get { return filename_; }
       set {
         filename_ = value;
@@ -10756,7 +10064,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int FilelengthFieldNumber = 8;
     private ulong filelength_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ulong Filelength {
       get { return filelength_; }
       set {
@@ -10766,10 +10073,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "grid_type" field.</summary>
     public const int GridTypeFieldNumber = 9;
-    private global::Agrirouter.Technicalmessagetype.Grid.Types.GridType gridType_ = global::Agrirouter.Technicalmessagetype.Grid.Types.GridType.INotset;
+    private global::Efdi.Grid.Types.GridType gridType_ = global::Efdi.Grid.Types.GridType.INotset;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.Grid.Types.GridType GridType {
+    public global::Efdi.Grid.Types.GridType GridType {
       get { return gridType_; }
       set {
         gridType_ = value;
@@ -10780,7 +10086,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int TreatmentZoneCodeFieldNumber = 10;
     private uint treatmentZoneCode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint TreatmentZoneCode {
       get { return treatmentZoneCode_; }
       set {
@@ -10794,19 +10099,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Grid);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Grid other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -10829,7 +10131,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (GridMinimumNorthPosition != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(GridMinimumNorthPosition);
@@ -10840,7 +10141,7 @@ namespace Agrirouter.Technicalmessagetype {
       if (GridMaximumRow != 0UL) hash ^= GridMaximumRow.GetHashCode();
       if (filename_ != null) hash ^= Filename.GetHashCode();
       if (Filelength != 0UL) hash ^= Filelength.GetHashCode();
-      if (GridType != global::Agrirouter.Technicalmessagetype.Grid.Types.GridType.INotset) hash ^= GridType.GetHashCode();
+      if (GridType != global::Efdi.Grid.Types.GridType.INotset) hash ^= GridType.GetHashCode();
       if (TreatmentZoneCode != 0) hash ^= TreatmentZoneCode.GetHashCode();
       hash ^= extension_.GetHashCode();
       if (_unknownFields != null) {
@@ -10850,13 +10151,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -10893,7 +10192,7 @@ namespace Agrirouter.Technicalmessagetype {
         output.WriteRawTag(64);
         output.WriteUInt64(Filelength);
       }
-      if (GridType != global::Agrirouter.Technicalmessagetype.Grid.Types.GridType.INotset) {
+      if (GridType != global::Efdi.Grid.Types.GridType.INotset) {
         output.WriteRawTag(72);
         output.WriteEnum((int) GridType);
       }
@@ -10910,7 +10209,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (GridMinimumNorthPosition != 0D) {
         output.WriteRawTag(9);
@@ -10944,7 +10242,7 @@ namespace Agrirouter.Technicalmessagetype {
         output.WriteRawTag(64);
         output.WriteUInt64(Filelength);
       }
-      if (GridType != global::Agrirouter.Technicalmessagetype.Grid.Types.GridType.INotset) {
+      if (GridType != global::Efdi.Grid.Types.GridType.INotset) {
         output.WriteRawTag(72);
         output.WriteEnum((int) GridType);
       }
@@ -10960,7 +10258,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (GridMinimumNorthPosition != 0D) {
@@ -10987,7 +10284,7 @@ namespace Agrirouter.Technicalmessagetype {
       if (Filelength != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Filelength);
       }
-      if (GridType != global::Agrirouter.Technicalmessagetype.Grid.Types.GridType.INotset) {
+      if (GridType != global::Efdi.Grid.Types.GridType.INotset) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) GridType);
       }
       if (TreatmentZoneCode != 0) {
@@ -11001,7 +10298,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Grid other) {
       if (other == null) {
         return;
@@ -11026,14 +10322,14 @@ namespace Agrirouter.Technicalmessagetype {
       }
       if (other.filename_ != null) {
         if (filename_ == null) {
-          Filename = new global::Agrirouter.Technicalmessagetype.UID();
+          Filename = new global::Efdi.UID();
         }
         Filename.MergeFrom(other.Filename);
       }
       if (other.Filelength != 0UL) {
         Filelength = other.Filelength;
       }
-      if (other.GridType != global::Agrirouter.Technicalmessagetype.Grid.Types.GridType.INotset) {
+      if (other.GridType != global::Efdi.Grid.Types.GridType.INotset) {
         GridType = other.GridType;
       }
       if (other.TreatmentZoneCode != 0) {
@@ -11044,7 +10340,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -11081,7 +10376,7 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 58: {
             if (filename_ == null) {
-              Filename = new global::Agrirouter.Technicalmessagetype.UID();
+              Filename = new global::Efdi.UID();
             }
             input.ReadMessage(Filename);
             break;
@@ -11091,7 +10386,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           }
           case 72: {
-            GridType = (global::Agrirouter.Technicalmessagetype.Grid.Types.GridType) input.ReadEnum();
+            GridType = (global::Efdi.Grid.Types.GridType) input.ReadEnum();
             break;
           }
           case 80: {
@@ -11109,7 +10404,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -11143,7 +10437,7 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 58: {
             if (filename_ == null) {
-              Filename = new global::Agrirouter.Technicalmessagetype.UID();
+              Filename = new global::Efdi.UID();
             }
             input.ReadMessage(Filename);
             break;
@@ -11153,7 +10447,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           }
           case 72: {
-            GridType = (global::Agrirouter.Technicalmessagetype.Grid.Types.GridType) input.ReadEnum();
+            GridType = (global::Efdi.Grid.Types.GridType) input.ReadEnum();
             break;
           }
           case 80: {
@@ -11172,7 +10466,6 @@ namespace Agrirouter.Technicalmessagetype {
     #region Nested types
     /// <summary>Container for nested types declared in the Grid message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       public enum GridType {
         [pbr::OriginalName("I_NOTSET")] INotset = 0,
@@ -11196,23 +10489,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<GuidanceAllocation> _parser = new pb::MessageParser<GuidanceAllocation>(() => new GuidanceAllocation());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<GuidanceAllocation> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[27]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[27]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GuidanceAllocation() {
       OnConstruction();
     }
@@ -11220,7 +10509,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GuidanceAllocation(GuidanceAllocation other) : this() {
       guidanceGroupIdRef_ = other.guidanceGroupIdRef_ != null ? other.guidanceGroupIdRef_.Clone() : null;
       allocationStamp_ = other.allocationStamp_ != null ? other.allocationStamp_.Clone() : null;
@@ -11230,17 +10518,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GuidanceAllocation Clone() {
       return new GuidanceAllocation(this);
     }
 
     /// <summary>Field number for the "guidance_group_id_ref" field.</summary>
     public const int GuidanceGroupIdRefFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.UID guidanceGroupIdRef_;
+    private global::Efdi.UID guidanceGroupIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID GuidanceGroupIdRef {
+    public global::Efdi.UID GuidanceGroupIdRef {
       get { return guidanceGroupIdRef_; }
       set {
         guidanceGroupIdRef_ = value;
@@ -11249,10 +10535,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "allocation_stamp" field.</summary>
     public const int AllocationStampFieldNumber = 2;
-    private global::Agrirouter.Technicalmessagetype.AllocationStamp allocationStamp_;
+    private global::Efdi.AllocationStamp allocationStamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.AllocationStamp AllocationStamp {
+    public global::Efdi.AllocationStamp AllocationStamp {
       get { return allocationStamp_; }
       set {
         allocationStamp_ = value;
@@ -11261,12 +10546,11 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "guidance_shift" field.</summary>
     public const int GuidanceShiftFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.GuidanceShift> _repeated_guidanceShift_codec
-        = pb::FieldCodec.ForMessage(26, global::Agrirouter.Technicalmessagetype.GuidanceShift.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.GuidanceShift> guidanceShift_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.GuidanceShift>();
+    private static readonly pb::FieldCodec<global::Efdi.GuidanceShift> _repeated_guidanceShift_codec
+        = pb::FieldCodec.ForMessage(26, global::Efdi.GuidanceShift.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.GuidanceShift> guidanceShift_ = new pbc::RepeatedField<global::Efdi.GuidanceShift>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.GuidanceShift> GuidanceShift {
+    public pbc::RepeatedField<global::Efdi.GuidanceShift> GuidanceShift {
       get { return guidanceShift_; }
     }
 
@@ -11276,19 +10560,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as GuidanceAllocation);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(GuidanceAllocation other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -11304,7 +10585,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (guidanceGroupIdRef_ != null) hash ^= GuidanceGroupIdRef.GetHashCode();
@@ -11318,13 +10598,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -11347,7 +10625,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (guidanceGroupIdRef_ != null) {
         output.WriteRawTag(10);
@@ -11366,7 +10643,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (guidanceGroupIdRef_ != null) {
@@ -11384,20 +10660,19 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(GuidanceAllocation other) {
       if (other == null) {
         return;
       }
       if (other.guidanceGroupIdRef_ != null) {
         if (guidanceGroupIdRef_ == null) {
-          GuidanceGroupIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          GuidanceGroupIdRef = new global::Efdi.UID();
         }
         GuidanceGroupIdRef.MergeFrom(other.GuidanceGroupIdRef);
       }
       if (other.allocationStamp_ != null) {
         if (allocationStamp_ == null) {
-          AllocationStamp = new global::Agrirouter.Technicalmessagetype.AllocationStamp();
+          AllocationStamp = new global::Efdi.AllocationStamp();
         }
         AllocationStamp.MergeFrom(other.AllocationStamp);
       }
@@ -11407,7 +10682,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -11420,14 +10694,14 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (guidanceGroupIdRef_ == null) {
-              GuidanceGroupIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              GuidanceGroupIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(GuidanceGroupIdRef);
             break;
           }
           case 18: {
             if (allocationStamp_ == null) {
-              AllocationStamp = new global::Agrirouter.Technicalmessagetype.AllocationStamp();
+              AllocationStamp = new global::Efdi.AllocationStamp();
             }
             input.ReadMessage(AllocationStamp);
             break;
@@ -11447,7 +10721,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -11457,14 +10730,14 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (guidanceGroupIdRef_ == null) {
-              GuidanceGroupIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              GuidanceGroupIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(GuidanceGroupIdRef);
             break;
           }
           case 18: {
             if (allocationStamp_ == null) {
-              AllocationStamp = new global::Agrirouter.Technicalmessagetype.AllocationStamp();
+              AllocationStamp = new global::Efdi.AllocationStamp();
             }
             input.ReadMessage(AllocationStamp);
             break;
@@ -11495,23 +10768,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<GuidanceGroup> _parser = new pb::MessageParser<GuidanceGroup>(() => new GuidanceGroup());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<GuidanceGroup> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[28]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[28]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GuidanceGroup() {
       OnConstruction();
     }
@@ -11519,7 +10788,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GuidanceGroup(GuidanceGroup other) : this() {
       guidanceGroupId_ = other.guidanceGroupId_ != null ? other.guidanceGroupId_.Clone() : null;
       guidanceGroupDesignator_ = other.guidanceGroupDesignator_;
@@ -11530,17 +10798,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GuidanceGroup Clone() {
       return new GuidanceGroup(this);
     }
 
     /// <summary>Field number for the "guidance_group_id" field.</summary>
     public const int GuidanceGroupIdFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.UID guidanceGroupId_;
+    private global::Efdi.UID guidanceGroupId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID GuidanceGroupId {
+    public global::Efdi.UID GuidanceGroupId {
       get { return guidanceGroupId_; }
       set {
         guidanceGroupId_ = value;
@@ -11551,7 +10817,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int GuidanceGroupDesignatorFieldNumber = 2;
     private string guidanceGroupDesignator_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string GuidanceGroupDesignator {
       get { return guidanceGroupDesignator_; }
       set {
@@ -11561,23 +10826,21 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "guidance_pattern" field.</summary>
     public const int GuidancePatternFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.GuidancePattern> _repeated_guidancePattern_codec
-        = pb::FieldCodec.ForMessage(26, global::Agrirouter.Technicalmessagetype.GuidancePattern.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.GuidancePattern> guidancePattern_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.GuidancePattern>();
+    private static readonly pb::FieldCodec<global::Efdi.GuidancePattern> _repeated_guidancePattern_codec
+        = pb::FieldCodec.ForMessage(26, global::Efdi.GuidancePattern.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.GuidancePattern> guidancePattern_ = new pbc::RepeatedField<global::Efdi.GuidancePattern>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.GuidancePattern> GuidancePattern {
+    public pbc::RepeatedField<global::Efdi.GuidancePattern> GuidancePattern {
       get { return guidancePattern_; }
     }
 
     /// <summary>Field number for the "boundary_polygon" field.</summary>
     public const int BoundaryPolygonFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.Polygon> _repeated_boundaryPolygon_codec
-        = pb::FieldCodec.ForMessage(34, global::Agrirouter.Technicalmessagetype.Polygon.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Polygon> boundaryPolygon_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Polygon>();
+    private static readonly pb::FieldCodec<global::Efdi.Polygon> _repeated_boundaryPolygon_codec
+        = pb::FieldCodec.ForMessage(34, global::Efdi.Polygon.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.Polygon> boundaryPolygon_ = new pbc::RepeatedField<global::Efdi.Polygon>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Polygon> BoundaryPolygon {
+    public pbc::RepeatedField<global::Efdi.Polygon> BoundaryPolygon {
       get { return boundaryPolygon_; }
     }
 
@@ -11587,19 +10850,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as GuidanceGroup);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(GuidanceGroup other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -11616,7 +10876,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (guidanceGroupId_ != null) hash ^= GuidanceGroupId.GetHashCode();
@@ -11631,13 +10890,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -11661,7 +10918,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (guidanceGroupId_ != null) {
         output.WriteRawTag(10);
@@ -11681,7 +10937,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (guidanceGroupId_ != null) {
@@ -11700,14 +10955,13 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(GuidanceGroup other) {
       if (other == null) {
         return;
       }
       if (other.guidanceGroupId_ != null) {
         if (guidanceGroupId_ == null) {
-          GuidanceGroupId = new global::Agrirouter.Technicalmessagetype.UID();
+          GuidanceGroupId = new global::Efdi.UID();
         }
         GuidanceGroupId.MergeFrom(other.GuidanceGroupId);
       }
@@ -11721,7 +10975,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -11734,7 +10987,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (guidanceGroupId_ == null) {
-              GuidanceGroupId = new global::Agrirouter.Technicalmessagetype.UID();
+              GuidanceGroupId = new global::Efdi.UID();
             }
             input.ReadMessage(GuidanceGroupId);
             break;
@@ -11762,7 +11015,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -11772,7 +11024,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (guidanceGroupId_ == null) {
-              GuidanceGroupId = new global::Agrirouter.Technicalmessagetype.UID();
+              GuidanceGroupId = new global::Efdi.UID();
             }
             input.ReadMessage(GuidanceGroupId);
             break;
@@ -11811,23 +11063,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<GuidancePattern> _parser = new pb::MessageParser<GuidancePattern>(() => new GuidancePattern());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<GuidancePattern> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[29]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[29]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GuidancePattern() {
       OnConstruction();
     }
@@ -11835,7 +11083,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GuidancePattern(GuidancePattern other) : this() {
       guidancePatternId_ = other.guidancePatternId_ != null ? other.guidancePatternId_.Clone() : null;
       guidancePatternDesignator_ = other.guidancePatternDesignator_;
@@ -11859,17 +11106,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GuidancePattern Clone() {
       return new GuidancePattern(this);
     }
 
     /// <summary>Field number for the "guidance_pattern_id" field.</summary>
     public const int GuidancePatternIdFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.UID guidancePatternId_;
+    private global::Efdi.UID guidancePatternId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID GuidancePatternId {
+    public global::Efdi.UID GuidancePatternId {
       get { return guidancePatternId_; }
       set {
         guidancePatternId_ = value;
@@ -11880,7 +11125,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int GuidancePatternDesignatorFieldNumber = 2;
     private string guidancePatternDesignator_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string GuidancePatternDesignator {
       get { return guidancePatternDesignator_; }
       set {
@@ -11890,10 +11134,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "guidance_pattern_type" field.</summary>
     public const int GuidancePatternTypeFieldNumber = 3;
-    private global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternType guidancePatternType_ = global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternType.CNotset;
+    private global::Efdi.GuidancePattern.Types.GuidancePatternType guidancePatternType_ = global::Efdi.GuidancePattern.Types.GuidancePatternType.CNotset;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternType GuidancePatternType {
+    public global::Efdi.GuidancePattern.Types.GuidancePatternType GuidancePatternType {
       get { return guidancePatternType_; }
       set {
         guidancePatternType_ = value;
@@ -11902,10 +11145,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "guidance_pattern_options" field.</summary>
     public const int GuidancePatternOptionsFieldNumber = 4;
-    private global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternOptions guidancePatternOptions_ = global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternOptions.DNotset;
+    private global::Efdi.GuidancePattern.Types.GuidancePatternOptions guidancePatternOptions_ = global::Efdi.GuidancePattern.Types.GuidancePatternOptions.DNotset;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternOptions GuidancePatternOptions {
+    public global::Efdi.GuidancePattern.Types.GuidancePatternOptions GuidancePatternOptions {
       get { return guidancePatternOptions_; }
       set {
         guidancePatternOptions_ = value;
@@ -11914,10 +11156,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "guidance_pattern_propagation_direction" field.</summary>
     public const int GuidancePatternPropagationDirectionFieldNumber = 5;
-    private global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternPropagationDirection guidancePatternPropagationDirection_ = global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternPropagationDirection.ENotset;
+    private global::Efdi.GuidancePattern.Types.GuidancePatternPropagationDirection guidancePatternPropagationDirection_ = global::Efdi.GuidancePattern.Types.GuidancePatternPropagationDirection.ENotset;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternPropagationDirection GuidancePatternPropagationDirection {
+    public global::Efdi.GuidancePattern.Types.GuidancePatternPropagationDirection GuidancePatternPropagationDirection {
       get { return guidancePatternPropagationDirection_; }
       set {
         guidancePatternPropagationDirection_ = value;
@@ -11926,10 +11167,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "guidance_pattern_extension" field.</summary>
     public const int GuidancePatternExtensionFieldNumber = 6;
-    private global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternExtension guidancePatternExtension_ = global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternExtension.FNotset;
+    private global::Efdi.GuidancePattern.Types.GuidancePatternExtension guidancePatternExtension_ = global::Efdi.GuidancePattern.Types.GuidancePatternExtension.FNotset;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternExtension GuidancePatternExtension {
+    public global::Efdi.GuidancePattern.Types.GuidancePatternExtension GuidancePatternExtension {
       get { return guidancePatternExtension_; }
       set {
         guidancePatternExtension_ = value;
@@ -11940,7 +11180,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int GuidancePatternHeadingFieldNumber = 7;
     private double guidancePatternHeading_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double GuidancePatternHeading {
       get { return guidancePatternHeading_; }
       set {
@@ -11952,7 +11191,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int GuidancePatternRadiusFieldNumber = 8;
     private ulong guidancePatternRadius_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ulong GuidancePatternRadius {
       get { return guidancePatternRadius_; }
       set {
@@ -11962,10 +11200,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "guidance_pattern_gnss_method" field.</summary>
     public const int GuidancePatternGnssMethodFieldNumber = 9;
-    private global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternGNSSMethod guidancePatternGnssMethod_ = global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternGNSSMethod.INotset;
+    private global::Efdi.GuidancePattern.Types.GuidancePatternGNSSMethod guidancePatternGnssMethod_ = global::Efdi.GuidancePattern.Types.GuidancePatternGNSSMethod.INotset;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternGNSSMethod GuidancePatternGnssMethod {
+    public global::Efdi.GuidancePattern.Types.GuidancePatternGNSSMethod GuidancePatternGnssMethod {
       get { return guidancePatternGnssMethod_; }
       set {
         guidancePatternGnssMethod_ = value;
@@ -11976,7 +11213,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int GuidancePatternHorizontalAccuracyFieldNumber = 10;
     private double guidancePatternHorizontalAccuracy_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double GuidancePatternHorizontalAccuracy {
       get { return guidancePatternHorizontalAccuracy_; }
       set {
@@ -11988,7 +11224,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int GuidancePatternVerticalAccuracyFieldNumber = 11;
     private double guidancePatternVerticalAccuracy_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double GuidancePatternVerticalAccuracy {
       get { return guidancePatternVerticalAccuracy_; }
       set {
@@ -11998,10 +11233,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "base_station_id_ref" field.</summary>
     public const int BaseStationIdRefFieldNumber = 12;
-    private global::Agrirouter.Technicalmessagetype.UID baseStationIdRef_;
+    private global::Efdi.UID baseStationIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID BaseStationIdRef {
+    public global::Efdi.UID BaseStationIdRef {
       get { return baseStationIdRef_; }
       set {
         baseStationIdRef_ = value;
@@ -12012,7 +11246,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int OriginalSridFieldNumber = 13;
     private string originalSrid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string OriginalSrid {
       get { return originalSrid_; }
       set {
@@ -12024,7 +11257,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int NumberOfSwathsLeftFieldNumber = 14;
     private ulong numberOfSwathsLeft_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ulong NumberOfSwathsLeft {
       get { return numberOfSwathsLeft_; }
       set {
@@ -12036,7 +11268,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int NumberOfSwathsRightFieldNumber = 15;
     private ulong numberOfSwathsRight_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ulong NumberOfSwathsRight {
       get { return numberOfSwathsRight_; }
       set {
@@ -12046,10 +11277,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "line_string" field.</summary>
     public const int LineStringFieldNumber = 16;
-    private global::Agrirouter.Technicalmessagetype.LineString lineString_;
+    private global::Efdi.LineString lineString_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.LineString LineString {
+    public global::Efdi.LineString LineString {
       get { return lineString_; }
       set {
         lineString_ = value;
@@ -12058,12 +11288,11 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "boundary_polygon" field.</summary>
     public const int BoundaryPolygonFieldNumber = 17;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.Polygon> _repeated_boundaryPolygon_codec
-        = pb::FieldCodec.ForMessage(138, global::Agrirouter.Technicalmessagetype.Polygon.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Polygon> boundaryPolygon_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Polygon>();
+    private static readonly pb::FieldCodec<global::Efdi.Polygon> _repeated_boundaryPolygon_codec
+        = pb::FieldCodec.ForMessage(138, global::Efdi.Polygon.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.Polygon> boundaryPolygon_ = new pbc::RepeatedField<global::Efdi.Polygon>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Polygon> BoundaryPolygon {
+    public pbc::RepeatedField<global::Efdi.Polygon> BoundaryPolygon {
       get { return boundaryPolygon_; }
     }
 
@@ -12073,19 +11302,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as GuidancePattern);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(GuidancePattern other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -12115,18 +11341,17 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (guidancePatternId_ != null) hash ^= GuidancePatternId.GetHashCode();
       if (GuidancePatternDesignator.Length != 0) hash ^= GuidancePatternDesignator.GetHashCode();
-      if (GuidancePatternType != global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternType.CNotset) hash ^= GuidancePatternType.GetHashCode();
-      if (GuidancePatternOptions != global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternOptions.DNotset) hash ^= GuidancePatternOptions.GetHashCode();
-      if (GuidancePatternPropagationDirection != global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternPropagationDirection.ENotset) hash ^= GuidancePatternPropagationDirection.GetHashCode();
-      if (GuidancePatternExtension != global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternExtension.FNotset) hash ^= GuidancePatternExtension.GetHashCode();
+      if (GuidancePatternType != global::Efdi.GuidancePattern.Types.GuidancePatternType.CNotset) hash ^= GuidancePatternType.GetHashCode();
+      if (GuidancePatternOptions != global::Efdi.GuidancePattern.Types.GuidancePatternOptions.DNotset) hash ^= GuidancePatternOptions.GetHashCode();
+      if (GuidancePatternPropagationDirection != global::Efdi.GuidancePattern.Types.GuidancePatternPropagationDirection.ENotset) hash ^= GuidancePatternPropagationDirection.GetHashCode();
+      if (GuidancePatternExtension != global::Efdi.GuidancePattern.Types.GuidancePatternExtension.FNotset) hash ^= GuidancePatternExtension.GetHashCode();
       if (GuidancePatternHeading != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(GuidancePatternHeading);
       if (GuidancePatternRadius != 0UL) hash ^= GuidancePatternRadius.GetHashCode();
-      if (GuidancePatternGnssMethod != global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternGNSSMethod.INotset) hash ^= GuidancePatternGnssMethod.GetHashCode();
+      if (GuidancePatternGnssMethod != global::Efdi.GuidancePattern.Types.GuidancePatternGNSSMethod.INotset) hash ^= GuidancePatternGnssMethod.GetHashCode();
       if (GuidancePatternHorizontalAccuracy != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(GuidancePatternHorizontalAccuracy);
       if (GuidancePatternVerticalAccuracy != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(GuidancePatternVerticalAccuracy);
       if (baseStationIdRef_ != null) hash ^= BaseStationIdRef.GetHashCode();
@@ -12143,13 +11368,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -12162,19 +11385,19 @@ namespace Agrirouter.Technicalmessagetype {
         output.WriteRawTag(18);
         output.WriteString(GuidancePatternDesignator);
       }
-      if (GuidancePatternType != global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternType.CNotset) {
+      if (GuidancePatternType != global::Efdi.GuidancePattern.Types.GuidancePatternType.CNotset) {
         output.WriteRawTag(24);
         output.WriteEnum((int) GuidancePatternType);
       }
-      if (GuidancePatternOptions != global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternOptions.DNotset) {
+      if (GuidancePatternOptions != global::Efdi.GuidancePattern.Types.GuidancePatternOptions.DNotset) {
         output.WriteRawTag(32);
         output.WriteEnum((int) GuidancePatternOptions);
       }
-      if (GuidancePatternPropagationDirection != global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternPropagationDirection.ENotset) {
+      if (GuidancePatternPropagationDirection != global::Efdi.GuidancePattern.Types.GuidancePatternPropagationDirection.ENotset) {
         output.WriteRawTag(40);
         output.WriteEnum((int) GuidancePatternPropagationDirection);
       }
-      if (GuidancePatternExtension != global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternExtension.FNotset) {
+      if (GuidancePatternExtension != global::Efdi.GuidancePattern.Types.GuidancePatternExtension.FNotset) {
         output.WriteRawTag(48);
         output.WriteEnum((int) GuidancePatternExtension);
       }
@@ -12186,7 +11409,7 @@ namespace Agrirouter.Technicalmessagetype {
         output.WriteRawTag(64);
         output.WriteUInt64(GuidancePatternRadius);
       }
-      if (GuidancePatternGnssMethod != global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternGNSSMethod.INotset) {
+      if (GuidancePatternGnssMethod != global::Efdi.GuidancePattern.Types.GuidancePatternGNSSMethod.INotset) {
         output.WriteRawTag(72);
         output.WriteEnum((int) GuidancePatternGnssMethod);
       }
@@ -12228,7 +11451,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (guidancePatternId_ != null) {
         output.WriteRawTag(10);
@@ -12238,19 +11460,19 @@ namespace Agrirouter.Technicalmessagetype {
         output.WriteRawTag(18);
         output.WriteString(GuidancePatternDesignator);
       }
-      if (GuidancePatternType != global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternType.CNotset) {
+      if (GuidancePatternType != global::Efdi.GuidancePattern.Types.GuidancePatternType.CNotset) {
         output.WriteRawTag(24);
         output.WriteEnum((int) GuidancePatternType);
       }
-      if (GuidancePatternOptions != global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternOptions.DNotset) {
+      if (GuidancePatternOptions != global::Efdi.GuidancePattern.Types.GuidancePatternOptions.DNotset) {
         output.WriteRawTag(32);
         output.WriteEnum((int) GuidancePatternOptions);
       }
-      if (GuidancePatternPropagationDirection != global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternPropagationDirection.ENotset) {
+      if (GuidancePatternPropagationDirection != global::Efdi.GuidancePattern.Types.GuidancePatternPropagationDirection.ENotset) {
         output.WriteRawTag(40);
         output.WriteEnum((int) GuidancePatternPropagationDirection);
       }
-      if (GuidancePatternExtension != global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternExtension.FNotset) {
+      if (GuidancePatternExtension != global::Efdi.GuidancePattern.Types.GuidancePatternExtension.FNotset) {
         output.WriteRawTag(48);
         output.WriteEnum((int) GuidancePatternExtension);
       }
@@ -12262,7 +11484,7 @@ namespace Agrirouter.Technicalmessagetype {
         output.WriteRawTag(64);
         output.WriteUInt64(GuidancePatternRadius);
       }
-      if (GuidancePatternGnssMethod != global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternGNSSMethod.INotset) {
+      if (GuidancePatternGnssMethod != global::Efdi.GuidancePattern.Types.GuidancePatternGNSSMethod.INotset) {
         output.WriteRawTag(72);
         output.WriteEnum((int) GuidancePatternGnssMethod);
       }
@@ -12303,7 +11525,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (guidancePatternId_ != null) {
@@ -12312,16 +11533,16 @@ namespace Agrirouter.Technicalmessagetype {
       if (GuidancePatternDesignator.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(GuidancePatternDesignator);
       }
-      if (GuidancePatternType != global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternType.CNotset) {
+      if (GuidancePatternType != global::Efdi.GuidancePattern.Types.GuidancePatternType.CNotset) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) GuidancePatternType);
       }
-      if (GuidancePatternOptions != global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternOptions.DNotset) {
+      if (GuidancePatternOptions != global::Efdi.GuidancePattern.Types.GuidancePatternOptions.DNotset) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) GuidancePatternOptions);
       }
-      if (GuidancePatternPropagationDirection != global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternPropagationDirection.ENotset) {
+      if (GuidancePatternPropagationDirection != global::Efdi.GuidancePattern.Types.GuidancePatternPropagationDirection.ENotset) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) GuidancePatternPropagationDirection);
       }
-      if (GuidancePatternExtension != global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternExtension.FNotset) {
+      if (GuidancePatternExtension != global::Efdi.GuidancePattern.Types.GuidancePatternExtension.FNotset) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) GuidancePatternExtension);
       }
       if (GuidancePatternHeading != 0D) {
@@ -12330,7 +11551,7 @@ namespace Agrirouter.Technicalmessagetype {
       if (GuidancePatternRadius != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(GuidancePatternRadius);
       }
-      if (GuidancePatternGnssMethod != global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternGNSSMethod.INotset) {
+      if (GuidancePatternGnssMethod != global::Efdi.GuidancePattern.Types.GuidancePatternGNSSMethod.INotset) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) GuidancePatternGnssMethod);
       }
       if (GuidancePatternHorizontalAccuracy != 0D) {
@@ -12363,30 +11584,29 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(GuidancePattern other) {
       if (other == null) {
         return;
       }
       if (other.guidancePatternId_ != null) {
         if (guidancePatternId_ == null) {
-          GuidancePatternId = new global::Agrirouter.Technicalmessagetype.UID();
+          GuidancePatternId = new global::Efdi.UID();
         }
         GuidancePatternId.MergeFrom(other.GuidancePatternId);
       }
       if (other.GuidancePatternDesignator.Length != 0) {
         GuidancePatternDesignator = other.GuidancePatternDesignator;
       }
-      if (other.GuidancePatternType != global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternType.CNotset) {
+      if (other.GuidancePatternType != global::Efdi.GuidancePattern.Types.GuidancePatternType.CNotset) {
         GuidancePatternType = other.GuidancePatternType;
       }
-      if (other.GuidancePatternOptions != global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternOptions.DNotset) {
+      if (other.GuidancePatternOptions != global::Efdi.GuidancePattern.Types.GuidancePatternOptions.DNotset) {
         GuidancePatternOptions = other.GuidancePatternOptions;
       }
-      if (other.GuidancePatternPropagationDirection != global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternPropagationDirection.ENotset) {
+      if (other.GuidancePatternPropagationDirection != global::Efdi.GuidancePattern.Types.GuidancePatternPropagationDirection.ENotset) {
         GuidancePatternPropagationDirection = other.GuidancePatternPropagationDirection;
       }
-      if (other.GuidancePatternExtension != global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternExtension.FNotset) {
+      if (other.GuidancePatternExtension != global::Efdi.GuidancePattern.Types.GuidancePatternExtension.FNotset) {
         GuidancePatternExtension = other.GuidancePatternExtension;
       }
       if (other.GuidancePatternHeading != 0D) {
@@ -12395,7 +11615,7 @@ namespace Agrirouter.Technicalmessagetype {
       if (other.GuidancePatternRadius != 0UL) {
         GuidancePatternRadius = other.GuidancePatternRadius;
       }
-      if (other.GuidancePatternGnssMethod != global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternGNSSMethod.INotset) {
+      if (other.GuidancePatternGnssMethod != global::Efdi.GuidancePattern.Types.GuidancePatternGNSSMethod.INotset) {
         GuidancePatternGnssMethod = other.GuidancePatternGnssMethod;
       }
       if (other.GuidancePatternHorizontalAccuracy != 0D) {
@@ -12406,7 +11626,7 @@ namespace Agrirouter.Technicalmessagetype {
       }
       if (other.baseStationIdRef_ != null) {
         if (baseStationIdRef_ == null) {
-          BaseStationIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          BaseStationIdRef = new global::Efdi.UID();
         }
         BaseStationIdRef.MergeFrom(other.BaseStationIdRef);
       }
@@ -12421,7 +11641,7 @@ namespace Agrirouter.Technicalmessagetype {
       }
       if (other.lineString_ != null) {
         if (lineString_ == null) {
-          LineString = new global::Agrirouter.Technicalmessagetype.LineString();
+          LineString = new global::Efdi.LineString();
         }
         LineString.MergeFrom(other.LineString);
       }
@@ -12431,7 +11651,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -12444,7 +11663,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (guidancePatternId_ == null) {
-              GuidancePatternId = new global::Agrirouter.Technicalmessagetype.UID();
+              GuidancePatternId = new global::Efdi.UID();
             }
             input.ReadMessage(GuidancePatternId);
             break;
@@ -12454,19 +11673,19 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           }
           case 24: {
-            GuidancePatternType = (global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternType) input.ReadEnum();
+            GuidancePatternType = (global::Efdi.GuidancePattern.Types.GuidancePatternType) input.ReadEnum();
             break;
           }
           case 32: {
-            GuidancePatternOptions = (global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternOptions) input.ReadEnum();
+            GuidancePatternOptions = (global::Efdi.GuidancePattern.Types.GuidancePatternOptions) input.ReadEnum();
             break;
           }
           case 40: {
-            GuidancePatternPropagationDirection = (global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternPropagationDirection) input.ReadEnum();
+            GuidancePatternPropagationDirection = (global::Efdi.GuidancePattern.Types.GuidancePatternPropagationDirection) input.ReadEnum();
             break;
           }
           case 48: {
-            GuidancePatternExtension = (global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternExtension) input.ReadEnum();
+            GuidancePatternExtension = (global::Efdi.GuidancePattern.Types.GuidancePatternExtension) input.ReadEnum();
             break;
           }
           case 57: {
@@ -12478,7 +11697,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           }
           case 72: {
-            GuidancePatternGnssMethod = (global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternGNSSMethod) input.ReadEnum();
+            GuidancePatternGnssMethod = (global::Efdi.GuidancePattern.Types.GuidancePatternGNSSMethod) input.ReadEnum();
             break;
           }
           case 81: {
@@ -12491,7 +11710,7 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 98: {
             if (baseStationIdRef_ == null) {
-              BaseStationIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              BaseStationIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(BaseStationIdRef);
             break;
@@ -12510,7 +11729,7 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 130: {
             if (lineString_ == null) {
-              LineString = new global::Agrirouter.Technicalmessagetype.LineString();
+              LineString = new global::Efdi.LineString();
             }
             input.ReadMessage(LineString);
             break;
@@ -12530,7 +11749,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -12540,7 +11758,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (guidancePatternId_ == null) {
-              GuidancePatternId = new global::Agrirouter.Technicalmessagetype.UID();
+              GuidancePatternId = new global::Efdi.UID();
             }
             input.ReadMessage(GuidancePatternId);
             break;
@@ -12550,19 +11768,19 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           }
           case 24: {
-            GuidancePatternType = (global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternType) input.ReadEnum();
+            GuidancePatternType = (global::Efdi.GuidancePattern.Types.GuidancePatternType) input.ReadEnum();
             break;
           }
           case 32: {
-            GuidancePatternOptions = (global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternOptions) input.ReadEnum();
+            GuidancePatternOptions = (global::Efdi.GuidancePattern.Types.GuidancePatternOptions) input.ReadEnum();
             break;
           }
           case 40: {
-            GuidancePatternPropagationDirection = (global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternPropagationDirection) input.ReadEnum();
+            GuidancePatternPropagationDirection = (global::Efdi.GuidancePattern.Types.GuidancePatternPropagationDirection) input.ReadEnum();
             break;
           }
           case 48: {
-            GuidancePatternExtension = (global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternExtension) input.ReadEnum();
+            GuidancePatternExtension = (global::Efdi.GuidancePattern.Types.GuidancePatternExtension) input.ReadEnum();
             break;
           }
           case 57: {
@@ -12574,7 +11792,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           }
           case 72: {
-            GuidancePatternGnssMethod = (global::Agrirouter.Technicalmessagetype.GuidancePattern.Types.GuidancePatternGNSSMethod) input.ReadEnum();
+            GuidancePatternGnssMethod = (global::Efdi.GuidancePattern.Types.GuidancePatternGNSSMethod) input.ReadEnum();
             break;
           }
           case 81: {
@@ -12587,7 +11805,7 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 98: {
             if (baseStationIdRef_ == null) {
-              BaseStationIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              BaseStationIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(BaseStationIdRef);
             break;
@@ -12606,7 +11824,7 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 130: {
             if (lineString_ == null) {
-              LineString = new global::Agrirouter.Technicalmessagetype.LineString();
+              LineString = new global::Efdi.LineString();
             }
             input.ReadMessage(LineString);
             break;
@@ -12627,7 +11845,6 @@ namespace Agrirouter.Technicalmessagetype {
     #region Nested types
     /// <summary>Container for nested types declared in the GuidancePattern message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       public enum GuidancePatternType {
         [pbr::OriginalName("C_NOTSET")] CNotset = 0,
@@ -12691,23 +11908,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<GuidanceShift> _parser = new pb::MessageParser<GuidanceShift>(() => new GuidanceShift());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<GuidanceShift> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[30]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[30]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GuidanceShift() {
       OnConstruction();
     }
@@ -12715,7 +11928,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GuidanceShift(GuidanceShift other) : this() {
       guidanceGroupIdRef_ = other.guidanceGroupIdRef_ != null ? other.guidanceGroupIdRef_.Clone() : null;
       guidancePatternIdRef_ = other.guidancePatternIdRef_ != null ? other.guidancePatternIdRef_.Clone() : null;
@@ -12728,17 +11940,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GuidanceShift Clone() {
       return new GuidanceShift(this);
     }
 
     /// <summary>Field number for the "guidance_group_id_ref" field.</summary>
     public const int GuidanceGroupIdRefFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.UID guidanceGroupIdRef_;
+    private global::Efdi.UID guidanceGroupIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID GuidanceGroupIdRef {
+    public global::Efdi.UID GuidanceGroupIdRef {
       get { return guidanceGroupIdRef_; }
       set {
         guidanceGroupIdRef_ = value;
@@ -12747,10 +11957,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "guidance_pattern_id_ref" field.</summary>
     public const int GuidancePatternIdRefFieldNumber = 2;
-    private global::Agrirouter.Technicalmessagetype.UID guidancePatternIdRef_;
+    private global::Efdi.UID guidancePatternIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID GuidancePatternIdRef {
+    public global::Efdi.UID GuidancePatternIdRef {
       get { return guidancePatternIdRef_; }
       set {
         guidancePatternIdRef_ = value;
@@ -12761,7 +11970,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int GuidanceEastShiftFieldNumber = 3;
     private long guidanceEastShift_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long GuidanceEastShift {
       get { return guidanceEastShift_; }
       set {
@@ -12773,7 +11981,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int GuidanceNorthShiftFieldNumber = 4;
     private long guidanceNorthShift_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long GuidanceNorthShift {
       get { return guidanceNorthShift_; }
       set {
@@ -12785,7 +11992,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int PropagationOffsetFieldNumber = 5;
     private long propagationOffset_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long PropagationOffset {
       get { return propagationOffset_; }
       set {
@@ -12795,10 +12001,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "allocation_stamp" field.</summary>
     public const int AllocationStampFieldNumber = 6;
-    private global::Agrirouter.Technicalmessagetype.AllocationStamp allocationStamp_;
+    private global::Efdi.AllocationStamp allocationStamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.AllocationStamp AllocationStamp {
+    public global::Efdi.AllocationStamp AllocationStamp {
       get { return allocationStamp_; }
       set {
         allocationStamp_ = value;
@@ -12811,19 +12016,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as GuidanceShift);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(GuidanceShift other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -12842,7 +12044,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (guidanceGroupIdRef_ != null) hash ^= GuidanceGroupIdRef.GetHashCode();
@@ -12859,13 +12060,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -12903,7 +12102,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (guidanceGroupIdRef_ != null) {
         output.WriteRawTag(10);
@@ -12937,7 +12135,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (guidanceGroupIdRef_ != null) {
@@ -12966,20 +12163,19 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(GuidanceShift other) {
       if (other == null) {
         return;
       }
       if (other.guidanceGroupIdRef_ != null) {
         if (guidanceGroupIdRef_ == null) {
-          GuidanceGroupIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          GuidanceGroupIdRef = new global::Efdi.UID();
         }
         GuidanceGroupIdRef.MergeFrom(other.GuidanceGroupIdRef);
       }
       if (other.guidancePatternIdRef_ != null) {
         if (guidancePatternIdRef_ == null) {
-          GuidancePatternIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          GuidancePatternIdRef = new global::Efdi.UID();
         }
         GuidancePatternIdRef.MergeFrom(other.GuidancePatternIdRef);
       }
@@ -12994,7 +12190,7 @@ namespace Agrirouter.Technicalmessagetype {
       }
       if (other.allocationStamp_ != null) {
         if (allocationStamp_ == null) {
-          AllocationStamp = new global::Agrirouter.Technicalmessagetype.AllocationStamp();
+          AllocationStamp = new global::Efdi.AllocationStamp();
         }
         AllocationStamp.MergeFrom(other.AllocationStamp);
       }
@@ -13003,7 +12199,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -13016,14 +12211,14 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (guidanceGroupIdRef_ == null) {
-              GuidanceGroupIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              GuidanceGroupIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(GuidanceGroupIdRef);
             break;
           }
           case 18: {
             if (guidancePatternIdRef_ == null) {
-              GuidancePatternIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              GuidancePatternIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(GuidancePatternIdRef);
             break;
@@ -13042,7 +12237,7 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 50: {
             if (allocationStamp_ == null) {
-              AllocationStamp = new global::Agrirouter.Technicalmessagetype.AllocationStamp();
+              AllocationStamp = new global::Efdi.AllocationStamp();
             }
             input.ReadMessage(AllocationStamp);
             break;
@@ -13058,7 +12253,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -13068,14 +12262,14 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (guidanceGroupIdRef_ == null) {
-              GuidanceGroupIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              GuidanceGroupIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(GuidanceGroupIdRef);
             break;
           }
           case 18: {
             if (guidancePatternIdRef_ == null) {
-              GuidancePatternIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              GuidancePatternIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(GuidancePatternIdRef);
             break;
@@ -13094,7 +12288,7 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 50: {
             if (allocationStamp_ == null) {
-              AllocationStamp = new global::Agrirouter.Technicalmessagetype.AllocationStamp();
+              AllocationStamp = new global::Efdi.AllocationStamp();
             }
             input.ReadMessage(AllocationStamp);
             break;
@@ -13121,23 +12315,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<ISO11783_TaskData> _parser = new pb::MessageParser<ISO11783_TaskData>(() => new ISO11783_TaskData());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ISO11783_TaskData> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[31]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[31]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ISO11783_TaskData() {
       OnConstruction();
     }
@@ -13145,7 +12335,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ISO11783_TaskData(ISO11783_TaskData other) : this() {
       versionMajor_ = other.versionMajor_;
       versionMinor_ = other.versionMinor_;
@@ -13179,17 +12368,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ISO11783_TaskData Clone() {
       return new ISO11783_TaskData(this);
     }
 
     /// <summary>Field number for the "version_major" field.</summary>
     public const int VersionMajorFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.ISO11783_TaskData.Types.VersionMajor versionMajor_ = global::Agrirouter.Technicalmessagetype.ISO11783_TaskData.Types.VersionMajor.Dis;
+    private global::Efdi.ISO11783_TaskData.Types.VersionMajor versionMajor_ = global::Efdi.ISO11783_TaskData.Types.VersionMajor.Dis;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.ISO11783_TaskData.Types.VersionMajor VersionMajor {
+    public global::Efdi.ISO11783_TaskData.Types.VersionMajor VersionMajor {
       get { return versionMajor_; }
       set {
         versionMajor_ = value;
@@ -13200,7 +12387,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int VersionMinorFieldNumber = 2;
     private uint versionMinor_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint VersionMinor {
       get { return versionMinor_; }
       set {
@@ -13212,7 +12398,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int ManagementSoftwareManufacturerFieldNumber = 3;
     private string managementSoftwareManufacturer_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ManagementSoftwareManufacturer {
       get { return managementSoftwareManufacturer_; }
       set {
@@ -13224,7 +12409,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int ManagementSoftwareVersionFieldNumber = 4;
     private string managementSoftwareVersion_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ManagementSoftwareVersion {
       get { return managementSoftwareVersion_; }
       set {
@@ -13236,7 +12420,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int TaskControllerManufacturerFieldNumber = 5;
     private string taskControllerManufacturer_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string TaskControllerManufacturer {
       get { return taskControllerManufacturer_; }
       set {
@@ -13248,7 +12431,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int TaskControllerVersionFieldNumber = 6;
     private string taskControllerVersion_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string TaskControllerVersion {
       get { return taskControllerVersion_; }
       set {
@@ -13258,10 +12440,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "data_transfer_origin" field.</summary>
     public const int DataTransferOriginFieldNumber = 7;
-    private global::Agrirouter.Technicalmessagetype.ISO11783_TaskData.Types.DataTransferOrigin dataTransferOrigin_ = global::Agrirouter.Technicalmessagetype.ISO11783_TaskData.Types.DataTransferOrigin.Notset;
+    private global::Efdi.ISO11783_TaskData.Types.DataTransferOrigin dataTransferOrigin_ = global::Efdi.ISO11783_TaskData.Types.DataTransferOrigin.Notset;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.ISO11783_TaskData.Types.DataTransferOrigin DataTransferOrigin {
+    public global::Efdi.ISO11783_TaskData.Types.DataTransferOrigin DataTransferOrigin {
       get { return dataTransferOrigin_; }
       set {
         dataTransferOrigin_ = value;
@@ -13272,7 +12453,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DataTransferLanguageFieldNumber = 8;
     private string dataTransferLanguage_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string DataTransferLanguage {
       get { return dataTransferLanguage_; }
       set {
@@ -13282,214 +12462,195 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "attached_file" field.</summary>
     public const int AttachedFileFieldNumber = 9;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.AttachedFile> _repeated_attachedFile_codec
-        = pb::FieldCodec.ForMessage(74, global::Agrirouter.Technicalmessagetype.AttachedFile.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.AttachedFile> attachedFile_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.AttachedFile>();
+    private static readonly pb::FieldCodec<global::Efdi.AttachedFile> _repeated_attachedFile_codec
+        = pb::FieldCodec.ForMessage(74, global::Efdi.AttachedFile.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.AttachedFile> attachedFile_ = new pbc::RepeatedField<global::Efdi.AttachedFile>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.AttachedFile> AttachedFile {
+    public pbc::RepeatedField<global::Efdi.AttachedFile> AttachedFile {
       get { return attachedFile_; }
     }
 
     /// <summary>Field number for the "base_station" field.</summary>
     public const int BaseStationFieldNumber = 10;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.BaseStation> _repeated_baseStation_codec
-        = pb::FieldCodec.ForMessage(82, global::Agrirouter.Technicalmessagetype.BaseStation.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.BaseStation> baseStation_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.BaseStation>();
+    private static readonly pb::FieldCodec<global::Efdi.BaseStation> _repeated_baseStation_codec
+        = pb::FieldCodec.ForMessage(82, global::Efdi.BaseStation.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.BaseStation> baseStation_ = new pbc::RepeatedField<global::Efdi.BaseStation>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.BaseStation> BaseStation {
+    public pbc::RepeatedField<global::Efdi.BaseStation> BaseStation {
       get { return baseStation_; }
     }
 
     /// <summary>Field number for the "coded_comment" field.</summary>
     public const int CodedCommentFieldNumber = 11;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.CodedComment> _repeated_codedComment_codec
-        = pb::FieldCodec.ForMessage(90, global::Agrirouter.Technicalmessagetype.CodedComment.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.CodedComment> codedComment_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.CodedComment>();
+    private static readonly pb::FieldCodec<global::Efdi.CodedComment> _repeated_codedComment_codec
+        = pb::FieldCodec.ForMessage(90, global::Efdi.CodedComment.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.CodedComment> codedComment_ = new pbc::RepeatedField<global::Efdi.CodedComment>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.CodedComment> CodedComment {
+    public pbc::RepeatedField<global::Efdi.CodedComment> CodedComment {
       get { return codedComment_; }
     }
 
     /// <summary>Field number for the "coded_comment_group" field.</summary>
     public const int CodedCommentGroupFieldNumber = 12;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.CodedCommentGroup> _repeated_codedCommentGroup_codec
-        = pb::FieldCodec.ForMessage(98, global::Agrirouter.Technicalmessagetype.CodedCommentGroup.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.CodedCommentGroup> codedCommentGroup_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.CodedCommentGroup>();
+    private static readonly pb::FieldCodec<global::Efdi.CodedCommentGroup> _repeated_codedCommentGroup_codec
+        = pb::FieldCodec.ForMessage(98, global::Efdi.CodedCommentGroup.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.CodedCommentGroup> codedCommentGroup_ = new pbc::RepeatedField<global::Efdi.CodedCommentGroup>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.CodedCommentGroup> CodedCommentGroup {
+    public pbc::RepeatedField<global::Efdi.CodedCommentGroup> CodedCommentGroup {
       get { return codedCommentGroup_; }
     }
 
     /// <summary>Field number for the "colour_legend" field.</summary>
     public const int ColourLegendFieldNumber = 13;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.ColourLegend> _repeated_colourLegend_codec
-        = pb::FieldCodec.ForMessage(106, global::Agrirouter.Technicalmessagetype.ColourLegend.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.ColourLegend> colourLegend_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.ColourLegend>();
+    private static readonly pb::FieldCodec<global::Efdi.ColourLegend> _repeated_colourLegend_codec
+        = pb::FieldCodec.ForMessage(106, global::Efdi.ColourLegend.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.ColourLegend> colourLegend_ = new pbc::RepeatedField<global::Efdi.ColourLegend>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.ColourLegend> ColourLegend {
+    public pbc::RepeatedField<global::Efdi.ColourLegend> ColourLegend {
       get { return colourLegend_; }
     }
 
     /// <summary>Field number for the "crop_type" field.</summary>
     public const int CropTypeFieldNumber = 14;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.CropType> _repeated_cropType_codec
-        = pb::FieldCodec.ForMessage(114, global::Agrirouter.Technicalmessagetype.CropType.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.CropType> cropType_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.CropType>();
+    private static readonly pb::FieldCodec<global::Efdi.CropType> _repeated_cropType_codec
+        = pb::FieldCodec.ForMessage(114, global::Efdi.CropType.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.CropType> cropType_ = new pbc::RepeatedField<global::Efdi.CropType>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.CropType> CropType {
+    public pbc::RepeatedField<global::Efdi.CropType> CropType {
       get { return cropType_; }
     }
 
     /// <summary>Field number for the "cultural_practice" field.</summary>
     public const int CulturalPracticeFieldNumber = 15;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.CulturalPractice> _repeated_culturalPractice_codec
-        = pb::FieldCodec.ForMessage(122, global::Agrirouter.Technicalmessagetype.CulturalPractice.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.CulturalPractice> culturalPractice_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.CulturalPractice>();
+    private static readonly pb::FieldCodec<global::Efdi.CulturalPractice> _repeated_culturalPractice_codec
+        = pb::FieldCodec.ForMessage(122, global::Efdi.CulturalPractice.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.CulturalPractice> culturalPractice_ = new pbc::RepeatedField<global::Efdi.CulturalPractice>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.CulturalPractice> CulturalPractice {
+    public pbc::RepeatedField<global::Efdi.CulturalPractice> CulturalPractice {
       get { return culturalPractice_; }
     }
 
     /// <summary>Field number for the "customer" field.</summary>
     public const int CustomerFieldNumber = 16;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.Customer> _repeated_customer_codec
-        = pb::FieldCodec.ForMessage(130, global::Agrirouter.Technicalmessagetype.Customer.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Customer> customer_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Customer>();
+    private static readonly pb::FieldCodec<global::Efdi.Customer> _repeated_customer_codec
+        = pb::FieldCodec.ForMessage(130, global::Efdi.Customer.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.Customer> customer_ = new pbc::RepeatedField<global::Efdi.Customer>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Customer> Customer {
+    public pbc::RepeatedField<global::Efdi.Customer> Customer {
       get { return customer_; }
     }
 
     /// <summary>Field number for the "device" field.</summary>
     public const int DeviceFieldNumber = 17;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.Device> _repeated_device_codec
-        = pb::FieldCodec.ForMessage(138, global::Agrirouter.Technicalmessagetype.Device.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Device> device_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Device>();
+    private static readonly pb::FieldCodec<global::Efdi.Device> _repeated_device_codec
+        = pb::FieldCodec.ForMessage(138, global::Efdi.Device.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.Device> device_ = new pbc::RepeatedField<global::Efdi.Device>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Device> Device {
+    public pbc::RepeatedField<global::Efdi.Device> Device {
       get { return device_; }
     }
 
     /// <summary>Field number for the "farm" field.</summary>
     public const int FarmFieldNumber = 18;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.Farm> _repeated_farm_codec
-        = pb::FieldCodec.ForMessage(146, global::Agrirouter.Technicalmessagetype.Farm.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Farm> farm_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Farm>();
+    private static readonly pb::FieldCodec<global::Efdi.Farm> _repeated_farm_codec
+        = pb::FieldCodec.ForMessage(146, global::Efdi.Farm.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.Farm> farm_ = new pbc::RepeatedField<global::Efdi.Farm>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Farm> Farm {
+    public pbc::RepeatedField<global::Efdi.Farm> Farm {
       get { return farm_; }
     }
 
     /// <summary>Field number for the "operation_technique" field.</summary>
     public const int OperationTechniqueFieldNumber = 19;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.OperationTechnique> _repeated_operationTechnique_codec
-        = pb::FieldCodec.ForMessage(154, global::Agrirouter.Technicalmessagetype.OperationTechnique.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.OperationTechnique> operationTechnique_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.OperationTechnique>();
+    private static readonly pb::FieldCodec<global::Efdi.OperationTechnique> _repeated_operationTechnique_codec
+        = pb::FieldCodec.ForMessage(154, global::Efdi.OperationTechnique.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.OperationTechnique> operationTechnique_ = new pbc::RepeatedField<global::Efdi.OperationTechnique>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.OperationTechnique> OperationTechnique {
+    public pbc::RepeatedField<global::Efdi.OperationTechnique> OperationTechnique {
       get { return operationTechnique_; }
     }
 
     /// <summary>Field number for the "partfield" field.</summary>
     public const int PartfieldFieldNumber = 20;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.Partfield> _repeated_partfield_codec
-        = pb::FieldCodec.ForMessage(162, global::Agrirouter.Technicalmessagetype.Partfield.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Partfield> partfield_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Partfield>();
+    private static readonly pb::FieldCodec<global::Efdi.Partfield> _repeated_partfield_codec
+        = pb::FieldCodec.ForMessage(162, global::Efdi.Partfield.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.Partfield> partfield_ = new pbc::RepeatedField<global::Efdi.Partfield>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Partfield> Partfield {
+    public pbc::RepeatedField<global::Efdi.Partfield> Partfield {
       get { return partfield_; }
     }
 
     /// <summary>Field number for the "product" field.</summary>
     public const int ProductFieldNumber = 21;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.Product> _repeated_product_codec
-        = pb::FieldCodec.ForMessage(170, global::Agrirouter.Technicalmessagetype.Product.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Product> product_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Product>();
+    private static readonly pb::FieldCodec<global::Efdi.Product> _repeated_product_codec
+        = pb::FieldCodec.ForMessage(170, global::Efdi.Product.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.Product> product_ = new pbc::RepeatedField<global::Efdi.Product>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Product> Product {
+    public pbc::RepeatedField<global::Efdi.Product> Product {
       get { return product_; }
     }
 
     /// <summary>Field number for the "product_group" field.</summary>
     public const int ProductGroupFieldNumber = 22;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.ProductGroup> _repeated_productGroup_codec
-        = pb::FieldCodec.ForMessage(178, global::Agrirouter.Technicalmessagetype.ProductGroup.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.ProductGroup> productGroup_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.ProductGroup>();
+    private static readonly pb::FieldCodec<global::Efdi.ProductGroup> _repeated_productGroup_codec
+        = pb::FieldCodec.ForMessage(178, global::Efdi.ProductGroup.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.ProductGroup> productGroup_ = new pbc::RepeatedField<global::Efdi.ProductGroup>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.ProductGroup> ProductGroup {
+    public pbc::RepeatedField<global::Efdi.ProductGroup> ProductGroup {
       get { return productGroup_; }
     }
 
     /// <summary>Field number for the "task" field.</summary>
     public const int TaskFieldNumber = 23;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.Task> _repeated_task_codec
-        = pb::FieldCodec.ForMessage(186, global::Agrirouter.Technicalmessagetype.Task.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Task> task_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Task>();
+    private static readonly pb::FieldCodec<global::Efdi.Task> _repeated_task_codec
+        = pb::FieldCodec.ForMessage(186, global::Efdi.Task.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.Task> task_ = new pbc::RepeatedField<global::Efdi.Task>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Task> Task {
+    public pbc::RepeatedField<global::Efdi.Task> Task {
       get { return task_; }
     }
 
     /// <summary>Field number for the "task_controller_capabilities" field.</summary>
     public const int TaskControllerCapabilitiesFieldNumber = 24;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.TaskControllerCapabilities> _repeated_taskControllerCapabilities_codec
-        = pb::FieldCodec.ForMessage(194, global::Agrirouter.Technicalmessagetype.TaskControllerCapabilities.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.TaskControllerCapabilities> taskControllerCapabilities_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.TaskControllerCapabilities>();
+    private static readonly pb::FieldCodec<global::Efdi.TaskControllerCapabilities> _repeated_taskControllerCapabilities_codec
+        = pb::FieldCodec.ForMessage(194, global::Efdi.TaskControllerCapabilities.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.TaskControllerCapabilities> taskControllerCapabilities_ = new pbc::RepeatedField<global::Efdi.TaskControllerCapabilities>();
     /// <summary>
     /// Note by S. Plum:
     /// TaskControllerCapabilities is a single element. "repeated" shall be removed
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.TaskControllerCapabilities> TaskControllerCapabilities {
+    public pbc::RepeatedField<global::Efdi.TaskControllerCapabilities> TaskControllerCapabilities {
       get { return taskControllerCapabilities_; }
     }
 
     /// <summary>Field number for the "value_presentation" field.</summary>
     public const int ValuePresentationFieldNumber = 25;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.ValuePresentation> _repeated_valuePresentation_codec
-        = pb::FieldCodec.ForMessage(202, global::Agrirouter.Technicalmessagetype.ValuePresentation.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.ValuePresentation> valuePresentation_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.ValuePresentation>();
+    private static readonly pb::FieldCodec<global::Efdi.ValuePresentation> _repeated_valuePresentation_codec
+        = pb::FieldCodec.ForMessage(202, global::Efdi.ValuePresentation.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.ValuePresentation> valuePresentation_ = new pbc::RepeatedField<global::Efdi.ValuePresentation>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.ValuePresentation> ValuePresentation {
+    public pbc::RepeatedField<global::Efdi.ValuePresentation> ValuePresentation {
       get { return valuePresentation_; }
     }
 
     /// <summary>Field number for the "worker" field.</summary>
     public const int WorkerFieldNumber = 26;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.Worker> _repeated_worker_codec
-        = pb::FieldCodec.ForMessage(210, global::Agrirouter.Technicalmessagetype.Worker.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Worker> worker_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Worker>();
+    private static readonly pb::FieldCodec<global::Efdi.Worker> _repeated_worker_codec
+        = pb::FieldCodec.ForMessage(210, global::Efdi.Worker.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.Worker> worker_ = new pbc::RepeatedField<global::Efdi.Worker>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Worker> Worker {
+    public pbc::RepeatedField<global::Efdi.Worker> Worker {
       get { return worker_; }
     }
 
     /// <summary>Field number for the "external_file_reference" field.</summary>
     public const int ExternalFileReferenceFieldNumber = 27;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.ExternalFileReference> _repeated_externalFileReference_codec
-        = pb::FieldCodec.ForMessage(218, global::Agrirouter.Technicalmessagetype.ExternalFileReference.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.ExternalFileReference> externalFileReference_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.ExternalFileReference>();
+    private static readonly pb::FieldCodec<global::Efdi.ExternalFileReference> _repeated_externalFileReference_codec
+        = pb::FieldCodec.ForMessage(218, global::Efdi.ExternalFileReference.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.ExternalFileReference> externalFileReference_ = new pbc::RepeatedField<global::Efdi.ExternalFileReference>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.ExternalFileReference> ExternalFileReference {
+    public pbc::RepeatedField<global::Efdi.ExternalFileReference> ExternalFileReference {
       get { return externalFileReference_; }
     }
 
@@ -13499,19 +12660,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ISO11783_TaskData);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ISO11783_TaskData other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -13551,16 +12709,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (VersionMajor != global::Agrirouter.Technicalmessagetype.ISO11783_TaskData.Types.VersionMajor.Dis) hash ^= VersionMajor.GetHashCode();
+      if (VersionMajor != global::Efdi.ISO11783_TaskData.Types.VersionMajor.Dis) hash ^= VersionMajor.GetHashCode();
       if (VersionMinor != 0) hash ^= VersionMinor.GetHashCode();
       if (ManagementSoftwareManufacturer.Length != 0) hash ^= ManagementSoftwareManufacturer.GetHashCode();
       if (ManagementSoftwareVersion.Length != 0) hash ^= ManagementSoftwareVersion.GetHashCode();
       if (TaskControllerManufacturer.Length != 0) hash ^= TaskControllerManufacturer.GetHashCode();
       if (TaskControllerVersion.Length != 0) hash ^= TaskControllerVersion.GetHashCode();
-      if (DataTransferOrigin != global::Agrirouter.Technicalmessagetype.ISO11783_TaskData.Types.DataTransferOrigin.Notset) hash ^= DataTransferOrigin.GetHashCode();
+      if (DataTransferOrigin != global::Efdi.ISO11783_TaskData.Types.DataTransferOrigin.Notset) hash ^= DataTransferOrigin.GetHashCode();
       if (DataTransferLanguage.Length != 0) hash ^= DataTransferLanguage.GetHashCode();
       hash ^= attachedFile_.GetHashCode();
       hash ^= baseStation_.GetHashCode();
@@ -13589,18 +12746,16 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (VersionMajor != global::Agrirouter.Technicalmessagetype.ISO11783_TaskData.Types.VersionMajor.Dis) {
+      if (VersionMajor != global::Efdi.ISO11783_TaskData.Types.VersionMajor.Dis) {
         output.WriteRawTag(8);
         output.WriteEnum((int) VersionMajor);
       }
@@ -13624,7 +12779,7 @@ namespace Agrirouter.Technicalmessagetype {
         output.WriteRawTag(50);
         output.WriteString(TaskControllerVersion);
       }
-      if (DataTransferOrigin != global::Agrirouter.Technicalmessagetype.ISO11783_TaskData.Types.DataTransferOrigin.Notset) {
+      if (DataTransferOrigin != global::Efdi.ISO11783_TaskData.Types.DataTransferOrigin.Notset) {
         output.WriteRawTag(56);
         output.WriteEnum((int) DataTransferOrigin);
       }
@@ -13660,9 +12815,8 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (VersionMajor != global::Agrirouter.Technicalmessagetype.ISO11783_TaskData.Types.VersionMajor.Dis) {
+      if (VersionMajor != global::Efdi.ISO11783_TaskData.Types.VersionMajor.Dis) {
         output.WriteRawTag(8);
         output.WriteEnum((int) VersionMajor);
       }
@@ -13686,7 +12840,7 @@ namespace Agrirouter.Technicalmessagetype {
         output.WriteRawTag(50);
         output.WriteString(TaskControllerVersion);
       }
-      if (DataTransferOrigin != global::Agrirouter.Technicalmessagetype.ISO11783_TaskData.Types.DataTransferOrigin.Notset) {
+      if (DataTransferOrigin != global::Efdi.ISO11783_TaskData.Types.DataTransferOrigin.Notset) {
         output.WriteRawTag(56);
         output.WriteEnum((int) DataTransferOrigin);
       }
@@ -13721,10 +12875,9 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (VersionMajor != global::Agrirouter.Technicalmessagetype.ISO11783_TaskData.Types.VersionMajor.Dis) {
+      if (VersionMajor != global::Efdi.ISO11783_TaskData.Types.VersionMajor.Dis) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) VersionMajor);
       }
       if (VersionMinor != 0) {
@@ -13742,7 +12895,7 @@ namespace Agrirouter.Technicalmessagetype {
       if (TaskControllerVersion.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(TaskControllerVersion);
       }
-      if (DataTransferOrigin != global::Agrirouter.Technicalmessagetype.ISO11783_TaskData.Types.DataTransferOrigin.Notset) {
+      if (DataTransferOrigin != global::Efdi.ISO11783_TaskData.Types.DataTransferOrigin.Notset) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) DataTransferOrigin);
       }
       if (DataTransferLanguage.Length != 0) {
@@ -13775,12 +12928,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ISO11783_TaskData other) {
       if (other == null) {
         return;
       }
-      if (other.VersionMajor != global::Agrirouter.Technicalmessagetype.ISO11783_TaskData.Types.VersionMajor.Dis) {
+      if (other.VersionMajor != global::Efdi.ISO11783_TaskData.Types.VersionMajor.Dis) {
         VersionMajor = other.VersionMajor;
       }
       if (other.VersionMinor != 0) {
@@ -13798,7 +12950,7 @@ namespace Agrirouter.Technicalmessagetype {
       if (other.TaskControllerVersion.Length != 0) {
         TaskControllerVersion = other.TaskControllerVersion;
       }
-      if (other.DataTransferOrigin != global::Agrirouter.Technicalmessagetype.ISO11783_TaskData.Types.DataTransferOrigin.Notset) {
+      if (other.DataTransferOrigin != global::Efdi.ISO11783_TaskData.Types.DataTransferOrigin.Notset) {
         DataTransferOrigin = other.DataTransferOrigin;
       }
       if (other.DataTransferLanguage.Length != 0) {
@@ -13828,7 +12980,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -13840,7 +12991,7 @@ namespace Agrirouter.Technicalmessagetype {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            VersionMajor = (global::Agrirouter.Technicalmessagetype.ISO11783_TaskData.Types.VersionMajor) input.ReadEnum();
+            VersionMajor = (global::Efdi.ISO11783_TaskData.Types.VersionMajor) input.ReadEnum();
             break;
           }
           case 16: {
@@ -13864,7 +13015,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           }
           case 56: {
-            DataTransferOrigin = (global::Agrirouter.Technicalmessagetype.ISO11783_TaskData.Types.DataTransferOrigin) input.ReadEnum();
+            DataTransferOrigin = (global::Efdi.ISO11783_TaskData.Types.DataTransferOrigin) input.ReadEnum();
             break;
           }
           case 66: {
@@ -13958,7 +13109,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -13967,7 +13117,7 @@ namespace Agrirouter.Technicalmessagetype {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            VersionMajor = (global::Agrirouter.Technicalmessagetype.ISO11783_TaskData.Types.VersionMajor) input.ReadEnum();
+            VersionMajor = (global::Efdi.ISO11783_TaskData.Types.VersionMajor) input.ReadEnum();
             break;
           }
           case 16: {
@@ -13991,7 +13141,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           }
           case 56: {
-            DataTransferOrigin = (global::Agrirouter.Technicalmessagetype.ISO11783_TaskData.Types.DataTransferOrigin) input.ReadEnum();
+            DataTransferOrigin = (global::Efdi.ISO11783_TaskData.Types.DataTransferOrigin) input.ReadEnum();
             break;
           }
           case 66: {
@@ -14086,7 +13236,6 @@ namespace Agrirouter.Technicalmessagetype {
     #region Nested types
     /// <summary>Container for nested types declared in the ISO11783_TaskData message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       public enum VersionMajor {
         [pbr::OriginalName("VERSION_MAJOR_DIS")] Dis = 0,
@@ -14118,23 +13267,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<LineString> _parser = new pb::MessageParser<LineString>(() => new LineString());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<LineString> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[32]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[32]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LineString() {
       OnConstruction();
     }
@@ -14142,7 +13287,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LineString(LineString other) : this() {
       lineStringType_ = other.lineStringType_;
       lineStringDesignator_ = other.lineStringDesignator_;
@@ -14156,17 +13300,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LineString Clone() {
       return new LineString(this);
     }
 
     /// <summary>Field number for the "line_string_type" field.</summary>
     public const int LineStringTypeFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.LineString.Types.LinestringType lineStringType_ = global::Agrirouter.Technicalmessagetype.LineString.Types.LinestringType.ANotset;
+    private global::Efdi.LineString.Types.LinestringType lineStringType_ = global::Efdi.LineString.Types.LinestringType.ANotset;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.LineString.Types.LinestringType LineStringType {
+    public global::Efdi.LineString.Types.LinestringType LineStringType {
       get { return lineStringType_; }
       set {
         lineStringType_ = value;
@@ -14177,7 +13319,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int LineStringDesignatorFieldNumber = 2;
     private string lineStringDesignator_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string LineStringDesignator {
       get { return lineStringDesignator_; }
       set {
@@ -14189,7 +13330,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int LineStringWidthFieldNumber = 3;
     private uint lineStringWidth_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint LineStringWidth {
       get { return lineStringWidth_; }
       set {
@@ -14201,7 +13341,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int LineStringLengthFieldNumber = 4;
     private uint lineStringLength_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint LineStringLength {
       get { return lineStringLength_; }
       set {
@@ -14213,7 +13352,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int LineStringColourFieldNumber = 5;
     private uint lineStringColour_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint LineStringColour {
       get { return lineStringColour_; }
       set {
@@ -14223,10 +13361,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "line_string_id" field.</summary>
     public const int LineStringIdFieldNumber = 6;
-    private global::Agrirouter.Technicalmessagetype.UID lineStringId_;
+    private global::Efdi.UID lineStringId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID LineStringId {
+    public global::Efdi.UID LineStringId {
       get { return lineStringId_; }
       set {
         lineStringId_ = value;
@@ -14235,12 +13372,11 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "point" field.</summary>
     public const int PointFieldNumber = 7;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.Point> _repeated_point_codec
-        = pb::FieldCodec.ForMessage(58, global::Agrirouter.Technicalmessagetype.Point.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Point> point_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Point>();
+    private static readonly pb::FieldCodec<global::Efdi.Point> _repeated_point_codec
+        = pb::FieldCodec.ForMessage(58, global::Efdi.Point.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.Point> point_ = new pbc::RepeatedField<global::Efdi.Point>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Point> Point {
+    public pbc::RepeatedField<global::Efdi.Point> Point {
       get { return point_; }
     }
 
@@ -14250,19 +13386,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as LineString);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(LineString other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -14282,10 +13415,9 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (LineStringType != global::Agrirouter.Technicalmessagetype.LineString.Types.LinestringType.ANotset) hash ^= LineStringType.GetHashCode();
+      if (LineStringType != global::Efdi.LineString.Types.LinestringType.ANotset) hash ^= LineStringType.GetHashCode();
       if (LineStringDesignator.Length != 0) hash ^= LineStringDesignator.GetHashCode();
       if (LineStringWidth != 0) hash ^= LineStringWidth.GetHashCode();
       if (LineStringLength != 0) hash ^= LineStringLength.GetHashCode();
@@ -14300,18 +13432,16 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (LineStringType != global::Agrirouter.Technicalmessagetype.LineString.Types.LinestringType.ANotset) {
+      if (LineStringType != global::Efdi.LineString.Types.LinestringType.ANotset) {
         output.WriteRawTag(8);
         output.WriteEnum((int) LineStringType);
       }
@@ -14345,9 +13475,8 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (LineStringType != global::Agrirouter.Technicalmessagetype.LineString.Types.LinestringType.ANotset) {
+      if (LineStringType != global::Efdi.LineString.Types.LinestringType.ANotset) {
         output.WriteRawTag(8);
         output.WriteEnum((int) LineStringType);
       }
@@ -14380,10 +13509,9 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (LineStringType != global::Agrirouter.Technicalmessagetype.LineString.Types.LinestringType.ANotset) {
+      if (LineStringType != global::Efdi.LineString.Types.LinestringType.ANotset) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) LineStringType);
       }
       if (LineStringDesignator.Length != 0) {
@@ -14410,12 +13538,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(LineString other) {
       if (other == null) {
         return;
       }
-      if (other.LineStringType != global::Agrirouter.Technicalmessagetype.LineString.Types.LinestringType.ANotset) {
+      if (other.LineStringType != global::Efdi.LineString.Types.LinestringType.ANotset) {
         LineStringType = other.LineStringType;
       }
       if (other.LineStringDesignator.Length != 0) {
@@ -14432,7 +13559,7 @@ namespace Agrirouter.Technicalmessagetype {
       }
       if (other.lineStringId_ != null) {
         if (lineStringId_ == null) {
-          LineStringId = new global::Agrirouter.Technicalmessagetype.UID();
+          LineStringId = new global::Efdi.UID();
         }
         LineStringId.MergeFrom(other.LineStringId);
       }
@@ -14442,7 +13569,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -14454,7 +13580,7 @@ namespace Agrirouter.Technicalmessagetype {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            LineStringType = (global::Agrirouter.Technicalmessagetype.LineString.Types.LinestringType) input.ReadEnum();
+            LineStringType = (global::Efdi.LineString.Types.LinestringType) input.ReadEnum();
             break;
           }
           case 18: {
@@ -14475,7 +13601,7 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 50: {
             if (lineStringId_ == null) {
-              LineStringId = new global::Agrirouter.Technicalmessagetype.UID();
+              LineStringId = new global::Efdi.UID();
             }
             input.ReadMessage(LineStringId);
             break;
@@ -14495,7 +13621,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -14504,7 +13629,7 @@ namespace Agrirouter.Technicalmessagetype {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            LineStringType = (global::Agrirouter.Technicalmessagetype.LineString.Types.LinestringType) input.ReadEnum();
+            LineStringType = (global::Efdi.LineString.Types.LinestringType) input.ReadEnum();
             break;
           }
           case 18: {
@@ -14525,7 +13650,7 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 50: {
             if (lineStringId_ == null) {
-              LineStringId = new global::Agrirouter.Technicalmessagetype.UID();
+              LineStringId = new global::Efdi.UID();
             }
             input.ReadMessage(LineStringId);
             break;
@@ -14546,7 +13671,6 @@ namespace Agrirouter.Technicalmessagetype {
     #region Nested types
     /// <summary>Container for nested types declared in the LineString message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       public enum LinestringType {
         [pbr::OriginalName("A_NOTSET")] ANotset = 0,
@@ -14577,23 +13701,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<OperationTechnique> _parser = new pb::MessageParser<OperationTechnique>(() => new OperationTechnique());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<OperationTechnique> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[33]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[33]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public OperationTechnique() {
       OnConstruction();
     }
@@ -14601,7 +13721,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public OperationTechnique(OperationTechnique other) : this() {
       operationTechniqueId_ = other.operationTechniqueId_ != null ? other.operationTechniqueId_.Clone() : null;
       operationTechniqueDesignator_ = other.operationTechniqueDesignator_;
@@ -14610,17 +13729,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public OperationTechnique Clone() {
       return new OperationTechnique(this);
     }
 
     /// <summary>Field number for the "operation_technique_id" field.</summary>
     public const int OperationTechniqueIdFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.UID operationTechniqueId_;
+    private global::Efdi.UID operationTechniqueId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID OperationTechniqueId {
+    public global::Efdi.UID OperationTechniqueId {
       get { return operationTechniqueId_; }
       set {
         operationTechniqueId_ = value;
@@ -14631,7 +13748,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int OperationTechniqueDesignatorFieldNumber = 2;
     private string operationTechniqueDesignator_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string OperationTechniqueDesignator {
       get { return operationTechniqueDesignator_; }
       set {
@@ -14645,19 +13761,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as OperationTechnique);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(OperationTechnique other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -14672,7 +13785,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (operationTechniqueId_ != null) hash ^= OperationTechniqueId.GetHashCode();
@@ -14685,13 +13797,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -14713,7 +13823,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (operationTechniqueId_ != null) {
         output.WriteRawTag(10);
@@ -14731,7 +13840,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (operationTechniqueId_ != null) {
@@ -14748,14 +13856,13 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(OperationTechnique other) {
       if (other == null) {
         return;
       }
       if (other.operationTechniqueId_ != null) {
         if (operationTechniqueId_ == null) {
-          OperationTechniqueId = new global::Agrirouter.Technicalmessagetype.UID();
+          OperationTechniqueId = new global::Efdi.UID();
         }
         OperationTechniqueId.MergeFrom(other.OperationTechniqueId);
       }
@@ -14767,7 +13874,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -14780,7 +13886,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (operationTechniqueId_ == null) {
-              OperationTechniqueId = new global::Agrirouter.Technicalmessagetype.UID();
+              OperationTechniqueId = new global::Efdi.UID();
             }
             input.ReadMessage(OperationTechniqueId);
             break;
@@ -14800,7 +13906,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -14810,7 +13915,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (operationTechniqueId_ == null) {
-              OperationTechniqueId = new global::Agrirouter.Technicalmessagetype.UID();
+              OperationTechniqueId = new global::Efdi.UID();
             }
             input.ReadMessage(OperationTechniqueId);
             break;
@@ -14841,23 +13946,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<OperationTechniqueReference> _parser = new pb::MessageParser<OperationTechniqueReference>(() => new OperationTechniqueReference());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<OperationTechniqueReference> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[34]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[34]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public OperationTechniqueReference() {
       OnConstruction();
     }
@@ -14865,7 +13966,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public OperationTechniqueReference(OperationTechniqueReference other) : this() {
       operationTechniqueIdRef_ = other.operationTechniqueIdRef_ != null ? other.operationTechniqueIdRef_.Clone() : null;
       extension_ = other.extension_.Clone();
@@ -14873,17 +13973,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public OperationTechniqueReference Clone() {
       return new OperationTechniqueReference(this);
     }
 
     /// <summary>Field number for the "operation_technique_id_ref" field.</summary>
     public const int OperationTechniqueIdRefFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.UID operationTechniqueIdRef_;
+    private global::Efdi.UID operationTechniqueIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID OperationTechniqueIdRef {
+    public global::Efdi.UID OperationTechniqueIdRef {
       get { return operationTechniqueIdRef_; }
       set {
         operationTechniqueIdRef_ = value;
@@ -14896,19 +13994,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as OperationTechniqueReference);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(OperationTechniqueReference other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -14922,7 +14017,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (operationTechniqueIdRef_ != null) hash ^= OperationTechniqueIdRef.GetHashCode();
@@ -14934,13 +14028,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -14958,7 +14050,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (operationTechniqueIdRef_ != null) {
         output.WriteRawTag(10);
@@ -14972,7 +14063,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (operationTechniqueIdRef_ != null) {
@@ -14986,14 +14076,13 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(OperationTechniqueReference other) {
       if (other == null) {
         return;
       }
       if (other.operationTechniqueIdRef_ != null) {
         if (operationTechniqueIdRef_ == null) {
-          OperationTechniqueIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          OperationTechniqueIdRef = new global::Efdi.UID();
         }
         OperationTechniqueIdRef.MergeFrom(other.OperationTechniqueIdRef);
       }
@@ -15002,7 +14091,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -15015,7 +14103,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (operationTechniqueIdRef_ == null) {
-              OperationTechniqueIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              OperationTechniqueIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(OperationTechniqueIdRef);
             break;
@@ -15031,7 +14119,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -15041,7 +14128,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (operationTechniqueIdRef_ == null) {
-              OperationTechniqueIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              OperationTechniqueIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(OperationTechniqueIdRef);
             break;
@@ -15068,23 +14155,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<OperTechPractice> _parser = new pb::MessageParser<OperTechPractice>(() => new OperTechPractice());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<OperTechPractice> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[35]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[35]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public OperTechPractice() {
       OnConstruction();
     }
@@ -15092,7 +14175,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public OperTechPractice(OperTechPractice other) : this() {
       culturalPracticeIdRef_ = other.culturalPracticeIdRef_ != null ? other.culturalPracticeIdRef_.Clone() : null;
       operationTechniqueIdRef_ = other.operationTechniqueIdRef_ != null ? other.operationTechniqueIdRef_.Clone() : null;
@@ -15101,17 +14183,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public OperTechPractice Clone() {
       return new OperTechPractice(this);
     }
 
     /// <summary>Field number for the "cultural_practice_id_ref" field.</summary>
     public const int CulturalPracticeIdRefFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.UID culturalPracticeIdRef_;
+    private global::Efdi.UID culturalPracticeIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID CulturalPracticeIdRef {
+    public global::Efdi.UID CulturalPracticeIdRef {
       get { return culturalPracticeIdRef_; }
       set {
         culturalPracticeIdRef_ = value;
@@ -15120,10 +14200,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "operation_technique_id_ref" field.</summary>
     public const int OperationTechniqueIdRefFieldNumber = 2;
-    private global::Agrirouter.Technicalmessagetype.UID operationTechniqueIdRef_;
+    private global::Efdi.UID operationTechniqueIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID OperationTechniqueIdRef {
+    public global::Efdi.UID OperationTechniqueIdRef {
       get { return operationTechniqueIdRef_; }
       set {
         operationTechniqueIdRef_ = value;
@@ -15136,19 +14215,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as OperTechPractice);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(OperTechPractice other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -15163,7 +14239,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (culturalPracticeIdRef_ != null) hash ^= CulturalPracticeIdRef.GetHashCode();
@@ -15176,13 +14251,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -15204,7 +14277,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (culturalPracticeIdRef_ != null) {
         output.WriteRawTag(10);
@@ -15222,7 +14294,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (culturalPracticeIdRef_ != null) {
@@ -15239,20 +14310,19 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(OperTechPractice other) {
       if (other == null) {
         return;
       }
       if (other.culturalPracticeIdRef_ != null) {
         if (culturalPracticeIdRef_ == null) {
-          CulturalPracticeIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          CulturalPracticeIdRef = new global::Efdi.UID();
         }
         CulturalPracticeIdRef.MergeFrom(other.CulturalPracticeIdRef);
       }
       if (other.operationTechniqueIdRef_ != null) {
         if (operationTechniqueIdRef_ == null) {
-          OperationTechniqueIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          OperationTechniqueIdRef = new global::Efdi.UID();
         }
         OperationTechniqueIdRef.MergeFrom(other.OperationTechniqueIdRef);
       }
@@ -15261,7 +14331,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -15274,14 +14343,14 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (culturalPracticeIdRef_ == null) {
-              CulturalPracticeIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              CulturalPracticeIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(CulturalPracticeIdRef);
             break;
           }
           case 18: {
             if (operationTechniqueIdRef_ == null) {
-              OperationTechniqueIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              OperationTechniqueIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(OperationTechniqueIdRef);
             break;
@@ -15297,7 +14366,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -15307,14 +14375,14 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (culturalPracticeIdRef_ == null) {
-              CulturalPracticeIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              CulturalPracticeIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(CulturalPracticeIdRef);
             break;
           }
           case 18: {
             if (operationTechniqueIdRef_ == null) {
-              OperationTechniqueIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              OperationTechniqueIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(OperationTechniqueIdRef);
             break;
@@ -15341,23 +14409,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<Partfield> _parser = new pb::MessageParser<Partfield>(() => new Partfield());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Partfield> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[36]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[36]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Partfield() {
       OnConstruction();
     }
@@ -15365,7 +14429,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Partfield(Partfield other) : this() {
       partfieldId_ = other.partfieldId_ != null ? other.partfieldId_.Clone() : null;
       partfieldCode_ = other.partfieldCode_;
@@ -15385,17 +14448,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Partfield Clone() {
       return new Partfield(this);
     }
 
     /// <summary>Field number for the "partfield_id" field.</summary>
     public const int PartfieldIdFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.UID partfieldId_;
+    private global::Efdi.UID partfieldId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID PartfieldId {
+    public global::Efdi.UID PartfieldId {
       get { return partfieldId_; }
       set {
         partfieldId_ = value;
@@ -15406,7 +14467,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int PartfieldCodeFieldNumber = 2;
     private string partfieldCode_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string PartfieldCode {
       get { return partfieldCode_; }
       set {
@@ -15418,7 +14478,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int PartfieldDesignatorFieldNumber = 3;
     private string partfieldDesignator_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string PartfieldDesignator {
       get { return partfieldDesignator_; }
       set {
@@ -15430,7 +14489,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int PartfieldAreaFieldNumber = 4;
     private ulong partfieldArea_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ulong PartfieldArea {
       get { return partfieldArea_; }
       set {
@@ -15440,10 +14498,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "customer_id_ref" field.</summary>
     public const int CustomerIdRefFieldNumber = 5;
-    private global::Agrirouter.Technicalmessagetype.UID customerIdRef_;
+    private global::Efdi.UID customerIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID CustomerIdRef {
+    public global::Efdi.UID CustomerIdRef {
       get { return customerIdRef_; }
       set {
         customerIdRef_ = value;
@@ -15452,10 +14509,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "farm_id_ref" field.</summary>
     public const int FarmIdRefFieldNumber = 6;
-    private global::Agrirouter.Technicalmessagetype.UID farmIdRef_;
+    private global::Efdi.UID farmIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID FarmIdRef {
+    public global::Efdi.UID FarmIdRef {
       get { return farmIdRef_; }
       set {
         farmIdRef_ = value;
@@ -15464,10 +14520,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "crop_type_id_ref" field.</summary>
     public const int CropTypeIdRefFieldNumber = 7;
-    private global::Agrirouter.Technicalmessagetype.UID cropTypeIdRef_;
+    private global::Efdi.UID cropTypeIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID CropTypeIdRef {
+    public global::Efdi.UID CropTypeIdRef {
       get { return cropTypeIdRef_; }
       set {
         cropTypeIdRef_ = value;
@@ -15476,10 +14531,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "crop_variety_id_ref" field.</summary>
     public const int CropVarietyIdRefFieldNumber = 8;
-    private global::Agrirouter.Technicalmessagetype.UID cropVarietyIdRef_;
+    private global::Efdi.UID cropVarietyIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID CropVarietyIdRef {
+    public global::Efdi.UID CropVarietyIdRef {
       get { return cropVarietyIdRef_; }
       set {
         cropVarietyIdRef_ = value;
@@ -15488,10 +14542,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "field_id_ref" field.</summary>
     public const int FieldIdRefFieldNumber = 9;
-    private global::Agrirouter.Technicalmessagetype.UID fieldIdRef_;
+    private global::Efdi.UID fieldIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID FieldIdRef {
+    public global::Efdi.UID FieldIdRef {
       get { return fieldIdRef_; }
       set {
         fieldIdRef_ = value;
@@ -15500,45 +14553,41 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "polygon" field.</summary>
     public const int PolygonFieldNumber = 10;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.Polygon> _repeated_polygon_codec
-        = pb::FieldCodec.ForMessage(82, global::Agrirouter.Technicalmessagetype.Polygon.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Polygon> polygon_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Polygon>();
+    private static readonly pb::FieldCodec<global::Efdi.Polygon> _repeated_polygon_codec
+        = pb::FieldCodec.ForMessage(82, global::Efdi.Polygon.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.Polygon> polygon_ = new pbc::RepeatedField<global::Efdi.Polygon>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Polygon> Polygon {
+    public pbc::RepeatedField<global::Efdi.Polygon> Polygon {
       get { return polygon_; }
     }
 
     /// <summary>Field number for the "line_string" field.</summary>
     public const int LineStringFieldNumber = 11;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.LineString> _repeated_lineString_codec
-        = pb::FieldCodec.ForMessage(90, global::Agrirouter.Technicalmessagetype.LineString.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.LineString> lineString_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.LineString>();
+    private static readonly pb::FieldCodec<global::Efdi.LineString> _repeated_lineString_codec
+        = pb::FieldCodec.ForMessage(90, global::Efdi.LineString.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.LineString> lineString_ = new pbc::RepeatedField<global::Efdi.LineString>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.LineString> LineString {
+    public pbc::RepeatedField<global::Efdi.LineString> LineString {
       get { return lineString_; }
     }
 
     /// <summary>Field number for the "point" field.</summary>
     public const int PointFieldNumber = 12;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.Point> _repeated_point_codec
-        = pb::FieldCodec.ForMessage(98, global::Agrirouter.Technicalmessagetype.Point.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Point> point_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Point>();
+    private static readonly pb::FieldCodec<global::Efdi.Point> _repeated_point_codec
+        = pb::FieldCodec.ForMessage(98, global::Efdi.Point.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.Point> point_ = new pbc::RepeatedField<global::Efdi.Point>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Point> Point {
+    public pbc::RepeatedField<global::Efdi.Point> Point {
       get { return point_; }
     }
 
     /// <summary>Field number for the "guidance_group" field.</summary>
     public const int GuidanceGroupFieldNumber = 13;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.GuidanceGroup> _repeated_guidanceGroup_codec
-        = pb::FieldCodec.ForMessage(106, global::Agrirouter.Technicalmessagetype.GuidanceGroup.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.GuidanceGroup> guidanceGroup_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.GuidanceGroup>();
+    private static readonly pb::FieldCodec<global::Efdi.GuidanceGroup> _repeated_guidanceGroup_codec
+        = pb::FieldCodec.ForMessage(106, global::Efdi.GuidanceGroup.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.GuidanceGroup> guidanceGroup_ = new pbc::RepeatedField<global::Efdi.GuidanceGroup>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.GuidanceGroup> GuidanceGroup {
+    public pbc::RepeatedField<global::Efdi.GuidanceGroup> GuidanceGroup {
       get { return guidanceGroup_; }
     }
 
@@ -15548,19 +14597,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Partfield);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Partfield other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -15586,7 +14632,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (partfieldId_ != null) hash ^= PartfieldId.GetHashCode();
@@ -15610,13 +14655,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -15670,7 +14713,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (partfieldId_ != null) {
         output.WriteRawTag(10);
@@ -15720,7 +14762,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (partfieldId_ != null) {
@@ -15762,14 +14803,13 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Partfield other) {
       if (other == null) {
         return;
       }
       if (other.partfieldId_ != null) {
         if (partfieldId_ == null) {
-          PartfieldId = new global::Agrirouter.Technicalmessagetype.UID();
+          PartfieldId = new global::Efdi.UID();
         }
         PartfieldId.MergeFrom(other.PartfieldId);
       }
@@ -15784,31 +14824,31 @@ namespace Agrirouter.Technicalmessagetype {
       }
       if (other.customerIdRef_ != null) {
         if (customerIdRef_ == null) {
-          CustomerIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          CustomerIdRef = new global::Efdi.UID();
         }
         CustomerIdRef.MergeFrom(other.CustomerIdRef);
       }
       if (other.farmIdRef_ != null) {
         if (farmIdRef_ == null) {
-          FarmIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          FarmIdRef = new global::Efdi.UID();
         }
         FarmIdRef.MergeFrom(other.FarmIdRef);
       }
       if (other.cropTypeIdRef_ != null) {
         if (cropTypeIdRef_ == null) {
-          CropTypeIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          CropTypeIdRef = new global::Efdi.UID();
         }
         CropTypeIdRef.MergeFrom(other.CropTypeIdRef);
       }
       if (other.cropVarietyIdRef_ != null) {
         if (cropVarietyIdRef_ == null) {
-          CropVarietyIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          CropVarietyIdRef = new global::Efdi.UID();
         }
         CropVarietyIdRef.MergeFrom(other.CropVarietyIdRef);
       }
       if (other.fieldIdRef_ != null) {
         if (fieldIdRef_ == null) {
-          FieldIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          FieldIdRef = new global::Efdi.UID();
         }
         FieldIdRef.MergeFrom(other.FieldIdRef);
       }
@@ -15821,7 +14861,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -15834,7 +14873,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (partfieldId_ == null) {
-              PartfieldId = new global::Agrirouter.Technicalmessagetype.UID();
+              PartfieldId = new global::Efdi.UID();
             }
             input.ReadMessage(PartfieldId);
             break;
@@ -15853,35 +14892,35 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 42: {
             if (customerIdRef_ == null) {
-              CustomerIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              CustomerIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(CustomerIdRef);
             break;
           }
           case 50: {
             if (farmIdRef_ == null) {
-              FarmIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              FarmIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(FarmIdRef);
             break;
           }
           case 58: {
             if (cropTypeIdRef_ == null) {
-              CropTypeIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              CropTypeIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(CropTypeIdRef);
             break;
           }
           case 66: {
             if (cropVarietyIdRef_ == null) {
-              CropVarietyIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              CropVarietyIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(CropVarietyIdRef);
             break;
           }
           case 74: {
             if (fieldIdRef_ == null) {
-              FieldIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              FieldIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(FieldIdRef);
             break;
@@ -15913,7 +14952,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -15923,7 +14961,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (partfieldId_ == null) {
-              PartfieldId = new global::Agrirouter.Technicalmessagetype.UID();
+              PartfieldId = new global::Efdi.UID();
             }
             input.ReadMessage(PartfieldId);
             break;
@@ -15942,35 +14980,35 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 42: {
             if (customerIdRef_ == null) {
-              CustomerIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              CustomerIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(CustomerIdRef);
             break;
           }
           case 50: {
             if (farmIdRef_ == null) {
-              FarmIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              FarmIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(FarmIdRef);
             break;
           }
           case 58: {
             if (cropTypeIdRef_ == null) {
-              CropTypeIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              CropTypeIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(CropTypeIdRef);
             break;
           }
           case 66: {
             if (cropVarietyIdRef_ == null) {
-              CropVarietyIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              CropVarietyIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(CropVarietyIdRef);
             break;
           }
           case 74: {
             if (fieldIdRef_ == null) {
-              FieldIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              FieldIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(FieldIdRef);
             break;
@@ -16016,23 +15054,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<Point> _parser = new pb::MessageParser<Point>(() => new Point());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Point> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[37]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[37]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Point() {
       OnConstruction();
     }
@@ -16040,7 +15074,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Point(Point other) : this() {
       pointType_ = other.pointType_;
       pointDesignator_ = other.pointDesignator_;
@@ -16058,17 +15091,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Point Clone() {
       return new Point(this);
     }
 
     /// <summary>Field number for the "point_type" field.</summary>
     public const int PointTypeFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.Point.Types.PointType pointType_ = global::Agrirouter.Technicalmessagetype.Point.Types.PointType.ANotset;
+    private global::Efdi.Point.Types.PointType pointType_ = global::Efdi.Point.Types.PointType.ANotset;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.Point.Types.PointType PointType {
+    public global::Efdi.Point.Types.PointType PointType {
       get { return pointType_; }
       set {
         pointType_ = value;
@@ -16079,7 +15110,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int PointDesignatorFieldNumber = 2;
     private string pointDesignator_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string PointDesignator {
       get { return pointDesignator_; }
       set {
@@ -16091,7 +15121,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int PointNorthFieldNumber = 3;
     private double pointNorth_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double PointNorth {
       get { return pointNorth_; }
       set {
@@ -16103,7 +15132,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int PointEastFieldNumber = 4;
     private double pointEast_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double PointEast {
       get { return pointEast_; }
       set {
@@ -16115,7 +15143,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int PointUpFieldNumber = 5;
     private long pointUp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long PointUp {
       get { return pointUp_; }
       set {
@@ -16127,7 +15154,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int PointColourFieldNumber = 6;
     private uint pointColour_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint PointColour {
       get { return pointColour_; }
       set {
@@ -16137,10 +15163,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "point_id" field.</summary>
     public const int PointIdFieldNumber = 7;
-    private global::Agrirouter.Technicalmessagetype.UID pointId_;
+    private global::Efdi.UID pointId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID PointId {
+    public global::Efdi.UID PointId {
       get { return pointId_; }
       set {
         pointId_ = value;
@@ -16151,7 +15176,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int PointHorizontalAccuracyFieldNumber = 8;
     private double pointHorizontalAccuracy_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double PointHorizontalAccuracy {
       get { return pointHorizontalAccuracy_; }
       set {
@@ -16163,7 +15187,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int PointVerticalAccuracyFieldNumber = 9;
     private double pointVerticalAccuracy_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double PointVerticalAccuracy {
       get { return pointVerticalAccuracy_; }
       set {
@@ -16175,7 +15198,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int FilenameFieldNumber = 10;
     private string filename_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Filename {
       get { return filename_; }
       set {
@@ -16187,7 +15209,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int FilelengthFieldNumber = 11;
     private ulong filelength_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ulong Filelength {
       get { return filelength_; }
       set {
@@ -16201,19 +15222,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Point);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Point other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -16237,10 +15255,9 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (PointType != global::Agrirouter.Technicalmessagetype.Point.Types.PointType.ANotset) hash ^= PointType.GetHashCode();
+      if (PointType != global::Efdi.Point.Types.PointType.ANotset) hash ^= PointType.GetHashCode();
       if (PointDesignator.Length != 0) hash ^= PointDesignator.GetHashCode();
       if (PointNorth != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(PointNorth);
       if (PointEast != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(PointEast);
@@ -16259,18 +15276,16 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (PointType != global::Agrirouter.Technicalmessagetype.Point.Types.PointType.ANotset) {
+      if (PointType != global::Efdi.Point.Types.PointType.ANotset) {
         output.WriteRawTag(8);
         output.WriteEnum((int) PointType);
       }
@@ -16323,9 +15338,8 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (PointType != global::Agrirouter.Technicalmessagetype.Point.Types.PointType.ANotset) {
+      if (PointType != global::Efdi.Point.Types.PointType.ANotset) {
         output.WriteRawTag(8);
         output.WriteEnum((int) PointType);
       }
@@ -16377,10 +15391,9 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (PointType != global::Agrirouter.Technicalmessagetype.Point.Types.PointType.ANotset) {
+      if (PointType != global::Efdi.Point.Types.PointType.ANotset) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) PointType);
       }
       if (PointDesignator.Length != 0) {
@@ -16421,12 +15434,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Point other) {
       if (other == null) {
         return;
       }
-      if (other.PointType != global::Agrirouter.Technicalmessagetype.Point.Types.PointType.ANotset) {
+      if (other.PointType != global::Efdi.Point.Types.PointType.ANotset) {
         PointType = other.PointType;
       }
       if (other.PointDesignator.Length != 0) {
@@ -16446,7 +15458,7 @@ namespace Agrirouter.Technicalmessagetype {
       }
       if (other.pointId_ != null) {
         if (pointId_ == null) {
-          PointId = new global::Agrirouter.Technicalmessagetype.UID();
+          PointId = new global::Efdi.UID();
         }
         PointId.MergeFrom(other.PointId);
       }
@@ -16467,7 +15479,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -16479,7 +15490,7 @@ namespace Agrirouter.Technicalmessagetype {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            PointType = (global::Agrirouter.Technicalmessagetype.Point.Types.PointType) input.ReadEnum();
+            PointType = (global::Efdi.Point.Types.PointType) input.ReadEnum();
             break;
           }
           case 18: {
@@ -16504,7 +15515,7 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 58: {
             if (pointId_ == null) {
-              PointId = new global::Agrirouter.Technicalmessagetype.UID();
+              PointId = new global::Efdi.UID();
             }
             input.ReadMessage(PointId);
             break;
@@ -16536,7 +15547,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -16545,7 +15555,7 @@ namespace Agrirouter.Technicalmessagetype {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            PointType = (global::Agrirouter.Technicalmessagetype.Point.Types.PointType) input.ReadEnum();
+            PointType = (global::Efdi.Point.Types.PointType) input.ReadEnum();
             break;
           }
           case 18: {
@@ -16570,7 +15580,7 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 58: {
             if (pointId_ == null) {
-              PointId = new global::Agrirouter.Technicalmessagetype.UID();
+              PointId = new global::Efdi.UID();
             }
             input.ReadMessage(PointId);
             break;
@@ -16603,7 +15613,6 @@ namespace Agrirouter.Technicalmessagetype {
     #region Nested types
     /// <summary>Container for nested types declared in the Point message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       public enum PointType {
         [pbr::OriginalName("A_NOTSET")] ANotset = 0,
@@ -16636,23 +15645,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<Polygon> _parser = new pb::MessageParser<Polygon>(() => new Polygon());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Polygon> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[38]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[38]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Polygon() {
       OnConstruction();
     }
@@ -16660,7 +15665,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Polygon(Polygon other) : this() {
       polygonType_ = other.polygonType_;
       polygonDesignator_ = other.polygonDesignator_;
@@ -16673,17 +15677,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Polygon Clone() {
       return new Polygon(this);
     }
 
     /// <summary>Field number for the "polygon_type" field.</summary>
     public const int PolygonTypeFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.Polygon.Types.PolygonType polygonType_ = global::Agrirouter.Technicalmessagetype.Polygon.Types.PolygonType.ANotset;
+    private global::Efdi.Polygon.Types.PolygonType polygonType_ = global::Efdi.Polygon.Types.PolygonType.ANotset;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.Polygon.Types.PolygonType PolygonType {
+    public global::Efdi.Polygon.Types.PolygonType PolygonType {
       get { return polygonType_; }
       set {
         polygonType_ = value;
@@ -16694,7 +15696,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int PolygonDesignatorFieldNumber = 2;
     private string polygonDesignator_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string PolygonDesignator {
       get { return polygonDesignator_; }
       set {
@@ -16706,7 +15707,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int PolygonAreaFieldNumber = 3;
     private ulong polygonArea_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ulong PolygonArea {
       get { return polygonArea_; }
       set {
@@ -16718,7 +15718,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int PolygonColourFieldNumber = 4;
     private uint polygonColour_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint PolygonColour {
       get { return polygonColour_; }
       set {
@@ -16728,10 +15727,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "polygon_id" field.</summary>
     public const int PolygonIdFieldNumber = 5;
-    private global::Agrirouter.Technicalmessagetype.UID polygonId_;
+    private global::Efdi.UID polygonId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID PolygonId {
+    public global::Efdi.UID PolygonId {
       get { return polygonId_; }
       set {
         polygonId_ = value;
@@ -16740,12 +15738,11 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "line_string" field.</summary>
     public const int LineStringFieldNumber = 6;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.LineString> _repeated_lineString_codec
-        = pb::FieldCodec.ForMessage(50, global::Agrirouter.Technicalmessagetype.LineString.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.LineString> lineString_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.LineString>();
+    private static readonly pb::FieldCodec<global::Efdi.LineString> _repeated_lineString_codec
+        = pb::FieldCodec.ForMessage(50, global::Efdi.LineString.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.LineString> lineString_ = new pbc::RepeatedField<global::Efdi.LineString>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.LineString> LineString {
+    public pbc::RepeatedField<global::Efdi.LineString> LineString {
       get { return lineString_; }
     }
 
@@ -16755,19 +15752,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Polygon);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Polygon other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -16786,10 +15780,9 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (PolygonType != global::Agrirouter.Technicalmessagetype.Polygon.Types.PolygonType.ANotset) hash ^= PolygonType.GetHashCode();
+      if (PolygonType != global::Efdi.Polygon.Types.PolygonType.ANotset) hash ^= PolygonType.GetHashCode();
       if (PolygonDesignator.Length != 0) hash ^= PolygonDesignator.GetHashCode();
       if (PolygonArea != 0UL) hash ^= PolygonArea.GetHashCode();
       if (PolygonColour != 0) hash ^= PolygonColour.GetHashCode();
@@ -16803,18 +15796,16 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (PolygonType != global::Agrirouter.Technicalmessagetype.Polygon.Types.PolygonType.ANotset) {
+      if (PolygonType != global::Efdi.Polygon.Types.PolygonType.ANotset) {
         output.WriteRawTag(8);
         output.WriteEnum((int) PolygonType);
       }
@@ -16844,9 +15835,8 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (PolygonType != global::Agrirouter.Technicalmessagetype.Polygon.Types.PolygonType.ANotset) {
+      if (PolygonType != global::Efdi.Polygon.Types.PolygonType.ANotset) {
         output.WriteRawTag(8);
         output.WriteEnum((int) PolygonType);
       }
@@ -16875,10 +15865,9 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (PolygonType != global::Agrirouter.Technicalmessagetype.Polygon.Types.PolygonType.ANotset) {
+      if (PolygonType != global::Efdi.Polygon.Types.PolygonType.ANotset) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) PolygonType);
       }
       if (PolygonDesignator.Length != 0) {
@@ -16902,12 +15891,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Polygon other) {
       if (other == null) {
         return;
       }
-      if (other.PolygonType != global::Agrirouter.Technicalmessagetype.Polygon.Types.PolygonType.ANotset) {
+      if (other.PolygonType != global::Efdi.Polygon.Types.PolygonType.ANotset) {
         PolygonType = other.PolygonType;
       }
       if (other.PolygonDesignator.Length != 0) {
@@ -16921,7 +15909,7 @@ namespace Agrirouter.Technicalmessagetype {
       }
       if (other.polygonId_ != null) {
         if (polygonId_ == null) {
-          PolygonId = new global::Agrirouter.Technicalmessagetype.UID();
+          PolygonId = new global::Efdi.UID();
         }
         PolygonId.MergeFrom(other.PolygonId);
       }
@@ -16931,7 +15919,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -16943,7 +15930,7 @@ namespace Agrirouter.Technicalmessagetype {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            PolygonType = (global::Agrirouter.Technicalmessagetype.Polygon.Types.PolygonType) input.ReadEnum();
+            PolygonType = (global::Efdi.Polygon.Types.PolygonType) input.ReadEnum();
             break;
           }
           case 18: {
@@ -16960,7 +15947,7 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 42: {
             if (polygonId_ == null) {
-              PolygonId = new global::Agrirouter.Technicalmessagetype.UID();
+              PolygonId = new global::Efdi.UID();
             }
             input.ReadMessage(PolygonId);
             break;
@@ -16980,7 +15967,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -16989,7 +15975,7 @@ namespace Agrirouter.Technicalmessagetype {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            PolygonType = (global::Agrirouter.Technicalmessagetype.Polygon.Types.PolygonType) input.ReadEnum();
+            PolygonType = (global::Efdi.Polygon.Types.PolygonType) input.ReadEnum();
             break;
           }
           case 18: {
@@ -17006,7 +15992,7 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 42: {
             if (polygonId_ == null) {
-              PolygonId = new global::Agrirouter.Technicalmessagetype.UID();
+              PolygonId = new global::Efdi.UID();
             }
             input.ReadMessage(PolygonId);
             break;
@@ -17027,7 +16013,6 @@ namespace Agrirouter.Technicalmessagetype {
     #region Nested types
     /// <summary>Container for nested types declared in the Polygon message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       public enum PolygonType {
         [pbr::OriginalName("A_NOTSET")] ANotset = 0,
@@ -17061,23 +16046,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<Position> _parser = new pb::MessageParser<Position>(() => new Position());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Position> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[39]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[39]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Position() {
       OnConstruction();
     }
@@ -17085,7 +16066,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Position(Position other) : this() {
       positionNorth_ = other.positionNorth_;
       positionEast_ = other.positionEast_;
@@ -17100,7 +16080,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Position Clone() {
       return new Position(this);
     }
@@ -17109,7 +16088,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int PositionNorthFieldNumber = 1;
     private double positionNorth_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double PositionNorth {
       get { return positionNorth_; }
       set {
@@ -17121,7 +16099,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int PositionEastFieldNumber = 2;
     private double positionEast_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double PositionEast {
       get { return positionEast_; }
       set {
@@ -17133,7 +16110,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int PositionUpFieldNumber = 3;
     private long positionUp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long PositionUp {
       get { return positionUp_; }
       set {
@@ -17143,10 +16119,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "position_status" field.</summary>
     public const int PositionStatusFieldNumber = 4;
-    private global::Agrirouter.Technicalmessagetype.Position.Types.PositionStatus positionStatus_ = global::Agrirouter.Technicalmessagetype.Position.Types.PositionStatus.DNoGps;
+    private global::Efdi.Position.Types.PositionStatus positionStatus_ = global::Efdi.Position.Types.PositionStatus.DNoGps;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.Position.Types.PositionStatus PositionStatus {
+    public global::Efdi.Position.Types.PositionStatus PositionStatus {
       get { return positionStatus_; }
       set {
         positionStatus_ = value;
@@ -17157,7 +16132,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int PdopFieldNumber = 5;
     private double pdop_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double Pdop {
       get { return pdop_; }
       set {
@@ -17169,7 +16143,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int HdopFieldNumber = 6;
     private double hdop_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double Hdop {
       get { return hdop_; }
       set {
@@ -17181,7 +16154,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int NumberOfSatellitesFieldNumber = 7;
     private uint numberOfSatellites_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint NumberOfSatellites {
       get { return numberOfSatellites_; }
       set {
@@ -17193,7 +16165,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int GpsUtcTimestampFieldNumber = 8;
     private global::Google.Protobuf.WellKnownTypes.Timestamp gpsUtcTimestamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp GpsUtcTimestamp {
       get { return gpsUtcTimestamp_; }
       set {
@@ -17207,19 +16178,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Position);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Position other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -17240,13 +16208,12 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (PositionNorth != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(PositionNorth);
       if (PositionEast != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(PositionEast);
       if (PositionUp != 0L) hash ^= PositionUp.GetHashCode();
-      if (PositionStatus != global::Agrirouter.Technicalmessagetype.Position.Types.PositionStatus.DNoGps) hash ^= PositionStatus.GetHashCode();
+      if (PositionStatus != global::Efdi.Position.Types.PositionStatus.DNoGps) hash ^= PositionStatus.GetHashCode();
       if (Pdop != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Pdop);
       if (Hdop != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Hdop);
       if (NumberOfSatellites != 0) hash ^= NumberOfSatellites.GetHashCode();
@@ -17259,13 +16226,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -17282,7 +16247,7 @@ namespace Agrirouter.Technicalmessagetype {
         output.WriteRawTag(24);
         output.WriteSInt64(PositionUp);
       }
-      if (PositionStatus != global::Agrirouter.Technicalmessagetype.Position.Types.PositionStatus.DNoGps) {
+      if (PositionStatus != global::Efdi.Position.Types.PositionStatus.DNoGps) {
         output.WriteRawTag(32);
         output.WriteEnum((int) PositionStatus);
       }
@@ -17311,7 +16276,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (PositionNorth != 0D) {
         output.WriteRawTag(9);
@@ -17325,7 +16289,7 @@ namespace Agrirouter.Technicalmessagetype {
         output.WriteRawTag(24);
         output.WriteSInt64(PositionUp);
       }
-      if (PositionStatus != global::Agrirouter.Technicalmessagetype.Position.Types.PositionStatus.DNoGps) {
+      if (PositionStatus != global::Efdi.Position.Types.PositionStatus.DNoGps) {
         output.WriteRawTag(32);
         output.WriteEnum((int) PositionStatus);
       }
@@ -17353,7 +16317,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (PositionNorth != 0D) {
@@ -17365,7 +16328,7 @@ namespace Agrirouter.Technicalmessagetype {
       if (PositionUp != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeSInt64Size(PositionUp);
       }
-      if (PositionStatus != global::Agrirouter.Technicalmessagetype.Position.Types.PositionStatus.DNoGps) {
+      if (PositionStatus != global::Efdi.Position.Types.PositionStatus.DNoGps) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) PositionStatus);
       }
       if (Pdop != 0D) {
@@ -17388,7 +16351,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Position other) {
       if (other == null) {
         return;
@@ -17402,7 +16364,7 @@ namespace Agrirouter.Technicalmessagetype {
       if (other.PositionUp != 0L) {
         PositionUp = other.PositionUp;
       }
-      if (other.PositionStatus != global::Agrirouter.Technicalmessagetype.Position.Types.PositionStatus.DNoGps) {
+      if (other.PositionStatus != global::Efdi.Position.Types.PositionStatus.DNoGps) {
         PositionStatus = other.PositionStatus;
       }
       if (other.Pdop != 0D) {
@@ -17425,7 +16387,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -17449,7 +16410,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           }
           case 32: {
-            PositionStatus = (global::Agrirouter.Technicalmessagetype.Position.Types.PositionStatus) input.ReadEnum();
+            PositionStatus = (global::Efdi.Position.Types.PositionStatus) input.ReadEnum();
             break;
           }
           case 41: {
@@ -17482,7 +16443,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -17503,7 +16463,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           }
           case 32: {
-            PositionStatus = (global::Agrirouter.Technicalmessagetype.Position.Types.PositionStatus) input.ReadEnum();
+            PositionStatus = (global::Efdi.Position.Types.PositionStatus) input.ReadEnum();
             break;
           }
           case 41: {
@@ -17537,7 +16497,6 @@ namespace Agrirouter.Technicalmessagetype {
     #region Nested types
     /// <summary>Container for nested types declared in the Position message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       public enum PositionStatus {
         [pbr::OriginalName("D_NO_GPS")] DNoGps = 0,
@@ -17572,23 +16531,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<ProcessDataVariable> _parser = new pb::MessageParser<ProcessDataVariable>(() => new ProcessDataVariable());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ProcessDataVariable> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[40]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[40]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ProcessDataVariable() {
       OnConstruction();
     }
@@ -17596,7 +16551,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ProcessDataVariable(ProcessDataVariable other) : this() {
       processDataDdi_ = other.processDataDdi_;
       processDataValue_ = other.processDataValue_;
@@ -17611,7 +16565,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ProcessDataVariable Clone() {
       return new ProcessDataVariable(this);
     }
@@ -17620,7 +16573,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int ProcessDataDdiFieldNumber = 1;
     private uint processDataDdi_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint ProcessDataDdi {
       get { return processDataDdi_; }
       set {
@@ -17632,7 +16584,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int ProcessDataValueFieldNumber = 2;
     private long processDataValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long ProcessDataValue {
       get { return processDataValue_; }
       set {
@@ -17642,10 +16593,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "product_id_ref" field.</summary>
     public const int ProductIdRefFieldNumber = 3;
-    private global::Agrirouter.Technicalmessagetype.UID productIdRef_;
+    private global::Efdi.UID productIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID ProductIdRef {
+    public global::Efdi.UID ProductIdRef {
       get { return productIdRef_; }
       set {
         productIdRef_ = value;
@@ -17654,10 +16604,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "device_element_id_ref" field.</summary>
     public const int DeviceElementIdRefFieldNumber = 4;
-    private global::Agrirouter.Technicalmessagetype.UID deviceElementIdRef_;
+    private global::Efdi.UID deviceElementIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID DeviceElementIdRef {
+    public global::Efdi.UID DeviceElementIdRef {
       get { return deviceElementIdRef_; }
       set {
         deviceElementIdRef_ = value;
@@ -17666,10 +16615,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "value_presentation_id_ref" field.</summary>
     public const int ValuePresentationIdRefFieldNumber = 5;
-    private global::Agrirouter.Technicalmessagetype.UID valuePresentationIdRef_;
+    private global::Efdi.UID valuePresentationIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID ValuePresentationIdRef {
+    public global::Efdi.UID ValuePresentationIdRef {
       get { return valuePresentationIdRef_; }
       set {
         valuePresentationIdRef_ = value;
@@ -17680,7 +16628,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int ActualCulturalPracticeValueFieldNumber = 6;
     private long actualCulturalPracticeValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long ActualCulturalPracticeValue {
       get { return actualCulturalPracticeValue_; }
       set {
@@ -17692,7 +16639,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int ElementTypeInstanceValueFieldNumber = 7;
     private long elementTypeInstanceValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long ElementTypeInstanceValue {
       get { return elementTypeInstanceValue_; }
       set {
@@ -17702,12 +16648,11 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "process_data_variable" field.</summary>
     public const int ProcessDataVariable_FieldNumber = 8;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.ProcessDataVariable> _repeated_processDataVariable_codec
-        = pb::FieldCodec.ForMessage(66, global::Agrirouter.Technicalmessagetype.ProcessDataVariable.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.ProcessDataVariable> processDataVariable_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.ProcessDataVariable>();
+    private static readonly pb::FieldCodec<global::Efdi.ProcessDataVariable> _repeated_processDataVariable_codec
+        = pb::FieldCodec.ForMessage(66, global::Efdi.ProcessDataVariable.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.ProcessDataVariable> processDataVariable_ = new pbc::RepeatedField<global::Efdi.ProcessDataVariable>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.ProcessDataVariable> ProcessDataVariable_ {
+    public pbc::RepeatedField<global::Efdi.ProcessDataVariable> ProcessDataVariable_ {
       get { return processDataVariable_; }
     }
 
@@ -17717,19 +16662,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ProcessDataVariable);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ProcessDataVariable other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -17750,7 +16692,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (ProcessDataDdi != 0) hash ^= ProcessDataDdi.GetHashCode();
@@ -17769,13 +16710,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -17818,7 +16757,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (ProcessDataDdi != 0) {
         output.WriteRawTag(8);
@@ -17857,7 +16795,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (ProcessDataDdi != 0) {
@@ -17890,7 +16827,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ProcessDataVariable other) {
       if (other == null) {
         return;
@@ -17903,19 +16839,19 @@ namespace Agrirouter.Technicalmessagetype {
       }
       if (other.productIdRef_ != null) {
         if (productIdRef_ == null) {
-          ProductIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          ProductIdRef = new global::Efdi.UID();
         }
         ProductIdRef.MergeFrom(other.ProductIdRef);
       }
       if (other.deviceElementIdRef_ != null) {
         if (deviceElementIdRef_ == null) {
-          DeviceElementIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          DeviceElementIdRef = new global::Efdi.UID();
         }
         DeviceElementIdRef.MergeFrom(other.DeviceElementIdRef);
       }
       if (other.valuePresentationIdRef_ != null) {
         if (valuePresentationIdRef_ == null) {
-          ValuePresentationIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          ValuePresentationIdRef = new global::Efdi.UID();
         }
         ValuePresentationIdRef.MergeFrom(other.ValuePresentationIdRef);
       }
@@ -17931,7 +16867,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -17952,21 +16887,21 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 26: {
             if (productIdRef_ == null) {
-              ProductIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              ProductIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(ProductIdRef);
             break;
           }
           case 34: {
             if (deviceElementIdRef_ == null) {
-              DeviceElementIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              DeviceElementIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(DeviceElementIdRef);
             break;
           }
           case 42: {
             if (valuePresentationIdRef_ == null) {
-              ValuePresentationIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              ValuePresentationIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(ValuePresentationIdRef);
             break;
@@ -17994,7 +16929,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -18012,21 +16946,21 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 26: {
             if (productIdRef_ == null) {
-              ProductIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              ProductIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(ProductIdRef);
             break;
           }
           case 34: {
             if (deviceElementIdRef_ == null) {
-              DeviceElementIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              DeviceElementIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(DeviceElementIdRef);
             break;
           }
           case 42: {
             if (valuePresentationIdRef_ == null) {
-              ValuePresentationIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              ValuePresentationIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(ValuePresentationIdRef);
             break;
@@ -18065,23 +16999,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<Product> _parser = new pb::MessageParser<Product>(() => new Product());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Product> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[41]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[41]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Product() {
       OnConstruction();
     }
@@ -18089,7 +17019,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Product(Product other) : this() {
       productId_ = other.productId_ != null ? other.productId_.Clone() : null;
       productDesignator_ = other.productDesignator_;
@@ -18107,17 +17036,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Product Clone() {
       return new Product(this);
     }
 
     /// <summary>Field number for the "product_id" field.</summary>
     public const int ProductIdFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.UID productId_;
+    private global::Efdi.UID productId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID ProductId {
+    public global::Efdi.UID ProductId {
       get { return productId_; }
       set {
         productId_ = value;
@@ -18128,7 +17055,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int ProductDesignatorFieldNumber = 2;
     private string productDesignator_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ProductDesignator {
       get { return productDesignator_; }
       set {
@@ -18138,10 +17064,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "product_group_id_ref" field.</summary>
     public const int ProductGroupIdRefFieldNumber = 3;
-    private global::Agrirouter.Technicalmessagetype.UID productGroupIdRef_;
+    private global::Efdi.UID productGroupIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID ProductGroupIdRef {
+    public global::Efdi.UID ProductGroupIdRef {
       get { return productGroupIdRef_; }
       set {
         productGroupIdRef_ = value;
@@ -18150,10 +17075,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "value_presentation_id_ref" field.</summary>
     public const int ValuePresentationIdRefFieldNumber = 4;
-    private global::Agrirouter.Technicalmessagetype.UID valuePresentationIdRef_;
+    private global::Efdi.UID valuePresentationIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID ValuePresentationIdRef {
+    public global::Efdi.UID ValuePresentationIdRef {
       get { return valuePresentationIdRef_; }
       set {
         valuePresentationIdRef_ = value;
@@ -18164,7 +17088,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int QuantityDdiFieldNumber = 5;
     private uint quantityDdi_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint QuantityDdi {
       get { return quantityDdi_; }
       set {
@@ -18174,10 +17097,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "product_type" field.</summary>
     public const int ProductTypeFieldNumber = 6;
-    private global::Agrirouter.Technicalmessagetype.Product.Types.ProductType productType_ = global::Agrirouter.Technicalmessagetype.Product.Types.ProductType.FNotset;
+    private global::Efdi.Product.Types.ProductType productType_ = global::Efdi.Product.Types.ProductType.FNotset;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.Product.Types.ProductType ProductType {
+    public global::Efdi.Product.Types.ProductType ProductType {
       get { return productType_; }
       set {
         productType_ = value;
@@ -18188,7 +17110,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int MixtureRecipeQuantityFieldNumber = 7;
     private long mixtureRecipeQuantity_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long MixtureRecipeQuantity {
       get { return mixtureRecipeQuantity_; }
       set {
@@ -18200,7 +17121,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DensityMassPerVolumeFieldNumber = 8;
     private long densityMassPerVolume_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long DensityMassPerVolume {
       get { return densityMassPerVolume_; }
       set {
@@ -18212,7 +17132,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DensityMassPerCountFieldNumber = 9;
     private long densityMassPerCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long DensityMassPerCount {
       get { return densityMassPerCount_; }
       set {
@@ -18224,7 +17143,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DensityVolumePerCountFieldNumber = 10;
     private long densityVolumePerCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long DensityVolumePerCount {
       get { return densityVolumePerCount_; }
       set {
@@ -18234,12 +17152,11 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "product_relation" field.</summary>
     public const int ProductRelationFieldNumber = 11;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.ProductRelation> _repeated_productRelation_codec
-        = pb::FieldCodec.ForMessage(90, global::Agrirouter.Technicalmessagetype.ProductRelation.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.ProductRelation> productRelation_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.ProductRelation>();
+    private static readonly pb::FieldCodec<global::Efdi.ProductRelation> _repeated_productRelation_codec
+        = pb::FieldCodec.ForMessage(90, global::Efdi.ProductRelation.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.ProductRelation> productRelation_ = new pbc::RepeatedField<global::Efdi.ProductRelation>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.ProductRelation> ProductRelation {
+    public pbc::RepeatedField<global::Efdi.ProductRelation> ProductRelation {
       get { return productRelation_; }
     }
 
@@ -18249,19 +17166,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Product);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Product other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -18285,7 +17199,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (productId_ != null) hash ^= ProductId.GetHashCode();
@@ -18293,7 +17206,7 @@ namespace Agrirouter.Technicalmessagetype {
       if (productGroupIdRef_ != null) hash ^= ProductGroupIdRef.GetHashCode();
       if (valuePresentationIdRef_ != null) hash ^= ValuePresentationIdRef.GetHashCode();
       if (QuantityDdi != 0) hash ^= QuantityDdi.GetHashCode();
-      if (ProductType != global::Agrirouter.Technicalmessagetype.Product.Types.ProductType.FNotset) hash ^= ProductType.GetHashCode();
+      if (ProductType != global::Efdi.Product.Types.ProductType.FNotset) hash ^= ProductType.GetHashCode();
       if (MixtureRecipeQuantity != 0L) hash ^= MixtureRecipeQuantity.GetHashCode();
       if (DensityMassPerVolume != 0L) hash ^= DensityMassPerVolume.GetHashCode();
       if (DensityMassPerCount != 0L) hash ^= DensityMassPerCount.GetHashCode();
@@ -18307,13 +17220,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -18338,7 +17249,7 @@ namespace Agrirouter.Technicalmessagetype {
         output.WriteRawTag(40);
         output.WriteUInt32(QuantityDdi);
       }
-      if (ProductType != global::Agrirouter.Technicalmessagetype.Product.Types.ProductType.FNotset) {
+      if (ProductType != global::Efdi.Product.Types.ProductType.FNotset) {
         output.WriteRawTag(48);
         output.WriteEnum((int) ProductType);
       }
@@ -18368,7 +17279,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (productId_ != null) {
         output.WriteRawTag(10);
@@ -18390,7 +17300,7 @@ namespace Agrirouter.Technicalmessagetype {
         output.WriteRawTag(40);
         output.WriteUInt32(QuantityDdi);
       }
-      if (ProductType != global::Agrirouter.Technicalmessagetype.Product.Types.ProductType.FNotset) {
+      if (ProductType != global::Efdi.Product.Types.ProductType.FNotset) {
         output.WriteRawTag(48);
         output.WriteEnum((int) ProductType);
       }
@@ -18419,7 +17329,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (productId_ != null) {
@@ -18437,7 +17346,7 @@ namespace Agrirouter.Technicalmessagetype {
       if (QuantityDdi != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(QuantityDdi);
       }
-      if (ProductType != global::Agrirouter.Technicalmessagetype.Product.Types.ProductType.FNotset) {
+      if (ProductType != global::Efdi.Product.Types.ProductType.FNotset) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ProductType);
       }
       if (MixtureRecipeQuantity != 0L) {
@@ -18461,14 +17370,13 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Product other) {
       if (other == null) {
         return;
       }
       if (other.productId_ != null) {
         if (productId_ == null) {
-          ProductId = new global::Agrirouter.Technicalmessagetype.UID();
+          ProductId = new global::Efdi.UID();
         }
         ProductId.MergeFrom(other.ProductId);
       }
@@ -18477,20 +17385,20 @@ namespace Agrirouter.Technicalmessagetype {
       }
       if (other.productGroupIdRef_ != null) {
         if (productGroupIdRef_ == null) {
-          ProductGroupIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          ProductGroupIdRef = new global::Efdi.UID();
         }
         ProductGroupIdRef.MergeFrom(other.ProductGroupIdRef);
       }
       if (other.valuePresentationIdRef_ != null) {
         if (valuePresentationIdRef_ == null) {
-          ValuePresentationIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          ValuePresentationIdRef = new global::Efdi.UID();
         }
         ValuePresentationIdRef.MergeFrom(other.ValuePresentationIdRef);
       }
       if (other.QuantityDdi != 0) {
         QuantityDdi = other.QuantityDdi;
       }
-      if (other.ProductType != global::Agrirouter.Technicalmessagetype.Product.Types.ProductType.FNotset) {
+      if (other.ProductType != global::Efdi.Product.Types.ProductType.FNotset) {
         ProductType = other.ProductType;
       }
       if (other.MixtureRecipeQuantity != 0L) {
@@ -18511,7 +17419,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -18524,7 +17431,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (productId_ == null) {
-              ProductId = new global::Agrirouter.Technicalmessagetype.UID();
+              ProductId = new global::Efdi.UID();
             }
             input.ReadMessage(ProductId);
             break;
@@ -18535,14 +17442,14 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 26: {
             if (productGroupIdRef_ == null) {
-              ProductGroupIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              ProductGroupIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(ProductGroupIdRef);
             break;
           }
           case 34: {
             if (valuePresentationIdRef_ == null) {
-              ValuePresentationIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              ValuePresentationIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(ValuePresentationIdRef);
             break;
@@ -18552,7 +17459,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           }
           case 48: {
-            ProductType = (global::Agrirouter.Technicalmessagetype.Product.Types.ProductType) input.ReadEnum();
+            ProductType = (global::Efdi.Product.Types.ProductType) input.ReadEnum();
             break;
           }
           case 56: {
@@ -18586,7 +17493,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -18596,7 +17502,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (productId_ == null) {
-              ProductId = new global::Agrirouter.Technicalmessagetype.UID();
+              ProductId = new global::Efdi.UID();
             }
             input.ReadMessage(ProductId);
             break;
@@ -18607,14 +17513,14 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 26: {
             if (productGroupIdRef_ == null) {
-              ProductGroupIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              ProductGroupIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(ProductGroupIdRef);
             break;
           }
           case 34: {
             if (valuePresentationIdRef_ == null) {
-              ValuePresentationIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              ValuePresentationIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(ValuePresentationIdRef);
             break;
@@ -18624,7 +17530,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           }
           case 48: {
-            ProductType = (global::Agrirouter.Technicalmessagetype.Product.Types.ProductType) input.ReadEnum();
+            ProductType = (global::Efdi.Product.Types.ProductType) input.ReadEnum();
             break;
           }
           case 56: {
@@ -18659,7 +17565,6 @@ namespace Agrirouter.Technicalmessagetype {
     #region Nested types
     /// <summary>Container for nested types declared in the Product message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       public enum ProductType {
         [pbr::OriginalName("F_NOTSET")] FNotset = 0,
@@ -18684,23 +17589,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<ProductAllocation> _parser = new pb::MessageParser<ProductAllocation>(() => new ProductAllocation());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ProductAllocation> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[42]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[42]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ProductAllocation() {
       OnConstruction();
     }
@@ -18708,7 +17609,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ProductAllocation(ProductAllocation other) : this() {
       productIdRef_ = other.productIdRef_ != null ? other.productIdRef_.Clone() : null;
       quantityDdi_ = other.quantityDdi_;
@@ -18723,17 +17623,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ProductAllocation Clone() {
       return new ProductAllocation(this);
     }
 
     /// <summary>Field number for the "product_id_ref" field.</summary>
     public const int ProductIdRefFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.UID productIdRef_;
+    private global::Efdi.UID productIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID ProductIdRef {
+    public global::Efdi.UID ProductIdRef {
       get { return productIdRef_; }
       set {
         productIdRef_ = value;
@@ -18744,7 +17642,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int QuantityDdiFieldNumber = 2;
     private uint quantityDdi_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint QuantityDdi {
       get { return quantityDdi_; }
       set {
@@ -18756,7 +17653,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int QuantityValueFieldNumber = 3;
     private long quantityValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long QuantityValue {
       get { return quantityValue_; }
       set {
@@ -18766,10 +17662,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "transfer_mode" field.</summary>
     public const int TransferModeFieldNumber = 4;
-    private global::Agrirouter.Technicalmessagetype.ProductAllocation.Types.TransferMode transferMode_ = global::Agrirouter.Technicalmessagetype.ProductAllocation.Types.TransferMode.DNotset;
+    private global::Efdi.ProductAllocation.Types.TransferMode transferMode_ = global::Efdi.ProductAllocation.Types.TransferMode.DNotset;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.ProductAllocation.Types.TransferMode TransferMode {
+    public global::Efdi.ProductAllocation.Types.TransferMode TransferMode {
       get { return transferMode_; }
       set {
         transferMode_ = value;
@@ -18778,10 +17673,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "device_element_id_ref" field.</summary>
     public const int DeviceElementIdRefFieldNumber = 5;
-    private global::Agrirouter.Technicalmessagetype.UID deviceElementIdRef_;
+    private global::Efdi.UID deviceElementIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID DeviceElementIdRef {
+    public global::Efdi.UID DeviceElementIdRef {
       get { return deviceElementIdRef_; }
       set {
         deviceElementIdRef_ = value;
@@ -18790,10 +17684,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "value_presentation_id_ref" field.</summary>
     public const int ValuePresentationIdRefFieldNumber = 6;
-    private global::Agrirouter.Technicalmessagetype.UID valuePresentationIdRef_;
+    private global::Efdi.UID valuePresentationIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID ValuePresentationIdRef {
+    public global::Efdi.UID ValuePresentationIdRef {
       get { return valuePresentationIdRef_; }
       set {
         valuePresentationIdRef_ = value;
@@ -18802,10 +17695,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "product_sub_type_id_ref" field.</summary>
     public const int ProductSubTypeIdRefFieldNumber = 7;
-    private global::Agrirouter.Technicalmessagetype.UID productSubTypeIdRef_;
+    private global::Efdi.UID productSubTypeIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID ProductSubTypeIdRef {
+    public global::Efdi.UID ProductSubTypeIdRef {
       get { return productSubTypeIdRef_; }
       set {
         productSubTypeIdRef_ = value;
@@ -18814,10 +17706,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "allocation_stamp" field.</summary>
     public const int AllocationStampFieldNumber = 8;
-    private global::Agrirouter.Technicalmessagetype.AllocationStamp allocationStamp_;
+    private global::Efdi.AllocationStamp allocationStamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.AllocationStamp AllocationStamp {
+    public global::Efdi.AllocationStamp AllocationStamp {
       get { return allocationStamp_; }
       set {
         allocationStamp_ = value;
@@ -18830,19 +17721,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ProductAllocation);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ProductAllocation other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -18863,13 +17751,12 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (productIdRef_ != null) hash ^= ProductIdRef.GetHashCode();
       if (QuantityDdi != 0) hash ^= QuantityDdi.GetHashCode();
       if (QuantityValue != 0L) hash ^= QuantityValue.GetHashCode();
-      if (TransferMode != global::Agrirouter.Technicalmessagetype.ProductAllocation.Types.TransferMode.DNotset) hash ^= TransferMode.GetHashCode();
+      if (TransferMode != global::Efdi.ProductAllocation.Types.TransferMode.DNotset) hash ^= TransferMode.GetHashCode();
       if (deviceElementIdRef_ != null) hash ^= DeviceElementIdRef.GetHashCode();
       if (valuePresentationIdRef_ != null) hash ^= ValuePresentationIdRef.GetHashCode();
       if (productSubTypeIdRef_ != null) hash ^= ProductSubTypeIdRef.GetHashCode();
@@ -18882,13 +17769,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -18905,7 +17790,7 @@ namespace Agrirouter.Technicalmessagetype {
         output.WriteRawTag(24);
         output.WriteSInt64(QuantityValue);
       }
-      if (TransferMode != global::Agrirouter.Technicalmessagetype.ProductAllocation.Types.TransferMode.DNotset) {
+      if (TransferMode != global::Efdi.ProductAllocation.Types.TransferMode.DNotset) {
         output.WriteRawTag(32);
         output.WriteEnum((int) TransferMode);
       }
@@ -18934,7 +17819,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (productIdRef_ != null) {
         output.WriteRawTag(10);
@@ -18948,7 +17832,7 @@ namespace Agrirouter.Technicalmessagetype {
         output.WriteRawTag(24);
         output.WriteSInt64(QuantityValue);
       }
-      if (TransferMode != global::Agrirouter.Technicalmessagetype.ProductAllocation.Types.TransferMode.DNotset) {
+      if (TransferMode != global::Efdi.ProductAllocation.Types.TransferMode.DNotset) {
         output.WriteRawTag(32);
         output.WriteEnum((int) TransferMode);
       }
@@ -18976,7 +17860,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (productIdRef_ != null) {
@@ -18988,7 +17871,7 @@ namespace Agrirouter.Technicalmessagetype {
       if (QuantityValue != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeSInt64Size(QuantityValue);
       }
-      if (TransferMode != global::Agrirouter.Technicalmessagetype.ProductAllocation.Types.TransferMode.DNotset) {
+      if (TransferMode != global::Efdi.ProductAllocation.Types.TransferMode.DNotset) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) TransferMode);
       }
       if (deviceElementIdRef_ != null) {
@@ -19011,14 +17894,13 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ProductAllocation other) {
       if (other == null) {
         return;
       }
       if (other.productIdRef_ != null) {
         if (productIdRef_ == null) {
-          ProductIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          ProductIdRef = new global::Efdi.UID();
         }
         ProductIdRef.MergeFrom(other.ProductIdRef);
       }
@@ -19028,30 +17910,30 @@ namespace Agrirouter.Technicalmessagetype {
       if (other.QuantityValue != 0L) {
         QuantityValue = other.QuantityValue;
       }
-      if (other.TransferMode != global::Agrirouter.Technicalmessagetype.ProductAllocation.Types.TransferMode.DNotset) {
+      if (other.TransferMode != global::Efdi.ProductAllocation.Types.TransferMode.DNotset) {
         TransferMode = other.TransferMode;
       }
       if (other.deviceElementIdRef_ != null) {
         if (deviceElementIdRef_ == null) {
-          DeviceElementIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          DeviceElementIdRef = new global::Efdi.UID();
         }
         DeviceElementIdRef.MergeFrom(other.DeviceElementIdRef);
       }
       if (other.valuePresentationIdRef_ != null) {
         if (valuePresentationIdRef_ == null) {
-          ValuePresentationIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          ValuePresentationIdRef = new global::Efdi.UID();
         }
         ValuePresentationIdRef.MergeFrom(other.ValuePresentationIdRef);
       }
       if (other.productSubTypeIdRef_ != null) {
         if (productSubTypeIdRef_ == null) {
-          ProductSubTypeIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          ProductSubTypeIdRef = new global::Efdi.UID();
         }
         ProductSubTypeIdRef.MergeFrom(other.ProductSubTypeIdRef);
       }
       if (other.allocationStamp_ != null) {
         if (allocationStamp_ == null) {
-          AllocationStamp = new global::Agrirouter.Technicalmessagetype.AllocationStamp();
+          AllocationStamp = new global::Efdi.AllocationStamp();
         }
         AllocationStamp.MergeFrom(other.AllocationStamp);
       }
@@ -19060,7 +17942,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -19073,7 +17954,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (productIdRef_ == null) {
-              ProductIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              ProductIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(ProductIdRef);
             break;
@@ -19087,33 +17968,33 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           }
           case 32: {
-            TransferMode = (global::Agrirouter.Technicalmessagetype.ProductAllocation.Types.TransferMode) input.ReadEnum();
+            TransferMode = (global::Efdi.ProductAllocation.Types.TransferMode) input.ReadEnum();
             break;
           }
           case 42: {
             if (deviceElementIdRef_ == null) {
-              DeviceElementIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              DeviceElementIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(DeviceElementIdRef);
             break;
           }
           case 50: {
             if (valuePresentationIdRef_ == null) {
-              ValuePresentationIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              ValuePresentationIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(ValuePresentationIdRef);
             break;
           }
           case 58: {
             if (productSubTypeIdRef_ == null) {
-              ProductSubTypeIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              ProductSubTypeIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(ProductSubTypeIdRef);
             break;
           }
           case 66: {
             if (allocationStamp_ == null) {
-              AllocationStamp = new global::Agrirouter.Technicalmessagetype.AllocationStamp();
+              AllocationStamp = new global::Efdi.AllocationStamp();
             }
             input.ReadMessage(AllocationStamp);
             break;
@@ -19129,7 +18010,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -19139,7 +18019,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (productIdRef_ == null) {
-              ProductIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              ProductIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(ProductIdRef);
             break;
@@ -19153,33 +18033,33 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           }
           case 32: {
-            TransferMode = (global::Agrirouter.Technicalmessagetype.ProductAllocation.Types.TransferMode) input.ReadEnum();
+            TransferMode = (global::Efdi.ProductAllocation.Types.TransferMode) input.ReadEnum();
             break;
           }
           case 42: {
             if (deviceElementIdRef_ == null) {
-              DeviceElementIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              DeviceElementIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(DeviceElementIdRef);
             break;
           }
           case 50: {
             if (valuePresentationIdRef_ == null) {
-              ValuePresentationIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              ValuePresentationIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(ValuePresentationIdRef);
             break;
           }
           case 58: {
             if (productSubTypeIdRef_ == null) {
-              ProductSubTypeIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              ProductSubTypeIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(ProductSubTypeIdRef);
             break;
           }
           case 66: {
             if (allocationStamp_ == null) {
-              AllocationStamp = new global::Agrirouter.Technicalmessagetype.AllocationStamp();
+              AllocationStamp = new global::Efdi.AllocationStamp();
             }
             input.ReadMessage(AllocationStamp);
             break;
@@ -19196,7 +18076,6 @@ namespace Agrirouter.Technicalmessagetype {
     #region Nested types
     /// <summary>Container for nested types declared in the ProductAllocation message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       public enum TransferMode {
         [pbr::OriginalName("D_NOTSET")] DNotset = 0,
@@ -19221,23 +18100,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<ProductGroup> _parser = new pb::MessageParser<ProductGroup>(() => new ProductGroup());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ProductGroup> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[43]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[43]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ProductGroup() {
       OnConstruction();
     }
@@ -19245,7 +18120,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ProductGroup(ProductGroup other) : this() {
       productGroupId_ = other.productGroupId_ != null ? other.productGroupId_.Clone() : null;
       productGroupDesignator_ = other.productGroupDesignator_;
@@ -19255,17 +18129,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ProductGroup Clone() {
       return new ProductGroup(this);
     }
 
     /// <summary>Field number for the "product_group_id" field.</summary>
     public const int ProductGroupIdFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.UID productGroupId_;
+    private global::Efdi.UID productGroupId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID ProductGroupId {
+    public global::Efdi.UID ProductGroupId {
       get { return productGroupId_; }
       set {
         productGroupId_ = value;
@@ -19276,7 +18148,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int ProductGroupDesignatorFieldNumber = 2;
     private string productGroupDesignator_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ProductGroupDesignator {
       get { return productGroupDesignator_; }
       set {
@@ -19286,10 +18157,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "product_group_type" field.</summary>
     public const int ProductGroupTypeFieldNumber = 3;
-    private global::Agrirouter.Technicalmessagetype.ProductGroup.Types.ProductGroupType productGroupType_ = global::Agrirouter.Technicalmessagetype.ProductGroup.Types.ProductGroupType.CNotset;
+    private global::Efdi.ProductGroup.Types.ProductGroupType productGroupType_ = global::Efdi.ProductGroup.Types.ProductGroupType.CNotset;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.ProductGroup.Types.ProductGroupType ProductGroupType {
+    public global::Efdi.ProductGroup.Types.ProductGroupType ProductGroupType {
       get { return productGroupType_; }
       set {
         productGroupType_ = value;
@@ -19302,19 +18172,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ProductGroup);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ProductGroup other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -19330,12 +18197,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (productGroupId_ != null) hash ^= ProductGroupId.GetHashCode();
       if (ProductGroupDesignator.Length != 0) hash ^= ProductGroupDesignator.GetHashCode();
-      if (ProductGroupType != global::Agrirouter.Technicalmessagetype.ProductGroup.Types.ProductGroupType.CNotset) hash ^= ProductGroupType.GetHashCode();
+      if (ProductGroupType != global::Efdi.ProductGroup.Types.ProductGroupType.CNotset) hash ^= ProductGroupType.GetHashCode();
       hash ^= extension_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -19344,13 +18210,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -19363,7 +18227,7 @@ namespace Agrirouter.Technicalmessagetype {
         output.WriteRawTag(18);
         output.WriteString(ProductGroupDesignator);
       }
-      if (ProductGroupType != global::Agrirouter.Technicalmessagetype.ProductGroup.Types.ProductGroupType.CNotset) {
+      if (ProductGroupType != global::Efdi.ProductGroup.Types.ProductGroupType.CNotset) {
         output.WriteRawTag(24);
         output.WriteEnum((int) ProductGroupType);
       }
@@ -19376,7 +18240,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (productGroupId_ != null) {
         output.WriteRawTag(10);
@@ -19386,7 +18249,7 @@ namespace Agrirouter.Technicalmessagetype {
         output.WriteRawTag(18);
         output.WriteString(ProductGroupDesignator);
       }
-      if (ProductGroupType != global::Agrirouter.Technicalmessagetype.ProductGroup.Types.ProductGroupType.CNotset) {
+      if (ProductGroupType != global::Efdi.ProductGroup.Types.ProductGroupType.CNotset) {
         output.WriteRawTag(24);
         output.WriteEnum((int) ProductGroupType);
       }
@@ -19398,7 +18261,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (productGroupId_ != null) {
@@ -19407,7 +18269,7 @@ namespace Agrirouter.Technicalmessagetype {
       if (ProductGroupDesignator.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ProductGroupDesignator);
       }
-      if (ProductGroupType != global::Agrirouter.Technicalmessagetype.ProductGroup.Types.ProductGroupType.CNotset) {
+      if (ProductGroupType != global::Efdi.ProductGroup.Types.ProductGroupType.CNotset) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ProductGroupType);
       }
       size += extension_.CalculateSize(_repeated_extension_codec);
@@ -19418,21 +18280,20 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ProductGroup other) {
       if (other == null) {
         return;
       }
       if (other.productGroupId_ != null) {
         if (productGroupId_ == null) {
-          ProductGroupId = new global::Agrirouter.Technicalmessagetype.UID();
+          ProductGroupId = new global::Efdi.UID();
         }
         ProductGroupId.MergeFrom(other.ProductGroupId);
       }
       if (other.ProductGroupDesignator.Length != 0) {
         ProductGroupDesignator = other.ProductGroupDesignator;
       }
-      if (other.ProductGroupType != global::Agrirouter.Technicalmessagetype.ProductGroup.Types.ProductGroupType.CNotset) {
+      if (other.ProductGroupType != global::Efdi.ProductGroup.Types.ProductGroupType.CNotset) {
         ProductGroupType = other.ProductGroupType;
       }
       extension_.Add(other.extension_);
@@ -19440,7 +18301,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -19453,7 +18313,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (productGroupId_ == null) {
-              ProductGroupId = new global::Agrirouter.Technicalmessagetype.UID();
+              ProductGroupId = new global::Efdi.UID();
             }
             input.ReadMessage(ProductGroupId);
             break;
@@ -19463,7 +18323,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           }
           case 24: {
-            ProductGroupType = (global::Agrirouter.Technicalmessagetype.ProductGroup.Types.ProductGroupType) input.ReadEnum();
+            ProductGroupType = (global::Efdi.ProductGroup.Types.ProductGroupType) input.ReadEnum();
             break;
           }
           case 16386: {
@@ -19477,7 +18337,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -19487,7 +18346,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (productGroupId_ == null) {
-              ProductGroupId = new global::Agrirouter.Technicalmessagetype.UID();
+              ProductGroupId = new global::Efdi.UID();
             }
             input.ReadMessage(ProductGroupId);
             break;
@@ -19497,7 +18356,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           }
           case 24: {
-            ProductGroupType = (global::Agrirouter.Technicalmessagetype.ProductGroup.Types.ProductGroupType) input.ReadEnum();
+            ProductGroupType = (global::Efdi.ProductGroup.Types.ProductGroupType) input.ReadEnum();
             break;
           }
           case 16386: {
@@ -19512,7 +18371,6 @@ namespace Agrirouter.Technicalmessagetype {
     #region Nested types
     /// <summary>Container for nested types declared in the ProductGroup message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       public enum ProductGroupType {
         [pbr::OriginalName("C_NOTSET")] CNotset = 0,
@@ -19536,23 +18394,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<ProductRelation> _parser = new pb::MessageParser<ProductRelation>(() => new ProductRelation());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ProductRelation> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[44]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[44]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ProductRelation() {
       OnConstruction();
     }
@@ -19560,7 +18414,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ProductRelation(ProductRelation other) : this() {
       productIdRef_ = other.productIdRef_ != null ? other.productIdRef_.Clone() : null;
       quantityValue_ = other.quantityValue_;
@@ -19569,17 +18422,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ProductRelation Clone() {
       return new ProductRelation(this);
     }
 
     /// <summary>Field number for the "product_id_ref" field.</summary>
     public const int ProductIdRefFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.UID productIdRef_;
+    private global::Efdi.UID productIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID ProductIdRef {
+    public global::Efdi.UID ProductIdRef {
       get { return productIdRef_; }
       set {
         productIdRef_ = value;
@@ -19590,7 +18441,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int QuantityValueFieldNumber = 2;
     private long quantityValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long QuantityValue {
       get { return quantityValue_; }
       set {
@@ -19604,19 +18454,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ProductRelation);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ProductRelation other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -19631,7 +18478,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (productIdRef_ != null) hash ^= ProductIdRef.GetHashCode();
@@ -19644,13 +18490,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -19672,7 +18516,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (productIdRef_ != null) {
         output.WriteRawTag(10);
@@ -19690,7 +18533,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (productIdRef_ != null) {
@@ -19707,14 +18549,13 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ProductRelation other) {
       if (other == null) {
         return;
       }
       if (other.productIdRef_ != null) {
         if (productIdRef_ == null) {
-          ProductIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          ProductIdRef = new global::Efdi.UID();
         }
         ProductIdRef.MergeFrom(other.ProductIdRef);
       }
@@ -19726,7 +18567,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -19739,7 +18579,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (productIdRef_ == null) {
-              ProductIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              ProductIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(ProductIdRef);
             break;
@@ -19759,7 +18599,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -19769,7 +18608,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (productIdRef_ == null) {
-              ProductIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              ProductIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(ProductIdRef);
             break;
@@ -19800,23 +18639,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<Task> _parser = new pb::MessageParser<Task>(() => new Task());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Task> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[45]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[45]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Task() {
       OnConstruction();
     }
@@ -19824,7 +18659,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Task(Task other) : this() {
       taskId_ = other.taskId_ != null ? other.taskId_.Clone() : null;
       taskDesignator_ = other.taskDesignator_;
@@ -19854,17 +18688,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Task Clone() {
       return new Task(this);
     }
 
     /// <summary>Field number for the "task_id" field.</summary>
     public const int TaskIdFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.UID taskId_;
+    private global::Efdi.UID taskId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID TaskId {
+    public global::Efdi.UID TaskId {
       get { return taskId_; }
       set {
         taskId_ = value;
@@ -19875,7 +18707,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int TaskDesignatorFieldNumber = 2;
     private string taskDesignator_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string TaskDesignator {
       get { return taskDesignator_; }
       set {
@@ -19885,10 +18716,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "customer_id_ref" field.</summary>
     public const int CustomerIdRefFieldNumber = 3;
-    private global::Agrirouter.Technicalmessagetype.UID customerIdRef_;
+    private global::Efdi.UID customerIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID CustomerIdRef {
+    public global::Efdi.UID CustomerIdRef {
       get { return customerIdRef_; }
       set {
         customerIdRef_ = value;
@@ -19897,10 +18727,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "farm_id_ref" field.</summary>
     public const int FarmIdRefFieldNumber = 4;
-    private global::Agrirouter.Technicalmessagetype.UID farmIdRef_;
+    private global::Efdi.UID farmIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID FarmIdRef {
+    public global::Efdi.UID FarmIdRef {
       get { return farmIdRef_; }
       set {
         farmIdRef_ = value;
@@ -19909,10 +18738,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "partfield_id_ref" field.</summary>
     public const int PartfieldIdRefFieldNumber = 5;
-    private global::Agrirouter.Technicalmessagetype.UID partfieldIdRef_;
+    private global::Efdi.UID partfieldIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID PartfieldIdRef {
+    public global::Efdi.UID PartfieldIdRef {
       get { return partfieldIdRef_; }
       set {
         partfieldIdRef_ = value;
@@ -19921,10 +18749,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "responsible_worker_id_ref" field.</summary>
     public const int ResponsibleWorkerIdRefFieldNumber = 6;
-    private global::Agrirouter.Technicalmessagetype.UID responsibleWorkerIdRef_;
+    private global::Efdi.UID responsibleWorkerIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID ResponsibleWorkerIdRef {
+    public global::Efdi.UID ResponsibleWorkerIdRef {
       get { return responsibleWorkerIdRef_; }
       set {
         responsibleWorkerIdRef_ = value;
@@ -19933,10 +18760,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "task_status" field.</summary>
     public const int TaskStatusFieldNumber = 7;
-    private global::Agrirouter.Technicalmessagetype.Task.Types.TaskStatus taskStatus_ = global::Agrirouter.Technicalmessagetype.Task.Types.TaskStatus.GNotset;
+    private global::Efdi.Task.Types.TaskStatus taskStatus_ = global::Efdi.Task.Types.TaskStatus.GNotset;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.Task.Types.TaskStatus TaskStatus {
+    public global::Efdi.Task.Types.TaskStatus TaskStatus {
       get { return taskStatus_; }
       set {
         taskStatus_ = value;
@@ -19947,7 +18773,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DefaultTreatmentZoneCodeFieldNumber = 8;
     private uint defaultTreatmentZoneCode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint DefaultTreatmentZoneCode {
       get { return defaultTreatmentZoneCode_; }
       set {
@@ -19959,7 +18784,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int PositionLostTreatmentZoneCodeFieldNumber = 9;
     private uint positionLostTreatmentZoneCode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint PositionLostTreatmentZoneCode {
       get { return positionLostTreatmentZoneCode_; }
       set {
@@ -19971,7 +18795,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int OutOfFieldTreatmentZoneCodeFieldNumber = 10;
     private uint outOfFieldTreatmentZoneCode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint OutOfFieldTreatmentZoneCode {
       get { return outOfFieldTreatmentZoneCode_; }
       set {
@@ -19981,32 +18804,29 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "treatment_zone" field.</summary>
     public const int TreatmentZoneFieldNumber = 11;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.TreatmentZone> _repeated_treatmentZone_codec
-        = pb::FieldCodec.ForMessage(90, global::Agrirouter.Technicalmessagetype.TreatmentZone.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.TreatmentZone> treatmentZone_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.TreatmentZone>();
+    private static readonly pb::FieldCodec<global::Efdi.TreatmentZone> _repeated_treatmentZone_codec
+        = pb::FieldCodec.ForMessage(90, global::Efdi.TreatmentZone.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.TreatmentZone> treatmentZone_ = new pbc::RepeatedField<global::Efdi.TreatmentZone>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.TreatmentZone> TreatmentZone {
+    public pbc::RepeatedField<global::Efdi.TreatmentZone> TreatmentZone {
       get { return treatmentZone_; }
     }
 
     /// <summary>Field number for the "time" field.</summary>
     public const int TimeFieldNumber = 12;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.Time> _repeated_time_codec
-        = pb::FieldCodec.ForMessage(98, global::Agrirouter.Technicalmessagetype.Time.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Time> time_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Time>();
+    private static readonly pb::FieldCodec<global::Efdi.Time> _repeated_time_codec
+        = pb::FieldCodec.ForMessage(98, global::Efdi.Time.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.Time> time_ = new pbc::RepeatedField<global::Efdi.Time>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Time> Time {
+    public pbc::RepeatedField<global::Efdi.Time> Time {
       get { return time_; }
     }
 
     /// <summary>Field number for the "oper_tech_practice" field.</summary>
     public const int OperTechPracticeFieldNumber = 13;
-    private global::Agrirouter.Technicalmessagetype.OperTechPractice operTechPractice_;
+    private global::Efdi.OperTechPractice operTechPractice_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.OperTechPractice OperTechPractice {
+    public global::Efdi.OperTechPractice OperTechPractice {
       get { return operTechPractice_; }
       set {
         operTechPractice_ = value;
@@ -20015,87 +18835,79 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "worker_allocation" field.</summary>
     public const int WorkerAllocationFieldNumber = 14;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.WorkerAllocation> _repeated_workerAllocation_codec
-        = pb::FieldCodec.ForMessage(114, global::Agrirouter.Technicalmessagetype.WorkerAllocation.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.WorkerAllocation> workerAllocation_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.WorkerAllocation>();
+    private static readonly pb::FieldCodec<global::Efdi.WorkerAllocation> _repeated_workerAllocation_codec
+        = pb::FieldCodec.ForMessage(114, global::Efdi.WorkerAllocation.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.WorkerAllocation> workerAllocation_ = new pbc::RepeatedField<global::Efdi.WorkerAllocation>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.WorkerAllocation> WorkerAllocation {
+    public pbc::RepeatedField<global::Efdi.WorkerAllocation> WorkerAllocation {
       get { return workerAllocation_; }
     }
 
     /// <summary>Field number for the "device_allocation" field.</summary>
     public const int DeviceAllocationFieldNumber = 15;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.DeviceAllocation> _repeated_deviceAllocation_codec
-        = pb::FieldCodec.ForMessage(122, global::Agrirouter.Technicalmessagetype.DeviceAllocation.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.DeviceAllocation> deviceAllocation_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.DeviceAllocation>();
+    private static readonly pb::FieldCodec<global::Efdi.DeviceAllocation> _repeated_deviceAllocation_codec
+        = pb::FieldCodec.ForMessage(122, global::Efdi.DeviceAllocation.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.DeviceAllocation> deviceAllocation_ = new pbc::RepeatedField<global::Efdi.DeviceAllocation>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.DeviceAllocation> DeviceAllocation {
+    public pbc::RepeatedField<global::Efdi.DeviceAllocation> DeviceAllocation {
       get { return deviceAllocation_; }
     }
 
     /// <summary>Field number for the "connection" field.</summary>
     public const int ConnectionFieldNumber = 16;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.Connection> _repeated_connection_codec
-        = pb::FieldCodec.ForMessage(130, global::Agrirouter.Technicalmessagetype.Connection.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Connection> connection_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Connection>();
+    private static readonly pb::FieldCodec<global::Efdi.Connection> _repeated_connection_codec
+        = pb::FieldCodec.ForMessage(130, global::Efdi.Connection.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.Connection> connection_ = new pbc::RepeatedField<global::Efdi.Connection>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Connection> Connection {
+    public pbc::RepeatedField<global::Efdi.Connection> Connection {
       get { return connection_; }
     }
 
     /// <summary>Field number for the "product_allocation" field.</summary>
     public const int ProductAllocationFieldNumber = 17;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.ProductAllocation> _repeated_productAllocation_codec
-        = pb::FieldCodec.ForMessage(138, global::Agrirouter.Technicalmessagetype.ProductAllocation.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.ProductAllocation> productAllocation_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.ProductAllocation>();
+    private static readonly pb::FieldCodec<global::Efdi.ProductAllocation> _repeated_productAllocation_codec
+        = pb::FieldCodec.ForMessage(138, global::Efdi.ProductAllocation.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.ProductAllocation> productAllocation_ = new pbc::RepeatedField<global::Efdi.ProductAllocation>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.ProductAllocation> ProductAllocation {
+    public pbc::RepeatedField<global::Efdi.ProductAllocation> ProductAllocation {
       get { return productAllocation_; }
     }
 
     /// <summary>Field number for the "data_log_trigger" field.</summary>
     public const int DataLogTriggerFieldNumber = 18;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.DataLogTrigger> _repeated_dataLogTrigger_codec
-        = pb::FieldCodec.ForMessage(146, global::Agrirouter.Technicalmessagetype.DataLogTrigger.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.DataLogTrigger> dataLogTrigger_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.DataLogTrigger>();
+    private static readonly pb::FieldCodec<global::Efdi.DataLogTrigger> _repeated_dataLogTrigger_codec
+        = pb::FieldCodec.ForMessage(146, global::Efdi.DataLogTrigger.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.DataLogTrigger> dataLogTrigger_ = new pbc::RepeatedField<global::Efdi.DataLogTrigger>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.DataLogTrigger> DataLogTrigger {
+    public pbc::RepeatedField<global::Efdi.DataLogTrigger> DataLogTrigger {
       get { return dataLogTrigger_; }
     }
 
     /// <summary>Field number for the "comment_allocation" field.</summary>
     public const int CommentAllocationFieldNumber = 19;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.CommentAllocation> _repeated_commentAllocation_codec
-        = pb::FieldCodec.ForMessage(154, global::Agrirouter.Technicalmessagetype.CommentAllocation.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.CommentAllocation> commentAllocation_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.CommentAllocation>();
+    private static readonly pb::FieldCodec<global::Efdi.CommentAllocation> _repeated_commentAllocation_codec
+        = pb::FieldCodec.ForMessage(154, global::Efdi.CommentAllocation.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.CommentAllocation> commentAllocation_ = new pbc::RepeatedField<global::Efdi.CommentAllocation>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.CommentAllocation> CommentAllocation {
+    public pbc::RepeatedField<global::Efdi.CommentAllocation> CommentAllocation {
       get { return commentAllocation_; }
     }
 
     /// <summary>Field number for the "time_log" field.</summary>
     public const int TimeLogFieldNumber = 20;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.TimeLog> _repeated_timeLog_codec
-        = pb::FieldCodec.ForMessage(162, global::Agrirouter.Technicalmessagetype.TimeLog.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.TimeLog> timeLog_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.TimeLog>();
+    private static readonly pb::FieldCodec<global::Efdi.TimeLog> _repeated_timeLog_codec
+        = pb::FieldCodec.ForMessage(162, global::Efdi.TimeLog.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.TimeLog> timeLog_ = new pbc::RepeatedField<global::Efdi.TimeLog>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.TimeLog> TimeLog {
+    public pbc::RepeatedField<global::Efdi.TimeLog> TimeLog {
       get { return timeLog_; }
     }
 
     /// <summary>Field number for the "grid" field.</summary>
     public const int GridFieldNumber = 21;
-    private global::Agrirouter.Technicalmessagetype.Grid grid_;
+    private global::Efdi.Grid grid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.Grid Grid {
+    public global::Efdi.Grid Grid {
       get { return grid_; }
       set {
         grid_ = value;
@@ -20104,23 +18916,21 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "control_assignment" field.</summary>
     public const int ControlAssignmentFieldNumber = 22;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.ControlAssignment> _repeated_controlAssignment_codec
-        = pb::FieldCodec.ForMessage(178, global::Agrirouter.Technicalmessagetype.ControlAssignment.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.ControlAssignment> controlAssignment_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.ControlAssignment>();
+    private static readonly pb::FieldCodec<global::Efdi.ControlAssignment> _repeated_controlAssignment_codec
+        = pb::FieldCodec.ForMessage(178, global::Efdi.ControlAssignment.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.ControlAssignment> controlAssignment_ = new pbc::RepeatedField<global::Efdi.ControlAssignment>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.ControlAssignment> ControlAssignment {
+    public pbc::RepeatedField<global::Efdi.ControlAssignment> ControlAssignment {
       get { return controlAssignment_; }
     }
 
     /// <summary>Field number for the "guidance_allocation" field.</summary>
     public const int GuidanceAllocationFieldNumber = 23;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.GuidanceAllocation> _repeated_guidanceAllocation_codec
-        = pb::FieldCodec.ForMessage(186, global::Agrirouter.Technicalmessagetype.GuidanceAllocation.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.GuidanceAllocation> guidanceAllocation_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.GuidanceAllocation>();
+    private static readonly pb::FieldCodec<global::Efdi.GuidanceAllocation> _repeated_guidanceAllocation_codec
+        = pb::FieldCodec.ForMessage(186, global::Efdi.GuidanceAllocation.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.GuidanceAllocation> guidanceAllocation_ = new pbc::RepeatedField<global::Efdi.GuidanceAllocation>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.GuidanceAllocation> GuidanceAllocation {
+    public pbc::RepeatedField<global::Efdi.GuidanceAllocation> GuidanceAllocation {
       get { return guidanceAllocation_; }
     }
 
@@ -20130,19 +18940,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Task);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Task other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -20178,7 +18985,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (taskId_ != null) hash ^= TaskId.GetHashCode();
@@ -20187,7 +18993,7 @@ namespace Agrirouter.Technicalmessagetype {
       if (farmIdRef_ != null) hash ^= FarmIdRef.GetHashCode();
       if (partfieldIdRef_ != null) hash ^= PartfieldIdRef.GetHashCode();
       if (responsibleWorkerIdRef_ != null) hash ^= ResponsibleWorkerIdRef.GetHashCode();
-      if (TaskStatus != global::Agrirouter.Technicalmessagetype.Task.Types.TaskStatus.GNotset) hash ^= TaskStatus.GetHashCode();
+      if (TaskStatus != global::Efdi.Task.Types.TaskStatus.GNotset) hash ^= TaskStatus.GetHashCode();
       if (DefaultTreatmentZoneCode != 0) hash ^= DefaultTreatmentZoneCode.GetHashCode();
       if (PositionLostTreatmentZoneCode != 0) hash ^= PositionLostTreatmentZoneCode.GetHashCode();
       if (OutOfFieldTreatmentZoneCode != 0) hash ^= OutOfFieldTreatmentZoneCode.GetHashCode();
@@ -20212,13 +19018,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -20247,7 +19051,7 @@ namespace Agrirouter.Technicalmessagetype {
         output.WriteRawTag(50);
         output.WriteMessage(ResponsibleWorkerIdRef);
       }
-      if (TaskStatus != global::Agrirouter.Technicalmessagetype.Task.Types.TaskStatus.GNotset) {
+      if (TaskStatus != global::Efdi.Task.Types.TaskStatus.GNotset) {
         output.WriteRawTag(56);
         output.WriteEnum((int) TaskStatus);
       }
@@ -20291,7 +19095,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (taskId_ != null) {
         output.WriteRawTag(10);
@@ -20317,7 +19120,7 @@ namespace Agrirouter.Technicalmessagetype {
         output.WriteRawTag(50);
         output.WriteMessage(ResponsibleWorkerIdRef);
       }
-      if (TaskStatus != global::Agrirouter.Technicalmessagetype.Task.Types.TaskStatus.GNotset) {
+      if (TaskStatus != global::Efdi.Task.Types.TaskStatus.GNotset) {
         output.WriteRawTag(56);
         output.WriteEnum((int) TaskStatus);
       }
@@ -20360,7 +19163,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (taskId_ != null) {
@@ -20381,7 +19183,7 @@ namespace Agrirouter.Technicalmessagetype {
       if (responsibleWorkerIdRef_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(ResponsibleWorkerIdRef);
       }
-      if (TaskStatus != global::Agrirouter.Technicalmessagetype.Task.Types.TaskStatus.GNotset) {
+      if (TaskStatus != global::Efdi.Task.Types.TaskStatus.GNotset) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) TaskStatus);
       }
       if (DefaultTreatmentZoneCode != 0) {
@@ -20418,14 +19220,13 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Task other) {
       if (other == null) {
         return;
       }
       if (other.taskId_ != null) {
         if (taskId_ == null) {
-          TaskId = new global::Agrirouter.Technicalmessagetype.UID();
+          TaskId = new global::Efdi.UID();
         }
         TaskId.MergeFrom(other.TaskId);
       }
@@ -20434,29 +19235,29 @@ namespace Agrirouter.Technicalmessagetype {
       }
       if (other.customerIdRef_ != null) {
         if (customerIdRef_ == null) {
-          CustomerIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          CustomerIdRef = new global::Efdi.UID();
         }
         CustomerIdRef.MergeFrom(other.CustomerIdRef);
       }
       if (other.farmIdRef_ != null) {
         if (farmIdRef_ == null) {
-          FarmIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          FarmIdRef = new global::Efdi.UID();
         }
         FarmIdRef.MergeFrom(other.FarmIdRef);
       }
       if (other.partfieldIdRef_ != null) {
         if (partfieldIdRef_ == null) {
-          PartfieldIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          PartfieldIdRef = new global::Efdi.UID();
         }
         PartfieldIdRef.MergeFrom(other.PartfieldIdRef);
       }
       if (other.responsibleWorkerIdRef_ != null) {
         if (responsibleWorkerIdRef_ == null) {
-          ResponsibleWorkerIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          ResponsibleWorkerIdRef = new global::Efdi.UID();
         }
         ResponsibleWorkerIdRef.MergeFrom(other.ResponsibleWorkerIdRef);
       }
-      if (other.TaskStatus != global::Agrirouter.Technicalmessagetype.Task.Types.TaskStatus.GNotset) {
+      if (other.TaskStatus != global::Efdi.Task.Types.TaskStatus.GNotset) {
         TaskStatus = other.TaskStatus;
       }
       if (other.DefaultTreatmentZoneCode != 0) {
@@ -20472,7 +19273,7 @@ namespace Agrirouter.Technicalmessagetype {
       time_.Add(other.time_);
       if (other.operTechPractice_ != null) {
         if (operTechPractice_ == null) {
-          OperTechPractice = new global::Agrirouter.Technicalmessagetype.OperTechPractice();
+          OperTechPractice = new global::Efdi.OperTechPractice();
         }
         OperTechPractice.MergeFrom(other.OperTechPractice);
       }
@@ -20485,7 +19286,7 @@ namespace Agrirouter.Technicalmessagetype {
       timeLog_.Add(other.timeLog_);
       if (other.grid_ != null) {
         if (grid_ == null) {
-          Grid = new global::Agrirouter.Technicalmessagetype.Grid();
+          Grid = new global::Efdi.Grid();
         }
         Grid.MergeFrom(other.Grid);
       }
@@ -20496,7 +19297,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -20509,7 +19309,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (taskId_ == null) {
-              TaskId = new global::Agrirouter.Technicalmessagetype.UID();
+              TaskId = new global::Efdi.UID();
             }
             input.ReadMessage(TaskId);
             break;
@@ -20520,34 +19320,34 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 26: {
             if (customerIdRef_ == null) {
-              CustomerIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              CustomerIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(CustomerIdRef);
             break;
           }
           case 34: {
             if (farmIdRef_ == null) {
-              FarmIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              FarmIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(FarmIdRef);
             break;
           }
           case 42: {
             if (partfieldIdRef_ == null) {
-              PartfieldIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              PartfieldIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(PartfieldIdRef);
             break;
           }
           case 50: {
             if (responsibleWorkerIdRef_ == null) {
-              ResponsibleWorkerIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              ResponsibleWorkerIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(ResponsibleWorkerIdRef);
             break;
           }
           case 56: {
-            TaskStatus = (global::Agrirouter.Technicalmessagetype.Task.Types.TaskStatus) input.ReadEnum();
+            TaskStatus = (global::Efdi.Task.Types.TaskStatus) input.ReadEnum();
             break;
           }
           case 64: {
@@ -20572,7 +19372,7 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 106: {
             if (operTechPractice_ == null) {
-              OperTechPractice = new global::Agrirouter.Technicalmessagetype.OperTechPractice();
+              OperTechPractice = new global::Efdi.OperTechPractice();
             }
             input.ReadMessage(OperTechPractice);
             break;
@@ -20607,7 +19407,7 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 170: {
             if (grid_ == null) {
-              Grid = new global::Agrirouter.Technicalmessagetype.Grid();
+              Grid = new global::Efdi.Grid();
             }
             input.ReadMessage(Grid);
             break;
@@ -20631,7 +19431,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -20641,7 +19440,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (taskId_ == null) {
-              TaskId = new global::Agrirouter.Technicalmessagetype.UID();
+              TaskId = new global::Efdi.UID();
             }
             input.ReadMessage(TaskId);
             break;
@@ -20652,34 +19451,34 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 26: {
             if (customerIdRef_ == null) {
-              CustomerIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              CustomerIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(CustomerIdRef);
             break;
           }
           case 34: {
             if (farmIdRef_ == null) {
-              FarmIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              FarmIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(FarmIdRef);
             break;
           }
           case 42: {
             if (partfieldIdRef_ == null) {
-              PartfieldIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              PartfieldIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(PartfieldIdRef);
             break;
           }
           case 50: {
             if (responsibleWorkerIdRef_ == null) {
-              ResponsibleWorkerIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              ResponsibleWorkerIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(ResponsibleWorkerIdRef);
             break;
           }
           case 56: {
-            TaskStatus = (global::Agrirouter.Technicalmessagetype.Task.Types.TaskStatus) input.ReadEnum();
+            TaskStatus = (global::Efdi.Task.Types.TaskStatus) input.ReadEnum();
             break;
           }
           case 64: {
@@ -20704,7 +19503,7 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 106: {
             if (operTechPractice_ == null) {
-              OperTechPractice = new global::Agrirouter.Technicalmessagetype.OperTechPractice();
+              OperTechPractice = new global::Efdi.OperTechPractice();
             }
             input.ReadMessage(OperTechPractice);
             break;
@@ -20739,7 +19538,7 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 170: {
             if (grid_ == null) {
-              Grid = new global::Agrirouter.Technicalmessagetype.Grid();
+              Grid = new global::Efdi.Grid();
             }
             input.ReadMessage(Grid);
             break;
@@ -20764,7 +19563,6 @@ namespace Agrirouter.Technicalmessagetype {
     #region Nested types
     /// <summary>Container for nested types declared in the Task message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       public enum TaskStatus {
         [pbr::OriginalName("G_NOTSET")] GNotset = 0,
@@ -20792,23 +19590,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<TaskControllerCapabilities> _parser = new pb::MessageParser<TaskControllerCapabilities>(() => new TaskControllerCapabilities());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<TaskControllerCapabilities> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[46]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[46]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TaskControllerCapabilities() {
       OnConstruction();
     }
@@ -20816,7 +19610,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TaskControllerCapabilities(TaskControllerCapabilities other) : this() {
       taskControllerControlFunctionName_ = other.taskControllerControlFunctionName_;
       taskControllerDesignator_ = other.taskControllerDesignator_;
@@ -20830,7 +19623,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TaskControllerCapabilities Clone() {
       return new TaskControllerCapabilities(this);
     }
@@ -20839,7 +19631,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int TaskControllerControlFunctionNameFieldNumber = 1;
     private pb::ByteString taskControllerControlFunctionName_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pb::ByteString TaskControllerControlFunctionName {
       get { return taskControllerControlFunctionName_; }
       set {
@@ -20851,7 +19642,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int TaskControllerDesignatorFieldNumber = 2;
     private string taskControllerDesignator_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string TaskControllerDesignator {
       get { return taskControllerDesignator_; }
       set {
@@ -20861,10 +19651,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "version_number" field.</summary>
     public const int VersionNumberFieldNumber = 3;
-    private global::Agrirouter.Technicalmessagetype.TaskControllerCapabilities.Types.VersionNumber versionNumber_ = global::Agrirouter.Technicalmessagetype.TaskControllerCapabilities.Types.VersionNumber.CDis;
+    private global::Efdi.TaskControllerCapabilities.Types.VersionNumber versionNumber_ = global::Efdi.TaskControllerCapabilities.Types.VersionNumber.CDis;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.TaskControllerCapabilities.Types.VersionNumber VersionNumber {
+    public global::Efdi.TaskControllerCapabilities.Types.VersionNumber VersionNumber {
       get { return versionNumber_; }
       set {
         versionNumber_ = value;
@@ -20875,7 +19664,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int ProvidedCapabilitiesFieldNumber = 4;
     private uint providedCapabilities_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint ProvidedCapabilities {
       get { return providedCapabilities_; }
       set {
@@ -20887,7 +19675,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int NumberOfBoomsSectionControlFieldNumber = 5;
     private uint numberOfBoomsSectionControl_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint NumberOfBoomsSectionControl {
       get { return numberOfBoomsSectionControl_; }
       set {
@@ -20899,7 +19686,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int NumberOfSectionsSectionControlFieldNumber = 6;
     private uint numberOfSectionsSectionControl_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint NumberOfSectionsSectionControl {
       get { return numberOfSectionsSectionControl_; }
       set {
@@ -20911,7 +19697,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int NumberOfControlChannelsFieldNumber = 7;
     private uint numberOfControlChannels_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint NumberOfControlChannels {
       get { return numberOfControlChannels_; }
       set {
@@ -20925,19 +19710,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as TaskControllerCapabilities);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(TaskControllerCapabilities other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -20957,12 +19739,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (TaskControllerControlFunctionName.Length != 0) hash ^= TaskControllerControlFunctionName.GetHashCode();
       if (TaskControllerDesignator.Length != 0) hash ^= TaskControllerDesignator.GetHashCode();
-      if (VersionNumber != global::Agrirouter.Technicalmessagetype.TaskControllerCapabilities.Types.VersionNumber.CDis) hash ^= VersionNumber.GetHashCode();
+      if (VersionNumber != global::Efdi.TaskControllerCapabilities.Types.VersionNumber.CDis) hash ^= VersionNumber.GetHashCode();
       if (ProvidedCapabilities != 0) hash ^= ProvidedCapabilities.GetHashCode();
       if (NumberOfBoomsSectionControl != 0) hash ^= NumberOfBoomsSectionControl.GetHashCode();
       if (NumberOfSectionsSectionControl != 0) hash ^= NumberOfSectionsSectionControl.GetHashCode();
@@ -20975,13 +19756,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -20994,7 +19773,7 @@ namespace Agrirouter.Technicalmessagetype {
         output.WriteRawTag(18);
         output.WriteString(TaskControllerDesignator);
       }
-      if (VersionNumber != global::Agrirouter.Technicalmessagetype.TaskControllerCapabilities.Types.VersionNumber.CDis) {
+      if (VersionNumber != global::Efdi.TaskControllerCapabilities.Types.VersionNumber.CDis) {
         output.WriteRawTag(24);
         output.WriteEnum((int) VersionNumber);
       }
@@ -21023,7 +19802,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (TaskControllerControlFunctionName.Length != 0) {
         output.WriteRawTag(10);
@@ -21033,7 +19811,7 @@ namespace Agrirouter.Technicalmessagetype {
         output.WriteRawTag(18);
         output.WriteString(TaskControllerDesignator);
       }
-      if (VersionNumber != global::Agrirouter.Technicalmessagetype.TaskControllerCapabilities.Types.VersionNumber.CDis) {
+      if (VersionNumber != global::Efdi.TaskControllerCapabilities.Types.VersionNumber.CDis) {
         output.WriteRawTag(24);
         output.WriteEnum((int) VersionNumber);
       }
@@ -21061,7 +19839,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (TaskControllerControlFunctionName.Length != 0) {
@@ -21070,7 +19847,7 @@ namespace Agrirouter.Technicalmessagetype {
       if (TaskControllerDesignator.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(TaskControllerDesignator);
       }
-      if (VersionNumber != global::Agrirouter.Technicalmessagetype.TaskControllerCapabilities.Types.VersionNumber.CDis) {
+      if (VersionNumber != global::Efdi.TaskControllerCapabilities.Types.VersionNumber.CDis) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) VersionNumber);
       }
       if (ProvidedCapabilities != 0) {
@@ -21093,7 +19870,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(TaskControllerCapabilities other) {
       if (other == null) {
         return;
@@ -21104,7 +19880,7 @@ namespace Agrirouter.Technicalmessagetype {
       if (other.TaskControllerDesignator.Length != 0) {
         TaskControllerDesignator = other.TaskControllerDesignator;
       }
-      if (other.VersionNumber != global::Agrirouter.Technicalmessagetype.TaskControllerCapabilities.Types.VersionNumber.CDis) {
+      if (other.VersionNumber != global::Efdi.TaskControllerCapabilities.Types.VersionNumber.CDis) {
         VersionNumber = other.VersionNumber;
       }
       if (other.ProvidedCapabilities != 0) {
@@ -21124,7 +19900,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -21144,7 +19919,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           }
           case 24: {
-            VersionNumber = (global::Agrirouter.Technicalmessagetype.TaskControllerCapabilities.Types.VersionNumber) input.ReadEnum();
+            VersionNumber = (global::Efdi.TaskControllerCapabilities.Types.VersionNumber) input.ReadEnum();
             break;
           }
           case 32: {
@@ -21174,7 +19949,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -21191,7 +19965,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           }
           case 24: {
-            VersionNumber = (global::Agrirouter.Technicalmessagetype.TaskControllerCapabilities.Types.VersionNumber) input.ReadEnum();
+            VersionNumber = (global::Efdi.TaskControllerCapabilities.Types.VersionNumber) input.ReadEnum();
             break;
           }
           case 32: {
@@ -21222,7 +19996,6 @@ namespace Agrirouter.Technicalmessagetype {
     #region Nested types
     /// <summary>Container for nested types declared in the TaskControllerCapabilities message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       public enum VersionNumber {
         [pbr::OriginalName("C_DIS")] CDis = 0,
@@ -21248,23 +20021,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<Time> _parser = new pb::MessageParser<Time>(() => new Time());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Time> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[47]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[47]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Time() {
       OnConstruction();
     }
@@ -21272,7 +20041,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Time(Time other) : this() {
       start_ = other.start_ != null ? other.start_.Clone() : null;
       stop_ = other.stop_ != null ? other.stop_.Clone() : null;
@@ -21286,7 +20054,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Time Clone() {
       return new Time(this);
     }
@@ -21298,7 +20065,6 @@ namespace Agrirouter.Technicalmessagetype {
     /// TODO:	eid string = 1; (element id: URN/URL whatever, aber prefix muss spezifiziert sein) => Vorschlag
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp Start {
       get { return start_; }
       set {
@@ -21310,7 +20076,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int StopFieldNumber = 2;
     private global::Google.Protobuf.WellKnownTypes.Timestamp stop_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp Stop {
       get { return stop_; }
       set {
@@ -21322,7 +20087,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int DurationFieldNumber = 3;
     private ulong duration_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ulong Duration {
       get { return duration_; }
       set {
@@ -21332,10 +20096,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "type" field.</summary>
     public const int TypeFieldNumber = 4;
-    private global::Agrirouter.Technicalmessagetype.Time.Types.TimeType type_ = global::Agrirouter.Technicalmessagetype.Time.Types.TimeType.DNotset;
+    private global::Efdi.Time.Types.TimeType type_ = global::Efdi.Time.Types.TimeType.DNotset;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.Time.Types.TimeType Type {
+    public global::Efdi.Time.Types.TimeType Type {
       get { return type_; }
       set {
         type_ = value;
@@ -21344,10 +20107,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "position_start" field.</summary>
     public const int PositionStartFieldNumber = 5;
-    private global::Agrirouter.Technicalmessagetype.Position positionStart_;
+    private global::Efdi.Position positionStart_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.Position PositionStart {
+    public global::Efdi.Position PositionStart {
       get { return positionStart_; }
       set {
         positionStart_ = value;
@@ -21356,10 +20118,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "position_stop" field.</summary>
     public const int PositionStopFieldNumber = 6;
-    private global::Agrirouter.Technicalmessagetype.Position positionStop_;
+    private global::Efdi.Position positionStop_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.Position PositionStop {
+    public global::Efdi.Position PositionStop {
       get { return positionStop_; }
       set {
         positionStop_ = value;
@@ -21368,12 +20129,11 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "data_log_value" field.</summary>
     public const int DataLogValueFieldNumber = 7;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.DataLogValue> _repeated_dataLogValue_codec
-        = pb::FieldCodec.ForMessage(58, global::Agrirouter.Technicalmessagetype.DataLogValue.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.DataLogValue> dataLogValue_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.DataLogValue>();
+    private static readonly pb::FieldCodec<global::Efdi.DataLogValue> _repeated_dataLogValue_codec
+        = pb::FieldCodec.ForMessage(58, global::Efdi.DataLogValue.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.DataLogValue> dataLogValue_ = new pbc::RepeatedField<global::Efdi.DataLogValue>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.DataLogValue> DataLogValue {
+    public pbc::RepeatedField<global::Efdi.DataLogValue> DataLogValue {
       get { return dataLogValue_; }
     }
 
@@ -21383,19 +20143,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Time);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Time other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -21415,13 +20172,12 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (start_ != null) hash ^= Start.GetHashCode();
       if (stop_ != null) hash ^= Stop.GetHashCode();
       if (Duration != 0UL) hash ^= Duration.GetHashCode();
-      if (Type != global::Agrirouter.Technicalmessagetype.Time.Types.TimeType.DNotset) hash ^= Type.GetHashCode();
+      if (Type != global::Efdi.Time.Types.TimeType.DNotset) hash ^= Type.GetHashCode();
       if (positionStart_ != null) hash ^= PositionStart.GetHashCode();
       if (positionStop_ != null) hash ^= PositionStop.GetHashCode();
       hash ^= dataLogValue_.GetHashCode();
@@ -21433,13 +20189,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -21456,7 +20210,7 @@ namespace Agrirouter.Technicalmessagetype {
         output.WriteRawTag(24);
         output.WriteUInt64(Duration);
       }
-      if (Type != global::Agrirouter.Technicalmessagetype.Time.Types.TimeType.DNotset) {
+      if (Type != global::Efdi.Time.Types.TimeType.DNotset) {
         output.WriteRawTag(32);
         output.WriteEnum((int) Type);
       }
@@ -21478,7 +20232,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (start_ != null) {
         output.WriteRawTag(10);
@@ -21492,7 +20245,7 @@ namespace Agrirouter.Technicalmessagetype {
         output.WriteRawTag(24);
         output.WriteUInt64(Duration);
       }
-      if (Type != global::Agrirouter.Technicalmessagetype.Time.Types.TimeType.DNotset) {
+      if (Type != global::Efdi.Time.Types.TimeType.DNotset) {
         output.WriteRawTag(32);
         output.WriteEnum((int) Type);
       }
@@ -21513,7 +20266,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (start_ != null) {
@@ -21525,7 +20277,7 @@ namespace Agrirouter.Technicalmessagetype {
       if (Duration != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Duration);
       }
-      if (Type != global::Agrirouter.Technicalmessagetype.Time.Types.TimeType.DNotset) {
+      if (Type != global::Efdi.Time.Types.TimeType.DNotset) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
       if (positionStart_ != null) {
@@ -21543,7 +20295,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Time other) {
       if (other == null) {
         return;
@@ -21563,18 +20314,18 @@ namespace Agrirouter.Technicalmessagetype {
       if (other.Duration != 0UL) {
         Duration = other.Duration;
       }
-      if (other.Type != global::Agrirouter.Technicalmessagetype.Time.Types.TimeType.DNotset) {
+      if (other.Type != global::Efdi.Time.Types.TimeType.DNotset) {
         Type = other.Type;
       }
       if (other.positionStart_ != null) {
         if (positionStart_ == null) {
-          PositionStart = new global::Agrirouter.Technicalmessagetype.Position();
+          PositionStart = new global::Efdi.Position();
         }
         PositionStart.MergeFrom(other.PositionStart);
       }
       if (other.positionStop_ != null) {
         if (positionStop_ == null) {
-          PositionStop = new global::Agrirouter.Technicalmessagetype.Position();
+          PositionStop = new global::Efdi.Position();
         }
         PositionStop.MergeFrom(other.PositionStop);
       }
@@ -21584,7 +20335,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -21614,19 +20364,19 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           }
           case 32: {
-            Type = (global::Agrirouter.Technicalmessagetype.Time.Types.TimeType) input.ReadEnum();
+            Type = (global::Efdi.Time.Types.TimeType) input.ReadEnum();
             break;
           }
           case 42: {
             if (positionStart_ == null) {
-              PositionStart = new global::Agrirouter.Technicalmessagetype.Position();
+              PositionStart = new global::Efdi.Position();
             }
             input.ReadMessage(PositionStart);
             break;
           }
           case 50: {
             if (positionStop_ == null) {
-              PositionStop = new global::Agrirouter.Technicalmessagetype.Position();
+              PositionStop = new global::Efdi.Position();
             }
             input.ReadMessage(PositionStop);
             break;
@@ -21646,7 +20396,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -21673,19 +20422,19 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           }
           case 32: {
-            Type = (global::Agrirouter.Technicalmessagetype.Time.Types.TimeType) input.ReadEnum();
+            Type = (global::Efdi.Time.Types.TimeType) input.ReadEnum();
             break;
           }
           case 42: {
             if (positionStart_ == null) {
-              PositionStart = new global::Agrirouter.Technicalmessagetype.Position();
+              PositionStart = new global::Efdi.Position();
             }
             input.ReadMessage(PositionStart);
             break;
           }
           case 50: {
             if (positionStop_ == null) {
-              PositionStop = new global::Agrirouter.Technicalmessagetype.Position();
+              PositionStop = new global::Efdi.Position();
             }
             input.ReadMessage(PositionStop);
             break;
@@ -21706,7 +20455,6 @@ namespace Agrirouter.Technicalmessagetype {
     #region Nested types
     /// <summary>Container for nested types declared in the Time message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       public enum TimeType {
         [pbr::OriginalName("D_NOTSET")] DNotset = 0,
@@ -21743,23 +20491,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<TimeLog> _parser = new pb::MessageParser<TimeLog>(() => new TimeLog());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<TimeLog> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[48]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[48]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TimeLog() {
       OnConstruction();
     }
@@ -21767,7 +20511,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TimeLog(TimeLog other) : this() {
       filename_ = other.filename_;
       filelength_ = other.filelength_;
@@ -21778,7 +20521,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TimeLog Clone() {
       return new TimeLog(this);
     }
@@ -21787,7 +20529,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int FilenameFieldNumber = 2;
     private string filename_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Filename {
       get { return filename_; }
       set {
@@ -21799,7 +20540,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int FilelengthFieldNumber = 3;
     private ulong filelength_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ulong Filelength {
       get { return filelength_; }
       set {
@@ -21809,10 +20549,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "time_log_type" field.</summary>
     public const int TimeLogTypeFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.TimeLog.Types.TimeLogType timeLogType_ = global::Agrirouter.Technicalmessagetype.TimeLog.Types.TimeLogType.CNotset;
+    private global::Efdi.TimeLog.Types.TimeLogType timeLogType_ = global::Efdi.TimeLog.Types.TimeLogType.CNotset;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.TimeLog.Types.TimeLogType TimeLogType {
+    public global::Efdi.TimeLog.Types.TimeLogType TimeLogType {
       get { return timeLogType_; }
       set {
         timeLogType_ = value;
@@ -21821,12 +20560,11 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "time" field.</summary>
     public const int TimeFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.Time> _repeated_time_codec
-        = pb::FieldCodec.ForMessage(34, global::Agrirouter.Technicalmessagetype.Time.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Time> time_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Time>();
+    private static readonly pb::FieldCodec<global::Efdi.Time> _repeated_time_codec
+        = pb::FieldCodec.ForMessage(34, global::Efdi.Time.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.Time> time_ = new pbc::RepeatedField<global::Efdi.Time>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Time> Time {
+    public pbc::RepeatedField<global::Efdi.Time> Time {
       get { return time_; }
     }
 
@@ -21836,19 +20574,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as TimeLog);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(TimeLog other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -21865,12 +20600,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Filename.Length != 0) hash ^= Filename.GetHashCode();
       if (Filelength != 0UL) hash ^= Filelength.GetHashCode();
-      if (TimeLogType != global::Agrirouter.Technicalmessagetype.TimeLog.Types.TimeLogType.CNotset) hash ^= TimeLogType.GetHashCode();
+      if (TimeLogType != global::Efdi.TimeLog.Types.TimeLogType.CNotset) hash ^= TimeLogType.GetHashCode();
       hash ^= time_.GetHashCode();
       hash ^= extension_.GetHashCode();
       if (_unknownFields != null) {
@@ -21880,18 +20614,16 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (TimeLogType != global::Agrirouter.Technicalmessagetype.TimeLog.Types.TimeLogType.CNotset) {
+      if (TimeLogType != global::Efdi.TimeLog.Types.TimeLogType.CNotset) {
         output.WriteRawTag(8);
         output.WriteEnum((int) TimeLogType);
       }
@@ -21913,9 +20645,8 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (TimeLogType != global::Agrirouter.Technicalmessagetype.TimeLog.Types.TimeLogType.CNotset) {
+      if (TimeLogType != global::Efdi.TimeLog.Types.TimeLogType.CNotset) {
         output.WriteRawTag(8);
         output.WriteEnum((int) TimeLogType);
       }
@@ -21936,7 +20667,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Filename.Length != 0) {
@@ -21945,7 +20675,7 @@ namespace Agrirouter.Technicalmessagetype {
       if (Filelength != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Filelength);
       }
-      if (TimeLogType != global::Agrirouter.Technicalmessagetype.TimeLog.Types.TimeLogType.CNotset) {
+      if (TimeLogType != global::Efdi.TimeLog.Types.TimeLogType.CNotset) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) TimeLogType);
       }
       size += time_.CalculateSize(_repeated_time_codec);
@@ -21957,7 +20687,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(TimeLog other) {
       if (other == null) {
         return;
@@ -21968,7 +20697,7 @@ namespace Agrirouter.Technicalmessagetype {
       if (other.Filelength != 0UL) {
         Filelength = other.Filelength;
       }
-      if (other.TimeLogType != global::Agrirouter.Technicalmessagetype.TimeLog.Types.TimeLogType.CNotset) {
+      if (other.TimeLogType != global::Efdi.TimeLog.Types.TimeLogType.CNotset) {
         TimeLogType = other.TimeLogType;
       }
       time_.Add(other.time_);
@@ -21977,7 +20706,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -21989,7 +20717,7 @@ namespace Agrirouter.Technicalmessagetype {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            TimeLogType = (global::Agrirouter.Technicalmessagetype.TimeLog.Types.TimeLogType) input.ReadEnum();
+            TimeLogType = (global::Efdi.TimeLog.Types.TimeLogType) input.ReadEnum();
             break;
           }
           case 18: {
@@ -22015,7 +20743,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -22024,7 +20751,7 @@ namespace Agrirouter.Technicalmessagetype {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            TimeLogType = (global::Agrirouter.Technicalmessagetype.TimeLog.Types.TimeLogType) input.ReadEnum();
+            TimeLogType = (global::Efdi.TimeLog.Types.TimeLogType) input.ReadEnum();
             break;
           }
           case 18: {
@@ -22051,7 +20778,6 @@ namespace Agrirouter.Technicalmessagetype {
     #region Nested types
     /// <summary>Container for nested types declared in the TimeLog message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       public enum TimeLogType {
         [pbr::OriginalName("C_NOTSET")] CNotset = 0,
@@ -22074,23 +20800,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<TreatmentZone> _parser = new pb::MessageParser<TreatmentZone>(() => new TreatmentZone());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<TreatmentZone> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[49]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[49]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TreatmentZone() {
       OnConstruction();
     }
@@ -22098,7 +20820,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TreatmentZone(TreatmentZone other) : this() {
       treatmentZoneCode_ = other.treatmentZoneCode_;
       treatmentZoneDesignator_ = other.treatmentZoneDesignator_;
@@ -22110,7 +20831,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TreatmentZone Clone() {
       return new TreatmentZone(this);
     }
@@ -22119,7 +20839,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int TreatmentZoneCodeFieldNumber = 1;
     private uint treatmentZoneCode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint TreatmentZoneCode {
       get { return treatmentZoneCode_; }
       set {
@@ -22131,7 +20850,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int TreatmentZoneDesignatorFieldNumber = 2;
     private string treatmentZoneDesignator_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string TreatmentZoneDesignator {
       get { return treatmentZoneDesignator_; }
       set {
@@ -22143,7 +20861,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int TreatmentZoneColourFieldNumber = 3;
     private uint treatmentZoneColour_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint TreatmentZoneColour {
       get { return treatmentZoneColour_; }
       set {
@@ -22153,23 +20870,21 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "polygon" field.</summary>
     public const int PolygonFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.Polygon> _repeated_polygon_codec
-        = pb::FieldCodec.ForMessage(34, global::Agrirouter.Technicalmessagetype.Polygon.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Polygon> polygon_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Polygon>();
+    private static readonly pb::FieldCodec<global::Efdi.Polygon> _repeated_polygon_codec
+        = pb::FieldCodec.ForMessage(34, global::Efdi.Polygon.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.Polygon> polygon_ = new pbc::RepeatedField<global::Efdi.Polygon>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.Polygon> Polygon {
+    public pbc::RepeatedField<global::Efdi.Polygon> Polygon {
       get { return polygon_; }
     }
 
     /// <summary>Field number for the "process_data_variable" field.</summary>
     public const int ProcessDataVariableFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::Agrirouter.Technicalmessagetype.ProcessDataVariable> _repeated_processDataVariable_codec
-        = pb::FieldCodec.ForMessage(42, global::Agrirouter.Technicalmessagetype.ProcessDataVariable.Parser);
-    private readonly pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.ProcessDataVariable> processDataVariable_ = new pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.ProcessDataVariable>();
+    private static readonly pb::FieldCodec<global::Efdi.ProcessDataVariable> _repeated_processDataVariable_codec
+        = pb::FieldCodec.ForMessage(42, global::Efdi.ProcessDataVariable.Parser);
+    private readonly pbc::RepeatedField<global::Efdi.ProcessDataVariable> processDataVariable_ = new pbc::RepeatedField<global::Efdi.ProcessDataVariable>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Agrirouter.Technicalmessagetype.ProcessDataVariable> ProcessDataVariable {
+    public pbc::RepeatedField<global::Efdi.ProcessDataVariable> ProcessDataVariable {
       get { return processDataVariable_; }
     }
 
@@ -22179,19 +20894,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as TreatmentZone);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(TreatmentZone other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -22209,7 +20921,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (TreatmentZoneCode != 0) hash ^= TreatmentZoneCode.GetHashCode();
@@ -22225,13 +20936,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -22259,7 +20968,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (TreatmentZoneCode != 0) {
         output.WriteRawTag(8);
@@ -22283,7 +20991,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (TreatmentZoneCode != 0) {
@@ -22305,7 +21012,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(TreatmentZone other) {
       if (other == null) {
         return;
@@ -22326,7 +21032,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -22368,7 +21073,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -22418,23 +21122,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<ValuePresentation> _parser = new pb::MessageParser<ValuePresentation>(() => new ValuePresentation());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ValuePresentation> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[50]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[50]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ValuePresentation() {
       OnConstruction();
     }
@@ -22442,7 +21142,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ValuePresentation(ValuePresentation other) : this() {
       valuePresentationId_ = other.valuePresentationId_ != null ? other.valuePresentationId_.Clone() : null;
       offset_ = other.offset_;
@@ -22455,17 +21154,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ValuePresentation Clone() {
       return new ValuePresentation(this);
     }
 
     /// <summary>Field number for the "value_presentation_id" field.</summary>
     public const int ValuePresentationIdFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.UID valuePresentationId_;
+    private global::Efdi.UID valuePresentationId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID ValuePresentationId {
+    public global::Efdi.UID ValuePresentationId {
       get { return valuePresentationId_; }
       set {
         valuePresentationId_ = value;
@@ -22476,7 +21173,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int OffsetFieldNumber = 2;
     private long offset_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long Offset {
       get { return offset_; }
       set {
@@ -22488,7 +21184,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int ScaleFieldNumber = 3;
     private double scale_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double Scale {
       get { return scale_; }
       set {
@@ -22500,7 +21195,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int NumberOfDecimalsFieldNumber = 4;
     private uint numberOfDecimals_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint NumberOfDecimals {
       get { return numberOfDecimals_; }
       set {
@@ -22512,7 +21206,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int UnitDesignatorFieldNumber = 5;
     private string unitDesignator_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string UnitDesignator {
       get { return unitDesignator_; }
       set {
@@ -22522,10 +21215,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "colour_legend_id_ref" field.</summary>
     public const int ColourLegendIdRefFieldNumber = 6;
-    private global::Agrirouter.Technicalmessagetype.UID colourLegendIdRef_;
+    private global::Efdi.UID colourLegendIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID ColourLegendIdRef {
+    public global::Efdi.UID ColourLegendIdRef {
       get { return colourLegendIdRef_; }
       set {
         colourLegendIdRef_ = value;
@@ -22538,19 +21230,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ValuePresentation);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ValuePresentation other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -22569,7 +21258,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (valuePresentationId_ != null) hash ^= ValuePresentationId.GetHashCode();
@@ -22586,13 +21274,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -22630,7 +21316,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (valuePresentationId_ != null) {
         output.WriteRawTag(10);
@@ -22664,7 +21349,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (valuePresentationId_ != null) {
@@ -22693,14 +21377,13 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ValuePresentation other) {
       if (other == null) {
         return;
       }
       if (other.valuePresentationId_ != null) {
         if (valuePresentationId_ == null) {
-          ValuePresentationId = new global::Agrirouter.Technicalmessagetype.UID();
+          ValuePresentationId = new global::Efdi.UID();
         }
         ValuePresentationId.MergeFrom(other.ValuePresentationId);
       }
@@ -22718,7 +21401,7 @@ namespace Agrirouter.Technicalmessagetype {
       }
       if (other.colourLegendIdRef_ != null) {
         if (colourLegendIdRef_ == null) {
-          ColourLegendIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          ColourLegendIdRef = new global::Efdi.UID();
         }
         ColourLegendIdRef.MergeFrom(other.ColourLegendIdRef);
       }
@@ -22727,7 +21410,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -22740,7 +21422,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (valuePresentationId_ == null) {
-              ValuePresentationId = new global::Agrirouter.Technicalmessagetype.UID();
+              ValuePresentationId = new global::Efdi.UID();
             }
             input.ReadMessage(ValuePresentationId);
             break;
@@ -22763,7 +21445,7 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 50: {
             if (colourLegendIdRef_ == null) {
-              ColourLegendIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              ColourLegendIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(ColourLegendIdRef);
             break;
@@ -22779,7 +21461,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -22789,7 +21470,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (valuePresentationId_ == null) {
-              ValuePresentationId = new global::Agrirouter.Technicalmessagetype.UID();
+              ValuePresentationId = new global::Efdi.UID();
             }
             input.ReadMessage(ValuePresentationId);
             break;
@@ -22812,7 +21493,7 @@ namespace Agrirouter.Technicalmessagetype {
           }
           case 50: {
             if (colourLegendIdRef_ == null) {
-              ColourLegendIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              ColourLegendIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(ColourLegendIdRef);
             break;
@@ -22839,23 +21520,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<Worker> _parser = new pb::MessageParser<Worker>(() => new Worker());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Worker> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[51]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[51]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Worker() {
       OnConstruction();
     }
@@ -22863,7 +21540,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Worker(Worker other) : this() {
       workerId_ = other.workerId_ != null ? other.workerId_.Clone() : null;
       workerLastName_ = other.workerLastName_;
@@ -22883,17 +21559,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Worker Clone() {
       return new Worker(this);
     }
 
     /// <summary>Field number for the "worker_id" field.</summary>
     public const int WorkerIdFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.UID workerId_;
+    private global::Efdi.UID workerId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID WorkerId {
+    public global::Efdi.UID WorkerId {
       get { return workerId_; }
       set {
         workerId_ = value;
@@ -22904,7 +21578,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int WorkerLastNameFieldNumber = 2;
     private string workerLastName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string WorkerLastName {
       get { return workerLastName_; }
       set {
@@ -22916,7 +21589,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int WorkerFirstNameFieldNumber = 3;
     private string workerFirstName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string WorkerFirstName {
       get { return workerFirstName_; }
       set {
@@ -22928,7 +21600,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int WorkerStreetFieldNumber = 4;
     private string workerStreet_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string WorkerStreet {
       get { return workerStreet_; }
       set {
@@ -22940,7 +21611,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int WorkerPoBoxFieldNumber = 5;
     private string workerPoBox_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string WorkerPoBox {
       get { return workerPoBox_; }
       set {
@@ -22952,7 +21622,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int WorkerPostalCodeFieldNumber = 6;
     private string workerPostalCode_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string WorkerPostalCode {
       get { return workerPostalCode_; }
       set {
@@ -22964,7 +21633,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int WorkerCityFieldNumber = 7;
     private string workerCity_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string WorkerCity {
       get { return workerCity_; }
       set {
@@ -22976,7 +21644,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int WorkerStateFieldNumber = 8;
     private string workerState_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string WorkerState {
       get { return workerState_; }
       set {
@@ -22988,7 +21655,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int WorkerCountryFieldNumber = 9;
     private string workerCountry_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string WorkerCountry {
       get { return workerCountry_; }
       set {
@@ -23000,7 +21666,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int WorkerPhoneFieldNumber = 10;
     private string workerPhone_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string WorkerPhone {
       get { return workerPhone_; }
       set {
@@ -23012,7 +21677,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int WorkerMobileFieldNumber = 11;
     private string workerMobile_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string WorkerMobile {
       get { return workerMobile_; }
       set {
@@ -23024,7 +21688,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int WorkerLicenseNumberFieldNumber = 12;
     private string workerLicenseNumber_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string WorkerLicenseNumber {
       get { return workerLicenseNumber_; }
       set {
@@ -23036,7 +21699,6 @@ namespace Agrirouter.Technicalmessagetype {
     public const int WorkerEmailFieldNumber = 13;
     private string workerEmail_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string WorkerEmail {
       get { return workerEmail_; }
       set {
@@ -23050,19 +21712,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Worker);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Worker other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -23088,7 +21747,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (workerId_ != null) hash ^= WorkerId.GetHashCode();
@@ -23112,13 +21770,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -23184,7 +21840,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (workerId_ != null) {
         output.WriteRawTag(10);
@@ -23246,7 +21901,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (workerId_ != null) {
@@ -23296,14 +21950,13 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Worker other) {
       if (other == null) {
         return;
       }
       if (other.workerId_ != null) {
         if (workerId_ == null) {
-          WorkerId = new global::Agrirouter.Technicalmessagetype.UID();
+          WorkerId = new global::Efdi.UID();
         }
         WorkerId.MergeFrom(other.WorkerId);
       }
@@ -23348,7 +22001,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -23361,7 +22013,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (workerId_ == null) {
-              WorkerId = new global::Agrirouter.Technicalmessagetype.UID();
+              WorkerId = new global::Efdi.UID();
             }
             input.ReadMessage(WorkerId);
             break;
@@ -23425,7 +22077,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -23435,7 +22086,7 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (workerId_ == null) {
-              WorkerId = new global::Agrirouter.Technicalmessagetype.UID();
+              WorkerId = new global::Efdi.UID();
             }
             input.ReadMessage(WorkerId);
             break;
@@ -23510,23 +22161,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<WorkerAllocation> _parser = new pb::MessageParser<WorkerAllocation>(() => new WorkerAllocation());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<WorkerAllocation> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[52]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[52]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public WorkerAllocation() {
       OnConstruction();
     }
@@ -23534,7 +22181,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public WorkerAllocation(WorkerAllocation other) : this() {
       workerIdRef_ = other.workerIdRef_ != null ? other.workerIdRef_.Clone() : null;
       allocationStamp_ = other.allocationStamp_ != null ? other.allocationStamp_.Clone() : null;
@@ -23543,17 +22189,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public WorkerAllocation Clone() {
       return new WorkerAllocation(this);
     }
 
     /// <summary>Field number for the "worker_id_ref" field.</summary>
     public const int WorkerIdRefFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.UID workerIdRef_;
+    private global::Efdi.UID workerIdRef_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID WorkerIdRef {
+    public global::Efdi.UID WorkerIdRef {
       get { return workerIdRef_; }
       set {
         workerIdRef_ = value;
@@ -23562,10 +22206,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "allocation_stamp" field.</summary>
     public const int AllocationStampFieldNumber = 2;
-    private global::Agrirouter.Technicalmessagetype.AllocationStamp allocationStamp_;
+    private global::Efdi.AllocationStamp allocationStamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.AllocationStamp AllocationStamp {
+    public global::Efdi.AllocationStamp AllocationStamp {
       get { return allocationStamp_; }
       set {
         allocationStamp_ = value;
@@ -23578,19 +22221,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as WorkerAllocation);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(WorkerAllocation other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -23605,7 +22245,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (workerIdRef_ != null) hash ^= WorkerIdRef.GetHashCode();
@@ -23618,13 +22257,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -23646,7 +22283,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (workerIdRef_ != null) {
         output.WriteRawTag(10);
@@ -23664,7 +22300,6 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (workerIdRef_ != null) {
@@ -23681,20 +22316,19 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(WorkerAllocation other) {
       if (other == null) {
         return;
       }
       if (other.workerIdRef_ != null) {
         if (workerIdRef_ == null) {
-          WorkerIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+          WorkerIdRef = new global::Efdi.UID();
         }
         WorkerIdRef.MergeFrom(other.WorkerIdRef);
       }
       if (other.allocationStamp_ != null) {
         if (allocationStamp_ == null) {
-          AllocationStamp = new global::Agrirouter.Technicalmessagetype.AllocationStamp();
+          AllocationStamp = new global::Efdi.AllocationStamp();
         }
         AllocationStamp.MergeFrom(other.AllocationStamp);
       }
@@ -23703,7 +22337,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -23716,14 +22349,14 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (workerIdRef_ == null) {
-              WorkerIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              WorkerIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(WorkerIdRef);
             break;
           }
           case 18: {
             if (allocationStamp_ == null) {
-              AllocationStamp = new global::Agrirouter.Technicalmessagetype.AllocationStamp();
+              AllocationStamp = new global::Efdi.AllocationStamp();
             }
             input.ReadMessage(AllocationStamp);
             break;
@@ -23739,7 +22372,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -23749,14 +22381,14 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (workerIdRef_ == null) {
-              WorkerIdRef = new global::Agrirouter.Technicalmessagetype.UID();
+              WorkerIdRef = new global::Efdi.UID();
             }
             input.ReadMessage(WorkerIdRef);
             break;
           }
           case 18: {
             if (allocationStamp_ == null) {
-              AllocationStamp = new global::Agrirouter.Technicalmessagetype.AllocationStamp();
+              AllocationStamp = new global::Efdi.AllocationStamp();
             }
             input.ReadMessage(AllocationStamp);
             break;
@@ -23783,23 +22415,19 @@ namespace Agrirouter.Technicalmessagetype {
     private static readonly pb::MessageParser<ExternalFileReference> _parser = new pb::MessageParser<ExternalFileReference>(() => new ExternalFileReference());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ExternalFileReference> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Technicalmessagetype.EfdiReflection.Descriptor.MessageTypes[53]; }
+      get { return global::Efdi.EfdiReflection.Descriptor.MessageTypes[53]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ExternalFileReference() {
       OnConstruction();
     }
@@ -23807,7 +22435,6 @@ namespace Agrirouter.Technicalmessagetype {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ExternalFileReference(ExternalFileReference other) : this() {
       filename_ = other.filename_ != null ? other.filename_.Clone() : null;
       fileType_ = other.fileType_;
@@ -23816,17 +22443,15 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ExternalFileReference Clone() {
       return new ExternalFileReference(this);
     }
 
     /// <summary>Field number for the "filename" field.</summary>
     public const int FilenameFieldNumber = 1;
-    private global::Agrirouter.Technicalmessagetype.UID filename_;
+    private global::Efdi.UID filename_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.UID Filename {
+    public global::Efdi.UID Filename {
       get { return filename_; }
       set {
         filename_ = value;
@@ -23835,10 +22460,9 @@ namespace Agrirouter.Technicalmessagetype {
 
     /// <summary>Field number for the "file_type" field.</summary>
     public const int FileTypeFieldNumber = 2;
-    private global::Agrirouter.Technicalmessagetype.ExternalFileReference.Types.FileType fileType_ = global::Agrirouter.Technicalmessagetype.ExternalFileReference.Types.FileType.BNotset;
+    private global::Efdi.ExternalFileReference.Types.FileType fileType_ = global::Efdi.ExternalFileReference.Types.FileType.BNotset;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Agrirouter.Technicalmessagetype.ExternalFileReference.Types.FileType FileType {
+    public global::Efdi.ExternalFileReference.Types.FileType FileType {
       get { return fileType_; }
       set {
         fileType_ = value;
@@ -23851,19 +22475,16 @@ namespace Agrirouter.Technicalmessagetype {
         = pb::FieldCodec.ForMessage(16386, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> extension_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Extension {
       get { return extension_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ExternalFileReference);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ExternalFileReference other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -23878,11 +22499,10 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (filename_ != null) hash ^= Filename.GetHashCode();
-      if (FileType != global::Agrirouter.Technicalmessagetype.ExternalFileReference.Types.FileType.BNotset) hash ^= FileType.GetHashCode();
+      if (FileType != global::Efdi.ExternalFileReference.Types.FileType.BNotset) hash ^= FileType.GetHashCode();
       hash ^= extension_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -23891,13 +22511,11 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -23906,7 +22524,7 @@ namespace Agrirouter.Technicalmessagetype {
         output.WriteRawTag(10);
         output.WriteMessage(Filename);
       }
-      if (FileType != global::Agrirouter.Technicalmessagetype.ExternalFileReference.Types.FileType.BNotset) {
+      if (FileType != global::Efdi.ExternalFileReference.Types.FileType.BNotset) {
         output.WriteRawTag(16);
         output.WriteEnum((int) FileType);
       }
@@ -23919,13 +22537,12 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (filename_ != null) {
         output.WriteRawTag(10);
         output.WriteMessage(Filename);
       }
-      if (FileType != global::Agrirouter.Technicalmessagetype.ExternalFileReference.Types.FileType.BNotset) {
+      if (FileType != global::Efdi.ExternalFileReference.Types.FileType.BNotset) {
         output.WriteRawTag(16);
         output.WriteEnum((int) FileType);
       }
@@ -23937,13 +22554,12 @@ namespace Agrirouter.Technicalmessagetype {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (filename_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Filename);
       }
-      if (FileType != global::Agrirouter.Technicalmessagetype.ExternalFileReference.Types.FileType.BNotset) {
+      if (FileType != global::Efdi.ExternalFileReference.Types.FileType.BNotset) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) FileType);
       }
       size += extension_.CalculateSize(_repeated_extension_codec);
@@ -23954,18 +22570,17 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ExternalFileReference other) {
       if (other == null) {
         return;
       }
       if (other.filename_ != null) {
         if (filename_ == null) {
-          Filename = new global::Agrirouter.Technicalmessagetype.UID();
+          Filename = new global::Efdi.UID();
         }
         Filename.MergeFrom(other.Filename);
       }
-      if (other.FileType != global::Agrirouter.Technicalmessagetype.ExternalFileReference.Types.FileType.BNotset) {
+      if (other.FileType != global::Efdi.ExternalFileReference.Types.FileType.BNotset) {
         FileType = other.FileType;
       }
       extension_.Add(other.extension_);
@@ -23973,7 +22588,6 @@ namespace Agrirouter.Technicalmessagetype {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -23986,13 +22600,13 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (filename_ == null) {
-              Filename = new global::Agrirouter.Technicalmessagetype.UID();
+              Filename = new global::Efdi.UID();
             }
             input.ReadMessage(Filename);
             break;
           }
           case 16: {
-            FileType = (global::Agrirouter.Technicalmessagetype.ExternalFileReference.Types.FileType) input.ReadEnum();
+            FileType = (global::Efdi.ExternalFileReference.Types.FileType) input.ReadEnum();
             break;
           }
           case 16386: {
@@ -24006,7 +22620,6 @@ namespace Agrirouter.Technicalmessagetype {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -24016,13 +22629,13 @@ namespace Agrirouter.Technicalmessagetype {
             break;
           case 10: {
             if (filename_ == null) {
-              Filename = new global::Agrirouter.Technicalmessagetype.UID();
+              Filename = new global::Efdi.UID();
             }
             input.ReadMessage(Filename);
             break;
           }
           case 16: {
-            FileType = (global::Agrirouter.Technicalmessagetype.ExternalFileReference.Types.FileType) input.ReadEnum();
+            FileType = (global::Efdi.ExternalFileReference.Types.FileType) input.ReadEnum();
             break;
           }
           case 16386: {
@@ -24037,7 +22650,6 @@ namespace Agrirouter.Technicalmessagetype {
     #region Nested types
     /// <summary>Container for nested types declared in the ExternalFileReference message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       public enum FileType {
         [pbr::OriginalName("B_NOTSET")] BNotset = 0,
