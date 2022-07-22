@@ -1,6 +1,6 @@
 syntax="proto3";
 
-package agrirouter.technicalmessagetype;
+package efdi;
 
 // reuse given representations as distributed in the official protobuf
 // releases:
