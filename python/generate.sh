@@ -3,9 +3,10 @@ rm -rf generated/
 rm -rf ../../AgrirouterTMTProtobufDefinitions
 
 printf 'Create new output folders.\n\n'
+mkdir generated
 mkdir -p ../../AgrirouterTMTProtobufDefinitions/Agrirouter/TechnicalMessageType
 mkdir -p ../../AgrirouterTMTProtobufDefinitions/Efdi
-mkdir generated
+
 
 printf 'Generating files from TechnicalMessageTypes.\n\n' 
 protoc --python_out=generated/ agrirouter/protobuf/technicalmessagetype/gps.proto
