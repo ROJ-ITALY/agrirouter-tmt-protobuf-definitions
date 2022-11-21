@@ -377,3 +377,6 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+# Python: ignore generated files
+python/generated/
